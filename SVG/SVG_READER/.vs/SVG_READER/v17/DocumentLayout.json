@@ -49,8 +49,16 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 10,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -73,8 +81,7 @@
               "RelativeToolTip": "SvgParser.cpp",
               "ViewState": "AgIAAEsAAAAAAAAAAAAAAEQAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-07T04:47:17.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T04:47:17.234Z"
             },
             {
               "$type": "Document",
@@ -156,7 +163,7 @@
               "RelativeDocumentMoniker": "SVGRenderer.cpp",
               "ToolTip": "D:\\Lap trinh huong doi tuong\\ProjectSVG\\SVG-Reader_OOP\\SVG\\SVG_READER\\SVGRenderer.cpp",
               "RelativeToolTip": "SVGRenderer.cpp",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAANDMzMzPbv0oAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-06T15:08:59.176Z",
               "EditorCaption": ""

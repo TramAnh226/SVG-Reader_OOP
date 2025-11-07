@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Lap trinh huong doi tuong\\ProjectSVG\\SVG-Reader_OOP\\SVG\\SVG_READER\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{588E06E0-130B-421F-A09A-8CE279108C41}|SVG_READER.vcxproj|D:\\Lap trinh huong doi tuong\\ProjectSVG\\SVG-Reader_OOP\\SVG\\SVG_READER\\SVGRenderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{588E06E0-130B-421F-A09A-8CE279108C41}|SVG_READER.vcxproj|solutionrelative:SVGRenderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{588E06E0-130B-421F-A09A-8CE279108C41}|SVG_READER.vcxproj|D:\\Lap trinh huong doi tuong\\ProjectSVG\\SVG-Reader_OOP\\SVG\\SVG_READER\\SvgParser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{588E06E0-130B-421F-A09A-8CE279108C41}|SVG_READER.vcxproj|solutionrelative:SvgParser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -36,10 +40,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{588E06E0-130B-421F-A09A-8CE279108C41}|SVG_READER.vcxproj|D:\\Lap trinh huong doi tuong\\ProjectSVG\\SVG-Reader_OOP\\SVG\\SVG_READER\\SVGRectangle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{588E06E0-130B-421F-A09A-8CE279108C41}|SVG_READER.vcxproj|solutionrelative:SVGRectangle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{588E06E0-130B-421F-A09A-8CE279108C41}|SVG_READER.vcxproj|D:\\Lap trinh huong doi tuong\\ProjectSVG\\SVG-Reader_OOP\\SVG\\SVG_READER\\SVGRenderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{588E06E0-130B-421F-A09A-8CE279108C41}|SVG_READER.vcxproj|solutionrelative:SVGRenderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -49,23 +49,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "stdafx.h",
-              "DocumentMoniker": "D:\\Lap trinh huong doi tuong\\SVGDemo\\SVGDemo\\stdafx.h",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\SVGDemo\\SVGDemo\\stdafx.h",
-              "ToolTip": "D:\\Lap trinh huong doi tuong\\SVGDemo\\SVGDemo\\stdafx.h",
-              "RelativeToolTip": "..\\..\\..\\..\\SVGDemo\\SVGDemo\\stdafx.h",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA4AAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-07T05:38:27.209Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "SvgParser.h",
               "DocumentMoniker": "D:\\Lap trinh huong doi tuong\\ProjectSVG\\SVG-Reader_OOP\\SVG\\SVG_READER\\SvgParser.h",
               "RelativeDocumentMoniker": "SvgParser.h",
@@ -77,20 +65,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "SvgParser.cpp",
               "DocumentMoniker": "D:\\Lap trinh huong doi tuong\\ProjectSVG\\SVG-Reader_OOP\\SVG\\SVG_READER\\SvgParser.cpp",
               "RelativeDocumentMoniker": "SvgParser.cpp",
               "ToolTip": "D:\\Lap trinh huong doi tuong\\ProjectSVG\\SVG-Reader_OOP\\SVG\\SVG_READER\\SvgParser.cpp",
               "RelativeToolTip": "SvgParser.cpp",
-              "ViewState": "AgIAABUAAAAAAAAAAAASwCUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAEQAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-07T04:47:17.234Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Shape.h",
               "DocumentMoniker": "D:\\Lap trinh huong doi tuong\\ProjectSVG\\SVG-Reader_OOP\\SVG\\SVG_READER\\Shape.h",
               "RelativeDocumentMoniker": "Shape.h",
@@ -102,7 +90,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "SVGRectangle.h",
               "DocumentMoniker": "D:\\Lap trinh huong doi tuong\\ProjectSVG\\SVG-Reader_OOP\\SVG\\SVG_READER\\SVGRectangle.h",
               "RelativeDocumentMoniker": "SVGRectangle.h",
@@ -114,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "SVGRenderer.h",
               "DocumentMoniker": "D:\\Lap trinh huong doi tuong\\ProjectSVG\\SVG-Reader_OOP\\SVG\\SVG_READER\\SVGRenderer.h",
               "RelativeDocumentMoniker": "SVGRenderer.h",
@@ -126,7 +114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "SVGRectangle.cpp",
               "DocumentMoniker": "D:\\Lap trinh huong doi tuong\\ProjectSVG\\SVG-Reader_OOP\\SVG\\SVG_READER\\SVGRectangle.cpp",
               "RelativeDocumentMoniker": "SVGRectangle.cpp",
@@ -138,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "rapidxml.hpp",
               "DocumentMoniker": "D:\\Lap trinh huong doi tuong\\ProjectSVG\\SVG-Reader_OOP\\SVG\\SVG_READER\\rapidxml.hpp",
               "RelativeDocumentMoniker": "rapidxml.hpp",
@@ -150,7 +138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Source_Main.cpp",
               "DocumentMoniker": "D:\\Lap trinh huong doi tuong\\ProjectSVG\\SVG-Reader_OOP\\SVG\\SVG_READER\\Source_Main.cpp",
               "RelativeDocumentMoniker": "Source_Main.cpp",
@@ -162,15 +150,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "SVGRenderer.cpp",
               "DocumentMoniker": "D:\\Lap trinh huong doi tuong\\ProjectSVG\\SVG-Reader_OOP\\SVG\\SVG_READER\\SVGRenderer.cpp",
               "RelativeDocumentMoniker": "SVGRenderer.cpp",
               "ToolTip": "D:\\Lap trinh huong doi tuong\\ProjectSVG\\SVG-Reader_OOP\\SVG\\SVG_READER\\SVGRenderer.cpp",
               "RelativeToolTip": "SVGRenderer.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-06T15:08:59.176Z"
+              "WhenOpened": "2025-11-06T15:08:59.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "stdafx.h",
+              "DocumentMoniker": "D:\\Lap trinh huong doi tuong\\SVGDemo\\SVGDemo\\stdafx.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\SVGDemo\\SVGDemo\\stdafx.h",
+              "ToolTip": "D:\\Lap trinh huong doi tuong\\SVGDemo\\SVGDemo\\stdafx.h",
+              "RelativeToolTip": "..\\..\\..\\..\\SVGDemo\\SVGDemo\\stdafx.h",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA4AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-07T05:38:27.209Z"
             }
           ]
         }
