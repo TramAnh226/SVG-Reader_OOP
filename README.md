@@ -1,1 +1,0 @@
-# SVG-Reader_OOP
