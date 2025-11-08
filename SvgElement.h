@@ -1,11 +1,8 @@
 #pragma once
-#ifndef SVG_ELEMENT_H
-#define SVG_ELEMENT_H
-
 #include <string>
-#include "SvgStyle.h"
-#include "SvgParser.h"
-#include "SvgRenderer."
+#include "SVGStyle.h"
+#include "SVGParser/SVGParser/SVGParser.h"
+#include "SVG/SVG_READER/SVGRenderer.h"
 
 using namespace std;
 
@@ -29,9 +26,8 @@ public:
 	void setSvgStyle(const SvgStyle&);
 
 	// polymorphism and separation of concerns
-	virtual void parse(const map<string, string>& attrs) = 0;
-	virtual void render(SvgRenderer& r) = 0;
+	virtual void parse(SVGParser&) const = 0;
+	virtual void render(SVGRenderer& r) const = 0;
 	// subsequent development
-	virtual void transform(Matrix* m) = 0;
+	// virtual void transform(Matrix* m) = 0;
 };
-#endif

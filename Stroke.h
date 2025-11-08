@@ -1,20 +1,15 @@
 #pragma once
-#ifndef STROKE_H
-#define STROKE_H
-#include "Color"
+#include "Color.h"
+#include "SVGParser/SVGParser/SVGParser.h"
+#include "SVG/SVG_READER/SVGRenderer.h"
 
-class Stroke {
-private: 
-private: 
-	Color strokeColr; 
-	float strokeWidth;
-	float strokeOpacity; 
+struct Stroke {
 public: 
-	Color strokeColr;
+	Color strokeColor;
 	float strokeWidth;
 	float strokeOpacity;
 
-	void parseStroke(const map<string, string>&);
-	void renderStroke(SvgRenderer& r);
+	void parseStroke(SVGParser&);
+	void renderStroke(SVGRenderer&);
 };
 #endif

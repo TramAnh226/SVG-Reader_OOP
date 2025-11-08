@@ -1,12 +1,12 @@
 #pragma once
-#ifndef SVG_CIRCLE_H
-#define SVG_CIRCLE_H
-#include "SvgEllipse.h"
+#include "SVGEllipse.h"
+#include "SVGParser/SVGParser/SVGParser.h"
+#include "SVG/SVG_READER/SVGRenderer.h"
 
-class Circle : public SvgEllipse {
+class SVGCircle : public SVGEllipse {
 public: 
-	void parse(const map<string, string>&) override;
-	void render(SvgRender&) override;
-	void transform(Matrix*) override;
+	void parse(SVGParser&) override;
+	void render(SVGRender&) override;
+	// void transform(Matrix*) override;
 };
 #endif

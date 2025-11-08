@@ -1,7 +1,8 @@
 #pragma once
-#ifndef SVG_STYLE_H
-#define SVG_STYLE_H
 #include "Color.h"
+#include "Stroke.h"
+#include "SVGParser/SVGParser/SVGParser.h"
+#include "SVG/SVG_READER/SVGRenderer.h"
 
 using namespace std;
 
@@ -18,8 +19,7 @@ public:
 	//SvgStyle(const SvgStyle&);
 	//SvgStyle& operator=(const SvgStyle&);
 	//~SvgStyle();
-
-	void parseStyle(const map<string, string>&);
-	void renderStyle(SvgRenderer* r);
+	void parseStyle(SVGParser&);
+	void renderStyle(SVGRenderer&);
 };
-#endif
+
