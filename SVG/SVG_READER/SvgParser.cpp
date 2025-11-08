@@ -1,8 +1,7 @@
-﻿#include "SvgParser.h"
+﻿#include "SVGParser.h"
 #include <fstream>
 #include <sstream>
 #include <iostream>
-
 
 using namespace rapidxml;
 
@@ -74,7 +73,7 @@ Shape* SVGParser::createShapeFromNode(xml_node<>* node) {
         float cy = std::stof(node->first_attribute("cy")->value());
         float r = std::stof(node->first_attribute("r")->value());
 
-        return new Ellipse(cx, cy, r, r, Color(255, 0, 0, 255), Color(255, 0, 0, 0), 2);
+        return new SVGEllipse(cx, cy, r, r, Color(255, 0, 0, 255), Color(255, 0, 0, 0), 2);
     }
     else if (name == "line") {
         float x1 = std::stof(node->first_attribute("x1")->value());

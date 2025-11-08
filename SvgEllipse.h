@@ -1,19 +1,18 @@
 #pragma once
-#ifndef SVG_ELLIPSE
-#define SVG_ELLIPSE
 #include "Point.h"
-#include "SvgRenderer.h"
+#include "SVG/SVG_READER/SVGParser.h"
+#include "SVG/SVG_READER/SVGRenderer.h"
 
-class SvgEllipse {
+class SVGEllipse {
 private: 
 	Point center;
 	float rx, ry;
 public: 
-	SvgEllipse();
-	SvgEllipse(Point, float, float);
-	SvgEllipse(const SvgEllipse&);
-	SvgEllipse& operator=(const SvgEllipse&);
-	~SvgEllipse();
+	SVGEllipse();
+	SVGEllipse(Point, float, float);
+	SVGEllipse(const SVGEllipse&);
+	SVGEllipse& operator=(const SVGEllipse&);
+	~SVGEllipse();
 
 	Point getCenter();
 	void setCenter(const Point&);
@@ -22,8 +21,7 @@ public:
 	float getRadiusY();
 	void setRadiusY(const float&);
 
-	void parse(const map<string, string>&) override;
-	void render(SvgRender&) override;
-	void transform(Matrix*) override;
+	void parse(SVGParser&) override;
+	void render(SVGRenderer&) override;
+	// void transform(Matrix*) override;
 };
-#endif
