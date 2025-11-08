@@ -6,28 +6,29 @@
 
 using namespace std;
 
-class SvgElement {
+class SVGElement {
 private: 
 	string tag_name;
 	string id;
-	SvgStyle style;
+	SVGStyle style;
 public: 
-	SvgElement();
-	SvgElement(const SvgElement&) = delete;
-	SvgElement& operator=(const SvgElement&) = delete;
+	SVGElement();
+	SVGElement(const string&, const string&, const SVGStyle&);
+	SVGElement(const SVGElement&) = delete;
+	SVGElement& operator=(const SVGElement&) = delete;
 	// virtual : obligatory (to delete derived object)
-	virtual ~SvgElement() = default;
+	virtual ~SVGElement() = default;
 
-	string getTagName();
+	string getTagName() const;
 	void setTagName(const string&);
-	string getId();
+	string getId() const;
 	void setId(const string&);
-	SvgStyle getSvgStyle();
-	void setSvgStyle(const SvgStyle&);
+	SvgStyle getSVGStyle() const;
+	void setSVGStyle(const SvgStyle&);
 
 	// polymorphism and separation of concerns
 	virtual void parse(SVGParser&) const = 0;
-	virtual void render(SVGRenderer& r) const = 0;
+	virtual void render(SVGRenderer&) const = 0;
 	// subsequent development
 	// virtual void transform(Matrix* m) = 0;
 };

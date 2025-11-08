@@ -2,8 +2,9 @@
 #include "Point.h"
 #include "SVGParser/SVGParser/SVGParser.h"
 #include "SVG/SVG_READER/SVGRenderer.h"
+#include "SVGElement.h"
 
-class SVGEllipse {
+class SVGEllipse : public SVGElement {
 private: 
 	Point center;
 	float rx, ry;
@@ -13,12 +14,12 @@ public:
 	SVGEllipse(const SVGEllipse&);
 	SVGEllipse& operator=(const SVGEllipse&);
 	~SVGEllipse();
-
-	Point getCenter();
+	
+	Point getCenter() const;
 	void setCenter(const Point&);
-	float getRadiusX();
+	float getRadiusX() const;
 	void setRadiusX(const float&);
-	float getRadiusY();
+	float getRadiusY() const;
 	void setRadiusY(const float&);
 
 	void parse(SVGParser&) override;

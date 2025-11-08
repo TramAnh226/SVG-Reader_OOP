@@ -9,7 +9,7 @@ public:
 	float strokeWidth;
 	float strokeOpacity;
 
-	void parseStroke(SVGParser&);
-	void renderStroke(SVGRenderer&);
+	void parse(SVGParser&);
+	void render(SVGRenderer&);
 };
 #endif
