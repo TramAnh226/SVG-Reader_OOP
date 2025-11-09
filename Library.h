@@ -1,0 +1,16 @@
+#pragma once
+#include "Color.h"
+#include "Point.h"
+#include "Stroke.h"
+#include "SVGElement.h"
+#include "SVGEllipse.h"
+#include "SVGCircle.h"
+#include "SVGLine.h"
+#include "SVGPolyshapeBase.h"
+#include "SVGPolygon.h"
+#include "SVGPolyline.h"
+#include "SVGRectangle.h"
+#include "SVGSquare.h"
+#include "SVGText.h"
+#include "SVGStyle.h"
+
