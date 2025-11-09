@@ -40,12 +40,8 @@ void SVGRenderer::drawRectangle(Graphics& g, const SVGRectangle* rect) {
 
 void SVGRenderer::drawCircle(Graphics& g, const SVGCircle* circle) {
     if (!circle) return;
-
-    // --- Lấy dữ liệu từ đối tượng SVGCircle ---
     PointF center = circle->getCenter();
     float radius = circle->getRadius();
-
-    // --- Lấy style ---
     Gdiplus::Color fill = circle->getFillColor();
     Gdiplus::Color stroke = circle->getStrokeColor();
     float strokeW = circle->getStrokeWidth();
@@ -58,24 +54,19 @@ void SVGRenderer::drawCircle(Graphics& g, const SVGCircle* circle) {
 
 void SVGRenderer::drawEllipse(Graphics& g, const SVGEllipse* ellipse) {
     if (!ellipse) return;
-
     PointF center = ellipse->getCenter();
     float rx = ellipse->getRadiusX();
     float ry = ellipse->getRadiusY();
-
     SolidBrush brush(ellipse->getFillColor());
     Pen pen(ellipse->getStrokeColor(), ellipse->getStrokeWidth());
-
     g.FillEllipse(&brush, center.X - rx, center.Y - ry, rx * 2, ry * 2);
     g.DrawEllipse(&pen, center.X - rx, center.Y - ry, rx * 2, ry * 2);
 }
 
 void SVGRenderer::drawLine(Graphics& g, const SVGLine* line) {
     if (!line) return;
-
     PointF start = line->getStartPoint();
     PointF end = line->getEndPoint();
-
     Pen pen(line->getStrokeColor(), line->getStrokeWidth());
     g.DrawLine(&pen, start, end);
 }
@@ -83,39 +74,31 @@ void SVGRenderer::drawLine(Graphics& g, const SVGLine* line) {
 
 void SVGRenderer::drawPolygon(Graphics& g, const SVGPolygon* polygon) {
     if (!polygon) return;
-
     const std::vector<PointF>& points = polygon->getPoints();
     if (points.empty()) return;
-
     SolidBrush brush(polygon->getFillColor());
     Pen pen(polygon->getStrokeColor(), polygon->getStrokeWidth());
-
     g.FillPolygon(&brush, points.data(), static_cast<INT>(points.size()));
     g.DrawPolygon(&pen, points.data(), static_cast<INT>(points.size()));
 }
 
 void SVGRenderer::drawPolyline(Graphics& g, const SVGPolyline* polyline) {
     if (!polyline) return;
-
     const std::vector<PointF>& points = polyline->getPoints();
     if (points.size() < 2) return;
-
     Pen pen(polyline->getStrokeColor(), polyline->getStrokeWidth());
     g.DrawLines(&pen, points.data(), static_cast<INT>(points.size()));
 }
 
 void SVGRenderer::drawText(Graphics& g, const SVGText* text) {
     if (!text) return;
-
     PointF pos = text->getPosition();
     std::wstring content = text->getContent();
     Gdiplus::Color color = text->getFillColor();
     float fontSize = text->getFontSize();
-
     FontFamily fontFamily(L"Arial");
     Font font(&fontFamily, fontSize, FontStyleRegular, UnitPixel);
     SolidBrush brush(color);
-
     g.DrawString(content.c_str(), -1, &font, pos, &brush);
 }
 
@@ -124,3 +107,4 @@ void SVGRenderer::renderFigure(Graphics& g, const std::vector<SVGElement*>& grou
         if (element) element->render(*this, g);
     }
 }
+
