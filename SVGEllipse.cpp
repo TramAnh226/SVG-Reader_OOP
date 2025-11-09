@@ -1,31 +1,33 @@
 #include "SVGEllipse.h"
 
-SVGEllipse::SVGEllipse() {
-    SVGElemment("ellipse", "", SVGStyle());
-    center = Point(0, 0);
-    rx = 0;
-    ry = 0; 
-}
-SVGEllipse::SVGEllipse(Point center, float rx, float ry) {
-    SVGElemment("ellipse", "", SVGStyle());
-    this->center = center;
-    this->rx = rx;      
-    this->ry = ry;      
-}
-SVGEllipse::SVGEllipse(const SVGEllipse& other) {
-    SVGElemment::SVGElemment(other);
-    this->center = other.center;
-    this->rx = other.rx;    
-    this->ry = other.ry;    
-}   
+SVGEllipse::SVGEllipse() 
+    : SVGElement("ellipse", "", SVGStyle()),
+    center(0, 0),
+    rx(0.0f),
+    ry(0.0f)
+{}
+SVGEllipse::SVGEllipse(Point center, float rx, float ry)
+    : SVGElement("ellipse", "", SVGStyle()),
+    center(center),
+    rx(rx),
+    ry(ry)    
+{}
+SVGEllipse::SVGEllipse(const SVGEllipse& other) 
+    : SVGElement(other.getTagName(), other.getId(), other.getSVGStyle()),
+    center(other.center),
+    rx(other.rx),
+    ry(other.ry)      
+{}
 SVGEllipse& SVGEllipse::operator=(const SVGEllipse& other) {
     if (this != &other) {
-        SVGElemment::operator=(other);
+        this->setTagName(other.getTagName());
+        this->setId(other.getId());
+        this->setSVGStyle(other.getSVGStyle());
         this->center = other.center;
         this->rx = other.rx;    
         this->ry = other.ry;    
     }
-    return *this;
+    return (*this);
 }
 SVGEllipse::~SVGEllipse() {
 
@@ -56,4 +58,4 @@ void SVGEllipse::parse(SVGParser& p) {
 void SVGEllipse::render(SVGRenderer& r) {
     r.renderEllipse(*this);
 }
-// void SVGEllipse::transform(Matrix* m) {
+// void SVGEllipse::transform(Matrix* m)

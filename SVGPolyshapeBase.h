@@ -6,20 +6,19 @@
 #include <vector>
 
 class SVGPolyshapeBase : public SVGElement {
-private: 
-	std::vector<Point> list;
+protected: 
+	std::vector<Point> points;
 public: 
 	SVGPolyshapeBase();
 	SVGPolyshapeBase(const std::vector<Point>&);
-	SVGPolyshapeBase(const SVGPolyshapeBase& other);
-	SVGPolyshapeBase& operator=(const SVGPolyshapeBase& other);
+	SVGPolyshapeBase(const SVGPolyshapeBase&);
+	SVGPolyshapeBase& operator=(const SVGPolyshapeBase&);
 	~SVGPolyshapeBase();
 
-	std::vector<Point> getList() const;
-	void setList(const std::vector<Point>&);
+	std::vector<Point> getPoints() const;
+	void setPoints(const std::vector<Point>&);
 	
 	void parse(SVGParser&) override;
 	void render(SVGRenderer&) override;
 	// void transform(Matrix*) override;
 };
-#endif

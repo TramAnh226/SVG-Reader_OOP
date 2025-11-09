@@ -1,15 +1,28 @@
 #pragma once
-#ifndef SVG_RECTANGLE_H
-#define SVG_RECTANGLE_H
 #include "Point.h"
+#include "SVGElement.h"
+#include "SVGParser/SVGParser/SVGParser.h"
+#include "SVG/SVR_READER/SVGRenderer.h"
 
-class SvgRectangle {
+class SVGRectangle : public SVGElement {
 private: 
 	Point top_left_corner;
 	float width, height;
 public: 
-	void parse(const map<string, string>&) override;
-	void render(SvgRender&) override;
-	void transform(Matrix*) override;
+	SVGRectangle();
+	SVGRectangle(const Point&, float, float);
+	SVGRectangle(const SVGRectangle&);
+	SVGRectangle& operator=(const SVGRectangle&);
+	~SVGRectangle();
+
+	Point getTopLeftCorner() const;
+	void setTopLeftCorner(const Point&);
+	float getWidth() const;
+	void setWidth(float);
+	float getHeight() const;
+	void setHeight(float);
+
+	void parse(SVGParser&) override;
+	void render(SVGRenderer&) override;
+	// void transform(Matrix*) override;
 };
-#endif

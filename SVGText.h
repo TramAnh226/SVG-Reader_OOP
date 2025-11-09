@@ -1,17 +1,29 @@
 #pragma once
-#ifndef SVG_TEXT_H
-#include SVG_TEXT_H
 #include "Point.h"
-#include "SvgRenderer.h"
+#include "SVGElement.h"
+#include "SVGParser/SVGParser/SVGParser.h"
+#include "SVG/SVG_READER/SVGRender.h"
 
-class SvgText {
+class SVGText : public SVGElement {
 private: 
 	float font_size;
 	Point start;
 	std::string content;
 public: 
-	void parse(const map<string, string>&) override;
-	void render(SvgRender&) override;
-	void transform(Matrix*) override;
+	SVGText();
+	SVGText(float, const Point&, const std::string&);
+	SVGText(const SVGText&);
+	SVGText& operator=(const SVGText&);
+	~SVGText() override = default;
+
+	float getFontSize() const;
+	void setFontSize(float);
+	Point getStart() const;
+	void setStart(const Point&);
+	std::string getContent() const;
+	void setContent(const std::string&);
+	
+	void parse(SVGParser&) override;
+	void render(SVGRenderer&) override;
+	// void transform(Matrix*) override;
 };
-#endif

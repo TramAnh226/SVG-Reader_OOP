@@ -1,21 +1,25 @@
 #include "SVGPolygon.h"
-SVGPolygon::SVGPolygon() {
-    SVGPolyshapeBase("polygon", "", SVGStyle());
+
+SVGPolygon::SVGPolygon() : SVGPolyshapeBase() {
+    this->setTagName("polygon");
 }   
-SVGPolygon::SVGPolygon(const std::vector<Point>& points) {
-    SVGPolyshapeBase("polygon", "", SVGStyle());
-    this->points = points;
+SVGPolygon::SVGPolygon(const std::vector<Point>& points) : SVGPolyshapeBase(points) {
+    this->setTagName("polygon");
 }
-SVGPolygon::SVGPolygon(const SVGPolygon& other) {
-    SVGPolyshapeBase::SVGPolyshapeBase(other);
-    this->points = other.points;
+SVGPolygon::SVGPolygon(const SVGPolygon& other) : SVGPolyshapeBase(other.points) {
+    this->setTagName("polygon");
+    this->setId(other.getId());
+    this->setSVGStyle(other.getSVGStyle());
 }
 SVGPolygon& SVGPolygon::operator=(const SVGPolygon& other) {
-    if (this != &other) {
-        SVGPolyshapeBase::operator=(other);
-        this->points = other.points;
+    if (this!= &other) {
+        this->setPoints(other.getPoints());
+
+        this->setTagName(other.getTagName());
+        this->setId(other.getId());
+        this->setSVGStyle(other.getSVGStyle());
     }
-    return *this;
+    return (*this);
 }
 SVGPolygon::~SVGPolygon() {
 
@@ -27,4 +31,4 @@ void SVGPolygon::parse(SVGParser& p) {
 void SVGPolygon::render(SVGRenderer& r) {
     r.renderPolygon(*this);
 }
-// void SVGPolygon::transform(Matrix* m) {
+// void SVGPolygon::transform(Matrix* m)

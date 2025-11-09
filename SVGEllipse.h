@@ -5,7 +5,7 @@
 #include "SVGElement.h"
 
 class SVGEllipse : public SVGElement {
-private: 
+protected: 
 	Point center;
 	float rx, ry;
 public: 

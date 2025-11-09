@@ -1,20 +1,23 @@
 #include "SVGPolyshapeBase.h"
-SVGPolyshapeBase::SVGPolyshapeBase() {
-    SVGElement("polyshapebase", "", SVGStyle());
-    list = std::vector<Point>();
-}
-SVGPolyshapeBase::SVGPolyshapeBase(const std::vector<Point>& points) {
-    SVGElement("polyshapebase", "", SVGStyle());
-    list = points;
-}
-SVGPolyshapeBase::SVGPolyshapeBase(const SVGPolyshapeBase& other) {
-    SVGElement::SVGElement(other);
-    list = other.list;
-}
+
+SVGPolyshapeBase::SVGPolyshapeBase() 
+    : SVGElement("polyshapebase", "", SVGStyle()),
+    points(std::vector<Point>())
+{}
+SVGPolyshapeBase::SVGPolyshapeBase(const std::vector<Point>& points)
+    : SVGElement("polyshapebase", "", SVGStyle()),
+    points(points)
+{}
+SVGPolyshapeBase::SVGPolyshapeBase(const SVGPolyshapeBase& other) 
+    : SVGElement(other.getTagName(), other.getId(), other.getSVGStyle()),
+    points(other.points)
+{}
 SVGPolyshapeBase& SVGPolyshapeBase::operator=(const SVGPolyshapeBase& other) {
     if (this != &other) {
-        SVGElement::operator=(other);
-        list = other.list;
+        this->setTagName(other.getTagName());
+        this->setId(other.getId());
+        this->setSVGStyle(other.getSVGStyle());
+        points = other.points;
     }
     return *this;
 }
@@ -22,11 +25,11 @@ SVGPolyshapeBase::~SVGPolyshapeBase() {
 
 }
 
-std::vector<Point> SVGPolyshapeBase::getList() const {
-    return list;
+std::vector<Point> SVGPolyshapeBase::getPoints() const {
+    return points;
 }
-void SVGPolyshapeBase::setList(const std::vector<Point>& points) {
-    list = points;
+void SVGPolyshapeBase::setPoints(const std::vector<Point>& points) {
+    points = points;
 }
 
 void SVGPolyshapeBase::parse(SVGParser& p) {
@@ -35,4 +38,4 @@ void SVGPolyshapeBase::parse(SVGParser& p) {
 void SVGPolyshapeBase::render(SVGRenderer& r) {
     r.renderPolyshapeBase(*this);
 }
-// void SVGPolyshapeBase::transform(Matrix* m) {
+// void SVGPolyshapeBase::transform(Matrix* m)

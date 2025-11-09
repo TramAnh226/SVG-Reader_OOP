@@ -1,5 +1,6 @@
 #include "Point.h"
 #include <cmath>
+
 Point::Point() {
     x = 0.0f;
     y = 0.0f;

@@ -4,8 +4,6 @@
 #include "SVGParser/SVGParser/SVGParser.h"
 #include "SVG/SVG_READER/SVGRenderer.h"
 
-using namespace std;
-
 class SVGStyle {
 private: 
 	Color fillColor;
@@ -20,14 +18,15 @@ public:
 	SVGStyle& operator=(const SVGStyle&);
 	~SVGStyle();
 
-	Color getFillColor();
+	Color getFillColor() const;
 	void setFillColor(const Color&);
-	float getFillOpacity();	
+	float getFillOpacity() const;	
 	void setFillOpacity(const float&);
-	Stroke getStroke();
+	Stroke getStroke() const;
 	void setStroke(const Stroke&);
 
 	void parse(SVGParser&);
 	void render(SVGRenderer&);
+	// void transform(Matrix*);
 };
 

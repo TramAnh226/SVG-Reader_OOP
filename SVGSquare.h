@@ -1,15 +1,17 @@
 #pragma once
-#ifndef SVG_SQUARE_H
-#define SVG_SQUARE_H
-#include "SvgRectangle.h"
+#include "SVGRectangle.h"
+#include "SVGParser/SVGParser/SVGParser.h"
+#include "SVG/SVR_READER/SVGRenderer.h"
 
-class SvgSquare : public SvgRectangle {
+class SVGSquare : public SVGRectangle {
 public: 
-	SvgSquare();
-	~SvgSquare();
+	SVGSquare();
+	SVGSquare(const Point&, float);
+	SVGSquare(const SVGSquare&);
+	SVGSquare& operator=(const SVGSquare&);
+	~SVGSquare();
 
-	void parse(const map<string, string>&) override;
-	void render(SvgRender&) override;
-	void transform(Matrix*) override;
+	void parse(SVGParser&) override;
+	void render(SVGRenderer&) override;
+	// void transform(Matrix*) override;
 };
-#endif

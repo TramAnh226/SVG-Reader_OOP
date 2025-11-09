@@ -1,22 +1,25 @@
 #include "SVGLine.h"
-SVGLine::SVGLine() {
-    SVGElement("line", "", SVGStyle());
-    start_point = Point(0, 0);
-    end_point = Point(0, 0);        
-}
-SVGLine::SVGLine(Point start, Point end) {
-    SVGElement("line", "", SVGStyle());
-    start_point = start;
-    end_point = end;        
-}
-SVGLine::SVGLine(const SVGLine& other) {
-    SVGElement::SVGElement(other);
-    start_point = other.start_point;
-    end_point = other.end_point;
-}
+
+SVGLine::SVGLine() 
+    : SVGElement("line", "", SVGStyle()),
+    start_point(0, 0),
+    end_point(0, 0)      
+{}
+SVGLine::SVGLine(Point start, Point end) 
+    : SVGElement("line", "", SVGStyle()),
+    start_point(start),
+    end_point(end)    
+{}
+SVGLine::SVGLine(const SVGLine& other)
+    : SVGElement(other.getTagName(), other.getId(), other.getSVGStyle()),
+    start_point(other.start_point),
+    end_point(other.end_point)
+{}
 SVGLine& SVGLine::operator=(const SVGLine& other) {
     if (this != &other) {
-        SVGElement::operator=(other);
+        this->setTagName(other.getTagName());
+        this->setId(other.getId());
+        this->setSVGStyle(other.getSVGStyle());
         start_point = other.start_point;
         end_point = other.end_point;
     }
