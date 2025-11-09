@@ -1,18 +1,21 @@
-#include "SvgGroup.h"
-#include "SvgFactoryPattern.h"
+#include "SVGGroup.h"
+#include "SVGFactoryPattern.h"
+
 
 #include <algorithm>
 
-SvgGroup::SvgGroup() : 
-    SvgElement(), 
-    ElementArray{}, 
+
+SVGGroup::SVGGroup() :
+    SVGElement(),
+    ElementArray{},
     parent(nullptr){
 }
 
-SvgGroup::SvgGroup(const SvgGroup& other): SvgElement(other), parent(other.parent){
-    SvgFactoryPattern factory;
+
+SVGGroup::SVGGroup(const SVGGroup& other): SVGElement(other), parent(other.parent){
+    SVGFactoryPattern factory;
     for(auto element: other.ElementArray){
-        SvgElement* newElement = factory.getElement(element->getTagName());
+        SVGElement* newElement = factory.getElement(element->getTagName());
         if(newElement){
             *newElement = *element;
             this->ElementArray.push_back(newElement);
@@ -20,36 +23,43 @@ SvgGroup::SvgGroup(const SvgGroup& other): SvgElement(other), parent(other.paren
     }
 }
 
-void swap(SvgGroup& first, SvgGroup& second) noexcept{
+
+void swap(SVGGroup& first, SVGGroup& second) noexcept{
     using std::swap;
     swap(first.ElementArray, second.ElementArray);
     swap(first.parent, second.parent);
 }
 
-SvgGroup& SvgGroup::operator= (SvgGroup other) noexcept{
+
+SVGGroup& SVGGroup::operator= (SVGGroup other) noexcept{
     swap(*this, other);
     return *this;
 }
 
-SvgGroup::~SvgGroup(){
+
+SVGGroup::~SVGGroup(){
     for (auto element : ElementArray)
         delete element;
     ElementArray.clear();
 }
 
-void SvgGroup::setParent(SvgGroup* parent){
+
+void SVGGroup::setParent(SVGGroup* parent){
     this->parent = parent;
 }
 
-void SvgGroup::setElementArray(const std::vector<SvgElement*>& SvgElementArray){
+
+void SVGGroup::setElementArray(const std::vector<SVGElement*>& SVGElementArray){
+
 
     for (auto elem : ElementArray)
         delete elem;
     ElementArray.clear();
 
-    SvgFactoryPattern factory;
-    for(auto element: SvgElementArray){
-        SvgElement* newElement = factory.getElement(element->getTagName());
+
+    SVGFactoryPattern factory;
+    for(auto element: SVGElementArray){
+        SVGElement* newElement = factory.getElement(element->getTagName());
         if(newElement){
             *newElement = *element;
             this->ElementArray.push_back(newElement);
@@ -57,15 +67,19 @@ void SvgGroup::setElementArray(const std::vector<SvgElement*>& SvgElementArray){
     }
 }
 
-void SvgGroup::addElement(SvgElement* ele){
+
+void SVGGroup::addElement(SVGElement* ele){
     this->ElementArray.push_back(ele);
 }
 
-SvgGroup* SvgGroup::getParent(){
+
+SVGGroup* SVGGroup::getParent(){
     return this->parent;
 }
 
-const std::vector<SvgElement*>& SvgGroup::getSvgElementArray() const {
+
+const std::vector<SVGElement*>& SvgGroup::getSVGElementArray() const {
     return this->ElementArray;
 }
+
 

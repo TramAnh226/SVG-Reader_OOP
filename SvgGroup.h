@@ -1,31 +1,40 @@
 #ifndef _SVGGROUP_H_
 #define _SVGGROUP_H_
 
+
 #include <vector>
 #include <iostream>
-#include "SvgElement.h"
+#include "SVGElement.h"
 
-class SvgGroup : public SvgElement{
+
+class SVGGroup : public SVGElement{
     private:
 
-    std::vector<SvgElement*> ElementArray;
-    SvgGroup* parent;
+
+    std::vector<SVGElement*> ElementArray;
+    SVGGroup* parent;
+
 
     public:
 
-    SvgGroup();
-    SvgGroup(const SvgGroup&);
-    SvgGroup& operator= (SvgGroup) noexcept;
-    ~SvgGroup();
 
-    friend void swap(SvgGroup& first, SvgGroup& second) noexcept;
+    SVGGroup();
+    SVGGroup(const SVGGroup&);
+    SVGGroup& operator= (SVGGroup) noexcept;
+    ~SVGGroup();
 
-    void setParent(SvgGroup*);
-    void setElementArray(const std::vector<SvgElement*>&);
-    void addElement(SvgElement*);
 
-    SvgGroup* getParent();
-    const std::vector<SvgElement*>& getSvgElementArray() const;
+    friend void swap(SVGGroup& first, SVGGroup& second) noexcept;
+
+
+    void setParent(SVGGroup*);
+    void setElementArray(const std::vector<SVGElement*>&);
+    void addElement(SVGElement*);
+
+
+    SVGGroup* getParent();
+    const std::vector<SVGElement*>& getSVGElementArray() const;
 };
+
 
 #endif

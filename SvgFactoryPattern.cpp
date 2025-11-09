@@ -1,11 +1,13 @@
-#include "SvgFactoryPattern.h"
-#include "SvgElement.h"
+#include "SVGFactoryPattern.h"
+#include "SVGElement.h"
 #include "Library.h"
+
 
 #include <stdexcept>
 #include <algorithm>
 
-SvgFactoryPattern::SvgFactoryPattern(){
+
+SVGFactoryPattern::SVGFactoryPattern(){
     ElementID["circle"] = 1;
     ElementID["ellipse"] =2;
     ElementID["line"] = 3;
@@ -17,13 +19,16 @@ SvgFactoryPattern::SvgFactoryPattern(){
     ElementID["g"] = 9;
 }
 
-SvgElement* SvgFactoryPattern::getElement(std::string tagname){
+
+SVGElement* SVGFactoryPattern::getElement(std::string tagname){
     auto it = ElementID.find(tagname);
     if(it == ElementID.end()){
         throw std::out_of_range("Cannot find the type of object for tag: " + tagname);
     }
 
+
     int numid = it->second;
+
 
     switch(numid){
     case 1:
@@ -43,12 +48,13 @@ SvgElement* SvgFactoryPattern::getElement(std::string tagname){
     case 8:
         return new SVGText();
     case 9:
-        return new SvgGroup();
+        return new SVGGroup();
     default:
         throw std::runtime_error ("Found tag - " + tagname + " but mapped ID is invalid");
     }
 }
 
-const std::unordered_map<std::string, int>& SvgFactoryPattern::getElementID() const {
+
+const std::unordered_map<std::string, int>& SVGFactoryPattern::getElementID() const {
     return this->ElementID;
 }
