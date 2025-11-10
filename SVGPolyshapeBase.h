@@ -2,22 +2,22 @@
 #include "SVGElement.h"
 #include "SVGParser/SVGParser/SVGParser.h"
 #include "SVGRenderer/SVGRenderer/SVGRenderer.h"
-#include "Point.h"
+#include "CustomPoint.h"
 #include <vector>
 
 class SVGPolyshapeBase : public SVGElement {
 protected: 
-	std::vector<Point> points;
+	std::vector<CustomPoint> points;
 public: 
 	SVGPolyshapeBase();
-	SVGPolyshapeBase(const std::vector<Point>&);
+	SVGPolyshapeBase(const std::vector<CustomPoint>&);
 	SVGPolyshapeBase(const SVGPolyshapeBase&);
 	SVGPolyshapeBase& operator=(const SVGPolyshapeBase&);
 	~SVGPolyshapeBase();
 	SVGElement* clone() const override;
 	
-	std::vector<Point> getPoints() const;
-	void setPoints(const std::vector<Point>&);
+	std::vector<CustomPoint> getPoints() const;
+	void setPoints(const std::vector<CustomPoint>&);
 	
 	void parse(SVGParser&) override;
 	void render(SVGRenderer&) override;

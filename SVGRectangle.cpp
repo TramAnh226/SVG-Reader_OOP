@@ -2,11 +2,11 @@
 
 SVGRectangle::SVGRectangle() 
     : SVGElement("rect", "", SVGStyle()), 
-    top_left_corner(Point(0, 0)), 
+    top_left_corner(CustomPoint(0, 0)), 
     width(0), 
     height(0) 
 {}
-SVGRectangle::SVGRectangle(const Point& topLeft, float w, float h) 
+SVGRectangle::SVGRectangle(const CustomPoint& topLeft, float w, float h) 
     : SVGElement("rect", "", SVGStyle()), 
     top_left_corner(topLeft), 
     width(w), 
@@ -35,10 +35,10 @@ SVGElement* SVGRectangle::clone() const {
     return new SVGRectangle(*this);
 }
 
-Point SVGRectangle::getTopLeftCorner() const {
+CustomPoint SVGRectangle::getTopLeftCorner() const {
     return top_left_corner;
 }
-void SVGRectangle::setTopLeftCorner(const Point& point) {
+void SVGRectangle::setTopLeftCorner(const CustomPoint& point) {
     top_left_corner = point;
 }
 float SVGRectangle::getWidth() const {

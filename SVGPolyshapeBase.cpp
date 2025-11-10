@@ -2,9 +2,9 @@
 
 SVGPolyshapeBase::SVGPolyshapeBase() 
     : SVGElement("polyshapebase", "", SVGStyle()),
-    points(std::vector<Point>())
+    points(std::vector<CustomPoint>())
 {}
-SVGPolyshapeBase::SVGPolyshapeBase(const std::vector<Point>& points)
+SVGPolyshapeBase::SVGPolyshapeBase(const std::vector<CustomPoint>& points)
     : SVGElement("polyshapebase", "", SVGStyle()),
     points(points)
 {}
@@ -26,10 +26,10 @@ SVGElement* SVGPolyshapeBase::clone() const {
     return new SVGPolyshapeBase(*this);
 }
 
-std::vector<Point> SVGPolyshapeBase::getPoints() const {
+std::vector<CustomPoint> SVGPolyshapeBase::getPoints() const {
     return points;
 }
-void SVGPolyshapeBase::setPoints(const std::vector<Point>& points) {
+void SVGPolyshapeBase::setPoints(const std::vector<CustomPoint>& points) {
     points = points;
 }
 

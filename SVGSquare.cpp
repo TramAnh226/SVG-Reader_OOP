@@ -1,9 +1,9 @@
 #include "SVGSquare.h"
 
-SVGSquare::SVGSquare() : SVGRectangle(Point(0, 0), 0, 0) {
+SVGSquare::SVGSquare() : SVGRectangle(CustomPoint(0, 0), 0, 0) {
     this->setTagName("square");
 }
-SVGSquare::SVGSquare(const Point& topLeft, float sideLength) : SVGRectangle(topLeft, sideLength, sideLength) {
+SVGSquare::SVGSquare(const CustomPoint& topLeft, float sideLength) : SVGRectangle(topLeft, sideLength, sideLength) {
     this->setTagName("square");
 }
 SVGSquare::SVGSquare(const SVGSquare& other) : SVGRectangle(other) {

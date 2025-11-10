@@ -3,7 +3,7 @@
 SVGPolygon::SVGPolygon() : SVGPolyshapeBase() {
     this->setTagName("polygon");
 }   
-SVGPolygon::SVGPolygon(const std::vector<Point>& points) : SVGPolyshapeBase(points) {
+SVGPolygon::SVGPolygon(const std::vector<CustomPoint>& points) : SVGPolyshapeBase(points) {
     this->setTagName("polygon");
 }
 SVGPolygon::SVGPolygon(const SVGPolygon& other) : SVGPolyshapeBase(other.points) {

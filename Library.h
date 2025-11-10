@@ -1,6 +1,6 @@
 #pragma once
-#include "Color.h"
-#include "Point.h"
+#include "CustomColor.h"
+#include "CustomPoint.h"
 #include "Stroke.h"
 #include "SVGElement.h"
 #include "SVGEllipse.h"

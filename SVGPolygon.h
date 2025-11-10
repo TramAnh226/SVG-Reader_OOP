@@ -4,7 +4,7 @@
 class SVGPolygon : public SVGPolyshapeBase {
 public: 
 	SVGPolygon();
-	SVGPolygon(const std::vector<Point>&);
+	SVGPolygon(const std::vector<CustomPoint>&);
 	SVGPolygon(const SVGPolygon&);
 	SVGPolygon& operator=(const SVGPolygon&);
 	~SVGPolygon();

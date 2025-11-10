@@ -1,11 +1,11 @@
 #include "Stroke.h"
 
 Stroke::Stroke() {
-    this->strokeColor = Color(0, 0, 0);
+    this->strokeColor = CustomColor(0, 0, 0);
     this->strokeOpacity = 0.0f;
     this->strokeWidth = 0.0f;
 }
-Stroke::Stroke(Color color, float opacity, float width) {
+Stroke::Stroke(CustomColor color, float opacity, float width) {
     this->strokeColor = color;
     this->strokeOpacity = opacity;
     this->strokeWidth = width;

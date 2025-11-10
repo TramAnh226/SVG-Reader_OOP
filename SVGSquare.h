@@ -6,7 +6,7 @@
 class SVGSquare : public SVGRectangle {
 public: 
 	SVGSquare();
-	SVGSquare(const Point&, float);
+	SVGSquare(const CustomPoint&, float);
 	SVGSquare(const SVGSquare&);
 	SVGSquare& operator=(const SVGSquare&);
 	~SVGSquare();

@@ -6,14 +6,14 @@
 class SVGCircle : public SVGEllipse {
 public: 
 	SVGCircle();
-	SVGCircle(Point, float);	
+	SVGCircle(CustomPoint, float);	
 	SVGCircle(const SVGCircle&);
 	SVGCircle& operator=(const SVGCircle&);
 	~SVGCircle();
 	SVGElement* clone() const override;
 	
-	Point getCenter() const;
-	void setCenter(const Point&);
+	CustomPoint getCenter() const;
+	void setCenter(const CustomPoint&);
 	float getRadius() const;
 	void setRadius(const float&);
 	

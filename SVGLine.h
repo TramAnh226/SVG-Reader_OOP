@@ -1,24 +1,24 @@
 #pragma once
-#include "Point.h"
+#include "CustomPoint.h"
 #include "SVGElement.h"
 #include "SVGParser/SVGParser/SVGParser.h"
 #include "SVG/SVG_READER/SVGRenderer.h"
 
 class SVGLine : public SVGElement {
 private: 
-	Point start_point, end_point;
+	CustomPoint start_point, end_point;
 public: 
 	SVGLine();
-	SVGLine(Point, Point);
+	SVGLine(CustomPoint, CustomPoint);
 	SVGLine(const SVGLine&);
 	SVGLine& operator=(const SVGLine&);
 	~SVGLine();
 	SVGElement* clone() const override;
 	
-	Point getStartPoint() const;
-	void setStartPoint(const Point&);
-	Point getEndPoint() const;
-	void setEndPoint(const Point&);
+	CustomPoint getStartPoint() const;
+	void setStartPoint(const CustomPoint&);
+	CustomPoint getEndPoint() const;
+	void setEndPoint(const CustomPoint&);
 
 	void parse(SVGParser&) override;
 	void render(SVGRenderer&) override;

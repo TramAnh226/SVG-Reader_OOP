@@ -1,11 +1,11 @@
 #include "SVGStyle.h"
 
 SVGStyle::SVGStyle() {
-    this->fillColor = Color(0, 0, 0);
+    this->fillColor = CustomColor(0, 0, 0);
     this->fillOpacity = 0.0f;
     this->stroke = Stroke();
 }
-SVGStyle::SVGStyle(Color color, float opacity, Stroke stroke) {
+SVGStyle::SVGStyle(CustomColor color, float opacity, Stroke stroke) {
     this->fillColor = color;
     this->fillOpacity = opacity;
     this->stroke = stroke;
@@ -28,10 +28,10 @@ SVGStyle& SVGStyle::operator=(const SVGStyle& other) {
 }
 SVGStyle::~SVGStyle() {}
 
-Color SVGStyle::getFillColor() const {
+CustomColor SVGStyle::getFillColor() const {
     return fillColor;       
 }
-void SVGStyle::setFillColor(const Color& color) {
+void SVGStyle::setFillColor(const CustomColor& color) {
     fillColor = color;              
 }
 float SVGStyle::getFillOpacity() const {

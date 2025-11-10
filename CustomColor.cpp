@@ -1,28 +1,28 @@
-#include "Color.h"
+#include "CustomColor.h"
 
-Color::Color() {
+CustomColor::CustomColor() {
     r = 0;
     g = 0;      
     b = 0;
 }
-Color::Color(int red, int green, int blue) {
+CustomColor::CustomColor(int red, int green, int blue) {
     r = red;
     g = green;      
     b = blue;
 }
-int Color::clampColorValue(int value) {
+int CustomColor::clampCustomColorValue(int value) {
     if (value < 0) return 0;
     if (value > 255) return 255;
     return value;
 }
 // eg: "rgb(255,0,128)"
-Color Color::fromStringToColor(const std::string& rgbString) {
+CustomColor CustomColor::fromStringToCustomColor(const std::string& rgbString) {
     // find the position of the parentheses
     size_t start = rgbString.find('(');
     size_t end = rgbString.find(')');
     // return black for invalid format
     if (start == std::string::npos || end == std::string::npos || end <= start) {
-        return Color(0, 0, 0); 
+        return CustomColor(0, 0, 0); 
     }
     
     std::string values = rgbString.substr(start + 1, end - start - 1);
@@ -39,13 +39,13 @@ Color Color::fromStringToColor(const std::string& rgbString) {
             i++;
         }
     }
-    return Color(
-        clampColorValue(components[0]),
-        clampColorValue(components[1]),
-        clampColorValue(components[2])
+    return CustomColor(
+        clampCustomColorValue(components[0]),
+        clampCustomColorValue(components[1]),
+        clampCustomColorValue(components[2])
     );
 }
-std::string Color::fromColorToString() const {
+std::string CustomColor::fromCustomColorToString() const {
     std::stringstream ss;
     ss << "rgb(" << r << "," << g << "," << b << ")";
     return ss.str();

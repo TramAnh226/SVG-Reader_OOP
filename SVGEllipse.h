@@ -1,23 +1,23 @@
 #pragma once
-#include "Point.h"
+#include "CustomPoint.h"
 #include "SVGParser/SVGParser/SVGParser.h"
 #include "SVG/SVG_READER/SVGRenderer.h"
 #include "SVGElement.h"
 
 class SVGEllipse : public SVGElement {
 protected: 
-	Point center;
+	CustomPoint center;
 	float rx, ry;
 public: 
 	SVGEllipse();
-	SVGEllipse(Point, float, float);
+	SVGEllipse(CustomPoint, float, float);
 	SVGEllipse(const SVGEllipse&);
 	SVGEllipse& operator=(const SVGEllipse&);
 	~SVGEllipse();
 	SVGElement* clone() const override;
 	
-	Point getCenter() const;
-	void setCenter(const Point&);
+	CustomPoint getCenter() const;
+	void setCenter(const CustomPoint&);
 	float getRadiusX() const;
 	void setRadiusX(const float&);
 	float getRadiusY() const;

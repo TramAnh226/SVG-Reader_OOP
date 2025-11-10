@@ -3,7 +3,7 @@
 SVGPolyline::SVGPolyline() : SVGPolyshapeBase() {
     this->setTagName("polyline");
 }
-SVGPolyline::SVGPolyline(const std::vector<Point>& points) : SVGPolyshapeBase(points) {
+SVGPolyline::SVGPolyline(const std::vector<CustomPoint>& points) : SVGPolyshapeBase(points) {
     this->setTagName("polyline");
 }
 SVGPolyline::SVGPolyline(const SVGPolyline& other) : SVGPolyshapeBase(other.getPoints()) {

@@ -1,25 +1,25 @@
 #pragma once
-#include "Color.h"
+#include "CustomColor.h"
 #include "Stroke.h"
 #include "SVGParser/SVGParser/SVGParser.h"
 #include "SVG/SVG_READER/SVGRenderer.h"
 
 class SVGStyle {
 private: 
-	Color fillColor;
+	CustomColor fillColor;
 	float fillOpacity;
 	Stroke stroke;
 	// subsequent development
 	// Gradient fillGradient
 public: 
 	SVGStyle();
-	SVGStyle(Color, float, Stroke);
+	SVGStyle(CustomColor, float, Stroke);
 	SVGStyle(const SVGStyle&);
 	SVGStyle& operator=(const SVGStyle&);
 	~SVGStyle();
 
-	Color getFillColor() const;
-	void setFillColor(const Color&);
+	CustomColor getFillColor() const;
+	void setFillColor(const CustomColor&);
 	float getFillOpacity() const;	
 	void setFillOpacity(const float&);
 	Stroke getStroke() const;

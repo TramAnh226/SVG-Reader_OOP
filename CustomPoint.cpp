@@ -1,0 +1,17 @@
+#include "CustomPoint.h"
+#include <cmath>
+
+CustomPoint::CustomPoint() {
+    x = 0.0f;
+    y = 0.0f;
+}
+CustomPoint::CustomPoint(float temp_x, float temp_y) {
+    x = temp_x;
+    y = temp_y;
+};
+float CustomPoint::distanceTo(const CustomPoint&) const {
+    return std::sqrt(x * x + y * y);
+}
+// subsequent development
+// CustomPoint& transform(Matrix* m);
+

@@ -5,7 +5,7 @@ SVGLine::SVGLine()
     start_point(0, 0),
     end_point(0, 0)      
 {}
-SVGLine::SVGLine(Point start, Point end) 
+SVGLine::SVGLine(CustomPoint start, CustomPoint end) 
     : SVGElement("line", "", SVGStyle()),
     start_point(start),
     end_point(end)    
@@ -30,16 +30,16 @@ SVGElement* SVGLine::clone() const {
     return new SVGLine(*this);
 }
 
-Point SVGLine::getStartPoint() const {
+CustomPoint SVGLine::getStartPoint() const {
     return start_point;
 }
-void SVGLine::setStartPoint(const Point& p) {
+void SVGLine::setStartPoint(const CustomPoint& p) {
     start_point = p;
 }
-Point SVGLine::getEndPoint() const {
+CustomPoint SVGLine::getEndPoint() const {
     return end_point;
 }
-void SVGLine::setEndPoint(const Point& p) {
+void SVGLine::setEndPoint(const CustomPoint& p) {
     end_point = p;
 }
 

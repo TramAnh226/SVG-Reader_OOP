@@ -6,7 +6,7 @@ SVGEllipse::SVGEllipse()
     rx(0.0f),
     ry(0.0f)
 {}
-SVGEllipse::SVGEllipse(Point center, float rx, float ry)
+SVGEllipse::SVGEllipse(CustomPoint center, float rx, float ry)
     : SVGElement("ellipse", "", SVGStyle()),
     center(center),
     rx(rx),
@@ -34,10 +34,10 @@ SVGElement* SVGEllipse::clone() const {
     return new SVGEllipse(*this);
 }
 
-Point SVGEllipse::getCenter() const {
+CustomPoint SVGEllipse::getCenter() const {
     return center;
 }
-void SVGEllipse::setCenter(const Point& center) {
+void SVGEllipse::setCenter(const CustomPoint& center) {
     this->center = center;
 }
 float SVGEllipse::getRadiusX() const {

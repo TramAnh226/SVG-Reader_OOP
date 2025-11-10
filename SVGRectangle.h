@@ -1,23 +1,23 @@
 #pragma once
-#include "Point.h"
+#include "CustomPoint.h"
 #include "SVGElement.h"
 #include "SVGParser/SVGParser/SVGParser.h"
 #include "SVG/SVR_READER/SVGRenderer.h"
 
 class SVGRectangle : public SVGElement {
 private: 
-	Point top_left_corner;
+	CustomPoint top_left_corner;
 	float width, height;
 public: 
 	SVGRectangle();
-	SVGRectangle(const Point&, float, float);
+	SVGRectangle(const CustomPoint&, float, float);
 	SVGRectangle(const SVGRectangle&);
 	SVGRectangle& operator=(const SVGRectangle&);
 	~SVGRectangle();
 	SVGElement* clone() const override;
 	
-	Point getTopLeftCorner() const;
-	void setTopLeftCorner(const Point&);
+	CustomPoint getTopLeftCorner() const;
+	void setTopLeftCorner(const CustomPoint&);
 	float getWidth() const;
 	void setWidth(float);
 	float getHeight() const;

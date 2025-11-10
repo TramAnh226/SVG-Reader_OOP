@@ -3,7 +3,7 @@
 SVGCircle::SVGCircle() : SVGEllipse() {
     this->setTagName("circle");
 }       
-SVGCircle::SVGCircle(Point center, float radius) : SVGEllipse(center, radius, radius){
+SVGCircle::SVGCircle(CustomPoint center, float radius) : SVGEllipse(center, radius, radius){
     this->setTagName("circle");
 }
 SVGCircle::SVGCircle(const SVGCircle& other) : SVGEllipse(other) {
@@ -24,10 +24,10 @@ SVGElement* SVGCircle::clone() const {
     return new SVGCircle(*this);
 }
 
-Point SVGCircle::getCenter() const {
+CustomPoint SVGCircle::getCenter() const {
     return this->center;
 }
-void SVGCircle::setCenter(const Point& center) {
+void SVGCircle::setCenter(const CustomPoint& center) {
     this->center = center;
 }
 float SVGCircle::getRadius() const {

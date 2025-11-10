@@ -4,7 +4,7 @@
 class SVGPolyline : public SVGPolyshapeBase {
 public: 
 	SVGPolyline();
-	SVGPolyline(const std::vector<Point>&);
+	SVGPolyline(const std::vector<CustomPoint>&);
 	SVGPolyline(const SVGPolyline&);
 	SVGPolyline& operator=(const SVGPolyline&);
 	~SVGPolyline();
