@@ -5,17 +5,18 @@
 #include "SVG/SVG_READER/SVGRenderer.h"
 
 class SVGElement {
-protected: 
+protected:
 	std::string tag_name;
 	std::string id;
 	SVGStyle style;
-public: 
+public:
 	SVGElement();
 	SVGElement(const std::string&, const std::string&, const SVGStyle&);
 	SVGElement(const SVGElement&) = delete;
 	SVGElement& operator=(const SVGElement&) = delete;
 	// virtual : obligatory (to delete derived object)
 	virtual ~SVGElement() = default;
+	virtual SVGElement* clone() const = 0;
 
 	std::string getTagName() const;
 	void setTagName(const std::string&);

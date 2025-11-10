@@ -1,23 +1,26 @@
 #include "SVGRectangle.h"
 
-SVGRectangle::SVGRectangle() 
-    : SVGElement("rect", "", SVGStyle()), 
-    top_left_corner(Point(0, 0)), 
-    width(0), 
-    height(0) 
-{}
-SVGRectangle::SVGRectangle(const Point& topLeft, float w, float h) 
-    : SVGElement("rect", "", SVGStyle()), 
-    top_left_corner(topLeft), 
-    width(w), 
-    height(h) 
-{}
-SVGRectangle::SVGRectangle(const SVGRectangle& other) 
+SVGRectangle::SVGRectangle()
+    : SVGElement("rect", "", SVGStyle()),
+    top_left_corner(CustomPoint(0, 0)),
+    width(0),
+    height(0)
+{
+}
+SVGRectangle::SVGRectangle(const CustomPoint& topLeft, float w, float h)
+    : SVGElement("rect", "", SVGStyle()),
+    top_left_corner(topLeft),
+    width(w),
+    height(h)
+{
+}
+SVGRectangle::SVGRectangle(const SVGRectangle& other)
     : SVGElement(other.getTagName(), other.getId(), other.getSVGStyle()),
-    top_left_corner(other.top_left_corner), 
-    width(other.width), 
-    height(other.height) 
-{}
+    top_left_corner(other.top_left_corner),
+    width(other.width),
+    height(other.height)
+{
+}
 SVGRectangle& SVGRectangle::operator=(const SVGRectangle& other) {
     if (this != &other) {
         this->tag_name = other.getTagName();
@@ -31,11 +34,14 @@ SVGRectangle& SVGRectangle::operator=(const SVGRectangle& other) {
     return *this;
 }
 SVGRectangle::~SVGRectangle() {}
+SVGElement* SVGRectangle::clone() const {
+    return new SVGRectangle(*this);
+}
 
-Point SVGRectangle::getTopLeftCorner() const {
+CustomPoint SVGRectangle::getTopLeftCorner() const {
     return top_left_corner;
 }
-void SVGRectangle::setTopLeftCorner(const Point& point) {
+void SVGRectangle::setTopLeftCorner(const CustomPoint& point) {
     top_left_corner = point;
 }
 float SVGRectangle::getWidth() const {

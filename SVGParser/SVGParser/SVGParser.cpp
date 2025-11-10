@@ -108,7 +108,7 @@ void SVGParser::parseStyle(SVGStyle& style, const string& styleStr) {
 		string key = item.substr(0, pos);
 		string value = item.substr(pos + 1);
 
-		if (key == "fill") style.setFillColor(Color::fromString(value));
+		if (key == "fill") style.setFillColor(CustomColor::fromStringToCustomColor(value));
 		else if (key == "fill-opacity") style.setFillOpacity(stof(value));
 		else if (key.find("stroke") != string::npos) {
             Stroke stroke = style.getStroke();
@@ -127,7 +127,7 @@ void SVGParser::parseStroke(Stroke& stroke, const string& styleStr) {
 	string key = s.substr(0, pos);
 	string value = s.substr(pos + 1);
 
-	if (key == "stroke") stroke.strokeColor = Color::fromString(value);
+	if (key == "stroke") stroke.strokeColor = CustomColor::fromStringToCustomColor(value);
 	else if (key == "stroke-width") stroke.strokeWidth = stof(value);
 	else if (key == "stroke-opacity") stroke.strokeOpacity = stof(value);
 }
@@ -137,7 +137,7 @@ void SVGParser::parseRectangle(SVGRectangle* rect, XMLElement* xmlNode) {
     float y = xmlNode->FloatAttribute("y");
     float w = xmlNode->FloatAttribute("width");
     float h = xmlNode->FloatAttribute("height");
-    rect->setTopLeftCorner(Point(x, y));
+    rect->setTopLeftCorner(CustomPoint(x, y));
     rect->setWidth(w);
     rect->setHeight(h);
 }
@@ -146,7 +146,7 @@ void SVGParser::parseSquare(SVGSquare* sq, XMLElement* xmlNode) {
     float x = xmlNode->FloatAttribute("x");
     float y = xmlNode->FloatAttribute("y");
     float size = xmlNode->FloatAttribute("width"); // SVG square dùng width = height
-    sq->setTopLeftCorner(Point(x, y));
+    sq->setTopLeftCorner(CustomPoint(x, y));
     sq->setWidth(size);
     sq->setHeight(size);
 }
@@ -156,7 +156,7 @@ void SVGParser::parseEllipse(SVGEllipse* el, XMLElement* xmlNode) {
     float cy = xmlNode->FloatAttribute("cy");
     float rx = xmlNode->FloatAttribute("rx");
     float ry = xmlNode->FloatAttribute("ry");
-    el->setCenter(Point(cx, cy));
+    el->setCenter(CustomPoint(cx, cy));
     el->setRadiusX(rx);
     el->setRadiusY(ry);
 }
@@ -165,7 +165,7 @@ void SVGParser::parseCircle(SVGCircle* circle, XMLElement* xmlNode) {
     float cx = xmlNode->FloatAttribute("cx");
     float cy = xmlNode->FloatAttribute("cy");
     float r = xmlNode->FloatAttribute("r");
-    circle->setCenter(Point(cx, cy));
+    circle->setCenter(CustomPoint(cx, cy));
     circle->setRadius(r);
 }
 
@@ -174,15 +174,15 @@ void SVGParser::parseLine(SVGLine* line, XMLElement* xmlNode) {
     float y1 = xmlNode->FloatAttribute("y1");
     float x2 = xmlNode->FloatAttribute("x2");
     float y2 = xmlNode->FloatAttribute("y2");
-    line->setStartPoint(Point(x1, y1));
-    line->setEndPoint(Point(x2, y2));
+    line->setStartPoint(CustomPoint(x1, y1));
+    line->setEndPoint(CustomPoint(x2, y2));
 }
 
 void SVGParser::parsePolyshape(SVGPolyshapeBase* poly, XMLElement* xmlNode) {
     const char* pointsStr = xmlNode->Attribute("points");
     if (!pointsStr) return;
 
-    vector<Point> pts;
+    vector<CustomPoint> pts;
     stringstream ss(pointsStr);
     string token;
     while (getline(ss, token, ' ')) {
@@ -200,6 +200,6 @@ void SVGParser::parseText(SVGText* text, XMLElement* xmlNode) {
     float x = xmlNode->FloatAttribute("x");
     float y = xmlNode->FloatAttribute("y");
     const char* content = xmlNode->GetText();
-    text->setStart(Point(x, y));
+    text->setStart(CustomPoint(x, y));
     text->setContent(content ? content : "");
 }

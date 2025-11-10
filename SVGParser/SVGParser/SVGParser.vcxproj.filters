@@ -24,10 +24,10 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\Color.cpp">
+    <ClCompile Include="source\CustomColor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\Point.cpp">
+    <ClCompile Include="source\CustomPoint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="source\Stroke.cpp">
@@ -77,10 +77,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Color.h">
+    <ClInclude Include="include\CustomColor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Point.h">
+    <ClInclude Include="include\CustomPoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Stroke.h">

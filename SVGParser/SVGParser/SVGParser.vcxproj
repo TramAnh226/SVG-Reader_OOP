@@ -126,8 +126,8 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\Downloads\tinyxml2-master\tinyxml2-master\tinyxml2.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="source\Color.cpp" />
-    <ClCompile Include="source\Point.cpp" />
+    <ClCompile Include="source\CustomColor.cpp" />
+    <ClCompile Include="source\CustomPoint.cpp" />
     <ClCompile Include="source\Stroke.cpp" />
     <ClCompile Include="source\SVGCircle.cpp" />
     <ClCompile Include="source\SVGElement.cpp" />
@@ -146,9 +146,9 @@
     <ClCompile Include="SVGParser.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Color.h" />
+    <ClInclude Include="include\CustomColor.h" />
     <ClInclude Include="include\Library.h" />
-    <ClInclude Include="include\Point.h" />
+    <ClInclude Include="include\CustomPoint.h" />
     <ClInclude Include="include\Stroke.h" />
     <ClInclude Include="include\SVGCircle.h" />
     <ClInclude Include="include\SVGElement.h" />

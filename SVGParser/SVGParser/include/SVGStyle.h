@@ -1,26 +1,26 @@
 #pragma once
-#include "Color.h"
+#include "CustomColor.h"
 #include "Stroke.h"
 #include "SVGParser.h"
 #include "SVG/SVG_READER/SVGRenderer.h"
 
 class SVGStyle {
-private: 
-	Color fillColor;
+private:
+	CustomColor fillColor;
 	float fillOpacity;
 	Stroke stroke;
 	// subsequent development
 	// Gradient fillGradient
-public: 
+public:
 	SVGStyle();
-	SVGStyle(Color, float, Stroke);
+	SVGStyle(CustomColor, float, Stroke);
 	SVGStyle(const SVGStyle&);
 	SVGStyle& operator=(const SVGStyle&);
 	~SVGStyle();
 
-	Color getFillColor() const;
-	void setFillColor(const Color&);
-	float getFillOpacity() const;	
+	CustomColor getFillColor() const;
+	void setFillColor(const CustomColor&);
+	float getFillOpacity() const;
 	void setFillOpacity(const float&);
 	Stroke getStroke() const;
 	void setStroke(const Stroke&);
@@ -29,4 +29,3 @@ public:
 	void render(SVGRenderer&);
 	// void transform(Matrix*);
 };
-

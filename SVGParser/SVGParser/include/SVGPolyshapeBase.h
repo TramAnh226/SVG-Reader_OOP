@@ -1,24 +1,25 @@
 #pragma once
 #include "SVGElement.h"
-#include ".h"
+#include "SVGParser.h"
 #include "SVGRenderer/SVGRenderer/SVGRenderer.h"
-#include "Point.h"
+#include "CustomPoint.h"
 #include <vector>
 
 class SVGPolyshapeBase : public SVGElement {
-protected: 
-	std::vector<Point> points;
-public: 
+protected:
+	std::vector<CustomPoint> points;
+public:
 	SVGPolyshapeBase();
-	SVGPolyshapeBase(const std::vector<Point>&);
+	SVGPolyshapeBase(const std::vector<CustomPoint>&);
 	SVGPolyshapeBase(const SVGPolyshapeBase&);
 	SVGPolyshapeBase& operator=(const SVGPolyshapeBase&);
 	~SVGPolyshapeBase();
+	SVGElement* clone() const override;
 
-	std::vector<Point> getPoints() const;
-	void setPoints(const std::vector<Point>&);
-	
-	void parse(SVGParser&) override;
+	std::vector<CustomPoint> getPoints() const;
+	void setPoints(const std::vector<CustomPoint>&);
+
+	void parse(SVGParser&) const override;
 	void render(SVGRenderer&) override;
 	// void transform(Matrix*) override;
 };

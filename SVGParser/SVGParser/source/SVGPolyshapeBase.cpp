@@ -1,17 +1,20 @@
 #include "SVGPolyshapeBase.h"
 
-SVGPolyshapeBase::SVGPolyshapeBase() 
+SVGPolyshapeBase::SVGPolyshapeBase()
     : SVGElement("polyshapebase", "", SVGStyle()),
-    points(std::vector<Point>())
-{}
-SVGPolyshapeBase::SVGPolyshapeBase(const std::vector<Point>& points)
+    points(std::vector<CustomPoint>())
+{
+}
+SVGPolyshapeBase::SVGPolyshapeBase(const std::vector<CustomPoint>& points)
     : SVGElement("polyshapebase", "", SVGStyle()),
     points(points)
-{}
-SVGPolyshapeBase::SVGPolyshapeBase(const SVGPolyshapeBase& other) 
+{
+}
+SVGPolyshapeBase::SVGPolyshapeBase(const SVGPolyshapeBase& other)
     : SVGElement(other.getTagName(), other.getId(), other.getSVGStyle()),
     points(other.points)
-{}
+{
+}
 SVGPolyshapeBase& SVGPolyshapeBase::operator=(const SVGPolyshapeBase& other) {
     if (this != &other) {
         this->setTagName(other.getTagName());
@@ -21,14 +24,15 @@ SVGPolyshapeBase& SVGPolyshapeBase::operator=(const SVGPolyshapeBase& other) {
     }
     return *this;
 }
-SVGPolyshapeBase::~SVGPolyshapeBase() {
-
+SVGPolyshapeBase::~SVGPolyshapeBase() {}
+SVGElement* SVGPolyshapeBase::clone() const {
+    return new SVGPolyshapeBase(*this);
 }
 
-std::vector<Point> SVGPolyshapeBase::getPoints() const {
+std::vector<CustomPoint> SVGPolyshapeBase::getPoints() const {
     return points;
 }
-void SVGPolyshapeBase::setPoints(const std::vector<Point>& points) {
+void SVGPolyshapeBase::setPoints(const std::vector<CustomPoint>& points) {
     points = points;
 }
 
