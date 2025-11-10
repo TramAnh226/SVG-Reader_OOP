@@ -1,5 +1,5 @@
-#include "SVGFactoryPattern.h"
-#include "SVGElement.h"
+#include "SVGGroup_Factory/SVG_H/SVGFactoryPattern.h"
+#include "SVGElement/SVG_H/SVGElement.h"
 #include "Library.h"
 
 

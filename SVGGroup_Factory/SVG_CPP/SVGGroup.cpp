@@ -1,6 +1,5 @@
-#include "SVGGroup.h"
-#include "SVGFactoryPattern.h"
-
+#include "SVGGroup_Factory/SVG_H/SVGGroup.h"
+#include "SVGGroup_Factory/SVG_H/SVGFactoryPattern.h"
 
 #include <algorithm>
 
@@ -78,10 +77,16 @@ const std::vector<SVGElement*>& SvgGroup::getSVGElementArray() const {
     return this->ElementArray;
 }
 
-void SVGGroup::parse(SVGParser& p) {
-    p.parseGroup(*this);
+SVGElement* SVFGroup::clone() const {
+    return new SVGGroup(*this);
+}
+
+
+void SVGGroup::parse(SVGParser& parser) {
+    parser.parseGroup(this, xmlNode);
 }
 
 void SVGGroup::render(SVGRenderer& r) {
     r.renderGroup(*this);
 }
+
