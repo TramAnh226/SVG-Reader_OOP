@@ -16,6 +16,7 @@ public:
 	SVGElement& operator=(const SVGElement&) = delete;
 	// virtual : obligatory (to delete derived object)
 	virtual ~SVGElement() = default;
+	virtual SVGElement* clone() const = 0;
 
 	std::string getTagName() const;
 	void setTagName(const std::string&);

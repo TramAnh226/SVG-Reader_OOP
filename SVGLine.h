@@ -13,7 +13,8 @@ public:
 	SVGLine(const SVGLine&);
 	SVGLine& operator=(const SVGLine&);
 	~SVGLine();
-
+	SVGElement* clone() const override;
+	
 	Point getStartPoint() const;
 	void setStartPoint(const Point&);
 	Point getEndPoint() const;

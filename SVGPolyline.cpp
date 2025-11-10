@@ -19,8 +19,9 @@ SVGPolyline& SVGPolyline::operator=(const SVGPolyline& other) {
     }
     return (*this);
 }
-SVGPolyline::~SVGPolyline() {
-
+SVGPolyline::~SVGPolyline() {}
+SVGElement* SVGPolyline::clone() const {
+    return new SVGPolyline(*this);
 }
 
 void SVGPolyline::parse(SVGParser& p) {

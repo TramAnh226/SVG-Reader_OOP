@@ -14,7 +14,8 @@ public:
 	SVGRectangle(const SVGRectangle&);
 	SVGRectangle& operator=(const SVGRectangle&);
 	~SVGRectangle();
-
+	SVGElement* clone() const override;
+	
 	Point getTopLeftCorner() const;
 	void setTopLeftCorner(const Point&);
 	float getWidth() const;

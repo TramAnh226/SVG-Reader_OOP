@@ -16,6 +16,9 @@ SVGSquare& SVGSquare::operator=(const SVGSquare& other) {
     return *this;
 }
 SVGSquare::~SVGSquare() {}
+SVGElement* SVGSquare::clone() const {
+    return new SVGSquare(*this);
+}
 
 void SVGSquare::parse(SVGParser& p) {
     p.parseSquare(*this);

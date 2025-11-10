@@ -26,6 +26,9 @@ SVGLine& SVGLine::operator=(const SVGLine& other) {
     return *this;
 }
 SVGLine::~SVGLine() {}
+SVGElement* SVGLine::clone() const {
+    return new SVGLine(*this);
+}
 
 Point SVGLine::getStartPoint() const {
     return start_point;

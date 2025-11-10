@@ -10,7 +10,8 @@ public:
 	SVGCircle(const SVGCircle&);
 	SVGCircle& operator=(const SVGCircle&);
 	~SVGCircle();
-
+	SVGElement* clone() const override;
+	
 	Point getCenter() const;
 	void setCenter(const Point&);
 	float getRadius() const;

@@ -15,7 +15,8 @@ public:
 	SVGText(const SVGText&);
 	SVGText& operator=(const SVGText&);
 	~SVGText() override = default;
-
+	SVGElement* clone() const override;
+	
 	float getFontSize() const;
 	void setFontSize(float);
 	Point getStart() const;
