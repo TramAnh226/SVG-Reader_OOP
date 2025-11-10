@@ -83,5 +83,5 @@ void SVGGroup::parse(SVGParser& p) {
 }
 
 void SVGGroup::render(SVGRenderer& r) {
-    r.renderFroup(*this);
+    r.renderGroup(*this);
 }
