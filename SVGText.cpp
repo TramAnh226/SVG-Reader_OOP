@@ -34,6 +34,9 @@ SVGText& SVGText::operator=(const SVGText& other) {
     return *this;
 }
 SVGText::~SVGText() {}
+SVGElement* SVGText::clone() const {
+    return new SVGText(*this);
+}
 
 float SVGText::getFontSize() const {
     return font_size;

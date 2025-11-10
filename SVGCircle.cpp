@@ -19,8 +19,9 @@ SVGCircle& SVGCircle::operator=(const SVGCircle& other) {
     }
     return (*this);
 }   
-SVGCircle::~SVGCircle() {
-
+SVGCircle::~SVGCircle() {}
+SVGElement* SVGCircle::clone() const {
+    return new SVGCircle(*this);
 }
 
 Point SVGCircle::getCenter() const {

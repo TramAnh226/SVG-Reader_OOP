@@ -14,6 +14,7 @@ public:
 	SVGEllipse(const SVGEllipse&);
 	SVGEllipse& operator=(const SVGEllipse&);
 	~SVGEllipse();
+	SVGElement* clone() const override;
 	
 	Point getCenter() const;
 	void setCenter(const Point&);

@@ -31,6 +31,9 @@ SVGRectangle& SVGRectangle::operator=(const SVGRectangle& other) {
     return *this;
 }
 SVGRectangle::~SVGRectangle() {}
+SVGElement* SVGRectangle::clone() const {
+    return new SVGRectangle(*this);
+}
 
 Point SVGRectangle::getTopLeftCorner() const {
     return top_left_corner;

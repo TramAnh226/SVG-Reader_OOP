@@ -29,8 +29,9 @@ SVGEllipse& SVGEllipse::operator=(const SVGEllipse& other) {
     }
     return (*this);
 }
-SVGEllipse::~SVGEllipse() {
-
+SVGEllipse::~SVGEllipse() {}
+SVGElement* SVGEllipse::clone() const {
+    return new SVGEllipse(*this);
 }
 
 Point SVGEllipse::getCenter() const {

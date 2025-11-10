@@ -5,10 +5,11 @@ class SVGPolyline : public SVGPolyshapeBase {
 public: 
 	SVGPolyline();
 	SVGPolyline(const std::vector<Point>&);
-	SVGPolyline(const SVGPolyline& other);
-	SVGPolyline& operator=(const SVGPolyline& other);
+	SVGPolyline(const SVGPolyline&);
+	SVGPolyline& operator=(const SVGPolyline&);
 	~SVGPolyline();
-
+	SVGElement* clone() const override;
+	
 	void parse(SVGParser&) override;
 	void render(SVGRenderer&) override;
 	// void transform(Matrix*) override;

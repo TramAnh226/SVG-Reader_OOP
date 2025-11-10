@@ -21,8 +21,9 @@ SVGPolygon& SVGPolygon::operator=(const SVGPolygon& other) {
     }
     return (*this);
 }
-SVGPolygon::~SVGPolygon() {
-
+SVGPolygon::~SVGPolygon() {}
+SVGElement* SVGPolygon::clone() const {
+    return new SVGPolygon(*this);
 }
 
 void SVGPolygon::parse(SVGParser& p) {

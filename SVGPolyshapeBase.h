@@ -14,7 +14,8 @@ public:
 	SVGPolyshapeBase(const SVGPolyshapeBase&);
 	SVGPolyshapeBase& operator=(const SVGPolyshapeBase&);
 	~SVGPolyshapeBase();
-
+	SVGElement* clone() const override;
+	
 	std::vector<Point> getPoints() const;
 	void setPoints(const std::vector<Point>&);
 	
