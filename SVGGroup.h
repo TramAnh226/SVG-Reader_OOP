@@ -34,6 +34,9 @@ class SVGGroup : public SVGElement{
 
     SVGGroup* getParent();
     const std::vector<SVGElement*>& getSVGElementArray() const;
+
+    void parse(SVGParser&) override;
+	void render(SVGRenderer&) override;
 };
 
 

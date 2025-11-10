@@ -12,12 +12,10 @@ SVGGroup::SVGGroup() :
 }
 
 
-SVGGroup::SVGGroup(const SVGGroup& other): SVGElement(other), parent(other.parent){
-    SVGFactoryPattern factory;
+SVGGroup::SVGGroup(const SVGGroup& other): SVGElement(other.getTagName(), other.getId(), other.getSVGStyle()), parent(other.parent){
     for(auto element: other.ElementArray){
-        SVGElement* newElement = factory.getElement(element->getTagName());
+        SVGElement* newElement = element->clone();
         if(newElement){
-            *newElement = *element;
             this->ElementArray.push_back(newElement);
         }
     }
@@ -57,11 +55,9 @@ void SVGGroup::setElementArray(const std::vector<SVGElement*>& SVGElementArray){
     ElementArray.clear();
 
 
-    SVGFactoryPattern factory;
     for(auto element: SVGElementArray){
-        SVGElement* newElement = factory.getElement(element->getTagName());
+        SVGElement* newElement = element->clone();
         if(newElement){
-            *newElement = *element;
             this->ElementArray.push_back(newElement);
         }
     }
@@ -80,4 +76,12 @@ SVGGroup* SVGGroup::getParent(){
 
 const std::vector<SVGElement*>& SvgGroup::getSVGElementArray() const {
     return this->ElementArray;
+}
+
+void SVGGroup::parse(SVGParser& p) {
+    p.parseGroup(*this);
+}
+
+void SVGGroup::render(SVGRenderer& r) {
+    r.renderFroup(*this);
 }
