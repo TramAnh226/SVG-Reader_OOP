@@ -18,22 +18,26 @@ using namespace std;
 
 class SVGParser {
 private:
+	XMLElement* currentNode = nullptr;
 	void parseNode(XMLElement* xmlNode, SVGGroup* parentGroup);
 	void parseAttributes(XMLElement* xmlNode, SVGElement* element);
 	SVGGroup* readXML(const string& filename);
-	void parseRectangle(SVGRectangle* rect, XMLElement* xmlNode);
-	void parseSquare(SVGSquare* sq, XMLElement* xmlNode);
-	void parseEllipse(SVGEllipse* el, XMLElement* xmlNode);
-	void parseCircle(SVGCircle* circle, XMLElement* xmlNode);
-	void parseLine(SVGLine* line, XMLElement* xmlNode);
-	void parsePolyshape(SVGPolyshapeBase* poly, XMLElement* xmlNode);
-	void parseText(SVGText* text, XMLElement* xmlNode);
+	
 public:
 	SVGParser() = default;
 	~SVGParser() = default;
 
 	void parseStyle(SVGStyle& style, const string& styleStr);
 	void parseStroke(Stroke& stroke, const string& styleStr);
+	void parseRectangle(SVGRectangle* rect);
+	void parseSquare(SVGSquare* sq);
+	void parseEllipse(SVGEllipse* el);
+	void parseCircle(SVGCircle* circle);
+	void parseLine(SVGLine* line);
+	void parsePolyshape(SVGPolyshapeBase* poly);
+	void parseText(SVGText* text);
 
-};
+};  
+
+
 

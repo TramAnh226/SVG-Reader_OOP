@@ -1,3 +1,4 @@
+
 #ifndef _SVGFACTORYPATTERN_H_
 #define _SVGFACTORYPATTERN_H
 
@@ -5,17 +6,16 @@
 #include <string>
 #include <unordered_map>
 #include "SVGElement.h"
-#include "Library.h"
 
 
-class SVGFactoryPattern{
-    private:
+class SVGFactoryPattern {
+private:
 
 
     std::unordered_map<std::string, int> ElementID;
 
 
-    public:
+public:
 
 
     SVGFactoryPattern();

@@ -3,14 +3,13 @@
 #include "Library.h"
 
 
-
 #include <stdexcept>
 #include <algorithm>
 
 
-SVGFactoryPattern::SVGFactoryPattern(){
+SVGFactoryPattern::SVGFactoryPattern() {
     ElementID["circle"] = 1;
-    ElementID["ellipse"] =2;
+    ElementID["ellipse"] = 2;
     ElementID["line"] = 3;
     ElementID["polygon"] = 4;
     ElementID["polyline"] = 5;
@@ -21,9 +20,9 @@ SVGFactoryPattern::SVGFactoryPattern(){
 }
 
 
-SVGElement* SVGFactoryPattern::getElement(std::string tagname){
+SVGElement* SVGFactoryPattern::getElement(std::string tagname) {
     auto it = ElementID.find(tagname);
-    if(it == ElementID.end()){
+    if (it == ElementID.end()) {
         throw std::out_of_range("Cannot find the type of object for tag: " + tagname);
     }
 
@@ -31,7 +30,7 @@ SVGElement* SVGFactoryPattern::getElement(std::string tagname){
     int numid = it->second;
 
 
-    switch(numid){
+    switch (numid) {
     case 1:
         return new SVGCircle();
     case 2:
@@ -51,7 +50,7 @@ SVGElement* SVGFactoryPattern::getElement(std::string tagname){
     case 9:
         return new SVGGroup();
     default:
-        throw std::runtime_error ("Found tag - " + tagname + " but mapped ID is invalid");
+        throw std::runtime_error("Found tag - " + tagname + " but mapped ID is invalid");
     }
 }
 

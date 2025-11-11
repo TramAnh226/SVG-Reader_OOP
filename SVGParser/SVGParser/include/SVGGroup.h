@@ -1,22 +1,26 @@
-#ifndef _SVGGROUP_H_
+﻿#ifndef _SVGGROUP_H_
 #define _SVGGROUP_H_
 
 
 #include <vector>
 #include <iostream>
 #include "SVGElement.h"
+#include "SVGParser.h"
 
-class SVGParser;
 
-class SVGGroup : public SVGElement{
-    private:
+class SVGGroup : public SVGElement {
+private:
 
 
     std::vector<SVGElement*> ElementArray;
     SVGGroup* parent;
 
+    // float width = 0.0f;     // Mặc định
+    // float height = 0.0f;    // Mặc định
+    // std::string viewBox;    // Mặc định là chuỗi rỗng
+    // std::string transform;  // Mặc định là chuỗi rỗng
 
-    public:
+public:
 
 
     SVGGroup();
@@ -36,10 +40,15 @@ class SVGGroup : public SVGElement{
     SVGGroup* getParent();
     const std::vector<SVGElement*>& getSVGElementArray() const;
 
-    // them parse va render
-    void parse(SVGParser&) const override;
-    void render(SVGRenderer&) const override;
+    SVGElement* clone() const override;
 
+    void parse(SVGParser&) const override;
+    void render(SVGRenderer&) override;
+
+    // void setWidth(float w) { width = w; }
+    // void setHeight(float h) { height = h; }
+    // void setViewBox(const std::string& vb) { viewBox = vb; }
+    // void setTransform(const std::string& t) { transform = t; }
 };
 
 
