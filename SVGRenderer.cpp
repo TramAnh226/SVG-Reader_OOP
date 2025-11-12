@@ -102,9 +102,23 @@ void SVGRenderer::drawText(Graphics& g, const SVGText* text) {
     g.DrawString(content.c_str(), -1, &font, pos, &brush);
 }
 
-void SVGRenderer::renderFigure(Graphics& g, const std::vector<SVGElement*>& group) {
-    for (const auto& element : group) {
-        if (element) element->render(*this, g);
-    }
+void SVGRenderer::renderFigure(Graphics& g, const SVGGroup* rootGroup) {
+    if (!rootGroup) return;
+    rootGroup->render(*this);
 }
+
+void SVGRenderer::renderGroup(const SVGGroup& group) {
+    //this->applyGroupContext(group);
+
+    // 2. Duyệt ĐỆ QUY (Composite Pattern)
+    const auto& children = group.getSVGElementArray();
+    for (SVGElement* element : children) {
+        // Gọi hàm render đa hình của TỪNG PHẦN TỬ CON
+        // Lệnh này sẽ gọi đúng hàm render() của Line, Circle, hoặc Group con
+        element->render(*this);
+    }
+    // 3. Khôi phục Context (nếu cần)
+    //this->restoreContext(group);
+}
+
 
