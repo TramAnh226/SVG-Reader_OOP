@@ -29,13 +29,14 @@ public:
 
 	void parseStyle(SVGStyle& style, const string& styleStr);
 	void parseStroke(Stroke& stroke, const string& styleStr);
-	void parseRectangle(SVGRectangle* rect);
-	void parseSquare(SVGSquare* sq);
-	void parseEllipse(SVGEllipse* el);
-	void parseCircle(SVGCircle* circle);
-	void parseLine(SVGLine* line);
-	void parsePolyshape(SVGPolyshapeBase* poly);
-	void parseText(SVGText* text);
+	void parseRectangle(SVGRectangle* rect, XMLElement* Node);
+	void parseSquare(SVGSquare* sq, XMLElement* Node);
+	void parseEllipse(SVGEllipse* el, XMLElement* Node);
+	void parseCircle(SVGCircle* circle, XMLElement* Node);
+	void parseLine(SVGLine* line, XMLElement* Node);
+	void parsePolyshape(SVGPolyshapeBase* poly, XMLElement* Node);
+	void parseText(SVGText* text, XMLElement* Node);
+	void parseGroup(SVGGroup* group, XMLElement* Node);
 
 };  
 

@@ -135,6 +135,7 @@
     <ClCompile Include="source\SVGFactoryPattern.cpp" />
     <ClCompile Include="source\SVGGroup.cpp" />
     <ClCompile Include="source\SVGLine.cpp" />
+    <ClCompile Include="source\SVGParser.cpp" />
     <ClCompile Include="source\SVGPolygon.cpp" />
     <ClCompile Include="source\SVGPolyline.cpp" />
     <ClCompile Include="source\SVGPolyshapeBase.cpp" />
@@ -143,7 +144,6 @@
     <ClCompile Include="source\SVGStyle.cpp" />
     <ClCompile Include="source\SVGText.cpp" />
     <ClCompile Include="source\tinyxml2.cpp" />
-    <ClCompile Include="SVGParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\CustomColor.h" />

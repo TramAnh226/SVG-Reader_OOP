@@ -1,4 +1,4 @@
-#include "SVGParser.h"
+﻿#include "SVGParser.h"
 
 #include <sstream>
 #include <algorithm>
@@ -27,9 +27,10 @@ SVGGroup* SVGParser::readXML(const string& filename) {
 	rootGroup->setParent(nullptr);
 
 	parseAttributes(rootXML, rootGroup);
+    rootGroup->parse(rootXML);
 	parseNode(rootXML, rootGroup);
     // them parse thuoc tinh group
-    rootGroup->parse(rootXML);
+    
 	return rootGroup;
 }
 
@@ -47,15 +48,13 @@ void SVGParser::parseNode(XMLElement* xmlNode, SVGGroup* parentGroup) {
         }
         
         parseAttributes(child, element);
+        element->parse(*this, child);             
+        parentGroup->addElement(element);
 
-        currentNode = child;
-        element->parse(*this);
-        
         if (auto group = dynamic_cast<SVGGroup*>(element)) {
             group->setParent(parentGroup);
             parseNode(child, group);
-        }        
-        parentGroup->addElement(element);
+        }
     }
 }
 
@@ -120,61 +119,57 @@ void SVGParser::parseStroke(Stroke& stroke, const string& styleStr) {
 	else if (key == "stroke-opacity") stroke.strokeOpacity = stof(value);
 }
 
-void SVGParser::parseRectangle(SVGRectangle* rect) {
-    if (!currentNode) return;
-    float x = currentNode->FloatAttribute("x");
-    float y = currentNode->FloatAttribute("y");
-    float w = currentNode->FloatAttribute("width");
-    float h = currentNode->FloatAttribute("height");
+void SVGParser::parseRectangle(SVGRectangle* rect, XMLElement* Node) {
+    float x = Node->FloatAttribute("x");
+    float y = Node->FloatAttribute("y");
+    float w = Node->FloatAttribute("width");
+    float h = Node->FloatAttribute("height");
     rect->setTopLeftCorner(CustomPoint(x, y));
     rect->setWidth(w);
     rect->setHeight(h);
 }
 
-void SVGParser::parseSquare(SVGSquare* sq) {
-    if (!currentNode) return;
-    float x = currentNode->FloatAttribute("x");
-    float y = currentNode->FloatAttribute("y");
-    float size = currentNode->FloatAttribute("width"); // SVG square d�ng width = height
+void SVGParser::parseSquare(SVGSquare* sq, XMLElement* Node) {
+    
+    float x = Node->FloatAttribute("x");
+    float y = Node->FloatAttribute("y");
+    float size = Node->FloatAttribute("width"); // SVG square dùng width = height
     sq->setTopLeftCorner(CustomPoint(x, y));
     sq->setWidth(size);
     sq->setHeight(size);
 }
 
-void SVGParser::parseEllipse(SVGEllipse* el) {
-    if (!currentNode) return;
-
-    float cx = currentNode->FloatAttribute("cx");
-    float cy = currentNode->FloatAttribute("cy");
-    float rx = currentNode->FloatAttribute("rx");
-    float ry = currentNode->FloatAttribute("ry");
+void SVGParser::parseEllipse(SVGEllipse* el, XMLElement* Node) {
+    float cx = Node->FloatAttribute("cx");
+    float cy = Node->FloatAttribute("cy");
+    float rx = Node->FloatAttribute("rx");
+    float ry = Node->FloatAttribute("ry");
     el->setCenter(CustomPoint(cx, cy));
     el->setRadiusX(rx);
     el->setRadiusY(ry);
 }
 
-void SVGParser::parseCircle(SVGCircle* circle) {
-    if (!currentNode) return;
-    float cx = currentNode->FloatAttribute("cx");
-    float cy = currentNode->FloatAttribute("cy");
-    float r = currentNode->FloatAttribute("r");
+void SVGParser::parseCircle(SVGCircle* circle, XMLElement* Node) {
+    float cx = Node->FloatAttribute("cx");
+    float cy = Node->FloatAttribute("cy");
+    float r = Node->FloatAttribute("r");
     circle->setCenter(CustomPoint(cx, cy));
     circle->setRadius(r);
 }
 
-void SVGParser::parseLine(SVGLine* line) {
-    if (!currentNode) return;
-    float x1 = currentNode->FloatAttribute("x1");
-    float y1 = currentNode->FloatAttribute("y1");
-    float x2 = currentNode->FloatAttribute("x2");
-    float y2 = currentNode->FloatAttribute("y2");
+void SVGParser::parseLine(SVGLine* line, XMLElement* Node) {
+
+    float x1 = Node->FloatAttribute("x1");
+    float y1 = Node->FloatAttribute("y1");
+    float x2 = Node->FloatAttribute("x2");
+    float y2 = Node->FloatAttribute("y2");
     line->setStartPoint(CustomPoint(x1, y1));
     line->setEndPoint(CustomPoint(x2, y2));
 }
 
-void SVGParser::parsePolyshape(SVGPolyshapeBase* poly) {
-    if (!currentNode) return;
-    const char* pointsStr = currentNode->Attribute("points");
+void SVGParser::parsePolyshape(SVGPolyshapeBase* poly, XMLElement* Node) {
+
+    const char* pointsStr = Node->Attribute("points");
     if (!pointsStr) return;
 
     vector<CustomPoint> pts;
@@ -191,12 +186,42 @@ void SVGParser::parsePolyshape(SVGPolyshapeBase* poly) {
     poly->setPoints(pts);
 }
 
-void SVGParser::parseText(SVGText* text) {
-    if (!currentNode) return;
-    float x = currentNode->FloatAttribute("x");
-    float y = currentNode->FloatAttribute("y");
-    const char* content = currentNode->GetText();
+void SVGParser::parseText(SVGText* text, XMLElement* Node) {
+
+    float x = Node->FloatAttribute("x");
+    float y = Node->FloatAttribute("y");
+    const char* content = Node->GetText();
     text->setStart(CustomPoint(x, y));
     text->setContent(content ? content : "");
 }
 
+void SVGParser::parseGroup(SVGGroup* group, XMLElement* Node) {
+    
+    /*const char* transformStr = Node->Attribute("transform");
+    if (transformStr) {
+        group->setTransform(std::string(transformStr));
+    }*/
+
+    
+    if (std::string(Node->Name()) == "svg") {
+
+        float w = Node->FloatAttribute("width");
+        if (w <= 0.0f) { w = 300.0f; }
+        group->setWidth(w);
+
+
+        float h = Node->FloatAttribute("height");
+        if (h <= 0.0f) { h = 150.0f; }
+        group->setHeight(h);
+
+
+        const char* viewBoxStr = Node->Attribute("viewBox");
+        if (viewBoxStr) {
+            group->setViewBox(std::string(viewBoxStr));
+        }
+        else {
+            group->setViewBox("0 0 " + std::to_string(w) + " " + std::to_string(h));
+        }
+    }
+
+}
