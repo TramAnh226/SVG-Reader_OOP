@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/Program Files/Git/SVG-Reader_OOP",
-      "program": "d:/Program Files/Git/SVG-Reader_OOP/build/Debug/outDebug",
+      "cwd": "d:/IT/SVG_Reader_Project",
+      "program": "d:/IT/SVG_Reader_Project/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
