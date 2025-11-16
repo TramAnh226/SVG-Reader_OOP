@@ -1,4 +1,4 @@
-﻿#include "SVGParser.h"
+﻿#include "../include/SVGParser.h"
 
 #include <sstream>
 #include <algorithm>
