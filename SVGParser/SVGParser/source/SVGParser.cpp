@@ -4,13 +4,13 @@
 #include <algorithm>
 #include <iostream>
 
-using namespace tinyxml2;
+// using namespace tinyxml2;
 using namespace std;
 
 SVGFactoryPattern factory;
 
 SVGGroup* SVGParser::readXML(const string& filename) {
-	XMLDocument doc;
+	tinyxml2::XMLDocument doc;
 	if (doc.LoadFile(filename.c_str()) != XML_SUCCESS) {
 		cerr << "Cannot read SVG file: " << filename << endl;
 		return nullptr;

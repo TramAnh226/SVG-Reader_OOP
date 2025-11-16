@@ -30,11 +30,11 @@ std::vector<CustomPoint> SVGPolyshapeBase::getPoints() const {
     return points;
 }
 void SVGPolyshapeBase::setPoints(const std::vector<CustomPoint>& points) {
-    points = points;
+    this->points = points;
 }
 
-void SVGPolyshapeBase::parse(SVGParser& p) {
-    p.parsePolyshapeBase(*this);
+void SVGPolyshapeBase::parse(SVGParser& p, XMLElement* node) {
+    p.parsePolyshape(this, node);
 }
 void SVGPolyshapeBase::render(SVGRenderer& r) {
     r.renderPolyshapeBase(*this);

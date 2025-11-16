@@ -53,8 +53,8 @@ void SVGEllipse::setRadiusY(const float& ry) {
     this->ry = ry;  
 }
 
-void SVGEllipse::parse(SVGParser& p) {
-    p.parseEllipse(*this);
+void SVGEllipse::parse(SVGParser& p, XMLElement* node) {
+    p.parseEllipse(this, node);
 }
 void SVGEllipse::render(SVGRenderer& r) {
     r.renderEllipse(*this);

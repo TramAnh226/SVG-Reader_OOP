@@ -38,10 +38,10 @@ void SVGCircle::setRadius(const float& radius) {
     this->ry = radius;    
 }
 
-void SVGCircle::parse(SVGParser& p) {
-    p.parseCircle(*this);
+void SVGCircle::parse(SVGParser& p, XMLElement* node) {
+    p.parseCircle(this, node);
 }
-void SVGCircle::render(SVGRenderer& r) {
+void SVGCircle::render(SVGRenderer& r, Graphics& g) {
     r.renderCircle(*this);
 }
 // void SVGCircle::transform(Matrix* m)

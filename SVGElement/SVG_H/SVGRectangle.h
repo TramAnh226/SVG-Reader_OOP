@@ -23,7 +23,7 @@ public:
 	float getHeight() const;
 	void setHeight(float);
 
-	void parse(SVGParser&) override;
+	void parse(SVGParser&, XMLElement*) override;
 	void render(SVGRenderer&) override;
 	// void transform(Matrix*) override;
 };

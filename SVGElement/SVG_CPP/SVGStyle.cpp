@@ -48,8 +48,8 @@ void SVGStyle::setStroke(const Stroke& s) {
     stroke = s;         
 }
 
-void SVGStyle::parse(SVGParser& p) {
-    p.parseStyle(*this);
+void SVGStyle::parse(SVGParser& p, const std::string& styleString) {
+    p.parseStyle(*this, styleString);
 }
 void SVGStyle::render(SVGRenderer& r) {
     r.renderStyle(*this);

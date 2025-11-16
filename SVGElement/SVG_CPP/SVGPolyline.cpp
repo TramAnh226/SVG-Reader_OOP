@@ -24,8 +24,8 @@ SVGElement* SVGPolyline::clone() const {
     return new SVGPolyline(*this);
 }
 
-void SVGPolyline::parse(SVGParser& p) {
-    p.parsePolyshapeBase(*this);
+void SVGPolyline::parse(SVGParser& p, XMLElement* node) {
+    p.parsePolyshape(this, node);
 }
 void SVGPolyline::render(SVGRenderer& r) {
     r.renderPolyshapeBase(*this);

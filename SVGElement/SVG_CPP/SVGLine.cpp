@@ -43,8 +43,8 @@ void SVGLine::setEndPoint(const CustomPoint& p) {
     end_point = p;
 }
 
-void SVGLine::parse(SVGParser& p) {
-    p.parseLine(*this);
+void SVGLine::parse(SVGParser& p, XMLElement* node) {
+    p.parseLine(this, node);
 }
 void SVGLine::render(SVGRenderer& r) {
     r.renderLine(*this);

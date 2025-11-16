@@ -9,8 +9,8 @@ public:
 	SVGPolygon& operator=(const SVGPolygon&);
 	~SVGPolygon();
 	SVGElement* clone() const override;
-	
-	void parse(SVGParser&) override;
-	void render(SVGRender&) override;
+
+	parse(SVGParser&, XMLElement*) override;
+	render(SVGRender&) override;
 	// void transform(Matrix*) override;
 };

@@ -20,8 +20,8 @@ SVGElement* SVGSquare::clone() const {
     return new SVGSquare(*this);
 }
 
-void SVGSquare::parse(SVGParser& p) {
-    p.parseSquare(*this);
+void SVGSquare::parse(SVGParser& p, XMLElement* node) {
+    p.parseSquare(this, node);
 }
 void SVGSquare::render(SVGRenderer& r) {
     r.renderSquare(*this);

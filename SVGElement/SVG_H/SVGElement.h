@@ -26,8 +26,8 @@ public:
 	void setSVGStyle(const SVGStyle&);
 
 	// polymorphism and separation of concerns
-	virtual void parse(SVGParser&) const = 0;
-	virtual void render(SVGRenderer&) const = 0;
+	virtual void parse(SVGParser&, XMLElement*);
+	virtual void render(SVGRenderer&);
 	// subsequent development
 	// virtual void transform(Matrix* m) = 0;
 };

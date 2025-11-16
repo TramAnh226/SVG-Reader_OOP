@@ -57,8 +57,8 @@ void SVGText::setContent(const std::string& content) {
     this->content = content;
 }
 
-void SVGText::parse(SVGParser& p) {
-    p.parseText(*this);
+void SVGText::parse(SVGParser& p, XMLElement* node) {
+    p.parseText(this, node);
 }
 void SVGText::render(SVGRenderer& r) {
     r.renderText(*this);

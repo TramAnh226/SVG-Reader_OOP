@@ -54,8 +54,8 @@ void SVGRectangle::setHeight(float h) {
     height = h;
 }
 
-void SVGRectangle::parse(SVGParser& p) {
-    p.parseRectangle(*this);
+void SVGRectangle::parse(SVGParser& p, XMLElement* node) {
+    p.parseRectangle(this, node);
 }
 void SVGRectangle::render(SVGRenderer& r) {
     r.renderRectangle(*this);
