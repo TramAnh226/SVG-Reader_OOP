@@ -3,7 +3,11 @@
     {
       "name": "windows-gcc-x64",
       "includePath": [
-        "${workspaceFolder}/**"
+        "${workspaceFolder}/**",
+        "${workspaceFolder}/SVGElement/**", 
+        "${workspaceFolder}/SVGDocument/**", 
+        "${workspaceFolder}/SVGRenderer/**",
+        "${workspaceFolder}/SVGParser/**"
       ],
       "compilerPath": "C:/msys64/ucrt64/bin/gcc.exe",
       "cStandard": "${default}",
