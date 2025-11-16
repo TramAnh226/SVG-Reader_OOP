@@ -12,16 +12,14 @@ SVGEllipse::SVGEllipse(CustomPoint center, float rx, float ry)
     rx(rx),
     ry(ry)    
 {}
-SVGEllipse::SVGEllipse(const SVGEllipse& other) 
-        : SVGElement(), 
-        center(other.center), 
-        rx(other.rx),
-        ry(other.ry) {
+SVGEllipse::SVGEllipse(const SVGEllipse& other) {
         this->setTagName(other.getTagName());
         this->setId(other.getId());
         this->setSVGStyle(other.getSVGStyle());
+        this->center = other.center;
+        this->rx = other.rx;    
+        this->ry = other.ry;  
 }
-
 SVGEllipse& SVGEllipse::operator=(const SVGEllipse& other) {
     if (this != &other) {
         this->setTagName(other.getTagName());
@@ -57,7 +55,7 @@ void SVGEllipse::setRadiusY(const float& ry) {
     this->ry = ry;  
 }
 
-void SVGEllipse::parse(SVGParser& p, tinyxml2::XMLElement* node) {
+void SVGEllipse::parse(SVGParser& p, XMLElement* node) {
     p.parseEllipse(this, node);
 }
 void SVGEllipse::render(SVGRenderer& r, Gdiplus::Graphics& g) const {

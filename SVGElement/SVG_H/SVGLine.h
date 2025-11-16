@@ -4,7 +4,6 @@
 #include "../../SVGParser/SVGParser/include/SVGParser.h"
 #include "../../SVGRenderer/SVGRenderer.h"
 
-
 class SVGLine : public SVGElement {
 private: 
 	CustomPoint start_point, end_point;
@@ -21,7 +20,7 @@ public:
 	CustomPoint getEndPoint() const;
 	void setEndPoint(const CustomPoint&);
 
-	void parse(SVGParser&, XMLElement*) override;
+	void parse(SVGParser&, tinyxml2::XMLElement*) override;
 	void render(SVGRenderer&, Gdiplus::Graphics&) const override;
 	// void transform(Matrix*) override;
 };

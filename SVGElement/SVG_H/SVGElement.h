@@ -14,7 +14,6 @@ public:
 	SVGElement(const std::string&, const std::string&, const SVGStyle&);
 	SVGElement(const SVGElement&) = delete;
 	SVGElement& operator=(const SVGElement&) = delete;
-	// virtual : obligatory (to delete derived object)
 	virtual ~SVGElement() = default;
 	virtual SVGElement* clone() const = 0;
 

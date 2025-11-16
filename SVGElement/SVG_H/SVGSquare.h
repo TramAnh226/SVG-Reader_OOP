@@ -12,7 +12,7 @@ public:
 	~SVGSquare();
 	SVGElement* clone() const override;
 	
-	void parse(SVGParser&, XMLElement*) override;
+	void parse(SVGParser&, tinyxml2::XMLElement*) override;
 	void render(SVGRenderer&, Gdiplus::Graphics&) const override;
 	// void transform(Matrix*) override;
 };
