@@ -5,6 +5,8 @@
       "includePath": [
         "${workspaceFolder}/**",
         "${workspaceFolder}/SVGElement/**", 
+        "${workspaceFolder}/SVGElement/SVG_H**", 
+        "${workspaceFolder}/SVGElement/SVG_CPP**", 
         "${workspaceFolder}/SVGDocument/**", 
         "${workspaceFolder}/SVGRenderer/**",
         "${workspaceFolder}/SVGParser/**"
