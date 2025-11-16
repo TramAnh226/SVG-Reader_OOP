@@ -28,7 +28,7 @@ SVGGroup* SVGParser::readXML(const string& filename) {
     rootGroup->setTagName(rootXML->Name());
 
 	parseAttributes(rootXML, rootGroup);
-    rootGroup->parse(rootXML);
+    rootGroup->parse(*this,rootXML);
 	parseNode(rootXML, rootGroup);
     // them parse thuoc tinh group
     

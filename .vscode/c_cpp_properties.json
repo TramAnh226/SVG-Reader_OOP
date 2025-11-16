@@ -9,11 +9,12 @@
         "${workspaceFolder}/SVGElement/SVG_H/**", 
         "${workspaceFolder}/SVGElement/SVG_CPP/**", 
 
-        "${workspaceFolder}/SVGDocument/**", 
+        "${workspaceFolder}/SVGDocument/SVG_H**", 
 
         "${workspaceFolder}/SVGGroup_Factory/**",
         "${workspaceFolder}/SVGGroup_Factory/SVG_H/**",
         "${workspaceFolder}/SVGGroup_Factory/SVG_CPP/**", 
+        
         "${workspaceFolder}/SVGRenderer/**",
 
         "${workspaceFolder}/SVGParser/**",

@@ -10,14 +10,14 @@ public:
 	SVGCircle(const SVGCircle&);
 	SVGCircle& operator=(const SVGCircle&);
 	~SVGCircle();
-	SVGElement* clone() const override;
+	SVGElement *clone() const override;
 	
 	CustomPoint getCenter() const;
 	void setCenter(const CustomPoint&);
 	float getRadius() const;
 	void setRadius(const float&);
 	
-	void parse(SVGParser&, XMLElement*) override;
+	void parse(SVGParser&, tinyxml2::XMLElement*) override;
 	void render(SVGRenderer&, Gdiplus::Graphics&) const override;
 	// void transform(Matrix*) override;
 };

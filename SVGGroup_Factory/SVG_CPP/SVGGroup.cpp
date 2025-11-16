@@ -82,11 +82,11 @@ SVGElement* SVGGroup::clone() const {
 }
 
 
-void SVGGroup::parse(SVGParser& parser, XMLElement* node) {
+void SVGGroup::parse(SVGParser& parser, tinyxml2::XMLElement* node) {
     parser.parseGroup(this, node);
 }
 
-void SVGGroup::render(SVGRenderer& r) const {
-    r.renderGroup(*this);
+void SVGGroup::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
+    r.renderGroup(g, this);
 }
 

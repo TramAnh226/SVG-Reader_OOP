@@ -18,7 +18,7 @@ class SVGDocument{
     ~SVGDocument();
 
     void parseSVGImage(SVGParser&);
-    void renderSVGImage(SVGRenderer&, Graphics&);
+    void renderSVGImage(SVGRenderer&, Gdiplus::Graphics&);
 };
 
 #endif
