@@ -27,9 +27,9 @@ SVGElement* SVGPolygon::clone() const {
 }
 
 void SVGPolygon::parse(SVGParser& p) {
-    p.parsePolygon(*this);
+    p.parsePolyshapeBase(*this);
 }
 void SVGPolygon::render(SVGRenderer& r) {
-    r.renderPolygon(*this);
+    r.renderPolyshapeBase(*this);
 }
 // void SVGPolygon::transform(Matrix* m)

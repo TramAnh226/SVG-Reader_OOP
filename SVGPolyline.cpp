@@ -25,9 +25,9 @@ SVGElement* SVGPolyline::clone() const {
 }
 
 void SVGPolyline::parse(SVGParser& p) {
-    p.parsePolyline(*this);
+    p.parsePolyshapeBase(*this);
 }
 void SVGPolyline::render(SVGRenderer& r) {
-    r.renderPolyline(*this);
+    r.renderPolyshapeBase(*this);
 }
 // void SVGPolyline::transform(Matrix* m)
