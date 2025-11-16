@@ -16,9 +16,8 @@ Stroke::Stroke(const Stroke& other) {
         this->strokeOpacity = other.strokeOpacity;
         this->strokeWidth = other.strokeWidth;
     }
-    return (*this);
 }
-Stroke* Stroke::operator=(const Stroke& other) {
+Stroke& Stroke::operator=(const Stroke& other) {
     if (this != &other) {
         this->strokeColor = other.strokeColor;
         this->strokeOpacity = other.strokeOpacity;
@@ -30,10 +29,10 @@ Stroke::~Stroke() {}
 
 // there is no getter/setter because all attributes are public
 
-void Stroke::parse(SVGParser& p) {
-    p.parseStroke();
+void Stroke::parse(SVGParser& p, const std::string& strokeStr) {
+    p.parseStroke(*this, strokeStr);
 }
-void STroke::render(SVGRenderer& r) {
-    r.renderStroke();
-}
+// void STroke::render(SVGRenderer& r) {
+//     r.renderStroke();
+// }
 // void transform(Matrix*);

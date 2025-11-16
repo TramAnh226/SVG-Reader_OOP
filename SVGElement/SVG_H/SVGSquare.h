@@ -13,6 +13,6 @@ public:
 	SVGElement* clone() const override;
 	
 	void parse(SVGParser&, XMLElement*) override;
-	void render(SVGRenderer&) override;
+	void render(SVGRenderer& r, Gdiplus::Graphics& g) override;
 	// void transform(Matrix*) override;
 };

@@ -23,7 +23,7 @@ SVGElement* SVGSquare::clone() const {
 void SVGSquare::parse(SVGParser& p, XMLElement* node) {
     p.parseSquare(this, node);
 }
-void SVGSquare::render(SVGRenderer& r) {
-    r.renderSquare(*this);
+void SVGSquare::render(SVGRenderer& r, Gdiplus::Graphics& g) {
+    r.renderSquare(g, this);
 }
 // void SVGSquare::transform(Matrix* m)
