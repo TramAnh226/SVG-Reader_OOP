@@ -13,5 +13,7 @@
 #include "SVGSquare.h"
 #include "SVGText.h"
 #include "SVGStyle.h"
+#include "tinyxml2.h"
+#include "../../SVGGroup_Factory/SVG_H/SVGGroup.h"
 #include "../../SVGParser/SVGParser/include/SVGParser.h"
 #include "../../SVGRenderer/SVGRenderer.h"
