@@ -2,7 +2,7 @@
 #include <string>
 #include "SVGStyle.h"
 #include "SVGParser.h"
-#include "SVG/SVG_READER/SVGRenderer.h"
+#include "../../../SVGRenderer/SVGRenderer.h"
 
 class SVGElement {
 protected:

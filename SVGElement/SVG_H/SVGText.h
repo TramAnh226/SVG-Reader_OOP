@@ -1,8 +1,8 @@
 #pragma once
 #include "CustomPoint.h"
 #include "SVGElement.h"
-#include "SVGParser/SVGParser/SVGParser.h"
-#include "SVG/SVG_READER/SVGRender.h"
+#include "../../SVGParser/SVGParser/include/SVGParser.h"
+#include "../../SVGRenderer/SVGRenderer.h"
 
 class SVGText : public SVGElement {
 private: 

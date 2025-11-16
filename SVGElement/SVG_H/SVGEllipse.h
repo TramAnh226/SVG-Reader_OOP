@@ -1,7 +1,7 @@
 #pragma once
 #include "CustomPoint.h"
-#include "SVGParser.h"
-#include "SVG/SVG_READER/SVGRenderer.h"
+#include "../../SVGParser/SVGParser/include/SVGParser.h"
+#include "../../SVGRenderer/SVGRenderer.h"
 #include "SVGElement.h"
 
 class SVGEllipse : public SVGElement {

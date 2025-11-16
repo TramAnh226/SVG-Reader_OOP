@@ -2,7 +2,7 @@
 #include "CustomColor.h"
 #include "Stroke.h"
 #include "SVGParser.h"
-#include "SVG/SVG_READER/SVGRenderer.h"
+#include "../../../SVGRenderer/SVGRenderer.h"
 
 class SVGStyle {
 private:

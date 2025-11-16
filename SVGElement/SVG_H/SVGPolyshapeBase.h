@@ -1,7 +1,7 @@
 #pragma once
 #include "SVGElement.h"
-#include "SVGParser/SVGParser/SVGParser.h"
-#include "SVGRenderer/SVGRenderer/SVGRenderer.h"
+#include "../../SVGParser/SVGParser/include/SVGParser.h"
+#include "../../SVGRenderer/SVGRenderer.h"
 #include "CustomPoint.h"
 #include <vector>
 

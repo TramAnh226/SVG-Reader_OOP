@@ -1,7 +1,7 @@
 #pragma once
 #include "CustomColor.h"
 #include "CustomPoint.h"
-#include "SVGElement/SVG_H/Stroke.h"
+#include "Stroke.h"
 #include "SVGElement.h"
 #include "SVGEllipse.h"
 #include "SVGCircle.h"
@@ -13,4 +13,5 @@
 #include "SVGSquare.h"
 #include "SVGText.h"
 #include "SVGStyle.h"
-#include "SVGRenderer.h"
+#include "../../SVGParser/SVGParser/include/SVGParser.h"
+#include "../../SVGRenderer/SVGRenderer.h"

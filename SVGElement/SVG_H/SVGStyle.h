@@ -1,8 +1,8 @@
 #pragma once
 #include "CustomColor.h"
 #include "Stroke.h"
-#include "SVGParser/SVGParser/SVGParser.h"
-#include "SVG/SVG_READER/SVGRenderer.h"
+#include "../../SVGParser/SVGParser/include/SVGParser.h"
+#include "../../SVGRenderer/SVGRenderer.h"
 
 class SVGStyle {
 private: 

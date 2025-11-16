@@ -1,8 +1,8 @@
 #pragma once
 #include "CustomPoint.h"
 #include "SVGElement.h"
-#include "SVGParser/SVGParser/SVGParser.h"
-#include "SVG/SVG_READER/SVGRenderer.h"
+#include "../../SVGParser/SVGParser/include/SVGParser.h"
+#include "../../SVGRenderer/SVGRenderer.h"
 
 class SVGLine : public SVGElement {
 private: 

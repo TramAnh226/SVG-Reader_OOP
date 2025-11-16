@@ -21,4 +21,3 @@ public:
 	void render(SVGRenderer&);
 	// void transform(Matrix*);
 };
-#endif
