@@ -224,5 +224,4 @@ void SVGParser::parseGroup(SVGGroup* group, XMLElement* Node) {
             group->setViewBox("0 0 " + std::to_string(w) + " " + std::to_string(h));
         }
     }
-
-} 
+}
