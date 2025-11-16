@@ -24,7 +24,7 @@ public:
 	std::string getContent() const;
 	void setContent(const std::string&);
 	
-	void parse(SVGParser&, XMLElement*) override;
+	void parse(SVGParser&, tinyxml2::XMLElement*) override;
 	void render(SVGRenderer&, Gdiplus::Graphics&) const override;
 	// void transform(Matrix*) override;
 };

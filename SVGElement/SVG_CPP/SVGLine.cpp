@@ -46,7 +46,7 @@ void SVGLine::setEndPoint(const CustomPoint& p) {
 void SVGLine::parse(SVGParser& p, XMLElement* node) {
     p.parseLine(this, node);
 }
-void SVGLine::render(SVGRenderer& r) const {
-    r.renderLine(*this);
+void SVGLine::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
+    r.renderLine(g, this);
 }
 // void SVGLine::transform(Matrix* m) {

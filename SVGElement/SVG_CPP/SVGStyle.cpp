@@ -48,7 +48,7 @@ void SVGStyle::setStroke(const Stroke& s) {
 void SVGStyle::parse(SVGParser& p, const std::string& styleString) {
     p.parseStyle(*this, styleString);
 }
-void SVGStyle::render(SVGRenderer& r) const {
-    r.renderStyle(*this);
-}  
+// void SVGStyle::render(SVGRenderer& r) const {
+//     r.renderStyle(*this);
+// }  
 // void transform(Matrix*);         

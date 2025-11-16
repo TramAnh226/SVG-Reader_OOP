@@ -23,7 +23,7 @@ public:
 	float getRadiusY() const;
 	void setRadiusY(const float&);
 
-	void parse(SVGParser&, XMLElement*);
+	void parse(SVGParser&, XMLElement*) override;
 	void render(SVGRenderer&, Gdiplus::Graphics&) const override;
 	// void transform(Matrix*) override;
 };

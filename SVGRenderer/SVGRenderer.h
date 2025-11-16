@@ -4,7 +4,7 @@
 #include <utility>  
 #include "../SVGElement/SVG_H/Library.h"
 
-using namespace Gdiplus;
+// using namespace Gdiplus;
 using namespace std;
 
 class SVGGroup;
@@ -23,14 +23,14 @@ public:
 
     //pair<double, double> transformPoint(double x, double y) const;
 
-    void renderRectangle(Graphics& g, const SVGRectangle* rect);
-    void renderCircle(Graphics& g, const SVGCircle* circle);
-    void renderEllipse(Graphics& g, const SVGEllipse* ellipse);
-    void renderLine(Graphics& g, const SVGLine* line);
-    void renderPolygon(Graphics& g, const SVGPolygon* polygon);
-    void renderPolyline(Graphics& g, const SVGPolyline* polyline);
-    void renderText(Graphics& g, const SVGText* text);
-    void renderSquare(Graphics& g, const SVGSquare* square);
-    void renderFigure(Graphics& g, const SVGGroup* rootGroup);
-    void renderGroup(const SVGGroup& group);
+    void renderRectangle(Gdiplus::Graphics& g, const SVGRectangle* rect);
+    void renderCircle(Gdiplus::Graphics& g, const SVGCircle* circle);
+    void renderEllipse(Gdiplus::Graphics& g, const SVGEllipse* ellipse);
+    void renderLine(Gdiplus::Graphics& g, const SVGLine* line);
+    void renderPolygon(Gdiplus::Graphics& g, const SVGPolygon* polygon);
+    void renderPolyline(Gdiplus::Graphics& g, const SVGPolyline* polyline);
+    void renderText(Gdiplus::Graphics& g, const SVGText* text);
+    void renderSquare(Gdiplus::Graphics& g, const SVGSquare* square);
+    void renderFigure(Gdiplus::Graphics& g, const SVGGroup* rootGroup);
+    void renderGroup(Gdiplus::Graphics& g, const SVGGroup* rootGroup);
 };

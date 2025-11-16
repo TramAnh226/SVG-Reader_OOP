@@ -8,9 +8,9 @@ class SVGGroup;
 
 class SVGParser {
 private:
-	XMLElement* currentNode = nullptr;
-	void parseNode(XMLElement* xmlNode, SVGGroup* parentGroup);
-	void parseAttributes(XMLElement* xmlNode, SVGElement* element);
+	tinyxml2::XMLElement* currentNode = nullptr;
+	void parseNode(tinyxml2::XMLElement* xmlNode, SVGGroup* parentGroup);
+	void parseAttributes(tinyxml2::XMLElement* xmlNode, SVGElement* element);
 	SVGGroup* readXML(const string& filename);
 	
 public:
@@ -19,14 +19,14 @@ public:
 
 	void parseStyle(SVGStyle& style, const string& styleStr);
 	void parseStroke(Stroke& stroke, const string& styleStr);
-	void parseRectangle(SVGRectangle* rect, XMLElement* Node);
-	void parseSquare(SVGSquare* sq, XMLElement* Node);
-	void parseEllipse(SVGEllipse* el, XMLElement* Node);
-	void parseCircle(SVGCircle* circle, XMLElement* Node);
-	void parseLine(SVGLine* line, XMLElement* Node);
-	void parsePolyshape(SVGPolyshapeBase* poly, XMLElement* Node);
-	void parseText(SVGText* text, XMLElement* Node);
-	void parseGroup(SVGGroup* group, XMLElement* Node);
+	void parseRectangle(SVGRectangle* rect, tinyxml2::XMLElement* Node);
+	void parseSquare(SVGSquare* sq, tinyxml2::XMLElement* Node);
+	void parseEllipse(SVGEllipse* el, tinyxml2::XMLElement* Node);
+	void parseCircle(SVGCircle* circle, tinyxml2::XMLElement* Node);
+	void parseLine(SVGLine* line, tinyxml2::XMLElement* Node);
+	void parsePolyshape(SVGPolyshapeBase* poly, tinyxml2::XMLElement* Node);
+	void parseText(SVGText* text, tinyxml2::XMLElement* Node);
+	void parseGroup(SVGGroup* group, tinyxml2::XMLElement* Node);
 
 };  
 

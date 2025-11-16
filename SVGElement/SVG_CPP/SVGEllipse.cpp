@@ -13,7 +13,7 @@ SVGEllipse::SVGEllipse(CustomPoint center, float rx, float ry)
     ry(ry)    
 {}
 SVGEllipse::SVGEllipse(const SVGEllipse& other) {
-    this->setTagName(other.getTagName());
+        this->setTagName(other.getTagName());
         this->setId(other.getId());
         this->setSVGStyle(other.getSVGStyle());
         this->center = other.center;

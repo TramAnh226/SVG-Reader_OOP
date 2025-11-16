@@ -25,8 +25,8 @@ public:
 	Stroke getStroke() const;
 	void setStroke(const Stroke&);
 
-	void parse(SVGParser&, const std::string&);
-	void render(SVGRenderer&) const ;
+	void parse(SVGParser&, const std::string&) override;
+	// void render(SVGRenderer&, Gdiplus::Graphics&) const override;
 	// void transform(Matrix*);
 };
 

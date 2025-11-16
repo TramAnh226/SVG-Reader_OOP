@@ -26,10 +26,10 @@ SVGElement* SVGPolygon::clone() const {
     return new SVGPolygon(*this);
 }
 
-void SVGPolyline::parse(SVGParser& p, XMLElement* node) {
+void SVGPolyline::parse(SVGParser& p, tinyxml2::XMLElement* node) {
     p.parsePolyshape(this, node);
 }
-void SVGPolyline::render(SVGRenderer& r) const {
-    r.renderPolyshapeBase(*this);
+void SVGPolyline::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
+    r.renderPolygon(g, this);
 }
 // void SVGPolygon::transform(Matrix* m)

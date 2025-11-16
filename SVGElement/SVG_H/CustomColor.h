@@ -13,5 +13,9 @@ struct CustomColor {
 	static int clampCustomColorValue(int);
 	static CustomColor fromStringToCustomColor(const std::string&);
 	std::string fromCustomColorToString() const;
+
+	operator Gdiplus::Color() const {
+        return Gdiplus::Color(255, r, g, b); 
+    }
 };
 
