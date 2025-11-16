@@ -18,6 +18,6 @@ public:
 	// there is no getter/setter because all attributes are public
 
 	void parse(SVGParser&);
-	void render(SVGRenderer&);
+	void render(SVGRenderer&) const;
 	// void transform(Matrix*);
 };

@@ -36,7 +36,7 @@ void SVGPolyshapeBase::setPoints(const std::vector<CustomPoint>& points) {
 void SVGPolyshapeBase::parse(SVGParser& p, XMLElement* node) {
     p.parsePolyshape(this, node);
 }
-void SVGPolyshapeBase::render(SVGRenderer& r) {
+void SVGPolyshapeBase::render(SVGRenderer& r) const {
     r.renderPolyshapeBase(*this);
 }
 // void SVGPolyshapeBase::transform(Matrix* m)

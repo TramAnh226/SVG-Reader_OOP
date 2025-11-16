@@ -26,7 +26,7 @@ public:
 	void setStroke(const Stroke&);
 
 	void parse(SVGParser&, const std::string&);
-	void render(SVGRenderer&);
+	void render(SVGRenderer&) const ;
 	// void transform(Matrix*);
 };
 

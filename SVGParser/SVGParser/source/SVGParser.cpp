@@ -25,6 +25,7 @@ SVGGroup* SVGParser::readXML(const string& filename) {
 	  
 	SVGGroup* rootGroup = new SVGGroup(); 
 	rootGroup->setParent(nullptr);
+    rootGroup->setTagName(rootXML->Name());
 
 	parseAttributes(rootXML, rootGroup);
     rootGroup->parse(rootXML);
@@ -224,4 +225,4 @@ void SVGParser::parseGroup(SVGGroup* group, XMLElement* Node) {
         }
     }
 
-}
+} 

@@ -7,6 +7,8 @@
 using namespace Gdiplus;
 using namespace std;
 
+class SVGGroup;
+
 class SVGRenderer {
 private:
     float zoom;

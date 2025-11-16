@@ -21,6 +21,6 @@ public:
 	void setEndPoint(const CustomPoint&);
 
 	void parse(SVGParser&, XMLElement*) override;
-	void render(SVGRenderer&) override;
+	void render(SVGRenderer&) const override;
 	// void transform(Matrix*) override;
 };

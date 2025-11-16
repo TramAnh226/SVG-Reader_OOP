@@ -11,12 +11,9 @@ SVGStyle::SVGStyle(CustomColor color, float opacity, Stroke stroke) {
     this->stroke = stroke;
 } 
 SVGStyle::SVGStyle(const SVGStyle& other) {
-    if (this != &other) {
-        this->fillColor = other.fillColor;
-        this->fillOpacity = other.fillOpacity;
-        this->stroke = other.stroke;
-    }
-    return (*this);
+    this->fillColor = other.fillColor;
+    this->fillOpacity = other.fillOpacity;
+    this->stroke = other.stroke;
 }
 SVGStyle& SVGStyle::operator=(const SVGStyle& other) {
     if (this != &other) {
@@ -51,7 +48,7 @@ void SVGStyle::setStroke(const Stroke& s) {
 void SVGStyle::parse(SVGParser& p, const std::string& styleString) {
     p.parseStyle(*this, styleString);
 }
-void SVGStyle::render(SVGRenderer& r) {
+void SVGStyle::render(SVGRenderer& r) const {
     r.renderStyle(*this);
 }  
 // void transform(Matrix*);         

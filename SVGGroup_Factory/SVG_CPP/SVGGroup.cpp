@@ -73,20 +73,20 @@ SVGGroup* SVGGroup::getParent(){
 }
 
 
-const std::vector<SVGElement*>& SvgGroup::getSVGElementArray() const {
+const std::vector<SVGElement*>& SVGGroup::getSVGElementArray() const {
     return this->ElementArray;
 }
 
-SVGElement* SVFGroup::clone() const {
+SVGElement* SVGGroup::clone() const {
     return new SVGGroup(*this);
 }
 
 
-void SVGGroup::parse(SVGParser& parser) {
-    parser.parseGroup(this, xmlNode);
+void SVGGroup::parse(SVGParser& parser, XMLElement* node) {
+    parser.parseGroup(this, node);
 }
 
-void SVGGroup::render(SVGRenderer& r) {
+void SVGGroup::render(SVGRenderer& r) const {
     r.renderGroup(*this);
 }
 

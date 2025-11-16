@@ -33,7 +33,7 @@ Stroke::~Stroke() {}
 void Stroke::parse(SVGParser& p) {
     p.parseStroke();
 }
-void STroke::render(SVGRenderer& r) {
+void STroke::render(SVGRenderer& r) const {
     r.renderStroke();
 }
 // void transform(Matrix*);

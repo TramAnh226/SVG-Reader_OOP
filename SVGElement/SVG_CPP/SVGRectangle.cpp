@@ -57,7 +57,7 @@ void SVGRectangle::setHeight(float h) {
 void SVGRectangle::parse(SVGParser& p, XMLElement* node) {
     p.parseRectangle(this, node);
 }
-void SVGRectangle::render(SVGRenderer& r) {
+void SVGRectangle::render(SVGRenderer& r) const {
     r.renderRectangle(*this);
 }
 // void SVGRectangle::transform(Matrix* m) 

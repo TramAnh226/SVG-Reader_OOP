@@ -10,7 +10,7 @@ public:
 	~SVGPolygon();
 	SVGElement* clone() const override;
 
-	parse(SVGParser&, XMLElement*) override;
-	render(SVGRender&) override;
+	void parse(SVGParser&, XMLElement*) override;
+	void render(SVGRenderer&) const override;
 	// void transform(Matrix*) override;
 };
