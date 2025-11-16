@@ -26,8 +26,8 @@ public:
 	void setSVGStyle(const SVGStyle&);
 
 	// polymorphism and separation of concerns
-	virtual void parse(SVGParser&, XMLElement*);
-	virtual void render(SVGRenderer&, Gdiplus::Graphics&);
-	// subsequent development
+	virtual void parse(SVGParser&, XMLElement*) = 0;
+	virtual void render(SVGRenderer&, Gdiplus::Graphics&) const = 0;
+	// subsequent developmenst
 	// virtual void transform(Matrix* m) = 0;
 };

@@ -3,6 +3,9 @@
 
 #include "../../SVGGroup_Factory/SVG_H/SVGGroup.h"
 
+class SVGParser;
+class SVGRenderer;
+
 class SVGDocument{
     private:
 

@@ -41,7 +41,7 @@ void SVGCircle::setRadius(const float& radius) {
 void SVGCircle::parse(SVGParser& p, XMLElement* node) {
     p.parseCircle(this, node);
 }
-void SVGCircle::render(SVGRenderer& r, Gdiplus::Graphics& g) {
+void SVGCircle::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
     r.renderCircle(g, this);
 }
 // void SVGCircle::transform(Matrix* m)

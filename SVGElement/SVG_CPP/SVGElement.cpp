@@ -39,7 +39,7 @@ void SVGElement::setSVGStyle(const SVGStyle& svg_style) {
 
 // polymorphism and separation of concerns
 
-// virtual void SVGElement::parse(SVGParser& p) const = 0; // pure virtual function
-// virtual void SVGElement::render(SVGRenderer& r) const = 0; // pure virtual function       
+void SVGElement::parse(SVGParser&, XMLElement*) {}
+void SVGElement::render(SVGRenderer&, Gdiplus::Graphics&) const {}     
 // virtual void SVGElement::transform(Matrix* m) = 0; // pure virtual function
 

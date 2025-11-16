@@ -60,7 +60,7 @@ void SVGText::setContent(const std::string& content) {
 void SVGText::parse(SVGParser& p, XMLElement* node) {
     p.parseText(this, node);
 }
-void SVGText::render(SVGRenderer& r) {
-    r.renderText(*this);
+void SVGText::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
+    r.renderText(g, this);
 }
 // void SVGText::transform(Matrix* m) {

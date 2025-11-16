@@ -14,6 +14,6 @@ void SVGDocument::parseSVGImage(SVGParser& parser){
     this->rootGroup = parser.readXML(this->fileName);
 }
 
-void SVGDocument::renderSVGImage(SVGRender& render, Graphics& graphics){
+void SVGDocument::renderSVGImage(SVGRenderer& render, Graphics& graphics){
     render.renderFigure(graphics, this->rootGroup);
 }

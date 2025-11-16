@@ -29,8 +29,16 @@ Stroke::~Stroke() {}
 
 // there is no getter/setter because all attributes are public
 
+<<<<<<< HEAD
 void Stroke::parse(SVGParser& p, const std::string& strokeStr) {
     p.parseStroke(*this, strokeStr);
+=======
+void Stroke::parse(SVGParser& p) {
+    p.parseStroke();
+}
+void STroke::render(SVGRenderer& r) const {
+    r.renderStroke();
+>>>>>>> 0e98a1fd97ea090b926142e9f550a5fe7b856f9e
 }
 // void STroke::render(SVGRenderer& r) {
 //     r.renderStroke();

@@ -4,6 +4,8 @@
 using namespace tinyxml2;
 using namespace std;
 
+class SVGGroup;
+
 class SVGParser {
 private:
 	XMLElement* currentNode = nullptr;

@@ -20,6 +20,6 @@ public:
 	void setPoints(const std::vector<CustomPoint>&);
 	
 	void parse(SVGParser&, XMLElement*) override;
-	void render(SVGRenderer&) override;
+	void render(SVGRenderer&) const override;
 	// void transform(Matrix*) override;
 };
