@@ -1,16 +1,16 @@
 #pragma once
-#include "Color.h"
+#include "CustomColor.h"
 #include "SVGParser.h"
-#include "SVG/SVG_READER/SVGRenderer.h"
+#include "SVGRenderer.h"
 
 struct Stroke {
 public: 
-	Color strokeColor;
+	CustomColor strokeColor;
 	float strokeWidth;
 	float strokeOpacity;
 
 	Stroke();
-	Stroke(Color, float, float);
+	Stroke(CustomColor, float, float);
 	Stroke(const Stroke&);
 	Stroke& operator=(const Stroke&);
 	~Stroke();

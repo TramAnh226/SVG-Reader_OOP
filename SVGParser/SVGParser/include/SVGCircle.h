@@ -1,7 +1,7 @@
 #pragma once
 #include "SVGEllipse.h"
 #include "SVGParser.h"
-#include "SVG/SVG_READER/SVGRenderer.h"
+#include "SVGRenderer.h"
 
 class SVGCircle : public SVGEllipse {
 public:

@@ -1,7 +1,7 @@
 #pragma once
 #include "SVGRectangle.h"
 #include "SVGParser.h"
-#include "SVG/SVR_READER/SVGRenderer.h"
+#include "SVGRenderer.h"
 
 class SVGSquare : public SVGRectangle {
 public:

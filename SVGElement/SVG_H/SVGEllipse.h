@@ -1,6 +1,6 @@
 #pragma once
 #include "CustomPoint.h"
-#include "SVGParser/SVGParser/SVGParser.h"
+#include "SVGParser.h"
 #include "SVG/SVG_READER/SVGRenderer.h"
 #include "SVGElement.h"
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CustomColor.h"
-#include "SVGParser/SVGParser/SVGParser.h"
-#include "SVG/SVG_READER/SVGRenderer.h"
+#include "SVGParser.h"
+#include "SVGRenderer.h"
 
 struct Stroke {
 public: 
