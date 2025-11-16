@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <windows.h>
 #include <gdiplus.h>
 #include <utility>  
@@ -12,6 +12,8 @@ class SVGLine;
 class SVGPolygon;
 class SVGPolyline;
 class SVGText;
+class SVGGroup;
+class SVGSquare;
 
 class SVGRenderer {
 private:
@@ -27,12 +29,14 @@ public:
 
     //pair<double, double> transformPoint(double x, double y) const;
 
-    void drawRectangle(Graphics& g, const SVGRectangle* rect);
-    void drawCircle(Graphics& g, const SVGCircle* circle);
-    void drawEllipse(Graphics& g, const SVGEllipse* ellipse);
-    void drawLine(Graphics& g, const SVGLine* line);
-    void drawPolygon(Graphics& g, const SVGPolygon* polygon);
-    void drawPolyline(Graphics& g, const SVGPolyline* polyline);
-    void drawText(Graphics& g, const SVGText* text);
-    void renderFigure(Graphics& g, const std::vector<SVGElement*>& group);
+    void renderRectangle(Graphics& g, const SVGRectangle* rect);
+    void renderCircle(Graphics& g, const SVGCircle* circle);
+    void renderEllipse(Graphics& g, const SVGEllipse* ellipse);
+    void renderLine(Graphics& g, const SVGLine* line);
+    void renderPolygon(Graphics& g, const SVGPolygon* polygon);
+    void renderPolyline(Graphics& g, const SVGPolyline* polyline);
+    void renderText(Graphics& g, const SVGText* text);
+    void renderSquare(Graphics& g, const SVGSquare* square);
+    void renderFigure(Graphics& g, const SVGGroup* rootGroup);
+    void renderGroup(const SVGGroup& group);
 };
