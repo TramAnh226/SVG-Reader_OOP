@@ -23,7 +23,7 @@ public:
 	float getHeight() const;
 	void setHeight(float);
 
-	void parse(SVGParser&, XMLElement*) override;
-	void render(SVGRenderer&) const override;
+	void parse(SVGParser&, tinyxml2::XMLElement*) override;
+	void render(SVGRenderer&, Gdiplus::Graphics&) const override;
 	// void transform(Matrix*) override;
 };
