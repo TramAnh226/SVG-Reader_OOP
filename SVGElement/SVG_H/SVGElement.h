@@ -27,7 +27,7 @@ public:
 
 	// polymorphism and separation of concerns
 	virtual void parse(SVGParser&, XMLElement*);
-	virtual void render(SVGRenderer&);
+	virtual void render(SVGRenderer&) const = 0;
 	// subsequent development
 	// virtual void transform(Matrix* m) = 0;
 };
