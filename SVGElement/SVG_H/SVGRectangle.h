@@ -1,8 +1,8 @@
 #pragma once
-#include "CustomPoint.h"
+// #include "CustomPoint.h"
 #include "SVGElement.h"
-#include "../../SVGParser/SVGParser/include/SVGParser.h"
-#include "../../SVGRenderer/SVGRenderer.h"
+// #include "../../SVGParser/SVGParser/include/SVGParser.h"
+// #include "../../SVGRenderer/SVGRenderer.h"
 
 class SVGRectangle : public SVGElement {
 private: 
@@ -14,7 +14,7 @@ public:
 	SVGRectangle(const SVGRectangle&);
 	SVGRectangle& operator=(const SVGRectangle&);
 	~SVGRectangle();
-	SVGElement* clone() const override;
+	SVGElement* clone() const;
 	
 	CustomPoint getTopLeftCorner() const;
 	void setTopLeftCorner(const CustomPoint&);

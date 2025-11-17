@@ -1,16 +1,14 @@
 #pragma once
 #include "SVGElement.h"
-#include "../../SVGParser/SVGParser/include/SVGParser.h"
-#include "../../SVGRenderer/SVGRenderer.h"
-#include "CustomPoint.h"
-#include <vector>
-namespace tinyxml2 {
-    class XMLDocument;
-    class XMLElement;
-    class XMLAttribute; // Sửa lỗi chính tả và dùng từ khóa class
-    class XMLNode;
-    // ... và các lớp khác mà bạn sử dụng
-}
+// #include "../../SVGParser/SVGParser/include/SVGParser.h"
+// #include "../../SVGRenderer/SVGRenderer.h"
+
+// namespace tinyxml2 {
+//     class XMLDocument;
+//     class XMLElement;
+//     class XMLAttribute; 
+//     class XMLNode;
+// }
 class SVGPolyshapeBase : public SVGElement {
 protected: 
 	std::vector<CustomPoint> points;
@@ -20,7 +18,7 @@ public:
 	SVGPolyshapeBase(const SVGPolyshapeBase&);
 	SVGPolyshapeBase& operator=(const SVGPolyshapeBase&);
 	~SVGPolyshapeBase();
-	SVGElement* clone() const override;
+	SVGElement* clone() const;
 	
 	std::vector<CustomPoint> getPoints() const;
 	void setPoints(const std::vector<CustomPoint>&);

@@ -5,7 +5,8 @@
 #include <string.h>
 #include <sstream>
 
-struct CustomColor {
+class CustomColor {
+public: 
 	int r, g, b;
 	CustomColor();
 	CustomColor(int, int, int);

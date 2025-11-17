@@ -1,6 +1,7 @@
 #pragma once
 
-struct CustomPoint {
+class CustomPoint {
+public:
 	float x, y;
 	CustomPoint();
 	CustomPoint(float, float);

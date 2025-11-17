@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
 #include "SVGStyle.h"
-#include "../../SVGParser/SVGParser/include/SVGParser.h"
-#include "../../SVGRenderer/SVGRenderer.h"
+// #include "../../SVGParser/SVGParser/include/SVGParser.h"
+// #include "../../SVGRenderer/SVGRenderer.h"
 
 class SVGRenderer;
 namespace Gdiplus { class Graphics; }
@@ -18,7 +18,7 @@ public:
 	SVGElement(const std::string&, const std::string&, const SVGStyle&);
 	SVGElement(const SVGElement&) = delete;
 	SVGElement& operator=(const SVGElement&) = delete;
-	virtual ~SVGElement() = default;
+	~SVGElement();
 	virtual SVGElement* clone() const = 0;
 
 	std::string getTagName() const;

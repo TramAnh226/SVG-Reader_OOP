@@ -1,8 +1,8 @@
 #pragma once
-#include "CustomPoint.h"
+// #include "CustomPoint.h"
 #include "SVGElement.h"
-#include "../../SVGParser/SVGParser/include/SVGParser.h"
-#include "../../SVGRenderer/SVGRenderer.h"
+// #include "../../SVGParser/SVGParser/include/SVGParser.h"
+// #include "../../SVGRenderer/SVGRenderer.h"
 
 class SVGLine : public SVGElement {
 private: 
@@ -13,7 +13,7 @@ public:
 	SVGLine(const SVGLine&);
 	SVGLine& operator=(const SVGLine&);
 	~SVGLine();
-	SVGElement* clone() const override;
+	SVGElement* clone() const;
 	
 	CustomPoint getStartPoint() const;
 	void setStartPoint(const CustomPoint&);

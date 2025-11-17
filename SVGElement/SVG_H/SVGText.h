@@ -1,9 +1,9 @@
 #pragma once
-#include "CustomPoint.h"
+// #include "CustomPoint.h"
 #include "SVGElement.h"
-#include "Library.h"
-#include "../../SVGParser/SVGParser/include/SVGParser.h"
-#include "../../SVGRenderer/SVGRenderer.h"
+// #include "Library.h"
+// #include "../../SVGParser/SVGParser/include/SVGParser.h"
+// #include "../../SVGRenderer/SVGRenderer.h"
 
 namespace tinyxml2 { class XMLElement; }
 
@@ -17,8 +17,8 @@ public:
 	SVGText(float, const CustomPoint&, const std::wstring&);
 	SVGText(const SVGText&);
 	SVGText& operator=(const SVGText&);
-	~SVGText() override = default;
-	SVGElement* clone() const override;
+	~SVGText();
+	SVGElement* clone() const;
 	
 	float getFontSize() const;
 	void setFontSize(float);

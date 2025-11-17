@@ -1,9 +1,10 @@
 #pragma once
 #include "SVGEllipse.h"
-#include "../../SVGParser/SVGParser/include/SVGParser.h"
-#include "../../SVGRenderer/SVGRenderer.h"
+// #include "../../SVGParser/SVGParser/include/SVGParser.h"
+// #include "../../SVGRenderer/SVGRenderer.h"
 
 // forward declarations to ensure types are known at this point
+class SVGElement;
 class SVGRenderer;
 namespace Gdiplus { class Graphics; }
 
@@ -14,7 +15,7 @@ public:
 	SVGCircle(const SVGCircle&);
 	SVGCircle& operator=(const SVGCircle&);
 	~SVGCircle();
-	SVGElement *clone() const override;
+	SVGElement *clone() const;
 	
 	CustomPoint getCenter() const;
 	void setCenter(const CustomPoint&);

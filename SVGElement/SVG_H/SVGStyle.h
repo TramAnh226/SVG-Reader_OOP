@@ -2,19 +2,21 @@
 #include "CustomColor.h"
 #include "Stroke.h"
 #include "../../SVGParser/SVGParser/include/SVGParser.h"
-#include "../../SVGRenderer/SVGRenderer.h"
-#include "Library.h"
+// #include "../../SVGRenderer/SVGRenderer.h"
+// #include "Library.h"
+
+class Stroke;
 
 class SVGStyle {
 private: 
+	Stroke stroke;	
 	CustomColor fillColor;
 	float fillOpacity;
-	Stroke stroke;
 	// subsequent development
 	// Gradient fillGradient
 public: 
 	SVGStyle();
-	SVGStyle(CustomColor, float, Stroke);
+	SVGStyle(CustomColor, float, const Stroke&);
 	SVGStyle(const SVGStyle&);
 	SVGStyle& operator=(const SVGStyle&);
 	~SVGStyle();

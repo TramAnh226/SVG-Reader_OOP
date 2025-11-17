@@ -1,7 +1,7 @@
 #pragma once
 #include "SVGRectangle.h"
-#include "../../SVGParser/SVGParser/include/SVGParser.h"
-#include "../../SVGRenderer/SVGRenderer.h"
+// #include "../../SVGParser/SVGParser/include/SVGParser.h"
+// #include "../../SVGRenderer/SVGRenderer.h"
 
 class SVGSquare : public SVGRectangle {
 public: 
@@ -10,7 +10,7 @@ public:
 	SVGSquare(const SVGSquare&);
 	SVGSquare& operator=(const SVGSquare&);
 	~SVGSquare();
-	SVGElement* clone() const override;
+	SVGElement* clone() const;
 	
 	void parse(tinyxml2::XMLElement*);
 	void render(SVGRenderer&, Gdiplus::Graphics&) const;

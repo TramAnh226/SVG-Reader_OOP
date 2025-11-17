@@ -2,6 +2,8 @@
 #include "CustomColor.h"
 #include "CustomPoint.h"
 #include "Stroke.h"
+#include "SVGStyle.h"
+
 #include "SVGElement.h"
 #include "SVGEllipse.h"
 #include "SVGCircle.h"
@@ -12,9 +14,10 @@
 #include "SVGRectangle.h"
 #include "SVGSquare.h"
 #include "SVGText.h"
-#include "SVGStyle.h"
-#include "tinyxml2.h"
+
 #include "../../SVGGroup_Factory/SVG_H/SVGGroup.h"
 #include "../../SVGGroup_Factory/SVG_H/SVGFactoryPattern.h"
+
 #include "../../SVGParser/SVGParser/include/SVGParser.h"
 #include "../../SVGRenderer/SVGRenderer.h"
+#include "tinyxml2.h"

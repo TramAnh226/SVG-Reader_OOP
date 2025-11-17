@@ -1,7 +1,7 @@
 #pragma once
-#include "CustomPoint.h"
-#include "../../SVGParser/SVGParser/include/SVGParser.h"
-#include "../../SVGRenderer/SVGRenderer.h"
+// #include "CustomPoint.h"
+// #include "../../SVGParser/SVGParser/include/SVGParser.h"
+// #include "../../SVGRenderer/SVGRenderer.h"
 #include "SVGElement.h"
 
 namespace tinyxml2 { class XMLElement; }
@@ -16,7 +16,7 @@ public:
 	SVGEllipse(const SVGEllipse&);
 	SVGEllipse& operator=(const SVGEllipse&);
 	~SVGEllipse();
-	SVGElement* clone() const override;
+	SVGElement* clone() const;
 	
 	CustomPoint getCenter() const;
 	void setCenter(const CustomPoint&);

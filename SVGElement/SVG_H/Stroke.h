@@ -1,8 +1,8 @@
 #pragma once
 #include "CustomColor.h"
-#include "../../SVGParser/SVGParser/include/SVGParser.h"
-#include "../../SVGRenderer/SVGRenderer.h"
-#include "Library.h"
+// #include "Library.h"
+// #include "../../SVGParser/SVGParser/include/SVGParser.h"
+// #include "../../SVGRenderer/SVGRenderer.h"
 
 class Stroke {
 public: 
