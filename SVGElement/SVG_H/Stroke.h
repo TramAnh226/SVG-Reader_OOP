@@ -2,8 +2,9 @@
 #include "CustomColor.h"
 #include "../../SVGParser/SVGParser/include/SVGParser.h"
 #include "../../SVGRenderer/SVGRenderer.h"
+#include "Library.h"
 
-struct Stroke {
+class Stroke {
 public: 
 	CustomColor strokeColor;
 	float strokeWidth;

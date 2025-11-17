@@ -1,0 +1,103 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        // --- 1. BIÊN DỊCH TẤT CẢ CÁC FILE .cpp THÀNH .o (COMPILE ALL) ---
+        {
+            "label": "Compile All Cpp Files (Debug)",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-Wall",
+                "-Wextra",
+                "-Wpedantic",
+                "-Wshadow",
+                "-Wformat=2",
+                "-Wcast-align",
+                "-Wconversion",
+                "-Wsign-conversion",
+                "-Wnull-dereference",
+                "-g3",
+                "-O0",
+                "-c",
+                // CỜ INCLUDE PATH CHO CÁC THƯ MỤC CHỨA FILE .h CỦA BẠN
+                "-I.",
+                "-I./SVGDocument",
+                "-I./SVGElement/SVG_H",
+                "-I./SVGGroup_Factory/SVG_H",
+                // TÌM TẤT CẢ CÁC FILE .cpp (Dùng cú pháp Globbing **/*.cpp)
+                "Demo_main.cpp",
+                "./SVGParser/source/*.cpp",
+                "./SVGParser/include/*.h",
+                "./SVGRenderer/*.cpp",
+                "./SVGRenderer/*.h",
+                "./SVGGroup_Factory/SVG_CPP/*.cpp",
+                "./SVGGroup_Factory/SVG_H/*.h",
+                "./SVGDocument/SVG_CPP/*.cpp",
+                "./SVGDocument/SVG_H/*.h",
+                "./SVGElement/SVG_CPP/*.cpp",
+                "./SVGElement/SVG_H/*.h",
+                // Bạn cần thêm các thư mục chứa file .cpp khác vào đây
+                "-o",
+                "./build/Debug/%.o" 
+            ],
+            "group": "build",
+            "problemMatcher": ["$gcc"],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        // --- 2. LIÊN KẾT TẤT CẢ CÁC FILE .o VỚI THƯ VIỆN (LINK ALL) ---
+        {
+            "label": "Link Project Debug",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                // LIÊN KẾT TẤT CẢ CÁC FILE .o ĐÃ BIÊN DỊCH
+                "./build/Debug/*.o", 
+                
+                // CỜ LINKER BẮT BUỘC CHO WINDOWS/GDI+
+                "-o",
+                "./build/Debug/outDebug.exe",
+                "-lgdiplus", // Thư viện GDI+
+                "-luser32",  // Windows API: Cửa sổ và thông điệp
+                "-lgdi32",   // Windows API: Đồ họa
+                "-lstdc++"   // Cho các cấu trúc STL phức tạp
+            ],
+            "dependsOn": [
+                "Compile All Cpp Files (Debug)"
+            ],
+            "problemMatcher": ["$gcc"],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        // --- 3. BUILD AND LINK (Task Tổng hợp) ---
+        {
+            "label": "Build and Link Debug",
+            "dependsOn": [
+                "Link Project Debug"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        // --- 4. RUN (Task Chạy file .exe) ---
+        {
+            "label": "Run Debug",
+            "type": "shell",
+            "command": "./build/Debug/outDebug.exe",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        }
+    ]
+}

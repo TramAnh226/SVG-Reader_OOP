@@ -6,8 +6,8 @@
 
 // using namespace tinyxml2;
 // using namespace std;
-
-SVGGroup* SVGParser::readXML(const std::string& filename, SVGFactoryPattern& factory) {
+SVGFactoryPattern factory;
+SVGGroup* SVGParser::readXML(const std::string& filename) {
 	tinyxml2::XMLDocument doc;
 	if (doc.LoadFile(filename.c_str()) != tinyxml2::XML_SUCCESS) {
 		std::cerr << "Cannot read SVG file: " << filename << '\n';
@@ -27,7 +27,7 @@ SVGGroup* SVGParser::readXML(const std::string& filename, SVGFactoryPattern& fac
 
 	parseAttributes(rootXML, rootGroup);
     rootGroup->parse(rootXML);
-	parseNode(rootXML, rootGroup, factory);
+	parseNode(rootXML, rootGroup);
     // them parse thuoc tinh group
     
 	return rootGroup;
@@ -36,7 +36,7 @@ SVGGroup* SVGParser::readXML(const std::string& filename, SVGFactoryPattern& fac
 
 
 // sua thanh da hinh (bo if-else)
-void SVGParser::parseNode(tinyxml2::XMLElement* xmlNode, SVGGroup* parentGroup, SVGFactoryPattern& factory) {
+void SVGParser::parseNode(tinyxml2::XMLElement* xmlNode, SVGGroup* parentGroup) {
     for (tinyxml2::XMLElement* child = xmlNode->FirstChildElement(); child; child = child->NextSiblingElement()) {
 
         std::string tagName = child->Name();
@@ -52,7 +52,7 @@ void SVGParser::parseNode(tinyxml2::XMLElement* xmlNode, SVGGroup* parentGroup, 
 
         if (auto group = dynamic_cast<SVGGroup*>(element)) {
             group->setParent(parentGroup);
-            parseNode(child, group, factory);
+            parseNode(child, group);
         }
     }
 }

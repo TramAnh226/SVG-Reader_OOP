@@ -3,19 +3,18 @@
 #include "Stroke.h"
 #include "../../SVGParser/SVGParser/include/SVGParser.h"
 #include "../../SVGRenderer/SVGRenderer.h"
-
-class Stroke; // forward declaration to avoid requiring full type in this header
+#include "Library.h"
 
 class SVGStyle {
 private: 
 	CustomColor fillColor;
 	float fillOpacity;
-	Stroke* stroke;
+	Stroke stroke;
 	// subsequent development
 	// Gradient fillGradient
 public: 
 	SVGStyle();
-	SVGStyle(CustomColor, float, Stroke*);
+	SVGStyle(CustomColor, float, Stroke);
 	SVGStyle(const SVGStyle&);
 	SVGStyle& operator=(const SVGStyle&);
 	~SVGStyle();
@@ -24,8 +23,8 @@ public:
 	void setFillColor(const CustomColor&);
 	float getFillOpacity() const;	
 	void setFillOpacity(const float&);
-	Stroke* getStroke() const;
-	void setStroke(Stroke*);
+	Stroke getStroke() const;
+	void setStroke(const Stroke&);
 
 	void parse(const std::string&) ;
 	// void render(SVGRenderer&, Gdiplus::Graphics&) const override;

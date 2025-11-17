@@ -39,7 +39,7 @@ void SVGStyle::setFillOpacity(const float& opacity) {
     fillOpacity = opacity;
 }
 Stroke SVGStyle::getStroke() const {
-    return stroke;      
+    return this->stroke;      
 }
 void SVGStyle::setStroke(const Stroke& s) {
     stroke = s;         

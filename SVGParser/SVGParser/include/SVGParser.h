@@ -15,14 +15,14 @@ namespace tinyxml2 {
 class SVGParser {
 private:
 	tinyxml2::XMLElement* currentNode = nullptr;
-	void parseNode(tinyxml2::XMLElement* xmlNode, SVGGroup* parentGroup, SVGFactoryPattern& factory);
+	void parseNode(tinyxml2::XMLElement* xmlNode, SVGGroup* parentGroup);
 	void parseAttributes(tinyxml2::XMLElement* xmlNode, SVGElement* element);
 	
 public:
 	SVGParser() = default;
 	~SVGParser() = default;
 
-	SVGGroup* readXML(const std::string& filename, SVGFactoryPattern& factory);
+	SVGGroup* readXML(const std::string& filename);
 
 	void parseStyle(SVGStyle& style, const std::string& styleStr);
 	void parseStroke(Stroke& stroke, const std::string& styleStr);
