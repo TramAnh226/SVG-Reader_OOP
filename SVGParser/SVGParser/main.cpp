@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
 	SVGParser parser;
-	SVGNode* root = parser.readXML("sample.svg");
+	SVGGroup* root = parser.readXML("D:\\Downloads\\sample.svg");
 	if (root) {
 		cout << "Successfully read!";
 	}

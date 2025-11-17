@@ -4,9 +4,8 @@
 
 #include <vector>
 #include <iostream>
-#include "SVGElement/SVG_H/SVGElement.h"
 #include "../../SVGParser/include/SVGParser.h"
-
+#include "../../SVGElement/SVG_H/SVGElement.h"
 
 class SVGGroup : public SVGElement{
     private:
