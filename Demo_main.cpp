@@ -1,40 +1,54 @@
-#include <windows.h>
+// #include "stdafx.h"
+// #include <windows.h>
+#include <objidl.h>
 #include <gdiplus.h>
+#include <vector>
+#include <fstream>
 #include <iostream>
 #include <string>
 
+// Kỹ thuật Include: Giả định các thư mục cha đã được cấu hình trong Project Properties
+// Các header cần thiết cho logic chính:
 #include "SVGDocument/SVG_H/SVGDocument.h"
-#include "SVGParser/SVGParser/include/SVGParser.h" 
+#include "SVGParser/SVGParser/include/SVGParser.h"
 #include "SVGRenderer/SVGRenderer.h"
+#include "SVGGroup_Factory/SVG_H/SVGGroup.h"
+#include "SVGGroup_Factory/SVG_H/SVGFactoryPattern.h"
+#include "SVGElement/SVG_H/Library.h"
 
+// Cần cho các hàm của Gdiplus
 using namespace Gdiplus;
+using namespace std;
 
+#pragma comment (lib,"Gdiplus.lib")
+
+// Tên file SVG để tải
+const std::string SVG_FILENAME = "sample.svg";
+const LPCWSTR WINDOW_CLASS_NAME = L"SVGReaderWindow";
+const LPCWSTR WINDOW_TITLE = L"SVG Reader Demo";
+
+// Khai báo Toàn cục để sử dụng trong WndProc và OnPaint
 SVGDocument* g_svgDocument = nullptr;
 SVGParser g_parser;
-SVGRenderer g_renderer; 
+SVGRenderer g_renderer;
 ULONG_PTR gdiplusToken;
-
-LPCWSTR g_szClassName = L"SVGReaderApp"; 
-const std::string SVG_FILENAME = "sample.svg"; 
 
 
 // Hàm vẽ chính (GDI+ Paint Handler)
-void OnPaint(HWND hWnd) {
+VOID OnPaint(HWND hWnd) {
     PAINTSTRUCT ps;
     HDC hdc = BeginPaint(hWnd, &ps);
     
     // Khởi tạo đối tượng Graphics của GDI+
     Graphics graphics(hdc);
 
-    // Kích hoạt Antialiasing (làm mịn) cho chất lượng tốt hơn
+    // Kích hoạt Antialiasing (làm mịn)
     graphics.SetSmoothingMode(SmoothingModeAntiAlias);
-
-    // Xóa nền (Tùy chọn: màu trắng)
-    graphics.Clear(Gdiplus::Color(255, 255, 255));
+    graphics.Clear(Gdiplus::Color(255, 255, 255)); // Xóa nền trắng
 
     if (g_svgDocument && g_svgDocument->getRootGroup()) {
-        // GỌI HÀM RENDER CẤP CAO NHẤT
-        // renderSVGImage gọi render.renderFigure, truyền Graphics& g.
+        // GỌI HÀM RENDER CẤP CAO NHẤT (SVGDocument sẽ điều phối)
+        // Đây là điểm gọi hàm ảo render(r, g) của từng SVGElement
         g_svgDocument->renderSVGImage(g_renderer, graphics); 
     }
 
@@ -60,19 +74,19 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
 }
 
 // Hàm Main (Điểm Khởi chạy Ứng dụng)
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, PSTR, INT iCmdShow) {
     
     // ----------------------------------------------------
-    // 1. KHỞI TẠO GDI+
+    // 1. KHỞI TẠO GDI+ VÀ PHÂN TÍCH FILE SVG
     // ----------------------------------------------------
     GdiplusStartupInput gdiplusStartupInput;
     GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
 
-    // ----------------------------------------------------
-    // 2. TẢI FILE SVG VÀ PARSE
-    // ----------------------------------------------------
     try {
+        // Tạo Document, Parser
         g_svgDocument = new SVGDocument(SVG_FILENAME);
+        
+        // Tải file và xây dựng cây đối tượng (sử dụng SVGParser)
         g_svgDocument->parseSVGImage(g_parser);
         
         if (!g_svgDocument->getRootGroup()) {
@@ -81,53 +95,47 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
     } catch (const std::exception& e) {
         std::cerr << "Parsing Exception: " << e.what() << std::endl;
-        // Xử lý lỗi và thoát
+        GdiplusShutdown(gdiplusToken);
         return 1; 
     }
 
-
     // ----------------------------------------------------
-    // 3. KHỞI TẠO CỬA SỔ WINDOWS
+    // 2. KHỞI TẠO CỬA SỔ WINDOWS
     // ----------------------------------------------------
-    WNDCLASSEX wc;
+    WNDCLASSEX wc = { 0 };
     wc.cbSize = sizeof(WNDCLASSEX);
     wc.style = CS_HREDRAW | CS_VREDRAW;
-    wc.lpfnWndProc = WndProc; // Đặt hàm xử lý thông điệp
-    wc.cbClsExtra = 0;
-    wc.cbWndExtra = 0;
+    wc.lpfnWndProc = WndProc;
     wc.hInstance = hInstance;
     wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
     wc.hCursor = LoadCursor(NULL, IDC_ARROW);
-    wc.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
-    wc.lpszMenuName = NULL;
-    wc.lpszClassName = g_szClassName;
+    wc.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
+    wc.lpszClassName = WINDOW_CLASS_NAME;
     wc.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
     
     if (!RegisterClassEx(&wc)) {
+        GdiplusShutdown(gdiplusToken);
         return 0;
     }
 
-    HWND hWnd = CreateWindowEx(
-        0,
-        g_szClassName,
-        L"SVG Reader", // Tiêu đề cửa sổ
-        WS_OVERLAPPEDWINDOW,
+    HWND hWnd = CreateWindow(
+        WINDOW_CLASS_NAME,          // window class name
+        WINDOW_TITLE,               // window caption
+        WS_OVERLAPPEDWINDOW,        // window style
         CW_USEDEFAULT, CW_USEDEFAULT, 800, 600, // Kích thước mặc định
-        NULL,
-        NULL,
-        hInstance,
-        NULL
+        NULL, NULL, hInstance, NULL
     );
 
     if (hWnd == NULL) {
+        GdiplusShutdown(gdiplusToken);
         return 0;
     }
 
-    ShowWindow(hWnd, nCmdShow);
+    ShowWindow(hWnd, iCmdShow);
     UpdateWindow(hWnd);
 
     // ----------------------------------------------------
-    // 4. VÒNG LẶP THÔNG ĐIỆP (MAIN LOOP)
+    // 3. VÒNG LẶP THÔNG ĐIỆP (MAIN LOOP)
     // ----------------------------------------------------
     MSG Msg;
     while (GetMessage(&Msg, NULL, 0, 0) > 0) {
@@ -136,7 +144,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     }
     
     // ----------------------------------------------------
-    // 5. DỌN DẸP
+    // 4. DỌN DẸP
     // ----------------------------------------------------
     delete g_svgDocument;
     GdiplusShutdown(gdiplusToken);
