@@ -23,7 +23,7 @@ using namespace std;
 #endif
 
 // Tên file SVG để tải
-const std::string SVG_FILENAME = "D:\\Downloads\\sample.svg";
+const std::string SVG_FILENAME = "C:/Users/LENOVO/Downloads/SVGDemo/SVGDemo";
 const LPCSTR WINDOW_CLASS_NAME = "SVGReaderWindow";
 const LPCSTR WINDOW_TITLE = "SVG Reader Demo";
 

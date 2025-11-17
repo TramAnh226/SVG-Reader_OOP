@@ -1,17 +1,18 @@
 #include "SVGGroup_Factory/SVG_H/SVGGroup.h"
-#include "SVGGroup_Factory/SVG_H/SVGFactoryPattern.h"
-
 #include <algorithm>
 
 
 SVGGroup::SVGGroup() :
-    SVGElement(),
-    ElementArray{},
-    parent(nullptr){
+    SVGElement(){
+    parent = nullptr;;
 }
 
 
-SVGGroup::SVGGroup(const SVGGroup& other): SVGElement(other.getTagName(), other.getId(), other.getSVGStyle()), parent(other.parent){
+SVGGroup::SVGGroup(const SVGGroup& other): SVGElement(){
+    this->setTagName(other.getTagName());
+    this->setId(other.getId());
+    this->setSVGStyle(other.getSVGStyle());
+
     for(auto element: other.ElementArray){
         SVGElement* newElement = element->clone();
         if(newElement){

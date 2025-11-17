@@ -2,6 +2,7 @@
 #include "SVGPolyshapeBase.h"
 
 class SVGPolyline : public SVGPolyshapeBase {
+	public:
 	SVGPolyline();
 	SVGPolyline(const std::vector<CustomPoint>&);
 	SVGPolyline(const SVGPolyline&);
