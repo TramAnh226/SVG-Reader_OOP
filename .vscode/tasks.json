@@ -7,6 +7,7 @@
             "type": "shell",
             "command": "g++",
             "args": [
+                // Các cờ biên dịch giữ nguyên
                 "-Wall",
                 "-Wextra",
                 "-Wpedantic",
@@ -18,27 +19,43 @@
                 "-Wnull-dereference",
                 "-g3",
                 "-O0",
-                "-c",
-                // CỜ INCLUDE PATH CHO CÁC THƯ MỤC CHỨA FILE .h CỦA BẠN
+                "-c", // Chỉ biên dịch, không liên kết
+                // CỜ INCLUDE PATH: Cần thiết để g++ tìm thấy tất cả các file .h
                 "-I.",
-                "-I./SVGDocument",
+                "-I./SVGDocument/SVG_H",
                 "-I./SVGElement/SVG_H",
                 "-I./SVGGroup_Factory/SVG_H",
-                // TÌM TẤT CẢ CÁC FILE .cpp (Dùng cú pháp Globbing **/*.cpp)
+                "-I./SVGParser/include",
+
+                // >>> LIỆT KÊ TẤT CẢ CÁC FILE .cpp CẦN BIÊN DỊCH <<<
                 "Demo_main.cpp",
-                "./SVGParser/source/*.cpp",
-                "./SVGParser/include/*.h",
-                "./SVGRenderer/*.cpp",
-                "./SVGRenderer/*.h",
-                "./SVGGroup_Factory/SVG_CPP/*.cpp",
-                "./SVGGroup_Factory/SVG_H/*.h",
-                "./SVGDocument/SVG_CPP/*.cpp",
-                "./SVGDocument/SVG_H/*.h",
-                "./SVGElement/SVG_CPP/*.cpp",
-                "./SVGElement/SVG_H/*.h",
-                // Bạn cần thêm các thư mục chứa file .cpp khác vào đây
+                
+                // SVG ELEMENT (Hình học và tiện ích)
+                "./SVGElement/SVG_CPP/CustomColor.cpp",
+                "./SVGElement/SVG_CPP/CustomPoint.cpp",
+                "./SVGElement/SVG_CPP/Stroke.cpp",
+                "./SVGElement/SVG_CPP/SVGElement.cpp",
+                "./SVGElement/SVG_CPP/SVGCircle.cpp",
+                "./SVGElement/SVG_CPP/SVGEllipse.cpp",
+                "./SVGElement/SVG_CPP/SVGLine.cpp",
+                "./SVGElement/SVG_CPP/SVGPolygon.cpp",
+                "./SVGElement/SVG_CPP/SVGPolyline.cpp",
+                "./SVGElement/SVG_CPP/SVGPolyshapeBase.cpp",
+                "./SVGElement/SVG_CPP/SVGRectangle.cpp",
+                "./SVGElement/SVG_CPP/SVGSquare.cpp",
+                "./SVGElement/SVG_CPP/SVGStyle.cpp",
+                "./SVGElement/SVG_CPP/SVGText.cpp",
+                
+                // CÁC MODULE CHÍNH
+                "./SVGParser/source/SVGParser.cpp",
+                "./SVGRenderer/SVGRenderer.cpp",
+                "./SVGGroup_Factory/SVG_CPP/SVGGroup.cpp",
+                "./SVGDocument/SVG_CPP/SVGDocument.cpp",
+                // Xử lý TinyXML2
+                "./SVGParser/source/tinyxml2.cpp", 
+                
                 "-o",
-                "./build/Debug/%.o" 
+                "./build/Debug/%.o" // Xuất file đối tượng vào thư mục Debug
             ],
             "group": "build",
             "problemMatcher": ["$gcc"],
@@ -59,10 +76,13 @@
                 // CỜ LINKER BẮT BUỘC CHO WINDOWS/GDI+
                 "-o",
                 "./build/Debug/outDebug.exe",
+                
+                "-mwindows", // KHẮC PHỤC LỖI ENTRY POINT WinMain 
+                
                 "-lgdiplus", // Thư viện GDI+
-                "-luser32",  // Windows API: Cửa sổ và thông điệp
-                "-lgdi32",   // Windows API: Đồ họa
-                "-lstdc++"   // Cho các cấu trúc STL phức tạp
+                "-luser32",  // Windows API
+                "-lgdi32",   // Windows API
+                "-lstdc++"   // Cho các cấu trúc STL
             ],
             "dependsOn": [
                 "Compile All Cpp Files (Debug)"
