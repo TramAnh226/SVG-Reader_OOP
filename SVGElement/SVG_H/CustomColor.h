@@ -15,7 +15,7 @@ struct CustomColor {
 	std::string fromCustomColorToString() const;
 
 	operator Gdiplus::Color() const {
-        return Gdiplus::Color(255, r, g, b); 
-    }
+		return Gdiplus::Color(255, static_cast<BYTE>(r), static_cast<BYTE>(g), static_cast<BYTE>(b)); 
+	}
 };
 
