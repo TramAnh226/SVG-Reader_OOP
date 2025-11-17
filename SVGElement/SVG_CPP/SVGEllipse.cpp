@@ -55,8 +55,15 @@ void SVGEllipse::setRadiusY(const float& ry) {
     this->ry = ry;  
 }
 
-void SVGEllipse::parse(SVGParser& p, XMLElement* node) {
-    p.parseEllipse(this, node);
+void SVGEllipse::parse(tinyxml2::XMLElement* node) {
+    // p.parseEllipse(this, node);
+    float cx = node->FloatAttribute("cx");
+    float cy = node->FloatAttribute("cy");
+    float rx = node->FloatAttribute("rx");
+    float ry = node->FloatAttribute("ry");
+    this->setCenter(CustomPoint(cx, cy));
+    this->setRadiusX(rx);
+    this->setRadiusY(ry);
 }
 void SVGEllipse::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
     r.renderEllipse(g, this);

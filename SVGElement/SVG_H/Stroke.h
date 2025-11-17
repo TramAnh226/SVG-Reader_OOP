@@ -17,7 +17,7 @@ public:
 
 	// there is no getter/setter because all attributes are public
 
-	void parse(SVGParser&, const std::string&);
+	void parse(const std::string&);
 	// void render(SVGRenderer&) const;
 	// void transform(Matrix*);
 };

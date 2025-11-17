@@ -54,8 +54,15 @@ void SVGRectangle::setHeight(float h) {
     height = h;
 }
 
-void SVGRectangle::parse(SVGParser& p, XMLElement* node) {
-    p.parseRectangle(this, node);
+void SVGRectangle::parse(tinyxml2::XMLElement* node) {
+    // p.parseRectangle(this, node);
+    float x = node->FloatAttribute("x");
+    float y = node->FloatAttribute("y");
+    float w = node->FloatAttribute("width");
+    float h = node->FloatAttribute("height");
+    this->setTopLeftCorner(CustomPoint(x, y));
+    this->setWidth(w);
+    this->setHeight(h);
 }
 void SVGRectangle::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
     r.renderRectangle(g, this);

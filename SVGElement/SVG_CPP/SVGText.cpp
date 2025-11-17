@@ -57,8 +57,13 @@ void SVGText::setContent(const std::string& content) {
     this->content = content;
 }
 
-void SVGText::parse(SVGParser& p, XMLElement* node) {
-    p.parseText(this, node);
+void SVGText::parse(tinyxml2::XMLElement* node) {
+    // p.parseText(this, node);
+    float x = node->FloatAttribute("x");
+    float y = node->FloatAttribute("y");
+    const char* content = node->GetText();
+    this->setStart(CustomPoint(x, y));
+    this->setContent(content ? content : "");
 }
 void SVGText::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
     r.renderText(g, this);

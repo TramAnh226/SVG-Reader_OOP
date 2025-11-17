@@ -29,8 +29,19 @@ Stroke::~Stroke() {}
 
 // there is no getter/setter because all attributes are public
 
-void Stroke::parse(SVGParser& p, const std::string& strokeStr) {
-    p.parseStroke(*this, strokeStr);
+void Stroke::parse(const std::string& strokeStr) {
+    // p.parseStroke(*this, strokeStr);
+    std::string s = strokeStr;
+	s.erase(remove_if(s.begin(), s.end(), ::isspace), s.end());
+	size_t pos = s.find(':');
+	if (pos == std::string::npos) return;
+
+	std::string key = s.substr(0, pos);
+	std::string value = s.substr(pos + 1);
+
+	if (key == "stroke") this->strokeColor = CustomColor::fromStringToCustomColor(value);
+	else if (key == "stroke-width") this->strokeWidth = stof(value);
+	else if (key == "stroke-opacity") this->strokeOpacity = stof(value);
 }
 // void STroke::render(SVGRenderer& r) const {
 //     r.renderStroke();

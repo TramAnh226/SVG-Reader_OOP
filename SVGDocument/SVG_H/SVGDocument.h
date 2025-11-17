@@ -17,6 +17,7 @@ class SVGDocument{
     SVGDocument(std::string);
     ~SVGDocument();
 
+    SVGGroup* getRootGroup();
     void parseSVGImage(SVGParser&);
     void renderSVGImage(SVGRenderer&, Gdiplus::Graphics&);
 };

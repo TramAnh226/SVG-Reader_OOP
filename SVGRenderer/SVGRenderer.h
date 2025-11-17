@@ -5,7 +5,7 @@
 #include "../SVGElement/SVG_H/Library.h"
 
 // using namespace Gdiplus;
-using namespace std;
+// using namespace std;
 
 class SVGGroup;
 

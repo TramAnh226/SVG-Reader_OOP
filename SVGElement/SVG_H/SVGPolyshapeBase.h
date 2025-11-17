@@ -19,7 +19,7 @@ public:
 	std::vector<CustomPoint> getPoints() const;
 	void setPoints(const std::vector<CustomPoint>&);
 	
-	void parse(SVGParser&, tinyxml2::XMLElement*) override;
+	void parse(tinyxml2::XMLElement*) override;
 	void render(SVGRenderer&, Gdiplus::Graphics&) const override;
 	// void transform(Matrix*) override;
 };

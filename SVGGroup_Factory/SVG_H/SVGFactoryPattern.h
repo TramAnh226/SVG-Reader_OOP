@@ -6,7 +6,7 @@
 #include <unordered_map>
 #include "../../SVGElement/SVG_H/SVGElement.h"
 
-class SVGFactoryPattern{
+class SVGFactoryPattern {
     private:
 
 

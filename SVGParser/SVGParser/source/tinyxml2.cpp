@@ -21,7 +21,7 @@ must not be misrepresented as being the original software.
 distribution.
 */
 
-#include "tinyxml2.h"
+#include "../../../SVGElement/SVG_H/tinyxml2.h"
 
 #include <new>		// yes, this one new style header, is in the Android SDK.
 #if defined(ANDROID_NDK) || defined(__BORLANDC__) || defined(__QNXNTO__) || defined(__CC_ARM)
@@ -31,6 +31,15 @@ distribution.
 #   include <cstddef>
 #   include <cstdarg>
 #endif
+
+// namespace tinyxml2 {
+//     class XMLDocument;
+//     class XMLElement;
+//     class XMLAttriutes;
+//     class XMLNode;
+//     class XMLText;
+//     class XMLComment;
+// }
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1400 ) && (!defined WINCE)
 	// Microsoft Visual Studio, version 2005 and higher. Not WinCE.

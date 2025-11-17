@@ -26,8 +26,23 @@ SVGElement* SVGPolygon::clone() const {
     return new SVGPolygon(*this);
 }
 
-void SVGPolygon::parse(SVGParser& p, tinyxml2::XMLElement* node) {
-    p.parsePolyshape(this, node);
+void SVGPolygon::parse(tinyxml2::XMLElement* node) {
+    // p.parsePolyshape(this, node);
+    const char* pointsStr = node->Attribute("points");
+    if (!pointsStr) return;
+
+    std::vector<CustomPoint> pts;
+    std::stringstream ss(pointsStr);
+    std::string token;
+    while (getline(ss, token, ' ')) {
+        if (token.empty()) continue;
+        size_t comma = token.find(',');
+        if (comma == std::string::npos) continue;
+        float x = stof(token.substr(0, comma));
+        float y = stof(token.substr(comma + 1));
+        pts.emplace_back(x, y);
+    }
+    this->setPoints(pts);
 }
 void SVGPolygon::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
     r.renderPolygon(g, this);

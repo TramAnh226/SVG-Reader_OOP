@@ -143,6 +143,12 @@
 //     // 3. Khôi phục Context (nếu cần)
 //     //this->restoreContext(group);
 // }
+
+
+
+
+
+
 #include "SVGRenderer.h"
 #include <sstream>
 #include <algorithm>
@@ -164,6 +170,35 @@ using Gdiplus::Pen;
 using Gdiplus::Color;
 // SVGRenderer::SVGRenderer() : zoom(1.0f), rotate(0.0f) {
 // }
+void SVGRenderer::renderText(Gdiplus::Graphics& g, const SVGText* text) {
+    if (!text) return;
+    PointF pos = text->getStart();// tương tự 
+    std::string content = text->getContent();
+    Color color = text->getSVGStyle().getFillColor();// tương tự 
+    float fontSize = text->getFontSize();
+    Gdiplus::FontFamily fontFamily(L"Arial");
+    Gdiplus::Font font(&fontFamily, fontSize, Gdiplus::FontStyleRegular, Gdiplus::UnitPixel);
+    Gdiplus::SolidBrush brush(color);
+    g.DrawString(content.c_str(), -1, &font, pos, &brush);
+}
+void SVGRenderer::renderSquare(Gdiplus::Graphics& g, const SVGSquare* square) {
+    if (!square) return;
+
+    PointF topLeft = square->getTopLeftCorner();
+    float side = square->getHeight();// tương tự 
+
+    Gdiplus::SolidBrush brush(square->getSVGStyle().getFillColor());
+    Gdiplus::Pen pen(square->getSVGStyle().getStroke().strokeColor, square->getSVGStyle().getStroke().strokeWidth);
+
+    g.FillRectangle(&brush, topLeft.X, topLeft.Y, side, side);
+    g.DrawRectangle(&pen, topLeft.X, topLeft.Y, side, side);
+}
+
+void SVGRenderer::renderFigure(Gdiplus::Graphics& g, const SVGGroup* rootGroup) {
+    if (!rootGroup) return;
+    rootGroup->render(*this, g);//hình như class SVGGroup chưa đc định nghĩa đầy đủ hay sao á, thử thêm virtual void render(SVGRenderer&) const = 0; vô thử 
+}
+
 void SVGRenderer::renderRectangle(Gdiplus::Graphics& g, const SVGRectangle* rect) {
     if (!rect) return;
 
@@ -182,7 +217,6 @@ void SVGRenderer::renderRectangle(Gdiplus::Graphics& g, const SVGRectangle* rect
     g.FillRectangle(&brush, topLeft.X, topLeft.Y, w, h); 
     g.DrawRectangle(&pen, topLeft.X, topLeft.Y, w, h);
 }
-
 
 void SVGRenderer::renderCircle(Gdiplus::Graphics& g, const SVGCircle* circle) {
     if (!circle) return;
@@ -223,7 +257,6 @@ void SVGRenderer::renderLine(Gdiplus::Graphics& g, const SVGLine* line) {
     Pen pen(line->getSVGStyle().getStroke().strokeColor, line->getSVGStyle().getStroke().strokeWidth);
     g.DrawLine(&pen, start, end);
 }
-
 
 void SVGRenderer::renderPolygon(Gdiplus::Graphics& g, const SVGPolygon* polygon) {
     if (!polygon) return;

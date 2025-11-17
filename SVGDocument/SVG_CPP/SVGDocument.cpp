@@ -9,7 +9,9 @@ SVGDocument::~SVGDocument(){
     delete rootGroup;
     rootGroup = nullptr;
 }
-
+// SVGGroup* SVGGroup::getRootGroup() {
+//     return this->rootGroup;
+// }
 void SVGDocument::parseSVGImage(SVGParser& parser){
     this->rootGroup = parser.readXML(this->fileName);
 }

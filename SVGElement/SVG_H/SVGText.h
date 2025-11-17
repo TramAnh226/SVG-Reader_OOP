@@ -1,6 +1,7 @@
 #pragma once
 #include "CustomPoint.h"
 #include "SVGElement.h"
+#include "Library.h"
 #include "../../SVGParser/SVGParser/include/SVGParser.h"
 #include "../../SVGRenderer/SVGRenderer.h"
 
@@ -24,7 +25,7 @@ public:
 	std::string getContent() const;
 	void setContent(const std::string&);
 	
-	void parse(SVGParser&, tinyxml2::XMLElement*) override;
+	void parse(tinyxml2::XMLElement*) override;
 	void render(SVGRenderer&, Gdiplus::Graphics&) const override;
 	// void transform(Matrix*) override;
 };
