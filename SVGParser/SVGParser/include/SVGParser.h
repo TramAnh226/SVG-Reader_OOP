@@ -4,7 +4,14 @@
 
 // using namespace tinyxml2;
 // using namespace std;
-
+namespace tinyxml2 {
+    class XMLDocument;
+    class XMLElement;
+    class XMLAttribute; 
+    class XMLNode;
+	class XMLText;
+	class XMLComment;
+}
 class SVGParser {
 private:
 	tinyxml2::XMLElement* currentNode = nullptr;

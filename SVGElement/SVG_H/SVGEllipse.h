@@ -4,6 +4,8 @@
 #include "../../SVGRenderer/SVGRenderer.h"
 #include "SVGElement.h"
 
+namespace tinyxml2 { class XMLElement; }
+
 class SVGEllipse : public SVGElement {
 protected: 
 	CustomPoint center;
@@ -23,7 +25,7 @@ public:
 	float getRadiusY() const;
 	void setRadiusY(const float&);
 
-	void parse(tinyxml2::XMLElement*) override;
-	void render(SVGRenderer&, Gdiplus::Graphics&) const override;
+	void parse(tinyxml2::XMLElement*);
+	void render(SVGRenderer&, Gdiplus::Graphics&) const;
 	// void transform(Matrix*) override;
 };

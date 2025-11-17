@@ -4,9 +4,9 @@ SVGText::SVGText()
     : SVGElement("text", "", SVGStyle()), 
     font_size(12.0f), 
     start(CustomPoint(0.0f, 0.0f)), 
-    content("") 
+    content(L"") 
 {}
-SVGText::SVGText(float font_size, const CustomPoint& start, const std::string& content) 
+SVGText::SVGText(float font_size, const CustomPoint& start, const std::wstring& content) 
     : SVGElement("text", "", SVGStyle()), 
     font_size(font_size), 
     start(start), 
@@ -50,10 +50,10 @@ CustomPoint SVGText::getStart() const {
 void SVGText::setStart(const CustomPoint& start) {
     this->start = start;
 }
-std::string SVGText::getContent() const {
+std::wstring SVGText::getContent() const {
     return content;
 }
-void SVGText::setContent(const std::string& content) {
+void SVGText::setContent(const std::wstring& content) {
     this->content = content;
 }
 
@@ -63,7 +63,15 @@ void SVGText::parse(tinyxml2::XMLElement* node) {
     float y = node->FloatAttribute("y");
     const char* content = node->GetText();
     this->setStart(CustomPoint(x, y));
-    this->setContent(content ? content : "");
+    const char* content_char = node->GetText();
+    
+    // Chuyển đổi char* sang wstring để lưu trữ
+    if (content_char) {
+        std::string content_str(content_char);
+        this->setContent(std::wstring(content_str.begin(), content_str.end()));
+    } else {
+        this->setContent(L"");
+    }
 }
 void SVGText::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
     r.renderText(g, this);

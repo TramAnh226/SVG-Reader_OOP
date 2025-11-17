@@ -6,14 +6,6 @@
 
 // using namespace tinyxml2;
 // using namespace std;
-namespace tinyxml2 {
-    class XMLDocument;
-    class XMLElement;
-    class XMLAttriutes;
-    class XMLNode;
-    class XMLText;
-    class XMLComment;
-}
 
 SVGGroup* SVGParser::readXML(const std::string& filename, SVGFactoryPattern& factory) {
 	tinyxml2::XMLDocument doc;

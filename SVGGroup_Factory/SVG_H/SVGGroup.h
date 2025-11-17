@@ -42,8 +42,8 @@ class SVGGroup : public SVGElement{
 
     SVGElement* clone() const override;
 
-    void parse(tinyxml2::XMLElement*) override;
-	void render(SVGRenderer&, Gdiplus::Graphics&) const override;
+    void parse(tinyxml2::XMLElement*);
+	void render(SVGRenderer&, Gdiplus::Graphics&) const;
 
     void setWidth(float w) { width = w; }
     void setHeight(float h) { height = h; }

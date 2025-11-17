@@ -11,5 +11,8 @@ struct CustomPoint {
 	operator Gdiplus::PointF() const {
         return Gdiplus::PointF(x, y); 
     }
+	operator Gdiplus::Point() const {
+		return Gdiplus::Point(static_cast<int>(x), static_cast<int>(y)); 
+	}
 };
 

@@ -3,6 +3,15 @@
 #include <gdiplus.h>
 #include <utility>  
 #include "../SVGElement/SVG_H/Library.h"
+#include "../SVGElement/SVG_H/SVGRectangle.h"
+#include "../SVGElement/SVG_H/SVGCircle.h"
+#include "../SVGElement/SVG_H/SVGEllipse.h" 
+#include "../SVGElement/SVG_H/SVGLine.h"
+#include "../SVGElement/SVG_H/SVGPolygon.h"
+#include "../SVGElement/SVG_H/SVGPolyline.h"
+#include "../SVGElement/SVG_H/SVGText.h"
+#include "../SVGElement/SVG_H/SVGSquare.h"
+#include "../SVGGroup_Factory/SVG_H/SVGGroup.h"
 
 // using namespace Gdiplus;
 // using namespace std;

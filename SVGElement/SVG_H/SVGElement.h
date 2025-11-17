@@ -4,6 +4,10 @@
 #include "../../SVGParser/SVGParser/include/SVGParser.h"
 #include "../../SVGRenderer/SVGRenderer.h"
 
+class SVGRenderer;
+namespace Gdiplus { class Graphics; }
+namespace tinyxml2 { class XMLElement; }
+
 class SVGElement {
 protected: 
 	std::string tag_name;
