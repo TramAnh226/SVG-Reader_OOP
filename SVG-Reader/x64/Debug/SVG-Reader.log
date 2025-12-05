@@ -1,0 +1,279 @@
+﻿  main.cpp
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(5,9): warning C4099: 'Gdiplus::PointF': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'main.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(247,7):
+      see declaration of 'Gdiplus::PointF'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(6,9): warning C4099: 'Gdiplus::Point': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'main.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(301,7):
+      see declaration of 'Gdiplus::Point'
+  
+  SVGCircle.cpp
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(5,9): warning C4099: 'Gdiplus::PointF': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGCircle.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(247,7):
+      see declaration of 'Gdiplus::PointF'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(6,9): warning C4099: 'Gdiplus::Point': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGCircle.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(301,7):
+      see declaration of 'Gdiplus::Point'
+  
+  SVGDocument.cpp
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(5,9): warning C4099: 'Gdiplus::PointF': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGDocument.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(247,7):
+      see declaration of 'Gdiplus::PointF'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(6,9): warning C4099: 'Gdiplus::Point': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGDocument.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(301,7):
+      see declaration of 'Gdiplus::Point'
+  
+  SVGElement.cpp
+  SVGEllipse.cpp
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(5,9): warning C4099: 'Gdiplus::PointF': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGEllipse.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(247,7):
+      see declaration of 'Gdiplus::PointF'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(6,9): warning C4099: 'Gdiplus::Point': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGEllipse.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(301,7):
+      see declaration of 'Gdiplus::Point'
+  
+  SVGFactoryPattern.cpp
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(5,9): warning C4099: 'Gdiplus::PointF': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGFactoryPattern.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(247,7):
+      see declaration of 'Gdiplus::PointF'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(6,9): warning C4099: 'Gdiplus::Point': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGFactoryPattern.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(301,7):
+      see declaration of 'Gdiplus::Point'
+  
+  SVGGroup.cpp
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(5,9): warning C4099: 'Gdiplus::PointF': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGGroup.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(247,7):
+      see declaration of 'Gdiplus::PointF'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(6,9): warning C4099: 'Gdiplus::Point': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGGroup.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(301,7):
+      see declaration of 'Gdiplus::Point'
+  
+  SVGLine.cpp
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(5,9): warning C4099: 'Gdiplus::PointF': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGLine.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(247,7):
+      see declaration of 'Gdiplus::PointF'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(6,9): warning C4099: 'Gdiplus::Point': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGLine.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(301,7):
+      see declaration of 'Gdiplus::Point'
+  
+  SVGParser.cpp
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(44,16): error C2660: 'SVGGroup::parse': function does not take 1 arguments
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGGroup.h(40,10):
+      see declaration of 'SVGGroup::parse'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(44,16):
+      while trying to match the argument list '(tinyxml2::XMLElement *)'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(67,18): error C2660: 'SVGElement::parse': function does not take 1 arguments
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGElement.h(36,15):
+      see declaration of 'SVGElement::parse'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(67,18):
+      while trying to match the argument list '(tinyxml2::XMLElement *)'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(130,44): error C3861: 'max': identifier not found
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(134,56): error C3861: 'max': identifier not found
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(134,46): error C3861: 'min': identifier not found
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(254,6): error C2027: use of undefined type 'SVGRectangle'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.h(5,7):
+      see declaration of 'SVGRectangle'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(254,29): error C3861: 'CustomPoint': identifier not found
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(255,6): error C2027: use of undefined type 'SVGRectangle'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.h(5,7):
+      see declaration of 'SVGRectangle'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(256,6): error C2027: use of undefined type 'SVGRectangle'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.h(5,7):
+      see declaration of 'SVGRectangle'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(263,6): error C2027: use of undefined type 'SVGSquare'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.h(6,7):
+      see declaration of 'SVGSquare'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(263,27): error C3861: 'CustomPoint': identifier not found
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(264,6): error C2027: use of undefined type 'SVGSquare'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.h(6,7):
+      see declaration of 'SVGSquare'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(265,6): error C2027: use of undefined type 'SVGSquare'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.h(6,7):
+      see declaration of 'SVGSquare'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(273,6): error C2027: use of undefined type 'SVGEllipse'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.h(7,7):
+      see declaration of 'SVGEllipse'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(273,20): error C3861: 'CustomPoint': identifier not found
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(274,6): error C2027: use of undefined type 'SVGEllipse'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.h(7,7):
+      see declaration of 'SVGEllipse'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(275,6): error C2027: use of undefined type 'SVGEllipse'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.h(7,7):
+      see declaration of 'SVGEllipse'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(282,6): error C2027: use of undefined type 'SVGCircle'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.h(8,7):
+      see declaration of 'SVGCircle'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(282,24): error C3861: 'CustomPoint': identifier not found
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(283,6): error C2027: use of undefined type 'SVGCircle'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.h(8,7):
+      see declaration of 'SVGCircle'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(291,6): error C2027: use of undefined type 'SVGLine'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.h(9,7):
+      see declaration of 'SVGLine'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(291,26): error C3861: 'CustomPoint': identifier not found
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(292,6): error C2027: use of undefined type 'SVGLine'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.h(9,7):
+      see declaration of 'SVGLine'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(292,24): error C3861: 'CustomPoint': identifier not found
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(298,18): error C2065: 'CustomPoint': undeclared identifier
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(298,11): error C2923: 'std::vector': 'CustomPoint' is not a valid template type argument for parameter '_Ty'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(298,18):
+      see declaration of 'CustomPoint'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(298,11): error C2976: 'std::vector': too few template arguments
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(429,7):
+      see declaration of 'std::vector'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(298,31): error C2641: cannot deduce template arguments for 'std::vector'
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(298,31): error C2783: 'std::vector<_Ty,_Alloc> std::vector(void) noexcept(<expr>)': could not deduce template argument for '_Ty'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(655,5):
+      see declaration of 'std::vector'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(298,31): error C2780: 'std::vector<_Ty,_Alloc> std::vector(std::vector<_Ty,_Alloc>)': expects 1 arguments - 0 provided
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(429,7):
+      see declaration of 'std::vector'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(307,14): error C2662: '_Ty &std::vector<_Ty,_Alloc>::emplace_back<float&,float&>(float &,float &)': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(307,10):
+      Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(307,10):
+      Conversion requires a second user-defined-conversion operator or constructor
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(907,44):
+      see declaration of 'std::vector<_Ty,_Alloc>::emplace_back'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(307,14):
+      while trying to match the argument list '(float, float)'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(309,6): error C2027: use of undefined type 'SVGPolyshapeBase'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.h(10,7):
+      see declaration of 'SVGPolyshapeBase'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(323,5): error C2027: use of undefined type 'SVGText'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.h(13,7):
+      see declaration of 'SVGText'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(323,20): error C3861: 'CustomPoint': identifier not found
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(329,9): error C2027: use of undefined type 'SVGText'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.h(13,7):
+      see declaration of 'SVGText'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.cpp(332,9): error C2027: use of undefined type 'SVGText'
+      D:\IT\SVG-Reader-Huong\SVG-Reader\SVGParser.h(13,7):
+      see declaration of 'SVGText'
+  
+  SVGPolygon.cpp
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(5,9): warning C4099: 'Gdiplus::PointF': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGPolygon.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(247,7):
+      see declaration of 'Gdiplus::PointF'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(6,9): warning C4099: 'Gdiplus::Point': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGPolygon.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(301,7):
+      see declaration of 'Gdiplus::Point'
+  
+  SVGPolyline.cpp
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(5,9): warning C4099: 'Gdiplus::PointF': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGPolyline.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(247,7):
+      see declaration of 'Gdiplus::PointF'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(6,9): warning C4099: 'Gdiplus::Point': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGPolyline.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(301,7):
+      see declaration of 'Gdiplus::Point'
+  
+  SVGPolyshapeBase.cpp
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(5,9): warning C4099: 'Gdiplus::PointF': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGPolyshapeBase.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(247,7):
+      see declaration of 'Gdiplus::PointF'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(6,9): warning C4099: 'Gdiplus::Point': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGPolyshapeBase.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(301,7):
+      see declaration of 'Gdiplus::Point'
+  
+  SVGRectangle.cpp
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(5,9): warning C4099: 'Gdiplus::PointF': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGRectangle.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(247,7):
+      see declaration of 'Gdiplus::PointF'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(6,9): warning C4099: 'Gdiplus::Point': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGRectangle.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(301,7):
+      see declaration of 'Gdiplus::Point'
+  
+  SVGRenderer.cpp
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(5,9): warning C4099: 'Gdiplus::PointF': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGRenderer.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(247,7):
+      see declaration of 'Gdiplus::PointF'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(6,9): warning C4099: 'Gdiplus::Point': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGRenderer.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(301,7):
+      see declaration of 'Gdiplus::Point'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\SVGRenderer.cpp(7,12): warning C4099: 'Gdiplus::PointF': type name first seen using 'class' now seen using 'struct'
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(247,7):
+      see declaration of 'Gdiplus::PointF'
+  
+  SVGSquare.cpp
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(5,9): warning C4099: 'Gdiplus::PointF': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGSquare.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(247,7):
+      see declaration of 'Gdiplus::PointF'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(6,9): warning C4099: 'Gdiplus::Point': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGSquare.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(301,7):
+      see declaration of 'Gdiplus::Point'
+  
+  SVGText.cpp
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(5,9): warning C4099: 'Gdiplus::PointF': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGText.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(247,7):
+      see declaration of 'Gdiplus::PointF'
+  
+D:\IT\SVG-Reader-Huong\SVG-Reader\CustomPoint.h(6,9): warning C4099: 'Gdiplus::Point': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGText.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\GdiplusTypes.h(301,7):
+      see declaration of 'Gdiplus::Point'
+  
+  Generating Code...
