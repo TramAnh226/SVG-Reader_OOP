@@ -1,4 +1,5 @@
-#include "SVGEllipse.h"
+#include "AccCtrl.h"
+#include "../SVGElement/SVG_H/SVGEllipse.h"
 
 SVGEllipse::SVGEllipse() 
     : SVGElement("ellipse", "", SVGStyle()),

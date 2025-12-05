@@ -1,4 +1,5 @@
-#include "Stroke.h"
+
+#include "SVGElement/SVG_H/Stroke.h"
 
 Stroke::Stroke() {
     this->strokeColor = CustomColor(0, 0, 0);

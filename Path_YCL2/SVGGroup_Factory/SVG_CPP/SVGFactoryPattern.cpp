@@ -17,12 +17,13 @@ SVGFactoryPattern::SVGFactoryPattern(){
     ElementID["square"] = 7;
     ElementID["text"] = 8;
     ElementID["g"] = 9;
+    ElementID["path"] = 10;
 }
 
 
-SVGElement* SVGFactoryPattern::getElement(std::string tagname){
+SVGElement* SVGFactoryPattern::getElement(std::string tagname) {
     auto it = ElementID.find(tagname);
-    if(it == ElementID.end()){
+    if (it == ElementID.end()) {
         throw std::out_of_range("Cannot find the type of object for tag: " + tagname);
     }
 
@@ -30,7 +31,7 @@ SVGElement* SVGFactoryPattern::getElement(std::string tagname){
     int numid = it->second;
 
 
-    switch(numid){
+    switch (numid) {
     case 1:
         return new SVGCircle();
     case 2:
@@ -49,8 +50,10 @@ SVGElement* SVGFactoryPattern::getElement(std::string tagname){
         return new SVGText();
     case 9:
         return new SVGGroup();
+    case 10:
+        return new SVGPath();
     default:
-        throw std::runtime_error ("Found tag - " + tagname + " but mapped ID is invalid");
+        throw std::runtime_error("Found tag - " + tagname + " but mapped ID is invalid");
     }
 }
 

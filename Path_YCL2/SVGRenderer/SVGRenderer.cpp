@@ -147,6 +147,78 @@ void SVGRenderer::renderGroup(Gdiplus::Graphics& g, const SVGGroup* rootGroup) {
     }
 }
 
+//render path
+void SVGRenderer::renderPath(Gdiplus::Graphics& g, SVGPath* Path, vector<PathCommand> commands) const {
+    using namespace Gdiplus;
+
+    Pen pen(Color(255, 0, 0, 0), 2.0f); // Black pen with width 2.0f)
+    PointF currentPoint(0.0f, 0.0f), startPoint(0.0f, 0.0f);
+
+    for (const auto& cmd : commands) {
+        switch (cmd.command) {
+        case 'M': {
+            currentPoint = PointF(cmd.parameters[0], cmd.parameters[1]);
+            startPoint = currentPoint;
+            break;
+        }
+        case 'L': {
+            PointF p(cmd.parameters[0], cmd.parameters[1]);
+            g.DrawLine(&pen, currentPoint, p);
+            currentPoint = p;
+            break;
+        }
+        case 'H': {
+            float x = cmd.parameters[0];
+            PointF p(x, currentPoint.Y);
+            g.DrawLine(&pen, currentPoint, p);
+
+            currentPoint = p;
+            break;
+        }
+        case 'V': {
+            float y = cmd.parameters[0];
+            PointF p(currentPoint.X, y);
+            g.DrawLine(&pen, currentPoint, p);
+            currentPoint = p;
+            break;
+        }
+        case 'Z': {
+            g.DrawLine(&pen, currentPoint, startPoint);
+            currentPoint = startPoint;
+            break;
+        }
+        case 'C': {
+            PointF p1(cmd.parameters[0], cmd.parameters[1]);
+            PointF p2(cmd.parameters[2], cmd.parameters[3]);
+            PointF p3(cmd.parameters[4], cmd.parameters[5]);
+
+            g.DrawBezier(&pen, currentPoint, p1, p2, p3);
+            currentPoint = p3;
+            break;
+        }
+        }
+    }
+}
+void SVGRenderer::drawCubicBezier(Gdiplus::Graphics& g,
+    const CustomPoint& p0,
+    const CustomPoint& p1,
+    const CustomPoint& p2,
+    const CustomPoint& p3) const
+{
+    using namespace Gdiplus;
+
+    Pen pen(Color(255, 0, 0, 0), 2);
+
+    PointF points[4] = {
+        PointF(p0.x, p0.y),
+        PointF(p1.x, p1.y),
+        PointF(p2.x, p2.y),
+        PointF(p3.x, p3.y)
+    };
+
+    g.DrawBeziers(&pen, points, 4);
+}
+
 
 
 

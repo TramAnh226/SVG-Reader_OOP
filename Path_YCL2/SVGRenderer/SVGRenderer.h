@@ -12,6 +12,7 @@
 #include "../SVGElement/SVG_H/SVGText.h"
 #include "../SVGElement/SVG_H/SVGSquare.h"
 #include "../SVGGroup_Factory/SVG_H/SVGGroup.h"
+#include "../SVGElement/SVG_H/SVGPath.h"
 
 // using namespace Gdiplus;
 // using namespace std;
@@ -42,4 +43,8 @@ public:
     void renderSquare(Gdiplus::Graphics& g, const SVGSquare* square);
     void renderFigure(Gdiplus::Graphics& g, const SVGGroup* rootGroup);
     void renderGroup(Gdiplus::Graphics& g, const SVGGroup* rootGroup);
+
+    //path
+    void renderPath(Gdiplus::Graphics& g, SVGPath* path, vector<PathCommand>) const;
+    void drawCubicBezier(Gdiplus::Graphics&, const CustomPoint&, const CustomPoint&, const CustomPoint&, const CustomPoint&) const;
 };

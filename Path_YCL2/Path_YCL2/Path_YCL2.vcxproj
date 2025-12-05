@@ -18,11 +18,58 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\SVGDocument\SVG_H\SVGDocument.h" />
+    <ClInclude Include="..\SVGElement\SVG_H\CustomColor.h" />
+    <ClInclude Include="..\SVGElement\SVG_H\CustomPoint.h" />
+    <ClInclude Include="..\SVGElement\SVG_H\Library.h" />
+    <ClInclude Include="..\SVGElement\SVG_H\Stroke.h" />
+    <ClInclude Include="..\SVGElement\SVG_H\SVGCircle.h" />
+    <ClInclude Include="..\SVGElement\SVG_H\SVGElement.h" />
+    <ClInclude Include="..\SVGElement\SVG_H\SVGEllipse.h" />
+    <ClInclude Include="..\SVGElement\SVG_H\SVGLine.h" />
+    <ClInclude Include="..\SVGElement\SVG_H\SVGPath.h" />
+    <ClInclude Include="..\SVGElement\SVG_H\SVGPolygon.h" />
+    <ClInclude Include="..\SVGElement\SVG_H\SVGPolyline.h" />
+    <ClInclude Include="..\SVGElement\SVG_H\SVGPolyshapeBase.h" />
+    <ClInclude Include="..\SVGElement\SVG_H\SVGRectangle.h" />
+    <ClInclude Include="..\SVGElement\SVG_H\SVGSquare.h" />
+    <ClInclude Include="..\SVGElement\SVG_H\SVGStyle.h" />
+    <ClInclude Include="..\SVGElement\SVG_H\SVGText.h" />
+    <ClInclude Include="..\SVGElement\SVG_H\tinyxml2.h" />
+    <ClInclude Include="..\SVGGroup_Factory\SVG_H\SVGFactoryPattern.h" />
+    <ClInclude Include="..\SVGGroup_Factory\SVG_H\SVGGroup.h" />
+    <ClInclude Include="..\SVGParser\SVGParser\include\SVGParser.h" />
+    <ClInclude Include="..\SVGRenderer\SVGRenderer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\SVGDocument\SVG_CPP\SVGDocument.cpp" />
+    <ClCompile Include="..\SVGElement\SVG_CPP\CustomColor.cpp" />
+    <ClCompile Include="..\SVGElement\SVG_CPP\CustomPoint.cpp" />
+    <ClCompile Include="..\SVGElement\SVG_CPP\Stroke.cpp" />
+    <ClCompile Include="..\SVGElement\SVG_CPP\SVGCircle.cpp" />
+    <ClCompile Include="..\SVGElement\SVG_CPP\SVGElement.cpp" />
+    <ClCompile Include="..\SVGElement\SVG_CPP\SVGEllipse.cpp" />
+    <ClCompile Include="..\SVGElement\SVG_CPP\SVGLine.cpp" />
+    <ClCompile Include="..\SVGElement\SVG_CPP\SVGPath.cpp" />
+    <ClCompile Include="..\SVGElement\SVG_CPP\SVGPolygon.cpp" />
+    <ClCompile Include="..\SVGElement\SVG_CPP\SVGPolyline.cpp" />
+    <ClCompile Include="..\SVGElement\SVG_CPP\SVGPolyshapeBase.cpp" />
+    <ClCompile Include="..\SVGElement\SVG_CPP\SVGRectangle.cpp" />
+    <ClCompile Include="..\SVGElement\SVG_CPP\SVGSquare.cpp" />
+    <ClCompile Include="..\SVGElement\SVG_CPP\SVGStyle.cpp" />
+    <ClCompile Include="..\SVGElement\SVG_CPP\SVGText.cpp" />
+    <ClCompile Include="..\SVGGroup_Factory\SVG_CPP\SVGFactoryPattern.cpp" />
+    <ClCompile Include="..\SVGGroup_Factory\SVG_CPP\SVGGroup.cpp" />
+    <ClCompile Include="..\SVGParser\SVGParser\source\SVGParser.cpp" />
+    <ClCompile Include="..\SVGParser\SVGParser\source\tinyxml2.cpp" />
+    <ClCompile Include="..\SVGRenderer\SVGRenderer.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{0d50afd7-118e-486a-b8ef-975c52581d35}</ProjectGuid>
-    <RootNamespace>SVGParser</RootNamespace>
+    <ProjectGuid>{cc1e94db-2939-4097-8dae-f91bbd7e3d82}</ProjectGuid>
+    <RootNamespace>PathYCL2</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -102,7 +149,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\HP\source\repos\SVG-Reader_OOP\SVGParser\SVGParser\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -117,58 +164,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Downloads\tinyxml2-master\tinyxml2-master\tinyxml2.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="source\CustomColor.cpp" />
-    <ClCompile Include="source\CustomPoint.cpp" />
-    <ClCompile Include="source\Stroke.cpp" />
-    <ClCompile Include="source\SVGCircle.cpp" />
-    <ClCompile Include="source\SVGElement.cpp" />
-    <ClCompile Include="source\SVGEllipse.cpp" />
-    <ClCompile Include="source\SVGFactoryPattern.cpp" />
-    <ClCompile Include="source\SVGGroup.cpp" />
-    <ClCompile Include="source\SVGLine.cpp" />
-    <ClCompile Include="source\SVGParser.cpp" />
-    <ClCompile Include="source\SVGPolygon.cpp" />
-    <ClCompile Include="source\SVGPolyline.cpp" />
-    <ClCompile Include="source\SVGPolyshapeBase.cpp" />
-    <ClCompile Include="source\SVGRectangle.cpp" />
-    <ClCompile Include="source\SVGSquare.cpp" />
-    <ClCompile Include="source\SVGStyle.cpp" />
-    <ClCompile Include="source\SVGText.cpp" />
-    <ClCompile Include="source\tinyxml2.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="include\CustomColor.h" />
-    <ClInclude Include="include\Library.h" />
-    <ClInclude Include="include\CustomPoint.h" />
-    <ClInclude Include="include\Stroke.h" />
-    <ClInclude Include="include\SVGCircle.h" />
-    <ClInclude Include="include\SVGElement.h" />
-    <ClInclude Include="include\SVGEllipse.h" />
-    <ClInclude Include="include\SVGFactoryPattern.h" />
-    <ClInclude Include="include\SVGGroup.h" />
-    <ClInclude Include="include\SVGLine.h" />
-    <ClInclude Include="include\SVGParser.h" />
-    <ClInclude Include="include\SVGPolygon.h" />
-    <ClInclude Include="include\SVGPolyline.h" />
-    <ClInclude Include="include\SVGPolyshapeBase.h" />
-    <ClInclude Include="include\SVGRectangle.h" />
-    <ClInclude Include="include\SVGSquare.h" />
-    <ClInclude Include="include\SVGStyle.h" />
-    <ClInclude Include="include\SVGText.h" />
-    <ClInclude Include="include\tinyxml2.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include=".gitignore.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
