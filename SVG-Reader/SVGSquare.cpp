@@ -1,5 +1,6 @@
 #include "SVGSquare.h"
 #include "tinyxml2.h"
+#include "SVGParser.h"
 #include "SVGRenderer.h"
 
 SVGSquare::SVGSquare() : SVGRectangle(CustomPoint(0, 0), 0, 0) {
@@ -22,15 +23,19 @@ SVGElement* SVGSquare::clone() const {
     return new SVGSquare(*this);
 }
 
-void SVGSquare::parse(tinyxml2::XMLElement* node) {
-    SVGElement::parse(node);
-    // p.parseSquare(this, node);
-    float x = node->FloatAttribute("x");
-    float y = node->FloatAttribute("y");
-    float size = node->FloatAttribute("width"); // SVG square dùng width = height
-    this->setTopLeftCorner(CustomPoint(x, y));
-    this->setWidth(size);
-    this->setHeight(size);
+//void SVGSquare::parse(tinyxml2::XMLElement* node) {
+//    SVGElement::parse(node);
+//    // p.parseSquare(this, node);
+//    float x = node->FloatAttribute("x");
+//    float y = node->FloatAttribute("y");
+//    float size = node->FloatAttribute("width"); // SVG square dùng width = height
+//    this->setTopLeftCorner(CustomPoint(x, y));
+//    this->setWidth(size);
+//    this->setHeight(size);
+//}
+void SVGSquare::parse(SVGParser& parser, tinyxml2::XMLElement* xmlNode) {
+    SVGElement::parse(parser, xmlNode);
+    parser.parseSquare(this, xmlNode);
 }
 void SVGSquare::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
     r.renderSquare(g, this);

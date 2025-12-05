@@ -1,5 +1,6 @@
 #include "SVGLine.h"
 #include "tinyxml2.h" 
+#include "SVGParser.h"
 #include "SVGRenderer.h"
 SVGLine::SVGLine()
     : SVGElement("line", "", SVGStyle()),
@@ -47,15 +48,19 @@ void SVGLine::setEndPoint(const CustomPoint& p) {
     end_point = p;
 }
 
-void SVGLine::parse(tinyxml2::XMLElement* node) {
-    SVGElement::parse(node);
-    // p.parseLine(this, node);
-    float x1 = node->FloatAttribute("x1");
-    float y1 = node->FloatAttribute("y1");
-    float x2 = node->FloatAttribute("x2");
-    float y2 = node->FloatAttribute("y2");
-    this->setStartPoint(CustomPoint(x1, y1));
-    this->setEndPoint(CustomPoint(x2, y2));
+//void SVGLine::parse(tinyxml2::XMLElement* node) {
+//    SVGElement::parse(node);
+//    // p.parseLine(this, node);
+//    float x1 = node->FloatAttribute("x1");
+//    float y1 = node->FloatAttribute("y1");
+//    float x2 = node->FloatAttribute("x2");
+//    float y2 = node->FloatAttribute("y2");
+//    this->setStartPoint(CustomPoint(x1, y1));
+//    this->setEndPoint(CustomPoint(x2, y2));
+//}
+void SVGLine::parse(SVGParser& parser, tinyxml2::XMLElement* xmlNode) {
+    SVGElement::parse(parser, xmlNode);
+    parser.parseLine(this, xmlNode);
 }
 void SVGLine::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
     r.renderLine(g, this);

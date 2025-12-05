@@ -1,9 +1,8 @@
 ﻿#pragma once
-#include "SVGGroup.h"
+#include "SVGElement.h"
 #include "SVGFactoryPattern.h"
 #include <algorithm>
 #include "tinyxml2.h" 
-#include "SVGRenderer.h"
 //#include "SVGParser.h"
 //#include "SVGRenderer.h"
 
@@ -41,8 +40,9 @@ public:
 
     SVGElement* clone() const override;
 
-    void parse(tinyxml2::XMLElement*);
-    void render(SVGRenderer&, Gdiplus::Graphics&) const;
+    //void parse(tinyxml2::XMLElement*);
+    void parse(SVGParser&, tinyxml2::XMLElement*) override;
+    void render(SVGRenderer&, Gdiplus::Graphics&) const override;
 
     void setWidth(float w) { width = w; }
     void setHeight(float h) { height = h; }

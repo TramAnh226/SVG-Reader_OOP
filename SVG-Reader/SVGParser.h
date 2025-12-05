@@ -1,5 +1,14 @@
 #pragma once
-//#include "Library.h"
+#include "SVGElement.h"
+#include "SVGRectangle.h"
+#include "SVGSquare.h"
+#include "SVGEllipse.h"
+#include "SVGCircle.h"
+#include "SVGLine.h"
+#include "SVGPolyshapeBase.h"
+#include "SVGPolygon.h"
+#include "SVGPolyline.h"
+#include "SVGText.h"
 #include "SVGGroup.h"
 
 // using namespace tinyxml2;
@@ -29,14 +38,14 @@ public:
 	void parseStyle(SVGStyle& style, const std::string& styleStr);
 
     
-	// void parseRectangle(SVGRectangle* rect, tinyxml2::XMLElement* Node);
-	// void parseSquare(SVGSquare* sq, tinyxml2::XMLElement* Node);
-	// void parseEllipse(SVGEllipse* el, tinyxml2::XMLElement* Node);
-	// void parseCircle(SVGCircle* circle, tinyxml2::XMLElement* Node);
-	// void parseLine(SVGLine* line, tinyxml2::XMLElement* Node);
-	// void parsePolyshape(SVGPolyshapeBase* poly, tinyxml2::XMLElement* Node);
-	// void parseText(SVGText* text, tinyxml2::XMLElement* Node);
-	// void parseGroup(SVGGroup* group, tinyxml2::XMLElement* Node);
+	 void parseRectangle(SVGRectangle* rect, tinyxml2::XMLElement* Node);
+	 void parseSquare(SVGSquare* sq, tinyxml2::XMLElement* Node);
+	 void parseEllipse(SVGEllipse* el, tinyxml2::XMLElement* Node);
+	 void parseCircle(SVGCircle* circle, tinyxml2::XMLElement* Node);
+	 void parseLine(SVGLine* line, tinyxml2::XMLElement* Node);
+	 void parsePolyshape(SVGPolyshapeBase* poly, tinyxml2::XMLElement* Node);
+	 void parseText(SVGText* text, tinyxml2::XMLElement* Node);
+	 void parseGroup(SVGGroup* group, tinyxml2::XMLElement* Node);
 
 };
 

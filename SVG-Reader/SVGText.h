@@ -2,8 +2,6 @@
 #include "SVGElement.h"
 #include "CustomPoint.h"
 
-namespace tinyxml2 { class XMLElement; }
-
 class SVGText : public SVGElement {
 private:
 	float font_size;
@@ -24,8 +22,9 @@ public:
 	std::wstring getContent() const;
 	void setContent(const std::wstring&);
 
-	void parse(tinyxml2::XMLElement*);
-	void render(SVGRenderer&, Gdiplus::Graphics&) const;
+	//void parse(tinyxml2::XMLElement*);
+	void parse(SVGParser&, tinyxml2::XMLElement*) override;
+	void render(SVGRenderer&, Gdiplus::Graphics&) const override;
 	// void transform(Matrix*) override;
 
 	void printDebugAttributes(std::ostream&) const;

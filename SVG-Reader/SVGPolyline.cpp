@@ -26,25 +26,25 @@ SVGElement* SVGPolyline::clone() const {
     return new SVGPolyline(*this);
 }
 
-void SVGPolyline::parse(tinyxml2::XMLElement* node) {
-    SVGElement::parse(node);
-    // p.parsePolyshape(this, node);
-    const char* pointsStr = node->Attribute("points");
-    if (!pointsStr) return;
-
-    std::vector<CustomPoint> pts;
-    std::stringstream ss(pointsStr);
-    std::string token;
-    while (getline(ss, token, ' ')) {
-        if (token.empty()) continue;
-        size_t comma = token.find(',');
-        if (comma == std::string::npos) continue;
-        float x = stof(token.substr(0, comma));
-        float y = stof(token.substr(comma + 1));
-        pts.emplace_back(x, y);
-    }
-    this->setPoints(pts);
-}
+//void SVGPolyline::parse(tinyxml2::XMLElement* node) {
+//    SVGElement::parse(node);
+//    // p.parsePolyshape(this, node);
+//    const char* pointsStr = node->Attribute("points");
+//    if (!pointsStr) return;
+//
+//    std::vector<CustomPoint> pts;
+//    std::stringstream ss(pointsStr);
+//    std::string token;
+//    while (getline(ss, token, ' ')) {
+//        if (token.empty()) continue;
+//        size_t comma = token.find(',');
+//        if (comma == std::string::npos) continue;
+//        float x = stof(token.substr(0, comma));
+//        float y = stof(token.substr(comma + 1));
+//        pts.emplace_back(x, y);
+//    }
+//    this->setPoints(pts);
+//}
 void SVGPolyline::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
     r.renderPolyline(g, this);
 }

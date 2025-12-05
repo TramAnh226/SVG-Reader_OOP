@@ -4,7 +4,6 @@
 //#include "SVGRenderer.h"
 
 // forward declarations to ensure types are known at this point
-class SVGRenderer;
 namespace Gdiplus { class Graphics; }
 
 class SVGCircle : public SVGEllipse {
@@ -21,7 +20,8 @@ public:
 	float getRadius() const;
 	void setRadius(const float&);
 
-	void parse(tinyxml2::XMLElement*);
-	void render(SVGRenderer&, Gdiplus::Graphics&) const;
+	//void parse(tinyxml2::XMLElement*);
+	void parse(SVGParser&, tinyxml2::XMLElement*) override;
+	void render(SVGRenderer&, Gdiplus::Graphics&) const override;
 	// void transform(Matrix*) override;
 };

@@ -1,8 +1,8 @@
 ﻿#include "SVGGroup.h"
 #include "SVGFactoryPattern.h"
-
 #include <algorithm>
-
+#include "SVGParser.h"
+#include "SVGRenderer.h"
 
 SVGGroup::SVGGroup() :
     SVGElement(),
@@ -82,31 +82,34 @@ SVGElement* SVGGroup::clone() const {
 }
 
 
-void SVGGroup::parse(tinyxml2::XMLElement* node) {
-    SVGElement::parse(node);
-    // parser.parseGroup(this, node);
-    if (std::string(node->Name()) == "svg") {
-
-        float w = node->FloatAttribute("width");
-        if (w <= 0.0f) { w = 300.0f; }
-        this->setWidth(w);
-
-
-        float h = node->FloatAttribute("height");
-        if (h <= 0.0f) { h = 150.0f; }
-        this->setHeight(h);
-
-
-        const char* viewBoxStr = node->Attribute("viewBox");
-        if (viewBoxStr) {
-            this->setViewBox(std::string(viewBoxStr));
-        }
-        else {
-            this->setViewBox("0 0 " + std::to_string(w) + " " + std::to_string(h));
-        }
-    }
+//void SVGGroup::parse(tinyxml2::XMLElement* node) {
+//    SVGElement::parse(node);
+//    // parser.parseGroup(this, node);
+//    if (std::string(node->Name()) == "svg") {
+//
+//        float w = node->FloatAttribute("width");
+//        if (w <= 0.0f) { w = 300.0f; }
+//        this->setWidth(w);
+//
+//
+//        float h = node->FloatAttribute("height");
+//        if (h <= 0.0f) { h = 150.0f; }
+//        this->setHeight(h);
+//
+//
+//        const char* viewBoxStr = node->Attribute("viewBox");
+//        if (viewBoxStr) {
+//            this->setViewBox(std::string(viewBoxStr));
+//        }
+//        else {
+//            this->setViewBox("0 0 " + std::to_string(w) + " " + std::to_string(h));
+//        }
+//    }
+//}
+void SVGGroup::parse(SVGParser& parser, tinyxml2::XMLElement* xmlNode) {
+    SVGElement::parse(parser, xmlNode);
+    parser.parseGroup(this, xmlNode);
 }
-
 void SVGGroup::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
     r.renderGroup(g, this);
 }

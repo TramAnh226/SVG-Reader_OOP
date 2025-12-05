@@ -1,5 +1,6 @@
 ﻿#include "SVGText.h"
 #include "tinyxml2.h"
+#include "SVGParser.h"
 #include "SVGRenderer.h"
 
 SVGText::SVGText()
@@ -79,37 +80,42 @@ void SVGText::setContent(const std::wstring& content) {
 //        this->setContent(L"");
 //    }
 //}
-void SVGText::parse(tinyxml2::XMLElement* node) {
-    // 1. Gọi hàm cơ sở để parse ID và Style/Fill/Stroke
-    SVGElement::parse(node);
+//void SVGText::parse(tinyxml2::XMLElement* node) {
+//    // 1. Gọi hàm cơ sở để parse ID và Style/Fill/Stroke
+//    SVGElement::parse(node);
+//
+//    // 2. Lấy thuộc tính hình học (x, y)
+//    float x = node->FloatAttribute("x");
+//    float y = node->FloatAttribute("y");
+//    this->setStart(CustomPoint(x, y));
+//
+//    // 3. Lấy thuộc tính font-size (Nếu tồn tại)
+//    // font-size thường là thuộc tính riêng biệt (standalone attribute)
+//    float fontSize = node->FloatAttribute("font-size");
+//
+//    // Nếu font-size không được tìm thấy (trả về 0.0f) hoặc không hợp lệ, 
+//    // ta nên đặt giá trị mặc định hợp lý (ví dụ: 12.0f)
+//    if (fontSize <= 0.0f) {
+//        fontSize = 12.0f; // Giá trị mặc định an toàn
+//    }
+//    this->setFontSize(fontSize);
+//
+//    // 4. Lấy nội dung text
+//    const char* content_char = node->GetText();
+//
+//    // Chuyển đổi char* sang wstring để lưu trữ (cho GDI+)
+//    if (content_char) {
+//        std::string content_str(content_char);
+//        this->setContent(std::wstring(content_str.begin(), content_str.end()));
+//    }
+//    else {
+//        this->setContent(L"");
+//    }
+//}
 
-    // 2. Lấy thuộc tính hình học (x, y)
-    float x = node->FloatAttribute("x");
-    float y = node->FloatAttribute("y");
-    this->setStart(CustomPoint(x, y));
-
-    // 3. Lấy thuộc tính font-size (Nếu tồn tại)
-    // font-size thường là thuộc tính riêng biệt (standalone attribute)
-    float fontSize = node->FloatAttribute("font-size");
-
-    // Nếu font-size không được tìm thấy (trả về 0.0f) hoặc không hợp lệ, 
-    // ta nên đặt giá trị mặc định hợp lý (ví dụ: 12.0f)
-    if (fontSize <= 0.0f) {
-        fontSize = 12.0f; // Giá trị mặc định an toàn
-    }
-    this->setFontSize(fontSize);
-
-    // 4. Lấy nội dung text
-    const char* content_char = node->GetText();
-
-    // Chuyển đổi char* sang wstring để lưu trữ (cho GDI+)
-    if (content_char) {
-        std::string content_str(content_char);
-        this->setContent(std::wstring(content_str.begin(), content_str.end()));
-    }
-    else {
-        this->setContent(L"");
-    }
+void SVGText::parse(SVGParser& parser, tinyxml2::XMLElement* xmlNode) {
+    SVGElement::parse(parser, xmlNode);
+    parser.parseText(this, xmlNode);
 }
 void SVGText::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
     r.renderText(g, this);

@@ -1,5 +1,6 @@
 #include "SVGCircle.h"
 #include "tinyxml2.h"
+#include "SVGParser.h"
 #include "SVGRenderer.h"
 
 SVGCircle::SVGCircle() : SVGEllipse() {
@@ -40,14 +41,18 @@ void SVGCircle::setRadius(const float& radius) {
     this->ry = radius;
 }
 
-void SVGCircle::parse(tinyxml2::XMLElement* node) {
-    SVGElement::parse(node);
-    // p.parseCircle(this, node);
-    float cx = node->FloatAttribute("cx");
-    float cy = node->FloatAttribute("cy");
-    float r = node->FloatAttribute("r");
-    this->setCenter(CustomPoint(cx, cy));
-    this->setRadius(r);
+//void SVGCircle::parse(tinyxml2::XMLElement* node) {
+//    SVGElement::parse(node);
+//    // p.parseCircle(this, node);
+//    float cx = node->FloatAttribute("cx");
+//    float cy = node->FloatAttribute("cy");
+//    float r = node->FloatAttribute("r");
+//    this->setCenter(CustomPoint(cx, cy));
+//    this->setRadius(r);
+//}
+void SVGCircle::parse(SVGParser& parser, tinyxml2::XMLElement* xmlNode) {
+    SVGElement::parse(parser, xmlNode);
+    parser.parseCircle(this, xmlNode);
 }
 void SVGCircle::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
     r.renderCircle(g, this);

@@ -3,6 +3,7 @@
 #include "CustomPoint.h"
 
 namespace tinyxml2 { class XMLElement; }
+namespace Gdiplus { class Graphics; }
 
 class SVGEllipse : public SVGElement {
 protected:
@@ -23,8 +24,9 @@ public:
 	float getRadiusY() const;
 	void setRadiusY(const float&);
 
-	void parse(tinyxml2::XMLElement*);
-	void render(SVGRenderer&, Gdiplus::Graphics&) const;
+	//void parse(tinyxml2::XMLElement*);
+	void parse(SVGParser&, tinyxml2::XMLElement*) override;
+	void render(SVGRenderer&, Gdiplus::Graphics&) const override;
 	// void transform(Matrix*) override;
 };
 #pragma once

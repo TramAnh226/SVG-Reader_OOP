@@ -1,6 +1,7 @@
 ﻿#include "SVGElement.h"
 #include "tinyxml2.h"
 #include "SVGParser.h"
+#include "SVGRenderer.h"
 #include <iostream>
 
 SVGElement::SVGElement() {
@@ -49,18 +50,21 @@ void SVGElement::setSVGStyle(const SVGStyle& svg_style) {
 }
 
 // polymorphism and separation of concerns
-void SVGElement::parse(tinyxml2::XMLElement* node) {
-    // Gọi hàm phân tích cú pháp thuộc tính chung (ID, STYLE, FILL...)
-    // Dạng 1: Nếu parseAttributes là hàm static trong SVGParser:
-    // SVGParser::parseAttributes(node, this); 
-
-    // Dạng 2: Nếu bạn dùng một hàm thành viên (non-static) của SVGParser
-    // SVGParser parser; 
-    // parser.parseAttributes(node, this); 
-
-    // Giả sử parseAttributes là static và bạn đã include SVGParser.h:
-    extern SVGParser g_parser; // Nếu g_parser là biến toàn cục
-    g_parser.parseAttributes(node, this);
+//void SVGElement::parse(tinyxml2::XMLElement* node) {
+//    // Gọi hàm phân tích cú pháp thuộc tính chung (ID, STYLE, FILL...)
+//    // Dạng 1: Nếu parseAttributes là hàm static trong SVGParser:
+//    // SVGParser::parseAttributes(node, this); 
+//
+//    // Dạng 2: Nếu bạn dùng một hàm thành viên (non-static) của SVGParser
+//    // SVGParser parser; 
+//    // parser.parseAttributes(node, this); 
+//
+//    // Giả sử parseAttributes là static và bạn đã include SVGParser.h:
+//    extern SVGParser g_parser; // Nếu g_parser là biến toàn cục
+//    g_parser.parseAttributes(node, this);
+//}
+void SVGElement::parse(SVGParser& parser, tinyxml2::XMLElement* xmlNode) {
+    parser.parseAttributes(xmlNode, this);
 }
 
 // ... (Các hàm khác)

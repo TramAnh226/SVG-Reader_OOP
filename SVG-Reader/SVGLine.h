@@ -20,8 +20,9 @@ public:
 	CustomPoint getEndPoint() const;
 	void setEndPoint(const CustomPoint&);
 
-	void parse(tinyxml2::XMLElement*);
-	void render(SVGRenderer&, Gdiplus::Graphics&) const;
+	//void parse(tinyxml2::XMLElement*);
+	void parse(SVGParser&, tinyxml2::XMLElement*) override;
+	void render(SVGRenderer&, Gdiplus::Graphics&) const override;
 	// void transform(Matrix*) override;
 };
 #pragma once

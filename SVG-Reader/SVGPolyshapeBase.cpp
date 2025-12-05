@@ -1,5 +1,6 @@
 #include "SVGPolyshapeBase.h"
 #include "tinyxml2.h"
+#include "SVGParser.h"
 
 SVGPolyshapeBase::SVGPolyshapeBase()
     : SVGElement("polyshapebase", "", SVGStyle()),
@@ -37,25 +38,29 @@ void SVGPolyshapeBase::setPoints(const std::vector<CustomPoint>& points) {
     this->points = points;
 }
 
-void SVGPolyshapeBase::parse(tinyxml2::XMLElement* node) {
-    SVGElement::parse(node);
-    // p.parsePolyshape(this, node);
-    const char* pointsStr = node->Attribute("points");
-    if (!pointsStr) return;
-
-    std::vector<CustomPoint> pts;
-    std::stringstream ss(pointsStr);
-    std::string token;
-    while (getline(ss, token, ' ')) {
-        if (token.empty()) continue;
-        size_t comma = token.find(',');
-        if (comma == std::string::npos) continue;
-        float x = stof(token.substr(0, comma));
-        float y = stof(token.substr(comma + 1));
-        pts.emplace_back(x, y);
-    }
-    this->setPoints(pts);
+//void SVGPolyshapeBase::parse(tinyxml2::XMLElement* node) {
+//    SVGElement::parse(node);
+//    // p.parsePolyshape(this, node);
+//    const char* pointsStr = node->Attribute("points");
+//    if (!pointsStr) return;
+//
+//    std::vector<CustomPoint> pts;
+//    std::stringstream ss(pointsStr);
+//    std::string token;
+//    while (getline(ss, token, ' ')) {
+//        if (token.empty()) continue;
+//        size_t comma = token.find(',');
+//        if (comma == std::string::npos) continue;
+//        float x = stof(token.substr(0, comma));
+//        float y = stof(token.substr(comma + 1));
+//        pts.emplace_back(x, y);
+//    }
+//    this->setPoints(pts);
+//}
+void SVGPolyshapeBase::parse(SVGParser& parser, tinyxml2::XMLElement* xmlNode) {
+    SVGElement::parse(parser, xmlNode);
+    parser.parsePolyshape(this, xmlNode);
 }
- void SVGPolyshapeBase::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
- }
+ //void SVGPolyshapeBase::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
+ //}
 // void SVGPolyshapeBase::transform(Matrix* m)

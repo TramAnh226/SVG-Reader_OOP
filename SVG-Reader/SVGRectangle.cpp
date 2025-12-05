@@ -1,5 +1,6 @@
 #include "SVGRectangle.h"
 #include "tinyxml2.h"
+#include "SVGParser.h"
 #include "SVGRenderer.h"
 
 SVGRectangle::SVGRectangle()
@@ -59,16 +60,20 @@ void SVGRectangle::setHeight(float h) {
     height = h;
 }
 
-void SVGRectangle::parse(tinyxml2::XMLElement* node) {
-    SVGElement::parse(node);
-    // p.parseRectangle(this, node);
-    float x = node->FloatAttribute("x");
-    float y = node->FloatAttribute("y");
-    float w = node->FloatAttribute("width");
-    float h = node->FloatAttribute("height");
-    this->setTopLeftCorner(CustomPoint(x, y));
-    this->setWidth(w);
-    this->setHeight(h);
+//void SVGRectangle::parse(tinyxml2::XMLElement* node) {
+//    SVGElement::parse(node);
+//    // p.parseRectangle(this, node);
+//    float x = node->FloatAttribute("x");
+//    float y = node->FloatAttribute("y");
+//    float w = node->FloatAttribute("width");
+//    float h = node->FloatAttribute("height");
+//    this->setTopLeftCorner(CustomPoint(x, y));
+//    this->setWidth(w);
+//    this->setHeight(h);
+//}
+void SVGRectangle::parse(SVGParser& parser, tinyxml2::XMLElement* xmlNode) {
+    SVGElement::parse(parser, xmlNode);
+    parser.parseRectangle(this, xmlNode);
 }
 void SVGRectangle::render(SVGRenderer& r, Gdiplus::Graphics& g) const {
     r.renderRectangle(g, this);

@@ -4,10 +4,15 @@
 //#include "SVGParser.h"
 //#include "SVGRenderer.h"
 
+class SVGParser;
 class SVGRenderer;
 namespace Gdiplus { class Graphics; }
-namespace tinyxml2 { class XMLElement; }
-
+namespace tinyxml2 {
+	class XMLDocument;
+	class XMLElement;
+	class XMLAttribute; 
+	class XMLNode;
+}
 class SVGElement {
 protected:
 //public:
@@ -32,7 +37,8 @@ public:
 	void setSVGStyle(const SVGStyle&);
 
 	// polymorphism and separation of concerns
-	virtual void parse(tinyxml2::XMLElement*) = 0;
+	//virtual void parse(tinyxml2::XMLElement*) = 0;
+	virtual void parse(SVGParser&, tinyxml2::XMLElement*);
 	virtual void render(SVGRenderer&, Gdiplus::Graphics&) const = 0;
 	// virtual void transform(Matrix* m) = 0;
 

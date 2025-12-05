@@ -10,7 +10,7 @@ public:
 	~SVGPolyline();
 	SVGElement* clone() const override;
 
-	void parse(tinyxml2::XMLElement*);
-	void render(SVGRenderer&, Gdiplus::Graphics&) const;
+	//void parse(tinyxml2::XMLElement*);
+	void render(SVGRenderer&, Gdiplus::Graphics&) const override;
 	// void transform(Matrix*) override;
 };

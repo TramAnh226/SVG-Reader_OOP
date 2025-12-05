@@ -3,13 +3,6 @@
 #include <vector>
 #include "CustomPoint.h" 
 
-namespace tinyxml2 {
-	class XMLDocument;
-	class XMLElement;
-	class XMLAttribute; // Sửa lỗi chính tả và dùng từ khóa class
-	class XMLNode;
-	// ... và các lớp khác mà bạn sử dụng
-}
 class SVGPolyshapeBase : public SVGElement {
 protected:
 	std::vector<CustomPoint> points;
@@ -24,7 +17,9 @@ public:
 	std::vector<CustomPoint> getPoints() const;
 	void setPoints(const std::vector<CustomPoint>&);
 
-	void parse(tinyxml2::XMLElement*);
-	virtual void render(SVGRenderer&, Gdiplus::Graphics&) const = 0;
+	//void parse(tinyxml2::XMLElement*);
+	void parse(SVGParser&, tinyxml2::XMLElement*) override;
+	// declare at SVGELement
+	//virtual void render(SVGRenderer&, Gdiplus::Graphics&) const = 0;
 	// void transform(Matrix*) override;
 };
