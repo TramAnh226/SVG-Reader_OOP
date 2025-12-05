@@ -151,6 +151,17 @@ void SVGRenderer::renderGroup(Gdiplus::Graphics& g, const SVGGroup* rootGroup) {
 void SVGRenderer::renderPath(Gdiplus::Graphics& g, SVGPath* Path, vector<PathCommand> commands) const {
     using namespace Gdiplus;
 
+    // Lưu transform hiện tại
+    Matrix oldMatrix;
+    g.GetTransform(&oldMatrix);
+
+    // Áp dụng transform của path (nếu có)
+    if (Path && Path->transform) {
+        // MultiplyTransform: kết hợp transform hiện tại với transform của path
+        // Chọn MatrixOrderPrepend hoặc Append tuỳ mục tiêu (prepend = local -> then world)
+        g.MultiplyTransform(Path->transform, MatrixOrderPrepend);
+    }
+
     Pen pen(Color(255, 0, 0, 0), 2.0f); // Black pen with width 2.0f)
     PointF currentPoint(0.0f, 0.0f), startPoint(0.0f, 0.0f);
 
@@ -198,7 +209,9 @@ void SVGRenderer::renderPath(Gdiplus::Graphics& g, SVGPath* Path, vector<PathCom
         }
         }
     }
+	g.SetTransform(&oldMatrix); // Khôi phục transform ban đầu
 }
+
 void SVGRenderer::drawCubicBezier(Gdiplus::Graphics& g,
     const CustomPoint& p0,
     const CustomPoint& p1,
