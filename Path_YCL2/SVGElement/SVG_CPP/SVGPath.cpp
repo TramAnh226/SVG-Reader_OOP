@@ -55,7 +55,8 @@ void SVGPath::parse(tinyxml2::XMLElement* node) {
     }
 
     // Parse style
-    style.parse(node);
+	string styleAttr = node->Attribute("style") ? node->Attribute("style") : "";
+    style.parse(styleAttr);
 
     // Parse transform
     const char* tAttr = node->Attribute("transform");
