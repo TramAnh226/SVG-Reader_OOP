@@ -1,0 +1,25 @@
+#ifndef _SVG_DOCUMENT_H_
+#define _SVG_DOCUMENT_H_
+
+#include "../../SVGGroup_Factory/SVG_H/SVGGroup.h"
+
+class SVGParser;
+class SVGRenderer;
+
+class SVGDocument{
+    private:
+
+    std::string fileName;
+    SVGGroup* rootGroup;
+
+    public:
+
+    SVGDocument(std::string);
+    ~SVGDocument();
+
+    SVGGroup* getRootGroup();
+    void parseSVGImage(SVGParser&);
+    void renderSVGImage(SVGRenderer&, Gdiplus::Graphics&);
+};
+
+#endif
