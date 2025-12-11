@@ -163,7 +163,7 @@ void SVGRenderer::renderPath(Gdiplus::Graphics& g, SVGPath* Path, vector<PathCom
     GraphicsPath gp;
 
     // Apply fill-rule
-    if (Path->style.fillRule == FillRule::EvenOdd)
+    if (Path->getSVGStyle().fillRule == FillRule::EvenOdd)
         gp.SetFillMode(FillModeAlternate); // EvenOdd
     else
         gp.SetFillMode(FillModeWinding);   // NonZero
@@ -217,15 +217,16 @@ void SVGRenderer::renderPath(Gdiplus::Graphics& g, SVGPath* Path, vector<PathCom
     }
 
     // ----- FILL -----
-    if (Path->style.fillColor.a > 0) {
-        SolidBrush brush(Path->style.fillColor.toGDI());
+    if (Path->getSVGStyle().fillColor.a > 0) {
+        Gdiplus::Color gdiFillColor = Path->getSVGStyle().getGdiFillColor();
+        SolidBrush brush(gdiFillColor);
         g.FillPath(&brush, &gp);
     }
 
     // ----- STROKE -----
-    if (Path->style.stroke.width > 0) {
+    if (Path->getSVGStyle().stroke.width > 0) {
 
-        Pen pen(Path->style.stroke.color.toGDI(), Path->style.stroke.width);
+        Pen pen(Path->getSVGStyle().stroke.color.toGDI(), Path->getSVGStyle().stroke.width);
 
         // linejoin
         /*switch (Path->style.stroke.lineJoin) {
@@ -235,7 +236,7 @@ void SVGRenderer::renderPath(Gdiplus::Graphics& g, SVGPath* Path, vector<PathCom
         }*/
 
         // miterlimit
-        pen.SetMiterLimit(Path->style.stroke.miterlimit);
+        pen.SetMiterLimit(Path->getSVGStyle().stroke.miterlimit);
 
         g.DrawPath(&pen, &gp);
     }
