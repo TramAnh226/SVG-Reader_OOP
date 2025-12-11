@@ -89,7 +89,14 @@ void SVGStyle::parse(const std::string& styleStr) {
             } catch (const std::exception& e) {
                 // Xử lý lỗi chuyển đổi
             }
-		} 
+        }
+        else if (key == "fill-rule") {
+            if (value == "nonzero")
+                fillRule = FillRule::NonZero;
+            else if (value == "evenodd")
+                fillRule = FillRule::EvenOdd;
+
+        }
         // Ghi chú: Xử lý các thuộc tính stroke
         else if (key.find("stroke") != std::string::npos) {
             // Ở đây, chúng ta phải quyết định thuộc tính này là gì (stroke, stroke-width, stroke-opacity)
@@ -106,7 +113,9 @@ void SVGStyle::parse(const std::string& styleStr) {
             } else if (key == "stroke-opacity") {
                 try { currentStroke.strokeOpacity = stof(value); } catch (...) {}
             }
-            
+            if (name == "stroke-miterlimit") {
+                stroke.miterlimit = std::stof(value);
+            }
             this->setStroke(currentStroke); // Gán lại Stroke đã được cập nhật
         }
 	}

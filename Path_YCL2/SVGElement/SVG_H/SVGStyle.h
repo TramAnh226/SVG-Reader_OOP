@@ -7,6 +7,10 @@
 
 class Stroke;
 
+enum class FillRule {
+	NonZero,
+	EvenOdd
+};
 class SVGStyle {
 private: 
 	Stroke stroke;	
@@ -14,6 +18,7 @@ private:
 	float fillOpacity;
 	// subsequent development
 	// Gradient fillGradient
+	FillRule fillRule = FillRule::NonZero;
 public: 
 	SVGStyle();
 	SVGStyle(CustomColor, float, const Stroke&);
