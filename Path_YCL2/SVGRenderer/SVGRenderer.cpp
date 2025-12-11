@@ -151,22 +151,28 @@ void SVGRenderer::renderGroup(Gdiplus::Graphics& g, const SVGGroup* rootGroup) {
 void SVGRenderer::renderPath(Gdiplus::Graphics& g, SVGPath* Path, vector<PathCommand> commands) const {
     using namespace Gdiplus;
 
-    // Lưu transform hiện tại
+    // Save transform
     Matrix oldMatrix;
     g.GetTransform(&oldMatrix);
 
-    // Áp dụng transform của path (nếu có)
+    // Apply path transform
     if (Path && Path->transform) {
-        // MultiplyTransform: kết hợp transform hiện tại với transform của path
-        // Chọn MatrixOrderPrepend hoặc Append tuỳ mục tiêu (prepend = local -> then world)
         g.MultiplyTransform(Path->transform, MatrixOrderPrepend);
     }
 
-    Pen pen(Color(255, 0, 0, 0), 2.0f); // Black pen with width 2.0f)
-    PointF currentPoint(0.0f, 0.0f), startPoint(0.0f, 0.0f);
+    GraphicsPath gp;
+
+    // Apply fill-rule
+    if (Path->style.fillRule == FillRule::EvenOdd)
+        gp.SetFillMode(FillModeAlternate); // EvenOdd
+    else
+        gp.SetFillMode(FillModeWinding);   // NonZero
+
+    PointF currentPoint(0, 0), startPoint(0, 0);
 
     for (const auto& cmd : commands) {
         switch (cmd.command) {
+
         case 'M': {
             currentPoint = PointF(cmd.parameters[0], cmd.parameters[1]);
             startPoint = currentPoint;
@@ -174,28 +180,22 @@ void SVGRenderer::renderPath(Gdiplus::Graphics& g, SVGPath* Path, vector<PathCom
         }
         case 'L': {
             PointF p(cmd.parameters[0], cmd.parameters[1]);
-            g.DrawLine(&pen, currentPoint, p);
+            gp.AddLine(currentPoint, p);
             currentPoint = p;
             break;
         }
         case 'H': {
             float x = cmd.parameters[0];
             PointF p(x, currentPoint.Y);
-            g.DrawLine(&pen, currentPoint, p);
-
+            gp.AddLine(currentPoint, p);
             currentPoint = p;
             break;
         }
         case 'V': {
             float y = cmd.parameters[0];
             PointF p(currentPoint.X, y);
-            g.DrawLine(&pen, currentPoint, p);
+            gp.AddLine(currentPoint, p);
             currentPoint = p;
-            break;
-        }
-        case 'Z': {
-            g.DrawLine(&pen, currentPoint, startPoint);
-            currentPoint = startPoint;
             break;
         }
         case 'C': {
@@ -203,184 +203,43 @@ void SVGRenderer::renderPath(Gdiplus::Graphics& g, SVGPath* Path, vector<PathCom
             PointF p2(cmd.parameters[2], cmd.parameters[3]);
             PointF p3(cmd.parameters[4], cmd.parameters[5]);
 
-            g.DrawBezier(&pen, currentPoint, p1, p2, p3);
+            gp.AddBezier(currentPoint, p1, p2, p3);
             currentPoint = p3;
             break;
         }
+        case 'Z': {
+            gp.AddLine(currentPoint, startPoint);
+            currentPoint = startPoint;
+            break;
+        }
+
         }
     }
-	g.SetTransform(&oldMatrix); // Khôi phục transform ban đầu
-}
 
-void SVGRenderer::drawCubicBezier(Gdiplus::Graphics& g,
-    const CustomPoint& p0,
-    const CustomPoint& p1,
-    const CustomPoint& p2,
-    const CustomPoint& p3) const
-{
-    using namespace Gdiplus;
-
-    Pen pen(Color(255, 0, 0, 0), 2);
-
-    PointF points[4] = {
-        PointF(p0.x, p0.y),
-        PointF(p1.x, p1.y),
-        PointF(p2.x, p2.y),
-        PointF(p3.x, p3.y)
-    };
-
-    g.DrawBeziers(&pen, points, 4);
-}
-
-
-
-
-
-/*
-#include "SVGRenderer.h"
-#include <sstream>
-#include <algorithm>
-#include <cmath>
-
-// bởi vì không dùng using namespace Gdiplus; trong header nữa
-namespace Gdiplus {
-    struct PointF; // Forward declaration nếu cần
-    class Graphics;
-    class SolidBrush;
-    class Pen;
-    class Color; 
-}
-
-// Sửa lỗi: Đảm bảo Gdiplus::PointF được sử dụng đúng
-using Gdiplus::PointF;
-using Gdiplus::SolidBrush;
-using Gdiplus::Pen;
-using Gdiplus::Color;
-// SVGRenderer::SVGRenderer() : zoom(1.0f), rotate(0.0f) {
-// }
-void SVGRenderer::renderText(Gdiplus::Graphics& g, const SVGText* text) {
-    if (!text) return;
-    PointF pos = text->getStart();// tương tự 
-    std::string content = text->getContent();
-    Color color = text->getSVGStyle().getFillColor();// tương tự 
-    float fontSize = text->getFontSize();
-    Gdiplus::FontFamily fontFamily(L"Arial");
-    Gdiplus::Font font(&fontFamily, fontSize, Gdiplus::FontStyleRegular, Gdiplus::UnitPixel);
-    Gdiplus::SolidBrush brush(color);
-    g.DrawString(content.c_str(), -1, &font, pos, &brush);
-}
-void SVGRenderer::renderSquare(Gdiplus::Graphics& g, const SVGSquare* square) {
-    if (!square) return;
-
-    PointF topLeft = square->getTopLeftCorner();
-    float side = square->getHeight();// tương tự 
-
-    Gdiplus::SolidBrush brush(square->getSVGStyle().getFillColor());
-    Gdiplus::Pen pen(square->getSVGStyle().getStroke().strokeColor, square->getSVGStyle().getStroke().strokeWidth);
-
-    g.FillRectangle(&brush, topLeft.X, topLeft.Y, side, side);
-    g.DrawRectangle(&pen, topLeft.X, topLeft.Y, side, side);
-}
-
-void SVGRenderer::renderFigure(Gdiplus::Graphics& g, const SVGGroup* rootGroup) {
-    if (!rootGroup) return;
-    rootGroup->render(*this, g);//hình như class SVGGroup chưa đc định nghĩa đầy đủ hay sao á, thử thêm virtual void render(SVGRenderer&) const = 0; vô thử 
-}
-
-void SVGRenderer::renderRectangle(Gdiplus::Graphics& g, const SVGRectangle* rect) {
-    if (!rect) return;
-
-    // LƯU Ý: Phải có hàm chuyển đổi CustomPoint sang Gdiplus::Point/PointF
-    // Giả định getTopLeftCorner() trả về CustomPoint có thể ép kiểu/convert
-    CustomPoint cp = rect->getTopLeftCorner();
-    Gdiplus::PointF topLeft(cp.x, cp.y); 
-
-    float w = rect->getWidth();
-    float h = rect->getHeight();
-
-    // Sử dụng Gdiplus::SolidBrush và Gdiplus::Pen
-    Gdiplus::SolidBrush brush(rect->getSVGStyle().getFillColor()); 
-    Gdiplus::Pen pen(rect->getSVGStyle().getStroke().strokeColor, rect->getSVGStyle().getStroke().strokeWidth);
-
-    g.FillRectangle(&brush, topLeft.X, topLeft.Y, w, h); 
-    g.DrawRectangle(&pen, topLeft.X, topLeft.Y, w, h);
-}
-
-void SVGRenderer::renderCircle(Gdiplus::Graphics& g, const SVGCircle* circle) {
-    if (!circle) return;
-
-    CustomPoint centerCp = circle->getCenter();
-    PointF center(centerCp.x, centerCp.y); 
-    float radius = circle->getRadius();
-
-    SolidBrush brush(circle->getSVGStyle().getFillColor());
-    Pen pen(circle->getSVGStyle().getStroke().strokeColor, circle->getSVGStyle().getStroke().strokeWidth);
-
-    float diameter = radius * 2;
-    g.FillEllipse(&brush, center.X - radius, center.Y - radius, diameter, diameter);
-    g.DrawEllipse(&pen, center.X - radius, center.Y - radius, diameter, diameter);
-}
-
-void SVGRenderer::renderEllipse(Gdiplus::Graphics& g, const SVGEllipse* ellipse) {
-    if (!ellipse) return;
-
-    CustomPoint centerCp = ellipse->getCenter();
-    PointF center(centerCp.x, centerCp.y); 
-    float rx = ellipse->getRadiusX();
-    float ry = ellipse->getRadiusY();
-
-    SolidBrush brush(ellipse->getSVGStyle().getFillColor());
-    Pen pen(ellipse->getSVGStyle().getStroke().strokeColor, ellipse->getSVGStyle().getStroke().strokeWidth);
-
-    g.FillEllipse(&brush, center.X - rx, center.Y - ry, rx * 2, ry * 2);
-    g.DrawEllipse(&pen, center.X - rx, center.Y - ry, rx * 2, ry * 2);
-}
-
-void SVGRenderer::renderLine(Gdiplus::Graphics& g, const SVGLine* line) {
-    if (!line) return;
-
-    PointF start(line->getStartPoint().x, line->getStartPoint().y);
-    PointF end(line->getEndPoint().x, line->getEndPoint().y);
-
-    Pen pen(line->getSVGStyle().getStroke().strokeColor, line->getSVGStyle().getStroke().strokeWidth);
-    g.DrawLine(&pen, start, end);
-}
-
-void SVGRenderer::renderPolygon(Gdiplus::Graphics& g, const SVGPolygon* polygon) {
-    if (!polygon) return;
-
-    // LƯU Ý: Nếu getPoints() trả về vector<CustomPoint>, 
-    // bạn cần chuyển đổi sang std::vector<Gdiplus::PointF>
-    
-    // Ví dụ về chuyển đổi:
-    std::vector<PointF> gdiPoints;
-    const auto& customPoints = polygon->getPoints();
-    for (const auto& cp : customPoints) {
-        gdiPoints.emplace_back(cp.x, cp.y);
+    // ----- FILL -----
+    if (Path->style.fillColor.a > 0) {
+        SolidBrush brush(Path->style.fillColor.toGDI());
+        g.FillPath(&brush, &gp);
     }
-    if (gdiPoints.empty()) return;
 
-    SolidBrush brush(polygon->getSVGStyle().getFillColor());
-    Pen pen(polygon->getSVGStyle().getStroke().strokeColor, polygon->getSVGStyle().getStroke().strokeWidth);
+    // ----- STROKE -----
+    if (Path->style.stroke.width > 0) {
 
-    g.FillPolygon(&brush, gdiPoints.data(), static_cast<INT>(gdiPoints.size()));
-    g.DrawPolygon(&pen, gdiPoints.data(), static_cast<INT>(gdiPoints.size()));
-}
+        Pen pen(Path->style.stroke.color.toGDI(), Path->style.stroke.width);
 
-// Hàm renderGroup sẽ gọi các hàm render đa hình của từng Element
-void SVGRenderer::renderGroup(Gdiplus::Graphics& g, const SVGGroup* rootGroup) {
-    if (!rootGroup) return;
+        // linejoin
+        /*switch (Path->style.stroke.lineJoin) {
+        case LineJoin::Miter:  pen.SetLineJoin(LineJoinMiter); break;
+        case LineJoin::Round:  pen.SetLineJoin(LineJoinRound); break;
+        case LineJoin::Bevel:  pen.SetLineJoin(LineJoinBevel); break;
+        }*/
 
-    const auto& children = rootGroup->getSVGElementArray();
-    for (SVGElement* element : children) {
-        // GỌI HÀM RENDER ĐA HÌNH
-        // Vì SVGElement::render() trong SVGElement.h đã được sửa thành chỉ nhận SVGRenderer&,
-        // bạn cần điều chỉnh cách gọi này. 
-        
-        // Ví dụ: element->render(*this); (Nếu bạn đổi lại chữ ký)
+        // miterlimit
+        pen.SetMiterLimit(Path->style.stroke.miterlimit);
 
-        // HOẶC nếu bạn dùng chữ ký cũ (render(SVGRenderer&, Gdiplus::Graphics&)):
-        element->render(*this, g); 
+        g.DrawPath(&pen, &gp);
     }
+
+    // Restore transform
+    g.SetTransform(&oldMatrix);
 }
-*/

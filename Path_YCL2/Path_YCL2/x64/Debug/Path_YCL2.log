@@ -1,0 +1,2434 @@
+﻿  SVGDocument.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(33,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(33,18): error C2146: syntax error: missing ';' before identifier 'GraphicsState'
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(33,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(533,8): error C7525: inline variables require at least '/std:c++17'
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(533,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(534,1): error C2146: syntax error: missing ';' before identifier 'ObjectTypeIsValid'
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(534,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(560,44): error C2065: 'META_SETBKCOLOR': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(560,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(561,44): error C2065: 'META_SETBKMODE': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(561,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(562,44): error C2065: 'META_SETMAPMODE': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(562,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(563,44): error C2065: 'META_SETROP2': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(563,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(564,44): error C2065: 'META_SETRELABS': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(564,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(565,44): error C2065: 'META_SETPOLYFILLMODE': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(565,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(566,44): error C2065: 'META_SETSTRETCHBLTMODE': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(566,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(567,44): error C2065: 'META_SETTEXTCHAREXTRA': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(567,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(568,44): error C2065: 'META_SETTEXTCOLOR': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(568,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(569,44): error C2065: 'META_SETTEXTJUSTIFICATION': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(569,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(570,44): error C2065: 'META_SETWINDOWORG': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(570,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(571,44): error C2065: 'META_SETWINDOWEXT': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(571,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(572,44): error C2065: 'META_SETVIEWPORTORG': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(572,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(573,44): error C2065: 'META_SETVIEWPORTEXT': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(573,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(574,44): error C2065: 'META_OFFSETWINDOWORG': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(574,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(575,44): error C2065: 'META_SCALEWINDOWEXT': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(575,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(576,44): error C2065: 'META_OFFSETVIEWPORTORG': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(576,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(577,44): error C2065: 'META_SCALEVIEWPORTEXT': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(577,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(578,44): error C2065: 'META_LINETO': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(578,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(579,44): error C2065: 'META_MOVETO': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(579,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(580,44): error C2065: 'META_EXCLUDECLIPRECT': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(580,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(581,44): error C2065: 'META_INTERSECTCLIPRECT': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(581,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(582,44): error C2065: 'META_ARC': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(582,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(583,44): error C2065: 'META_ELLIPSE': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(583,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(584,44): error C2065: 'META_FLOODFILL': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(584,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(585,44): error C2065: 'META_PIE': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(585,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(586,44): error C2065: 'META_RECTANGLE': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(586,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(587,44): error C2065: 'META_ROUNDRECT': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(587,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(588,44): error C2065: 'META_PATBLT': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(588,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(589,44): error C2065: 'META_SAVEDC': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(589,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(590,44): error C2065: 'META_SETPIXEL': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(590,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(591,44): error C2065: 'META_OFFSETCLIPRGN': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(591,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(592,44): error C2065: 'META_TEXTOUT': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(592,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(593,44): error C2065: 'META_BITBLT': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(593,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(594,44): error C2065: 'META_STRETCHBLT': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(594,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(595,44): error C2065: 'META_POLYGON': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(595,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(596,44): error C2065: 'META_POLYLINE': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(596,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(597,44): error C2065: 'META_ESCAPE': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(597,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(598,44): error C2065: 'META_RESTOREDC': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(598,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(599,44): error C2065: 'META_FILLREGION': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(599,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(600,44): error C2065: 'META_FRAMEREGION': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(600,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(601,44): error C2065: 'META_INVERTREGION': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(601,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(602,44): error C2065: 'META_PAINTREGION': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(602,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(603,44): error C2065: 'META_SELECTCLIPREGION': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(603,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(604,44): error C2065: 'META_SELECTOBJECT': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(604,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(605,44): error C2065: 'META_SETTEXTALIGN': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(605,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(607,44): error C2065: 'META_CHORD': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(607,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(608,44): error C2065: 'META_SETMAPPERFLAGS': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(608,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(609,44): error C2065: 'META_EXTTEXTOUT': undeclared identifier
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(609,5): error C2056: illegal expression
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(609,5): error C1003: error count exceeds 100; stopping compilation
+  (compiling source file '../SVGDocument/SVG_CPP/SVGDocument.cpp')
+  
+  CustomColor.cpp
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_CPP\CustomColor.cpp(1,10): error C1083: Cannot open include file: 'CustomColor.h': No such file or directory
+  CustomPoint.cpp
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_CPP\CustomPoint.cpp(1,10): error C1083: Cannot open include file: 'CustomPoint.h': No such file or directory
+  Stroke.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(33,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(33,18): error C2146: syntax error: missing ';' before identifier 'GraphicsState'
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(33,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(533,8): error C7525: inline variables require at least '/std:c++17'
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(533,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(534,1): error C2146: syntax error: missing ';' before identifier 'ObjectTypeIsValid'
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(534,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(560,44): error C2065: 'META_SETBKCOLOR': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(560,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(561,44): error C2065: 'META_SETBKMODE': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(561,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(562,44): error C2065: 'META_SETMAPMODE': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(562,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(563,44): error C2065: 'META_SETROP2': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(563,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(564,44): error C2065: 'META_SETRELABS': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(564,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(565,44): error C2065: 'META_SETPOLYFILLMODE': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(565,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(566,44): error C2065: 'META_SETSTRETCHBLTMODE': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(566,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(567,44): error C2065: 'META_SETTEXTCHAREXTRA': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(567,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(568,44): error C2065: 'META_SETTEXTCOLOR': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(568,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(569,44): error C2065: 'META_SETTEXTJUSTIFICATION': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(569,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(570,44): error C2065: 'META_SETWINDOWORG': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(570,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(571,44): error C2065: 'META_SETWINDOWEXT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(571,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(572,44): error C2065: 'META_SETVIEWPORTORG': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(572,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(573,44): error C2065: 'META_SETVIEWPORTEXT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(573,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(574,44): error C2065: 'META_OFFSETWINDOWORG': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(574,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(575,44): error C2065: 'META_SCALEWINDOWEXT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(575,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(576,44): error C2065: 'META_OFFSETVIEWPORTORG': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(576,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(577,44): error C2065: 'META_SCALEVIEWPORTEXT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(577,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(578,44): error C2065: 'META_LINETO': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(578,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(579,44): error C2065: 'META_MOVETO': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(579,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(580,44): error C2065: 'META_EXCLUDECLIPRECT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(580,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(581,44): error C2065: 'META_INTERSECTCLIPRECT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(581,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(582,44): error C2065: 'META_ARC': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(582,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(583,44): error C2065: 'META_ELLIPSE': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(583,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(584,44): error C2065: 'META_FLOODFILL': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(584,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(585,44): error C2065: 'META_PIE': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(585,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(586,44): error C2065: 'META_RECTANGLE': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(586,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(587,44): error C2065: 'META_ROUNDRECT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(587,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(588,44): error C2065: 'META_PATBLT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(588,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(589,44): error C2065: 'META_SAVEDC': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(589,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(590,44): error C2065: 'META_SETPIXEL': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(590,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(591,44): error C2065: 'META_OFFSETCLIPRGN': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(591,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(592,44): error C2065: 'META_TEXTOUT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(592,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(593,44): error C2065: 'META_BITBLT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(593,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(594,44): error C2065: 'META_STRETCHBLT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(594,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(595,44): error C2065: 'META_POLYGON': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(595,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(596,44): error C2065: 'META_POLYLINE': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(596,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(597,44): error C2065: 'META_ESCAPE': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(597,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(598,44): error C2065: 'META_RESTOREDC': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(598,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(599,44): error C2065: 'META_FILLREGION': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(599,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(600,44): error C2065: 'META_FRAMEREGION': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(600,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(601,44): error C2065: 'META_INVERTREGION': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(601,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(602,44): error C2065: 'META_PAINTREGION': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(602,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(603,44): error C2065: 'META_SELECTCLIPREGION': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(603,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(604,44): error C2065: 'META_SELECTOBJECT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(604,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(605,44): error C2065: 'META_SETTEXTALIGN': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(605,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(607,44): error C2065: 'META_CHORD': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(607,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(608,44): error C2065: 'META_SETMAPPERFLAGS': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(608,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(609,44): error C2065: 'META_EXTTEXTOUT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(609,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(609,5): error C1003: error count exceeds 100; stopping compilation
+  (compiling source file '../SVGElement/SVG_CPP/Stroke.cpp')
+  
+  SVGCircle.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(33,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(33,18): error C2146: syntax error: missing ';' before identifier 'GraphicsState'
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(33,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(533,8): error C7525: inline variables require at least '/std:c++17'
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(533,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(534,1): error C2146: syntax error: missing ';' before identifier 'ObjectTypeIsValid'
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(534,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(560,44): error C2065: 'META_SETBKCOLOR': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(560,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(561,44): error C2065: 'META_SETBKMODE': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(561,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(562,44): error C2065: 'META_SETMAPMODE': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(562,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(563,44): error C2065: 'META_SETROP2': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(563,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(564,44): error C2065: 'META_SETRELABS': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(564,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(565,44): error C2065: 'META_SETPOLYFILLMODE': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(565,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(566,44): error C2065: 'META_SETSTRETCHBLTMODE': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(566,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(567,44): error C2065: 'META_SETTEXTCHAREXTRA': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(567,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(568,44): error C2065: 'META_SETTEXTCOLOR': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(568,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(569,44): error C2065: 'META_SETTEXTJUSTIFICATION': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(569,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(570,44): error C2065: 'META_SETWINDOWORG': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(570,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(571,44): error C2065: 'META_SETWINDOWEXT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(571,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(572,44): error C2065: 'META_SETVIEWPORTORG': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(572,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(573,44): error C2065: 'META_SETVIEWPORTEXT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(573,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(574,44): error C2065: 'META_OFFSETWINDOWORG': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(574,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(575,44): error C2065: 'META_SCALEWINDOWEXT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(575,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(576,44): error C2065: 'META_OFFSETVIEWPORTORG': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(576,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(577,44): error C2065: 'META_SCALEVIEWPORTEXT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(577,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(578,44): error C2065: 'META_LINETO': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(578,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(579,44): error C2065: 'META_MOVETO': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(579,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(580,44): error C2065: 'META_EXCLUDECLIPRECT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(580,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(581,44): error C2065: 'META_INTERSECTCLIPRECT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(581,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(582,44): error C2065: 'META_ARC': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(582,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(583,44): error C2065: 'META_ELLIPSE': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(583,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(584,44): error C2065: 'META_FLOODFILL': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(584,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(585,44): error C2065: 'META_PIE': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(585,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(586,44): error C2065: 'META_RECTANGLE': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(586,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(587,44): error C2065: 'META_ROUNDRECT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(587,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(588,44): error C2065: 'META_PATBLT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(588,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(589,44): error C2065: 'META_SAVEDC': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(589,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(590,44): error C2065: 'META_SETPIXEL': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(590,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(591,44): error C2065: 'META_OFFSETCLIPRGN': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(591,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(592,44): error C2065: 'META_TEXTOUT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(592,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(593,44): error C2065: 'META_BITBLT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(593,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(594,44): error C2065: 'META_STRETCHBLT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(594,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(595,44): error C2065: 'META_POLYGON': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(595,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(596,44): error C2065: 'META_POLYLINE': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(596,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(597,44): error C2065: 'META_ESCAPE': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(597,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(598,44): error C2065: 'META_RESTOREDC': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(598,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(599,44): error C2065: 'META_FILLREGION': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(599,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(600,44): error C2065: 'META_FRAMEREGION': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(600,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(601,44): error C2065: 'META_INVERTREGION': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(601,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(602,44): error C2065: 'META_PAINTREGION': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(602,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(603,44): error C2065: 'META_SELECTCLIPREGION': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(603,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(604,44): error C2065: 'META_SELECTOBJECT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(604,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(605,44): error C2065: 'META_SETTEXTALIGN': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(605,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(607,44): error C2065: 'META_CHORD': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(607,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(608,44): error C2065: 'META_SETMAPPERFLAGS': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(608,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(609,44): error C2065: 'META_EXTTEXTOUT': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(609,5): error C2056: illegal expression
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(609,5): error C1003: error count exceeds 100; stopping compilation
+  (compiling source file '../SVGElement/SVG_CPP/SVGCircle.cpp')
+  
+  SVGElement.cpp
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_CPP\SVGElement.cpp(1,10): error C1083: Cannot open include file: 'SVGElement.h': No such file or directory
+  SVGEllipse.cpp
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\Stroke.h(16,36): error C2061: syntax error: identifier 'string'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\Stroke.h(20,19): error C2061: syntax error: identifier 'LineJoin'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\Stroke.h(21,14): error C2065: 'lj': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGCircle.h(11,26): error C2504: 'SVGEllipse': base class undefined
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGCircle.h(25,13): error C2653: 'tinyxml2': is not a class or namespace name
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGCircle.h(25,23): error C2061: syntax error: identifier 'XMLElement'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGLine.h(7,24): error C2504: 'SVGElement': base class undefined
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGLine.h(23,13): error C2653: 'tinyxml2': is not a class or namespace name
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGLine.h(23,23): error C2061: syntax error: identifier 'XMLElement'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(12,33): error C2504: 'SVGElement': base class undefined
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(14,7): error C2039: 'vector': is not a member of 'std'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\sstream(19,1):
+      see declaration of 'std'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(14,13): error C2143: syntax error: missing ';' before '<'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(14,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(14,33): error C2238: unexpected token(s) preceding ';'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(17,30): error C2039: 'vector': is not a member of 'std'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\sstream(19,1):
+      see declaration of 'std'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(17,19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(17,36): error C2143: syntax error: missing ',' before '<'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(23,7): error C2039: 'vector': is not a member of 'std'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\sstream(19,1):
+      see declaration of 'std'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(23,13): error C2143: syntax error: missing ';' before '<'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(23,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(23,44): error C2238: unexpected token(s) preceding ';'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(24,28): error C2039: 'vector': is not a member of 'std'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\sstream(19,1):
+      see declaration of 'std'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(24,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(24,34): error C2143: syntax error: missing ',' before '<'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(26,13): error C2653: 'tinyxml2': is not a class or namespace name
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(26,23): error C2061: syntax error: identifier 'XMLElement'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolygon.h(7,24): error C2039: 'vector': is not a member of 'std'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\sstream(19,1):
+      see declaration of 'std'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolygon.h(7,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolygon.h(7,30): error C2143: syntax error: missing ',' before '<'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolygon.h(13,13): error C2653: 'tinyxml2': is not a class or namespace name
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolygon.h(13,23): error C2061: syntax error: identifier 'XMLElement'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyline.h(7,25): error C2039: 'vector': is not a member of 'std'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\sstream(19,1):
+      see declaration of 'std'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyline.h(7,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyline.h(7,31): error C2143: syntax error: missing ',' before '<'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyline.h(13,13): error C2653: 'tinyxml2': is not a class or namespace name
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyline.h(13,23): error C2061: syntax error: identifier 'XMLElement'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGRectangle.h(7,29): error C2504: 'SVGElement': base class undefined
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGRectangle.h(26,13): error C2653: 'tinyxml2': is not a class or namespace name
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGRectangle.h(26,23): error C2061: syntax error: identifier 'XMLElement'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGSquare.h(15,13): error C2653: 'tinyxml2': is not a class or namespace name
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGSquare.h(15,23): error C2061: syntax error: identifier 'XMLElement'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGText.h(10,24): error C2504: 'SVGElement': base class undefined
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPath.h(18,24): error C2504: 'SVGElement': base class undefined
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.h(38,46): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.h(38,62): error C2143: syntax error: missing ',' before '*'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGGroup_Factory\SVG_H\SVGGroup.h(11,25): error C2504: 'SVGElement': base class undefined
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGGroup_Factory\SVG_H\SVGGroup.h(43,17): error C3668: 'SVGGroup::clone': method with override specifier 'override' did not override any base class methods
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGParser\SVGParser\include\SVGParser.h(27,18): error C2061: syntax error: identifier 'SVGStyle'
+  (compiling source file '../SVGElement/SVG_CPP/SVGEllipse.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_CPP\SVGEllipse.cpp(70,7): error C2664: 'void SVGRenderer::renderEllipse(Gdiplus::Graphics &,const int)': cannot convert argument 2 from 'const SVGEllipse *' to 'const int'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_CPP\SVGEllipse.cpp(70,24):
+      There is no context in which this conversion is possible
+      D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.h(38,10):
+      see declaration of 'SVGRenderer::renderEllipse'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_CPP\SVGEllipse.cpp(70,7):
+      while trying to match the argument list '(Gdiplus::Graphics, const SVGEllipse *)'
+  
+  SVGLine.cpp
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_CPP\SVGLine.cpp(1,10): error C1083: Cannot open include file: 'SVGLine.h': No such file or directory
+  SVGPath.cpp
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\Stroke.h(16,36): error C2061: syntax error: identifier 'string'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\Stroke.h(20,19): error C2061: syntax error: identifier 'LineJoin'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\Stroke.h(21,14): error C2065: 'lj': undeclared identifier
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGEllipse.h(9,27): error C2504: 'SVGElement': base class undefined
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGEllipse.h(19,12): error C2143: syntax error: missing ';' before '*'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGEllipse.h(19,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGEllipse.h(19,27): error C2238: unexpected token(s) preceding ';'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGEllipse.h(29,14): error C2061: syntax error: identifier 'SVGRenderer'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGLine.h(7,24): error C2504: 'SVGElement': base class undefined
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(12,33): error C2504: 'SVGElement': base class undefined
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(14,7): error C2039: 'vector': is not a member of 'std'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\sstream(19,1):
+      see declaration of 'std'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(14,13): error C2143: syntax error: missing ';' before '<'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(14,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(14,33): error C2238: unexpected token(s) preceding ';'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(17,30): error C2039: 'vector': is not a member of 'std'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\sstream(19,1):
+      see declaration of 'std'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(17,19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(17,36): error C2143: syntax error: missing ',' before '<'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(23,7): error C2039: 'vector': is not a member of 'std'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\sstream(19,1):
+      see declaration of 'std'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(23,13): error C2143: syntax error: missing ';' before '<'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(23,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(23,44): error C2238: unexpected token(s) preceding ';'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(24,28): error C2039: 'vector': is not a member of 'std'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\sstream(19,1):
+      see declaration of 'std'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(24,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyshapeBase.h(24,34): error C2143: syntax error: missing ',' before '<'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolygon.h(7,24): error C2039: 'vector': is not a member of 'std'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\sstream(19,1):
+      see declaration of 'std'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolygon.h(7,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolygon.h(7,30): error C2143: syntax error: missing ',' before '<'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyline.h(7,25): error C2039: 'vector': is not a member of 'std'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\sstream(19,1):
+      see declaration of 'std'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyline.h(7,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyline.h(7,31): error C2143: syntax error: missing ',' before '<'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGRectangle.h(7,29): error C2504: 'SVGElement': base class undefined
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGText.h(10,24): error C2504: 'SVGElement': base class undefined
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.h(48,43): error C2061: syntax error: identifier 'SVGPath'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGGroup_Factory\SVG_H\SVGGroup.h(11,25): error C2504: 'SVGElement': base class undefined
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGGroup_Factory\SVG_H\SVGGroup.h(43,17): error C3668: 'SVGGroup::clone': method with override specifier 'override' did not override any base class methods
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGParser\SVGParser\include\SVGParser.h(27,18): error C2061: syntax error: identifier 'SVGStyle'
+  (compiling source file '../SVGElement/SVG_CPP/SVGPath.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_CPP\SVGPath.cpp(179,4): error C2660: 'SVGRenderer::renderPath': function does not take 3 arguments
+      D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.h(48,10):
+      see declaration of 'SVGRenderer::renderPath'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_CPP\SVGPath.cpp(179,4):
+      while trying to match the argument list '(Gdiplus::Graphics, SVGPath *, const std::vector<PathCommand,std::allocator<PathCommand>>)'
+  
+  SVGPolygon.cpp
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_CPP\SVGPolygon.cpp(1,10): error C1083: Cannot open include file: 'SVGPolygon.h': No such file or directory
+  SVGPolyline.cpp
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_CPP\SVGPolyline.cpp(1,10): error C1083: Cannot open include file: 'SVGPolyline.h': No such file or directory
+  SVGPolyshapeBase.cpp
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_CPP\SVGPolyshapeBase.cpp(1,10): error C1083: Cannot open include file: 'SVGPolyshapeBase.h': No such file or directory
+  SVGRectangle.cpp
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_CPP\SVGRectangle.cpp(1,10): error C1083: Cannot open include file: 'SVGRectangle.h': No such file or directory
+  SVGSquare.cpp
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_CPP\SVGSquare.cpp(1,10): error C1083: Cannot open include file: 'SVGSquare.h': No such file or directory
+  SVGStyle.cpp
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_CPP\SVGStyle.cpp(1,10): error C1083: Cannot open include file: 'SVGStyle.h': No such file or directory
+  SVGText.cpp
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_CPP\SVGText.cpp(1,10): error C1083: Cannot open include file: 'SVGText.h': No such file or directory
+  SVGFactoryPattern.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(33,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(33,18): error C2146: syntax error: missing ';' before identifier 'GraphicsState'
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(33,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(533,8): error C7525: inline variables require at least '/std:c++17'
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(533,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(534,1): error C2146: syntax error: missing ';' before identifier 'ObjectTypeIsValid'
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(534,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(560,44): error C2065: 'META_SETBKCOLOR': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(560,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(561,44): error C2065: 'META_SETBKMODE': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(561,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(562,44): error C2065: 'META_SETMAPMODE': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(562,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(563,44): error C2065: 'META_SETROP2': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(563,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(564,44): error C2065: 'META_SETRELABS': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(564,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(565,44): error C2065: 'META_SETPOLYFILLMODE': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(565,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(566,44): error C2065: 'META_SETSTRETCHBLTMODE': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(566,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(567,44): error C2065: 'META_SETTEXTCHAREXTRA': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(567,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(568,44): error C2065: 'META_SETTEXTCOLOR': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(568,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(569,44): error C2065: 'META_SETTEXTJUSTIFICATION': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(569,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(570,44): error C2065: 'META_SETWINDOWORG': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(570,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(571,44): error C2065: 'META_SETWINDOWEXT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(571,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(572,44): error C2065: 'META_SETVIEWPORTORG': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(572,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(573,44): error C2065: 'META_SETVIEWPORTEXT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(573,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(574,44): error C2065: 'META_OFFSETWINDOWORG': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(574,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(575,44): error C2065: 'META_SCALEWINDOWEXT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(575,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(576,44): error C2065: 'META_OFFSETVIEWPORTORG': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(576,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(577,44): error C2065: 'META_SCALEVIEWPORTEXT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(577,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(578,44): error C2065: 'META_LINETO': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(578,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(579,44): error C2065: 'META_MOVETO': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(579,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(580,44): error C2065: 'META_EXCLUDECLIPRECT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(580,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(581,44): error C2065: 'META_INTERSECTCLIPRECT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(581,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(582,44): error C2065: 'META_ARC': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(582,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(583,44): error C2065: 'META_ELLIPSE': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(583,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(584,44): error C2065: 'META_FLOODFILL': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(584,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(585,44): error C2065: 'META_PIE': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(585,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(586,44): error C2065: 'META_RECTANGLE': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(586,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(587,44): error C2065: 'META_ROUNDRECT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(587,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(588,44): error C2065: 'META_PATBLT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(588,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(589,44): error C2065: 'META_SAVEDC': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(589,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(590,44): error C2065: 'META_SETPIXEL': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(590,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(591,44): error C2065: 'META_OFFSETCLIPRGN': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(591,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(592,44): error C2065: 'META_TEXTOUT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(592,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(593,44): error C2065: 'META_BITBLT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(593,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(594,44): error C2065: 'META_STRETCHBLT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(594,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(595,44): error C2065: 'META_POLYGON': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(595,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(596,44): error C2065: 'META_POLYLINE': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(596,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(597,44): error C2065: 'META_ESCAPE': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(597,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(598,44): error C2065: 'META_RESTOREDC': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(598,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(599,44): error C2065: 'META_FILLREGION': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(599,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(600,44): error C2065: 'META_FRAMEREGION': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(600,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(601,44): error C2065: 'META_INVERTREGION': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(601,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(602,44): error C2065: 'META_PAINTREGION': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(602,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(603,44): error C2065: 'META_SELECTCLIPREGION': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(603,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(604,44): error C2065: 'META_SELECTOBJECT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(604,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(605,44): error C2065: 'META_SETTEXTALIGN': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(605,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(607,44): error C2065: 'META_CHORD': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(607,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(608,44): error C2065: 'META_SETMAPPERFLAGS': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(608,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(609,44): error C2065: 'META_EXTTEXTOUT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(609,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(609,5): error C1003: error count exceeds 100; stopping compilation
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGFactoryPattern.cpp')
+  
+  SVGGroup.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(33,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(33,18): error C2146: syntax error: missing ';' before identifier 'GraphicsState'
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(33,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(533,8): error C7525: inline variables require at least '/std:c++17'
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(533,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(534,1): error C2146: syntax error: missing ';' before identifier 'ObjectTypeIsValid'
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(534,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(560,44): error C2065: 'META_SETBKCOLOR': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(560,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(561,44): error C2065: 'META_SETBKMODE': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(561,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(562,44): error C2065: 'META_SETMAPMODE': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(562,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(563,44): error C2065: 'META_SETROP2': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(563,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(564,44): error C2065: 'META_SETRELABS': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(564,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(565,44): error C2065: 'META_SETPOLYFILLMODE': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(565,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(566,44): error C2065: 'META_SETSTRETCHBLTMODE': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(566,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(567,44): error C2065: 'META_SETTEXTCHAREXTRA': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(567,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(568,44): error C2065: 'META_SETTEXTCOLOR': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(568,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(569,44): error C2065: 'META_SETTEXTJUSTIFICATION': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(569,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(570,44): error C2065: 'META_SETWINDOWORG': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(570,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(571,44): error C2065: 'META_SETWINDOWEXT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(571,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(572,44): error C2065: 'META_SETVIEWPORTORG': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(572,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(573,44): error C2065: 'META_SETVIEWPORTEXT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(573,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(574,44): error C2065: 'META_OFFSETWINDOWORG': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(574,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(575,44): error C2065: 'META_SCALEWINDOWEXT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(575,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(576,44): error C2065: 'META_OFFSETVIEWPORTORG': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(576,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(577,44): error C2065: 'META_SCALEVIEWPORTEXT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(577,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(578,44): error C2065: 'META_LINETO': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(578,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(579,44): error C2065: 'META_MOVETO': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(579,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(580,44): error C2065: 'META_EXCLUDECLIPRECT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(580,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(581,44): error C2065: 'META_INTERSECTCLIPRECT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(581,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(582,44): error C2065: 'META_ARC': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(582,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(583,44): error C2065: 'META_ELLIPSE': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(583,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(584,44): error C2065: 'META_FLOODFILL': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(584,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(585,44): error C2065: 'META_PIE': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(585,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(586,44): error C2065: 'META_RECTANGLE': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(586,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(587,44): error C2065: 'META_ROUNDRECT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(587,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(588,44): error C2065: 'META_PATBLT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(588,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(589,44): error C2065: 'META_SAVEDC': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(589,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(590,44): error C2065: 'META_SETPIXEL': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(590,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(591,44): error C2065: 'META_OFFSETCLIPRGN': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(591,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(592,44): error C2065: 'META_TEXTOUT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(592,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(593,44): error C2065: 'META_BITBLT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(593,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(594,44): error C2065: 'META_STRETCHBLT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(594,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(595,44): error C2065: 'META_POLYGON': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(595,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(596,44): error C2065: 'META_POLYLINE': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(596,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(597,44): error C2065: 'META_ESCAPE': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(597,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(598,44): error C2065: 'META_RESTOREDC': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(598,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(599,44): error C2065: 'META_FILLREGION': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(599,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(600,44): error C2065: 'META_FRAMEREGION': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(600,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(601,44): error C2065: 'META_INVERTREGION': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(601,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(602,44): error C2065: 'META_PAINTREGION': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(602,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(603,44): error C2065: 'META_SELECTCLIPREGION': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(603,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(604,44): error C2065: 'META_SELECTOBJECT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(604,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(605,44): error C2065: 'META_SETTEXTALIGN': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(605,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(607,44): error C2065: 'META_CHORD': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(607,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(608,44): error C2065: 'META_SETMAPPERFLAGS': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(608,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(609,44): error C2065: 'META_EXTTEXTOUT': undeclared identifier
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(609,5): error C2056: illegal expression
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(609,5): error C1003: error count exceeds 100; stopping compilation
+  (compiling source file '../SVGGroup_Factory/SVG_CPP/SVGGroup.cpp')
+  
+  SVGParser.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(33,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(33,18): error C2146: syntax error: missing ';' before identifier 'GraphicsState'
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(33,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(533,8): error C7525: inline variables require at least '/std:c++17'
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(533,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(534,1): error C2146: syntax error: missing ';' before identifier 'ObjectTypeIsValid'
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(534,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(560,44): error C2065: 'META_SETBKCOLOR': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(560,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(561,44): error C2065: 'META_SETBKMODE': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(561,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(562,44): error C2065: 'META_SETMAPMODE': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(562,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(563,44): error C2065: 'META_SETROP2': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(563,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(564,44): error C2065: 'META_SETRELABS': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(564,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(565,44): error C2065: 'META_SETPOLYFILLMODE': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(565,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(566,44): error C2065: 'META_SETSTRETCHBLTMODE': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(566,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(567,44): error C2065: 'META_SETTEXTCHAREXTRA': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(567,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(568,44): error C2065: 'META_SETTEXTCOLOR': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(568,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(569,44): error C2065: 'META_SETTEXTJUSTIFICATION': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(569,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(570,44): error C2065: 'META_SETWINDOWORG': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(570,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(571,44): error C2065: 'META_SETWINDOWEXT': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(571,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(572,44): error C2065: 'META_SETVIEWPORTORG': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(572,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(573,44): error C2065: 'META_SETVIEWPORTEXT': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(573,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(574,44): error C2065: 'META_OFFSETWINDOWORG': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(574,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(575,44): error C2065: 'META_SCALEWINDOWEXT': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(575,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(576,44): error C2065: 'META_OFFSETVIEWPORTORG': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(576,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(577,44): error C2065: 'META_SCALEVIEWPORTEXT': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(577,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(578,44): error C2065: 'META_LINETO': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(578,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(579,44): error C2065: 'META_MOVETO': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(579,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(580,44): error C2065: 'META_EXCLUDECLIPRECT': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(580,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(581,44): error C2065: 'META_INTERSECTCLIPRECT': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(581,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(582,44): error C2065: 'META_ARC': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(582,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(583,44): error C2065: 'META_ELLIPSE': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(583,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(584,44): error C2065: 'META_FLOODFILL': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(584,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(585,44): error C2065: 'META_PIE': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(585,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(586,44): error C2065: 'META_RECTANGLE': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(586,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(587,44): error C2065: 'META_ROUNDRECT': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(587,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(588,44): error C2065: 'META_PATBLT': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(588,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(589,44): error C2065: 'META_SAVEDC': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(589,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(590,44): error C2065: 'META_SETPIXEL': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(590,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(591,44): error C2065: 'META_OFFSETCLIPRGN': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(591,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(592,44): error C2065: 'META_TEXTOUT': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(592,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(593,44): error C2065: 'META_BITBLT': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(593,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(594,44): error C2065: 'META_STRETCHBLT': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(594,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(595,44): error C2065: 'META_POLYGON': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(595,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(596,44): error C2065: 'META_POLYLINE': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(596,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(597,44): error C2065: 'META_ESCAPE': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(597,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(598,44): error C2065: 'META_RESTOREDC': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(598,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(599,44): error C2065: 'META_FILLREGION': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(599,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(600,44): error C2065: 'META_FRAMEREGION': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(600,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(601,44): error C2065: 'META_INVERTREGION': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(601,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(602,44): error C2065: 'META_PAINTREGION': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(602,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(603,44): error C2065: 'META_SELECTCLIPREGION': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(603,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(604,44): error C2065: 'META_SELECTOBJECT': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(604,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(605,44): error C2065: 'META_SETTEXTALIGN': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(605,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(607,44): error C2065: 'META_CHORD': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(607,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(608,44): error C2065: 'META_SETMAPPERFLAGS': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(608,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(609,44): error C2065: 'META_EXTTEXTOUT': undeclared identifier
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(609,5): error C2056: illegal expression
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusEnums.h(609,5): error C1003: error count exceeds 100; stopping compilation
+  (compiling source file '../SVGParser/SVGParser/source/SVGParser.cpp')
+  
+  tinyxml2.cpp
+  Generating Code...
+  Compiling...
+  SVGRenderer.cpp
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\Stroke.h(16,36): error C2061: syntax error: identifier 'string'
+  (compiling source file '../SVGRenderer/SVGRenderer.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\Stroke.h(20,19): error C2061: syntax error: identifier 'LineJoin'
+  (compiling source file '../SVGRenderer/SVGRenderer.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\Stroke.h(21,14): error C2065: 'lj': undeclared identifier
+  (compiling source file '../SVGRenderer/SVGRenderer.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGElement.h(15,11): error C3646: 'style': unknown override specifier
+  (compiling source file '../SVGRenderer/SVGRenderer.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGElement.h(15,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGRenderer/SVGRenderer.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGElement.h(18,53): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGRenderer/SVGRenderer.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGElement.h(18,67): error C2143: syntax error: missing ',' before '&'
+  (compiling source file '../SVGRenderer/SVGRenderer.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGElement.h(28,11): error C3646: 'getSVGStyle': unknown override specifier
+  (compiling source file '../SVGRenderer/SVGRenderer.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGElement.h(28,22): error C2059: syntax error: '('
+  (compiling source file '../SVGRenderer/SVGRenderer.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGElement.h(28,30): error C2238: unexpected token(s) preceding ';'
+  (compiling source file '../SVGRenderer/SVGRenderer.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGElement.h(29,19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '../SVGRenderer/SVGRenderer.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGElement.h(29,33): error C2143: syntax error: missing ',' before '&'
+  (compiling source file '../SVGRenderer/SVGRenderer.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGParser\SVGParser\include\SVGParser.h(27,18): error C2061: syntax error: identifier 'SVGStyle'
+  (compiling source file '../SVGRenderer/SVGRenderer.cpp')
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(7,12): warning C4099: 'Gdiplus::PointF': type name first seen using 'class' now seen using 'struct'
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusTypes.h(247,7):
+      see declaration of 'Gdiplus::PointF'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(37,37): error C2039: 'getSVGStyle': is not a member of 'SVGRectangle'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGRectangle.h(7,7):
+      see declaration of 'SVGRectangle'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(37,30): error C2248: 'Gdiplus::SolidBrush::SolidBrush': cannot access protected member declared in class 'Gdiplus::SolidBrush'
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusBrush.h(159,5):
+      see declaration of 'Gdiplus::SolidBrush::SolidBrush'
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusBrush.h(116,7):
+      see declaration of 'Gdiplus::SolidBrush'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(38,28): error C2039: 'getSVGStyle': is not a member of 'SVGRectangle'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGRectangle.h(7,7):
+      see declaration of 'SVGRectangle'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(38,73): error C2039: 'getSVGStyle': is not a member of 'SVGRectangle'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGRectangle.h(7,7):
+      see declaration of 'SVGRectangle'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(38,21): error C2512: 'Gdiplus::Pen::Pen': no appropriate default constructor available
+      D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(38,21):
+      while trying to match the argument list '()'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(46,35): error C2039: 'getSVGStyle': is not a member of 'SVGCircle'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGCircle.h(11,7):
+      see declaration of 'SVGCircle'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(47,37): error C2039: 'getSVGStyle': is not a member of 'SVGCircle'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGCircle.h(11,7):
+      see declaration of 'SVGCircle'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(48,29): error C2039: 'getSVGStyle': is not a member of 'SVGCircle'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGCircle.h(11,7):
+      see declaration of 'SVGCircle'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(59,40): error C2039: 'getSVGStyle': is not a member of 'SVGEllipse'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGEllipse.h(9,7):
+      see declaration of 'SVGEllipse'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(59,30): error C2248: 'Gdiplus::SolidBrush::SolidBrush': cannot access protected member declared in class 'Gdiplus::SolidBrush'
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusBrush.h(159,5):
+      see declaration of 'Gdiplus::SolidBrush::SolidBrush'
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusBrush.h(116,7):
+      see declaration of 'Gdiplus::SolidBrush'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(60,31): error C2039: 'getSVGStyle': is not a member of 'SVGEllipse'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGEllipse.h(9,7):
+      see declaration of 'SVGEllipse'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(60,79): error C2039: 'getSVGStyle': is not a member of 'SVGEllipse'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGEllipse.h(9,7):
+      see declaration of 'SVGEllipse'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(60,21): error C2512: 'Gdiplus::Pen::Pen': no appropriate default constructor available
+      D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(60,21):
+      while trying to match the argument list '()'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(68,28): error C2039: 'getSVGStyle': is not a member of 'SVGLine'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGLine.h(7,7):
+      see declaration of 'SVGLine'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(68,73): error C2039: 'getSVGStyle': is not a member of 'SVGLine'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGLine.h(7,7):
+      see declaration of 'SVGLine'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(68,21): error C2512: 'Gdiplus::Pen::Pen': no appropriate default constructor available
+      D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(68,21):
+      while trying to match the argument list '()'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(81,40): error C2039: 'getSVGStyle': is not a member of 'SVGPolygon'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolygon.h(4,7):
+      see declaration of 'SVGPolygon'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(81,30): error C2248: 'Gdiplus::SolidBrush::SolidBrush': cannot access protected member declared in class 'Gdiplus::SolidBrush'
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusBrush.h(159,5):
+      see declaration of 'Gdiplus::SolidBrush::SolidBrush'
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusBrush.h(116,7):
+      see declaration of 'Gdiplus::SolidBrush'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(82,31): error C2039: 'getSVGStyle': is not a member of 'SVGPolygon'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolygon.h(4,7):
+      see declaration of 'SVGPolygon'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(82,79): error C2039: 'getSVGStyle': is not a member of 'SVGPolygon'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolygon.h(4,7):
+      see declaration of 'SVGPolygon'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(82,21): error C2512: 'Gdiplus::Pen::Pen': no appropriate default constructor available
+      D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(82,21):
+      while trying to match the argument list '()'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(95,32): error C2039: 'getSVGStyle': is not a member of 'SVGPolyline'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyline.h(4,7):
+      see declaration of 'SVGPolyline'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(95,81): error C2039: 'getSVGStyle': is not a member of 'SVGPolyline'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPolyline.h(4,7):
+      see declaration of 'SVGPolyline'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(95,21): error C2512: 'Gdiplus::Pen::Pen': no appropriate default constructor available
+      D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(95,21):
+      while trying to match the argument list '()'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(102,25): error C2039: 'getSVGStyle': is not a member of 'SVGText'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGText.h(10,7):
+      see declaration of 'SVGText'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(113,39): error C2039: 'getSVGStyle': is not a member of 'SVGSquare'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGSquare.h(6,7):
+      see declaration of 'SVGSquare'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(113,30): error C2248: 'Gdiplus::SolidBrush::SolidBrush': cannot access protected member declared in class 'Gdiplus::SolidBrush'
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusBrush.h(159,5):
+      see declaration of 'Gdiplus::SolidBrush::SolidBrush'
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusBrush.h(116,7):
+      see declaration of 'Gdiplus::SolidBrush'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(114,30): error C2039: 'getSVGStyle': is not a member of 'SVGSquare'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGSquare.h(6,7):
+      see declaration of 'SVGSquare'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(114,77): error C2039: 'getSVGStyle': is not a member of 'SVGSquare'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGSquare.h(6,7):
+      see declaration of 'SVGSquare'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(114,21): error C2512: 'Gdiplus::Pen::Pen': no appropriate default constructor available
+      D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(114,21):
+      while trying to match the argument list '()'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(165,40): error C2039: 'style': is not a member of 'SVGPath'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPath.h(18,7):
+      see declaration of 'SVGPath'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(167,19): error C2039: 'style': is not a member of 'SVGPath'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPath.h(18,7):
+      see declaration of 'SVGPath'
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(168,20): error C2838: 'Miter': illegal qualified name in member declaration
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(168,20): error C2065: 'Miter': undeclared identifier
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(168,20): error C2131: expression did not evaluate to a constant
+      D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(168,20):
+      a non-constant (sub-)expression was encountered
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(171,20): error C2838: 'Round': illegal qualified name in member declaration
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(171,20): error C2065: 'Round': undeclared identifier
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(171,20): error C2131: expression did not evaluate to a constant
+      D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(171,20):
+      a non-constant (sub-)expression was encountered
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(174,20): error C2838: 'Bevel': illegal qualified name in member declaration
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(174,20): error C2065: 'Bevel': undeclared identifier
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(174,20): error C2131: expression did not evaluate to a constant
+      D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(174,20):
+      a non-constant (sub-)expression was encountered
+  
+D:\DoAnOOP2025\Path_YCL2\SVGRenderer\SVGRenderer.cpp(179,29): error C2039: 'style': is not a member of 'SVGPath'
+      D:\DoAnOOP2025\Path_YCL2\SVGElement\SVG_H\SVGPath.h(18,7):
+      see declaration of 'SVGPath'
+  
+  Generating Code...
