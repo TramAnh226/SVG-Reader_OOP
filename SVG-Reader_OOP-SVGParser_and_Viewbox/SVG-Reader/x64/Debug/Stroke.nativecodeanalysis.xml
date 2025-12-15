@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\LENOVO\Downloads\SVG-Reader_OOP-SVGParser_and_Viewbox (1)\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\</FILEPATH>
+      <FILENAME>Stroke.cpp</FILENAME>
+      <LINE>239</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Stroke::strokeMiterLimit' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Stroke::{ctor}</FUNCTION>
+    <DECORATED>??0Stroke@@QEAA@XZ</DECORATED>
+    <FUNCLINE>239</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Stroke::strokeMiterLimit</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\LENOVO\Downloads\SVG-Reader_OOP-SVGParser_and_Viewbox (1)\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\</FILEPATH>
+      <FILENAME>Stroke.cpp</FILENAME>
+      <LINE>248</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Stroke::strokeMiterLimit' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Stroke::{ctor}</FUNCTION>
+    <DECORATED>??0Stroke@@QEAA@UCustomColor@@MM@Z</DECORATED>
+    <FUNCLINE>248</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Stroke::strokeMiterLimit</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\LENOVO\Downloads\SVG-Reader_OOP-SVGParser_and_Viewbox (1)\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\</FILEPATH>
+      <FILENAME>Stroke.cpp</FILENAME>
+      <LINE>265</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Stroke::strokeMiterLimit' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Stroke::{ctor}</FUNCTION>
+    <DECORATED>??0Stroke@@QEAA@AEBU0@@Z</DECORATED>
+    <FUNCLINE>265</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Stroke::strokeMiterLimit</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>
