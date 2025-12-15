@@ -1669,20 +1669,67 @@ void SVGParser::parseLine(SVGLine* line, tinyxml2::XMLElement* Node) {
     line->setEndPoint(CustomPoint(x2, y2));
 }
 
+//void SVGParser::parsePolyshape(SVGPolyshapeBase* poly, tinyxml2::XMLElement* Node) {
+//    const char* pointsStr = Node->Attribute("points");
+//    if (!pointsStr) return;
+//    std::vector<CustomPoint> pts;
+//    std::stringstream ss(pointsStr);
+//    std::string token;
+//    while (getline(ss, token, ' ')) {
+//        if (token.empty()) continue;
+//        size_t comma = token.find(',');
+//        if (comma == std::string::npos) continue;
+//        float x = stof(token.substr(0, comma));
+//        float y = stof(token.substr(comma + 1));
+//        pts.emplace_back(x, y);
+//    }
+//    poly->setPoints(pts);
+//}
+
 void SVGParser::parsePolyshape(SVGPolyshapeBase* poly, tinyxml2::XMLElement* Node) {
     const char* pointsStr = Node->Attribute("points");
     if (!pointsStr) return;
+
     std::vector<CustomPoint> pts;
-    std::stringstream ss(pointsStr);
+    std::string pointsString(pointsStr);
+
+    // 1. CHUẨN HÓA: Thay thế dấu phẩy bằng khoảng trắng
+    // Điều này cho phép chúng ta xử lý cả định dạng "x,y x,y" và "x y x y"
+    std::replace(pointsString.begin(), pointsString.end(), ',', ' ');
+
+    // 2. TÁCH TOKEN VÀ GHÉP CẶP
+    std::stringstream ss(pointsString);
     std::string token;
-    while (getline(ss, token, ' ')) {
-        if (token.empty()) continue;
-        size_t comma = token.find(',');
-        if (comma == std::string::npos) continue;
-        float x = stof(token.substr(0, comma));
-        float y = stof(token.substr(comma + 1));
-        pts.emplace_back(x, y);
+
+    float x = 0.0f;
+    bool readingX = true;
+
+    // ss >> token tự động bỏ qua khoảng trắng thừa
+    while (ss >> token) {
+        try {
+            float value = std::stof(token);
+
+            if (readingX) {
+                x = value;
+                // Sẵn sàng đọc tọa độ Y
+                readingX = false;
+            }
+            else {
+                // Đã đọc xong Y, tạo điểm và sẵn sàng đọc X tiếp theo
+                pts.emplace_back(x, value);
+                readingX = true;
+            }
+        }
+        catch (const std::exception& e) {
+            // Xử lý lỗi: Nếu không thể chuyển token thành float, bỏ qua
+            // Nếu đang chờ Y, chúng ta reset để không làm hỏng cặp tiếp theo
+            if (!readingX) {
+                readingX = true;
+            }
+        }
     }
+
+    // Gán tập hợp điểm đã phân tích cho đối tượng
     poly->setPoints(pts);
 }
 

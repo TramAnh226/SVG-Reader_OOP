@@ -153,7 +153,7 @@ SVGText::SVGText()
     content(L""),
     dx(0.0f), 
     dy(0.0f),
-    font_family("Arial")
+    font_family("Times New Roman")
 {
 }
 SVGText::SVGText(float font_size, const CustomPoint& start, const std::wstring& content)
@@ -161,7 +161,7 @@ SVGText::SVGText(float font_size, const CustomPoint& start, const std::wstring& 
     font_size(font_size),
     start(start),
     content(content),
-    font_family("Arial"),
+    font_family("Times New Roman"),
     dx(0.0f), 
     dy(0.0f)
 {

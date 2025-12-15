@@ -2633,7 +2633,7 @@ void SVGRenderer::renderText(Gdiplus::Graphics& g, const SVGText* text, const SV
         wFontFamilyName = fallbackFontName;
     }
     else if (fontFamilyName == "sans-serif") {
-        wFontFamilyName = L"Arial";
+        wFontFamilyName = L"Times New Roman";
     }
     else {
         wFontFamilyName.assign(fontFamilyName.begin(), fontFamilyName.end());
