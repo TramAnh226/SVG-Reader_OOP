@@ -78,8 +78,19 @@
 
 
 #pragma once
+
+#include <cmath>
+
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
 #include <windows.h>
 #include <gdiplus.h>
+#include "SVGPath.h"
+#include <algorithm>
+#include <iostream>
+
 //#include "SVGRectangle.h"
 //#include "SVGCircle.h"
 //#include "SVGEllipse.h" 
@@ -89,7 +100,6 @@
 //#include "SVGText.h"
 //#include "SVGSquare.h"
 //#include "SVGGroup.h"
-#include "SVGPath.h"
 //#include "SVGDocumentContext.h" 
 //#include "SVGGradient.h"
 //#include "SVGLinearGradient.h"
@@ -147,10 +157,13 @@ public:
     //void renderPath(Gdiplus::Graphics& g, const SVGPath* pathElement, const std::vector<PathCommand>& commands, const SVGDocumentContext& context) const;
     void renderPath(Gdiplus::Graphics&, const SVGPath*, const SVGDocumentContext&) const;
     void drawCubicBezier(Gdiplus::Graphics&, const CustomPoint&, const CustomPoint&, const CustomPoint&, const CustomPoint&) const;
+    void addSvgArcToPath(Gdiplus::GraphicsPath& path, Gdiplus::PointF start, Gdiplus::PointF end, float rx, float ry, float rot, bool largeArc, bool sweep) const;
 
     Gdiplus::WrapMode getGdiWrapMode(const std::string& spreadMethod) const;
-    void renderLinearGradientFill(Gdiplus::Graphics& g, const SVGLinearGradient* grad, const Gdiplus::RectF& bounds);
-    void renderRadialGradientFill(Gdiplus::Graphics& g, const SVGRadialGradient* grad, const Gdiplus::RectF& bounds);
-    void renderGradientFill(Gdiplus::Graphics& g, const SVGGradient* grad, const Gdiplus::RectF& bounds, const SVGDocumentContext& context);
+    void renderLinearGradientFill(Gdiplus::Graphics& g, const SVGLinearGradient* grad, const Gdiplus::GraphicsPath& path, const Gdiplus::RectF& bounds) const;
+    void renderRadialObjectBoundingBox(Gdiplus::Graphics& g, const SVGRadialGradient* grad, const Gdiplus::GraphicsPath& path, const Gdiplus::RectF& bounds) const;
+    void renderRadialUserSpace(Gdiplus::Graphics& g, const SVGRadialGradient* grad, const Gdiplus::GraphicsPath& path, const Gdiplus::RectF& bounds) const;
+    void renderRadialGradientFill(Gdiplus::Graphics& g, const SVGRadialGradient* grad, const Gdiplus::GraphicsPath& path, const Gdiplus::RectF& bounds) const;
+    void renderGradientFill(Gdiplus::Graphics& g, const SVGGradient* grad, const Gdiplus::GraphicsPath& path,  const Gdiplus::RectF& bounds, const SVGDocumentContext& context);
 
 };

@@ -320,26 +320,21 @@ bool SVGStyle::hasGradientFill() const {
 
 void SVGStyle::resolveGradient(const SVGDocumentContext& context) {
     if (!gradId.empty() && grad == nullptr) {
-
-        // Trích xuất ID: loại bỏ dấu #
         std::string id = gradId;
-        if (id.size() > 0 && id[0] == '#') {
-            id = id.substr(1);
-        }
+        if (id.size() > 0 && id[0] == '#') id = id.substr(1);
 
-        // 2. Tìm kiếm ID Gradient trong Context
         const SVGGradient* gradient = context.getGradientById(id);
 
         if (gradient) {
-            // BƯỚC MỚI: GIẢI QUYẾT CHUỖI THAM CHIẾU
-            const SVGGradient* resolvedGradient = gradient->resolveReference(context);
+            // SỬA TẠI ĐÂY:
+            // 1. Bảo gradient tự đi tìm màu từ xlink:href nếu nó chưa có stops
+            gradient->resolveReference(context);
 
-            // 3. Gán con trỏ thực tế (trỏ đến Gradient cuối cùng)
-            this->grad = const_cast<SVGGradient*>(resolvedGradient);
+            // 2. Gán trực tiếp vì 'gradient' bây giờ đã chứa dữ liệu stops cần thiết
+            this->grad = const_cast<SVGGradient*>(gradient);
         }
         else {
-            // 4. Nếu không tìm thấy, reset
-            std::cerr << "Warning: Gradient ID #" << id << " not found during resolution.\n";
+            std::cerr << "Warning: Gradient ID #" << id << " not found.\n";
             this->gradId = "";
             this->grad = nullptr;
         }

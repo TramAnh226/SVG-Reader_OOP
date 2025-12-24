@@ -1,5 +1,5 @@
 ﻿  main.cpp
-C:\Users\LENOVO\Documents\GitHub\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(101,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
+C:\Users\LENOVO\Documents\GitHub\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(111,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
   (compiling source file 'main.cpp')
       C:\Users\LENOVO\Documents\GitHub\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(37,8):
       see declaration of 'CustomPoint'

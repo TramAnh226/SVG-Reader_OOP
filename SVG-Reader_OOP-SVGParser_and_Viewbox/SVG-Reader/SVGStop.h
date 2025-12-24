@@ -39,4 +39,6 @@ public:
 	CustomColor getStopColor() const;
 	float getOffset() const;
 	float getStopOpacity() const;
+
+	Gdiplus::Color getGdiColor() const;
 };

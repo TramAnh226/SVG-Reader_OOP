@@ -1,4 +1,4 @@
-//#include "SVGStop.h"
+﻿//#include "SVGStop.h"
 //
 //SVGStop::SVGStop(): offset(0.0f), stopOpacity(1.0f)  {
 //}
@@ -84,4 +84,14 @@ float SVGStop::getOffset() const {
 
 float SVGStop::getStopOpacity() const {
 	return this->stopOpacity;
+}
+
+Gdiplus::Color SVGStop::getGdiColor() const {
+	// Giả sử stopColor là kiểu CustomColor có các thuộc tính r, g, b
+	return Gdiplus::Color(
+		static_cast<BYTE>(stopOpacity * 255),
+		stopColor.r,
+		stopColor.g,
+		stopColor.b
+	);
 }

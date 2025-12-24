@@ -53,6 +53,7 @@
 //#include "SVGParser.h"
 #include <string>
 #include <vector>
+#include <unordered_set>
 
 class SVGParser;
 class SVGDocumentContext;
@@ -60,29 +61,30 @@ class SVGDocumentContext;
 class SVGGradient {
 protected:
 	std::string gradientID; // id de dinh danh trong GradientMap
-	std::vector<SVGStop> stopArray;
 	std::string gradientUnits;
 	std::string spreadMethod;
-	std::string transform;
+	Gdiplus::Matrix* gradientTransform;
 	std::string hrefID;
+
+	mutable std::vector<SVGStop> stopArray;
 public:
 	SVGGradient();
 	SVGGradient(const SVGGradient& other);
 	SVGGradient& operator=(const SVGGradient& other);
-	virtual ~SVGGradient() = default;
+	virtual ~SVGGradient();
 
 	const std::string& getGradientID() const;
 	const std::vector<SVGStop>& getStopArray() const;
 	const std::string& getGradientUnits() const;
 	const std::string& getSpreadMethod() const;
-	const std::string& getTransform() const;
+	const Gdiplus::Matrix* getGradientTransform() const;
 	const std::string& getHrefID() const;
 
 	void setGradientID(const std::string&);
 	void setStopArray(const std::vector<SVGStop>&);
 	void setGradientUnits(const std::string&);
 	void setSpreadMethod(const std::string&);
-	void setTransform(const std::string&);
+	void setGradientTransform(Gdiplus::Matrix* matrix);
 	void setHrefID(const std::string&);
 
 	void addStop(const SVGStop&);
@@ -93,5 +95,6 @@ public:
 
 	bool isReferencing() const; // Kiểm tra xem có đang tham chiếu không
 
-	virtual const SVGGradient* resolveReference(const SVGDocumentContext& context) const;
+	/*virtual const SVGGradient* resolveReference(const SVGDocumentContext& context) const;*/
+	void resolveReference(const SVGDocumentContext& context) const;
 };

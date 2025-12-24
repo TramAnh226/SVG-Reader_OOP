@@ -930,6 +930,134 @@
 // using namespace tinyxml2;
 // using namespace std;
 
+// Helper: Bỏ qua khoảng trắng và dấu phẩy
+static void skipSpacesAndCommas(const std::string& s, size_t& pos) {
+    while (pos < s.size()) {
+        char ch = s[pos];
+        if (std::isspace((unsigned char)ch) || ch == ',')
+            ++pos;
+        else
+            break;
+    }
+}
+
+static bool parseFloatToken(const std::string& s, size_t& pos, float& out) {
+    skipSpacesAndCommas(s, pos);
+    if (pos >= s.size()) return false;
+    size_t start = pos;
+    bool hasDecimal = false;
+    for (; pos < s.size(); ++pos) {
+        char ch = s[pos];
+        if (std::isdigit((unsigned char)ch)) continue;
+        if (ch == '-' || ch == '+') { if (pos == start) continue; else break; }
+        if (ch == '.') { if (hasDecimal) break; hasDecimal = true; continue; }
+        if (ch == 'e' || ch == 'E') {
+            if (pos + 1 < s.size() && (std::isdigit(s[pos + 1]) || s[pos + 1] == '-' || s[pos + 1] == '+')) {
+                pos++; continue;
+            }
+            break;
+        }
+        break;
+    }
+    if (start == pos) return false;
+    try {
+        out = std::stof(s.substr(start, pos - start));
+        return true;
+    }
+    catch (...) { return false; }
+}
+
+static bool parseArcFlag(const std::string& s, size_t& pos, float& out) {
+    skipSpacesAndCommas(s, pos);
+    if (pos < s.size() && (s[pos] == '0' || s[pos] == '1')) {
+        out = (float)(s[pos] - '0');
+        pos++;
+        return true;
+    }
+    return false;
+}
+
+static std::vector<float>parseNumbers(const std::string& s)
+{
+    std::vector<float> nums;
+    std::stringstream ss(s);
+    std::string token;
+
+    char c;
+    std::string cur;
+    for (char ch : s) {
+        if (ch == ',' || isspace((unsigned char)ch)) {
+            if (!cur.empty()) {
+                nums.push_back(stof(cur));
+                cur.clear();
+            }
+        }
+        else {
+            cur.push_back(ch);
+        }
+    }
+
+    if (!cur.empty()) {
+        nums.push_back(stof(cur));
+    }
+    return nums;
+}
+
+Gdiplus::Matrix* SVGParser::parseTransform(const std::string& str) {
+    Gdiplus::Matrix* t = new Gdiplus::Matrix();
+    std::string s = str;
+
+    size_t pos = 0;
+    while (pos < s.size()) {
+        // XỬ LÝ MATRIX(a, b, c, d, e, f)
+        if (s.compare(pos, 6, "matrix") == 0) {
+            pos += 6;
+            size_t l = s.find('(', pos);
+            size_t r = s.find(')', l + 1);
+            if (l == std::string::npos || r == std::string::npos) break;
+
+            std::string inside = s.substr(l + 1, r - l - 1);
+            auto nums = parseNumbers(inside); // Đảm bảo hàm này tách được dấu phẩy hoặc khoảng trắng
+            if (nums.size() >= 6) {
+                // SVG matrix: a, b, c, d, e, f tương ứng với ma trận biến đổi 3x3
+                Gdiplus::Matrix m(nums[0], nums[1], nums[2], nums[3], nums[4], nums[5]);
+                t->Multiply(&m);
+            }
+            pos = r + 1;
+        }
+        else if (s.compare(pos, 9, "translate") == 0) {
+            pos += 9;
+            size_t l = s.find('(', pos), r = s.find(')', l + 1);
+            if (l == std::string::npos || r == std::string::npos) break;
+            auto nums = parseNumbers(s.substr(l + 1, r - l - 1));
+            t->Translate(nums.size() > 0 ? nums[0] : 0.0f, nums.size() > 1 ? nums[1] : 0.0f);
+            pos = r + 1;
+        }
+        else if (s.compare(pos, 5, "scale") == 0) {
+            pos += 5;
+            size_t l = s.find('(', pos), r = s.find(')', l + 1);
+            if (l == std::string::npos || r == std::string::npos) break;
+            auto nums = parseNumbers(s.substr(l + 1, r - l - 1));
+            float sx = nums.size() > 0 ? nums[0] : 1.0f;
+            float sy = nums.size() > 1 ? nums[1] : sx;
+            t->Scale(sx, sy);
+            pos = r + 1;
+        }
+        else if (s.compare(pos, 6, "rotate") == 0) {
+            pos += 6;
+            size_t l = s.find('(', pos), r = s.find(')', l + 1);
+            if (l == std::string::npos || r == std::string::npos) break;
+            auto nums = parseNumbers(s.substr(l + 1, r - l - 1));
+            t->Rotate(nums.size() > 0 ? nums[0] : 0.0f);
+            pos = r + 1;
+        }
+        else {
+            pos++;
+        }
+    }
+    return t;
+}
+
 // Hàm hỗ trợ chuyển đổi chuỗi sang enum cho TextAnchor
 TextAnchor SVGParser::parseTextAnchor(const std::string& value) {
     if (value == "middle") return TextAnchor::Middle;
@@ -1072,10 +1200,85 @@ void SVGParser::parseDEFS(tinyxml2::XMLElement* defsNode, SVGFactoryPattern& fac
     }
 }
 
+//float SVGParser::parseFloatValue(const char* attr) {
+//    if (!attr) return 0.0f;
+//    std::string s(attr);
+//    try {
+//        // Xóa khoảng trắng thừa
+//        size_t first = s.find_first_not_of(" \t\r\n");
+//        if (std::string::npos == first) return 0.0f;
+//        size_t last = s.find_last_not_of(" \t\r\n");
+//        std::string trimmed = s.substr(first, (last - first + 1));
+//
+//        float val = std::stof(trimmed);
+//        // Nếu có dấu %, chia cho 100 để đưa về hệ số (0.0 - 1.0)
+//        if (trimmed.find('%') != std::string::npos) {
+//            return val / 100.0f;
+//        }
+//        return val;
+//    }
+//    catch (...) { return 0.0f; }
+//}
+
+float SVGParser::parseFloatValue(const char* attr) {
+    if (!attr) return 0.0f;
+    std::string s(attr);
+    try {
+        size_t first = s.find_first_not_of(" \t\r\n");
+        if (std::string::npos == first) return 0.0f;
+        size_t last = s.find_last_not_of(" \t\r\n");
+        std::string trimmed = s.substr(first, (last - first + 1));
+
+        float val = std::stof(trimmed);
+        float finalVal = val;
+
+        if (trimmed.find('%') != std::string::npos) {
+            finalVal = val / 100.0f;
+        }
+
+        // DEBUG LUÔN Ở ĐÂY ĐỂ BIẾT TẠI SAO HÌNH SAI
+        if (val < 0 || finalVal > 1.0f) {
+            std::cout << "[PARSER DEBUG] String: '" << trimmed << "' -> Float: " << finalVal << std::endl;
+        }
+
+        return finalVal;
+    }
+    catch (...) {
+        std::cout << "[PARSER ERROR] Failed to parse: " << (attr ? attr : "NULL") << std::endl;
+        return 0.0f;
+    }
+}
+
+void SVGParser::parseGradientStops(SVGGradient* grad, tinyxml2::XMLElement* node) {
+    for (tinyxml2::XMLElement* child = node->FirstChildElement("stop"); child; child = child->NextSiblingElement("stop")) {
+        float offset = 0.0f;
+        const char* offsetAttr = child->Attribute("offset");
+        if (offsetAttr) {
+            std::string s = offsetAttr;
+            size_t pos = 0;
+            // Dùng hàm parseFloatToken đã sửa để đọc số nén hoặc %
+            if (parseFloatToken(s, pos, offset)) {
+                // Nếu parseFloatToken chưa xử lý chia 100 cho %, hãy check ở đây
+                if (s.find('%') != std::string::npos && offset > 1.0f) offset /= 100.0f;
+            }
+        }
+
+        CustomColor color(0, 0, 0);
+        float opacity = 1.0f;
+        const char* stopColorAttr = child->Attribute("stop-color");
+        if (stopColorAttr) color = CustomColor::fromStringToCustomColor(stopColorAttr);
+
+        const char* stopOpacityAttr = child->Attribute("stop-opacity");
+        if (stopOpacityAttr) opacity = std::stof(stopOpacityAttr);
+
+        grad->addStop(SVGStop(color, offset, opacity));
+    }
+}
+
 void SVGParser::parseGradient(SVGGradient* grad, tinyxml2::XMLElement* node) {
     if (!grad || !node) return;
 
-    // Xử lý ID (Rất quan trọng cho tham chiếu)
+    // Xử lý ID
     const char* idAttr = node->Attribute("id");
     if (idAttr) {
         grad->setGradientID(idAttr);
@@ -1093,119 +1296,52 @@ void SVGParser::parseGradient(SVGGradient* grad, tinyxml2::XMLElement* node) {
         grad->setSpreadMethod(spreadAttr);
     }
 
-    // Xử lý Transform
     const char* transformAttr = node->Attribute("gradientTransform");
     if (transformAttr) {
-        grad->setTransform(transformAttr);
+        // Gọi hàm đã được định nghĩa trong lớp
+        grad->setGradientTransform(SVGParser::parseTransform(transformAttr));
     }
 
     grad->clearStops();
 
-    for (tinyxml2::XMLElement* child = node->FirstChildElement(); child; child = child->NextSiblingElement()) {
-        std::string tagName = child->Name();
-
-        if (tagName == "stop") {
-            float offset = child->FloatAttribute("offset");
-            const char* stopColorAttr = child->Attribute("stop-color");
-            const char* stopOpacityAttr = child->Attribute("stop-opacity");
-
-            CustomColor color(0, 0, 0);
-            float opacity = 1.0f;
-
-            if (stopColorAttr) {
-                color = CustomColor::fromStringToCustomColor(stopColorAttr);
-            }
-            if (stopOpacityAttr) {
-                try { opacity = std::stof(stopOpacityAttr); }
-                catch (...) {}
-            }
-
-            grad->addStop(SVGStop(color, offset, opacity));
-        }
-    }
+    parseGradientStops(grad, node);
 }
+
 
 void SVGParser::parseLinearGradient(SVGLinearGradient* grad, tinyxml2::XMLElement* node) {
     if (!grad || !node) return;
 
-    const char* x1Attr = node->Attribute("x1");
-    if (x1Attr) { try { grad->setX1(std::stof(x1Attr)); } catch (...) {} }
+    // Sử dụng parseFloatValue để xử lý x1, y1, x2, y2 (hỗ trợ %)
+    grad->setX1(parseFloatValue(node->Attribute("x1")));
+    grad->setY1(parseFloatValue(node->Attribute("y1")));
 
-    const char* y1Attr = node->Attribute("y1");
-    if (y1Attr) { try { grad->setY1(std::stof(y1Attr)); } catch (...) {} }
-
+    // x2 mặc định thường là 1 (100%) nếu không khai báo
     const char* x2Attr = node->Attribute("x2");
-    if (x2Attr) { try { grad->setX2(std::stof(x2Attr)); } catch (...) {} }
+    grad->setX2(x2Attr ? parseFloatValue(x2Attr) : 1.0f);
 
-    const char* y2Attr = node->Attribute("y2");
-    if (y2Attr) { try { grad->setY2(std::stof(y2Attr)); } catch (...) {} }
+    grad->setY2(parseFloatValue(node->Attribute("y2")));
 
+    // Xử lý href/xlink:href
     const char* href = node->Attribute("href");
-    if (!href) {
-        href = node->Attribute("xlink:href");
-    }
-
-    if (href) {
-        grad->setHrefID(href);
-    }
+    if (!href) href = node->Attribute("xlink:href");
+    if (href) grad->setHrefID(href);
 }
 
 void SVGParser::parseRadialGradient(SVGRadialGradient* grad, tinyxml2::XMLElement* node) {
     if (!grad || !node) return;
 
-    const char* cxAttr = node->Attribute("cx");
-    if (cxAttr) { try { grad->setCX(std::stof(cxAttr)); } catch (...) {} }
-    else { grad->setCX(0.5f); }
-
-    const char* cyAttr = node->Attribute("cy");
-    if (cyAttr) { try { grad->setCY(std::stof(cyAttr)); } catch (...) {} }
-    else { grad->setCY(0.5f); }
-
-    const char* rAttr = node->Attribute("r");
-    if (rAttr) { try { grad->setR(std::stof(rAttr)); } catch (...) {} }
-    else { grad->setR(0.5f); }
+    // SỬA: Đọc đúng "cx" và "cy" thay vì "x1", "y1"
+    grad->setCX(node->Attribute("cx") ? parseFloatValue(node->Attribute("cx")) : 0.5f);
+    grad->setCY(node->Attribute("cy") ? parseFloatValue(node->Attribute("cy")) : 0.5f);
+    grad->setR(node->Attribute("r") ? parseFloatValue(node->Attribute("r")) : 0.5f);
 
     const char* fxAttr = node->Attribute("fx");
     const char* fyAttr = node->Attribute("fy");
+    grad->setFX(fxAttr ? parseFloatValue(fxAttr) : grad->getCX());
+    grad->setFY(fyAttr ? parseFloatValue(fyAttr) : grad->getCY());
 
-    if (fxAttr) { try { grad->setFX(std::stof(fxAttr)); } catch (...) {} }
-    else { grad->setFX(grad->getCX()); }
-    if (fyAttr) { try { grad->setFY(std::stof(fyAttr)); } catch (...) {} }
-    else { grad->setFY(grad->getCY()); }
-
-    const char* href = node->Attribute("href");
-    if (!href) {
-        href = node->Attribute("xlink:href");
-    }
-
-    if (href) {
-        grad->setHrefID(href);
-    }
-}
-static std::vector<float>parseNumbers(const std::string& s)
-{
-    std::vector<float> nums;
-    std::stringstream ss(s);
-    std::string token;
-
-    char c;
-    std::string cur;
-    for (char ch : s) {
-        if (ch == ',' || isspace((unsigned char)ch)) {
-            if (!cur.empty()) {
-                nums.push_back(stof(cur));
-                cur.clear();
-            }
-        }
-        else {
-            cur.push_back(ch);
-        }
-    }
-
-    if (!cur.empty()) {
-        nums.push_back(stof(cur));
-    }
-    return nums;
+    const char* href = node->Attribute("href") ? node->Attribute("href") : node->Attribute("xlink:href");
+    if (href) grad->setHrefID(href);
 }
 Gdiplus::Matrix* parse(const std::string& str)
 {
@@ -2137,3 +2273,217 @@ void SVGParser::parseInheritableAttributes(tinyxml2::XMLElement* xmlNode,
     }
 }
 
+void SVGParser::parsePath(SVGPath* path, tinyxml2::XMLElement* Node) {
+    const char* dAttr = Node->Attribute("d");
+    if (!dAttr) return;
+
+    std::string d = dAttr;
+    size_t pos = 0;
+    char cmd = 0;
+
+    float currentX = 0.0f, currentY = 0.0f;
+    float subPathStartX = 0.0f, subPathStartY = 0.0f; // Điểm bắt đầu của Sub-path (lệnh M gần nhất)
+    float lastCtrlX = 0.0f, lastCtrlY = 0.0f;        // Lưu điểm điều khiển cho lệnh S
+
+    while (pos < d.size()) {
+        skipSpacesAndCommas(d, pos);
+        if (pos >= d.size()) break;
+
+        // Kiểm tra lệnh mới
+        if (std::isalpha((unsigned char)d[pos])) {
+            cmd = d[pos];
+            pos++;
+        }
+
+        bool isRel = (cmd >= 'a' && cmd <= 'z'); // Lệnh chữ thường = tương đối
+        char absCmd = (char)std::toupper((unsigned char)cmd);
+
+        switch (absCmd) {
+        case 'M': {
+            float x, y;
+            while (parseFloatToken(d, pos, x) && parseFloatToken(d, pos, y)) {
+                if (isRel) { x += currentX; y += currentY; }
+                path->setCommands({ PathCommandType::MoveTo, {x, y} });
+                currentX = x; currentY = y;
+                subPathStartX = x; subPathStartY = y; // QUAN TRỌNG: Cập nhật gốc Sub-path
+                cmd = isRel ? 'l' : 'L'; // Implicit LineTo sau M
+                skipSpacesAndCommas(d, pos);
+                if (pos < d.size() && std::isalpha(d[pos])) break;
+            }
+            break;
+        }
+        case 'L': {
+            float x, y;
+            while (parseFloatToken(d, pos, x) && parseFloatToken(d, pos, y)) {
+                if (isRel) { x += currentX; y += currentY; }
+                path->setCommands({ PathCommandType::LineTo, {x, y} });
+                currentX = x; currentY = y;
+                lastCtrlX = currentX; lastCtrlY = currentY;
+                skipSpacesAndCommas(d, pos);
+                if (pos < d.size() && std::isalpha(d[pos])) break;
+            }
+            break;
+        }
+        case 'H': { // Horizontal Line
+            float x;
+            while (parseFloatToken(d, pos, x)) {
+                if (isRel) x += currentX;
+                path->setCommands({ PathCommandType::HLineTo, {x} });
+                currentX = x;
+                lastCtrlX = currentX; lastCtrlY = currentY;
+                skipSpacesAndCommas(d, pos);
+                if (pos < d.size() && std::isalpha(d[pos])) break;
+            }
+            break;
+        }
+        case 'V': { // Vertical Line
+            float y;
+            while (parseFloatToken(d, pos, y)) {
+                if (isRel) y += currentY;
+                path->setCommands({ PathCommandType::VLineTo, {y} });
+                currentY = y;
+                lastCtrlX = currentX; lastCtrlY = currentY;
+                skipSpacesAndCommas(d, pos);
+                if (pos < d.size() && std::isalpha(d[pos])) break;
+            }
+            break;
+        }
+        case 'C': { // Cubic Bezier
+            float x1, y1, x2, y2, x, y;
+            while (parseFloatToken(d, pos, x1) && parseFloatToken(d, pos, y1) &&
+                parseFloatToken(d, pos, x2) && parseFloatToken(d, pos, y2) &&
+                parseFloatToken(d, pos, x) && parseFloatToken(d, pos, y)) {
+                if (isRel) {
+                    x1 += currentX; y1 += currentY;
+                    x2 += currentX; y2 += currentY;
+                    x += currentX;  y += currentY;
+                }
+                path->setCommands({ PathCommandType::CubicBezier, {x1, y1, x2, y2, x, y} });
+                lastCtrlX = x2; lastCtrlY = y2; // Lưu để dùng cho lệnh S
+                currentX = x; currentY = y;
+                skipSpacesAndCommas(d, pos);
+                if (pos < d.size() && std::isalpha(d[pos])) break;
+            }
+            break;
+        }
+        case 'S': { // Smooth Cubic Bezier
+            float x2, y2, x, y;
+            while (parseFloatToken(d, pos, x2) && parseFloatToken(d, pos, y2) &&
+                parseFloatToken(d, pos, x) && parseFloatToken(d, pos, y)) {
+                if (isRel) {
+                    x2 += currentX; y2 += currentY;
+                    x += currentX;  y += currentY;
+                }
+                // Tính toán điểm x1, y1 đối xứng (để renderer dùng luôn cho AddBezier)
+                float x1 = currentX, y1 = currentY;
+                if (!path->getCommands().empty()) {
+                    PathCommandType prevType = path->getCommands().back().type;
+                    if (prevType == PathCommandType::CubicBezier || prevType == PathCommandType::SmoothCubicBezier) {
+                        x1 = 2.0f * currentX - lastCtrlX;
+                        y1 = 2.0f * currentY - lastCtrlY;
+                    }
+                }
+                path->setCommands({ PathCommandType::SmoothCubicBezier, {x1, y1, x2, y2, x, y} });
+                lastCtrlX = x2; lastCtrlY = y2;
+                currentX = x; currentY = y;
+                skipSpacesAndCommas(d, pos);
+                if (pos < d.size() && std::isalpha(d[pos])) break;
+            }
+            break;
+        }
+                //case 'A': { // Elliptical Arc
+                //    float rx, ry, rot, large, sweep, x, y;
+                //    while (parseFloatToken(d, pos, rx) && parseFloatToken(d, pos, ry) &&
+                //        parseFloatToken(d, pos, rot) && parseFloatToken(d, pos, large) &&
+                //        parseFloatToken(d, pos, sweep) && parseFloatToken(d, pos, x) &&
+                //        parseFloatToken(d, pos, y)) {
+                //        if (isRel) { x += currentX; y += currentY; }
+                //        path->setCommands({ PathCommandType::Arc, {rx, ry, rot, large, sweep, x, y} });
+                //        currentX = x; currentY = y;
+                //        skipSpacesAndCommas(d, pos);
+                //        if (pos < d.size() && std::isalpha(d[pos])) break;
+                //    }
+                //    break;
+                //}
+                //case 'A': {
+                //    float rx, ry, rot, large, sweep, x, y;
+                //    while (parseFloatToken(d, pos, rx) && parseFloatToken(d, pos, ry) &&
+                //        parseFloatToken(d, pos, rot) && parseFloatToken(d, pos, large) &&
+                //        parseFloatToken(d, pos, sweep) && parseFloatToken(d, pos, x) &&
+                //        parseFloatToken(d, pos, y)) {
+
+                //        float targetX = x;
+                //        float targetY = y;
+
+                //        if (isRel) { targetX += currentX; targetY += currentY; }
+
+                //        // --- LỆNH IN ĐỂ DEBUG ---
+                //        std::cout << "--- Command Arc (A/a) detected ---" << std::endl;
+                //        std::cout << "Original Type: " << cmd << " (isRel: " << (isRel ? "true" : "false") << ")" << std::endl;
+                //        std::cout << "Params read: "
+                //            << "rx=" << rx << ", ry=" << ry << ", rot=" << rot
+                //            << ", large=" << large << ", sweep=" << sweep
+                //            << ", x=" << x << ", y=" << y << std::endl;
+                //        std::cout << "Calculated Absolute EndPoint: (" << targetX << ", " << targetY << ")" << std::endl;
+                //        std::cout << "Current StartPoint: (" << currentX << ", " << currentY << ")" << std::endl;
+                //        // ------------------------
+
+                //        path->setCommands({ PathCommandType::Arc, {rx, ry, rot, large, sweep, targetX, targetY} });
+
+                //        currentX = x; currentY = y;
+                //        lastCtrlX = currentX; lastCtrlY = currentY;
+                //        skipSpacesAndCommas(d, pos);
+                //        if (pos < d.size() && std::isalpha(d[pos]) && d[pos] != 'e') break;
+                //    }
+                //    break;
+                //}
+        case 'A': {
+            float rx, ry, rot, large, sweep, x, y;
+            while (parseFloatToken(d, pos, rx) &&
+                parseFloatToken(d, pos, ry) &&
+                parseFloatToken(d, pos, rot) &&
+                parseArcFlag(d, pos, large) && // Dùng hàm đọc flag riêng
+                parseArcFlag(d, pos, sweep) && // Dùng hàm đọc flag riêng
+                parseFloatToken(d, pos, x) &&
+                parseFloatToken(d, pos, y)) {
+
+                float targetX = x;
+                float targetY = y;
+                if (isRel) {
+                    targetX += currentX;
+                    targetY += currentY;
+                }
+
+                // --- LỆNH IN ĐỂ DEBUG ---
+                std::cout << "--- Command Arc (A/a) detected ---" << std::endl;
+                std::cout << "Original Type: " << cmd << " (isRel: " << (isRel ? "true" : "false") << ")" << std::endl;
+                std::cout << "Params read: "
+                    << "rx=" << rx << ", ry=" << ry << ", rot=" << rot
+                    << ", large=" << large << ", sweep=" << sweep
+                    << ", x=" << x << ", y=" << y << std::endl;
+                std::cout << "Calculated Absolute EndPoint: (" << targetX << ", " << targetY << ")" << std::endl;
+                std::cout << "Current StartPoint: (" << currentX << ", " << currentY << ")" << std::endl;
+                // ------------------------
+
+                path->setCommands({ PathCommandType::Arc, {rx, ry, rot, large, sweep, targetX, targetY} });
+
+                // QUAN TRỌNG: Cập nhật bằng tọa độ tuyệt đối để lệnh tiếp theo dùng đúng gốc
+                currentX = targetX;
+                currentY = targetY;
+
+                lastCtrlX = currentX; lastCtrlY = currentY;
+                skipSpacesAndCommas(d, pos);
+                if (pos < d.size() && std::isalpha(d[pos]) && d[pos] != 'e') break;
+            }
+            break;
+        }
+        case 'Z': {
+            path->setCommands({ PathCommandType::ClosePath, {} });
+            currentX = subPathStartX; // Quay về điểm bắt đầu Sub-path
+            currentY = subPathStartY;
+            break;
+        }
+        default: pos++; break;
+        }
+    }
+}

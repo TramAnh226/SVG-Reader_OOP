@@ -444,12 +444,10 @@ void SVGElement::printDebugAttributes(std::ostream& os, int idx) const {
     this->printStyleDebug(os);
 }
 void SVGElement::printStyleDebug(std::ostream& os) const {
-    // Hàm này chỉ in các thuộc tính Style của chính đối tượng này
     os << "Fill: " << this->style.getFillColor().fromCustomColorToString() << std::endl;
     os << "Fill Opacity: " << this->style.getFillOpacity() << std::endl;
 
     Stroke* strokeObj = this->style.getStroke();
-
     if (strokeObj != nullptr) {
         os << "  --- STROKE INFO ---" << std::endl;
         os << "  Width: " << strokeObj->strokeWidth << std::endl;
@@ -460,14 +458,25 @@ void SVGElement::printStyleDebug(std::ostream& os) const {
     else {
         os << "Stroke: NONE" << std::endl;
     }
+
     os << "GradId: " << this->style.getGradId() << std::endl;
+
     const SVGGradient* gradObj = this->style.getGrad();
     if (gradObj) {
         os << "  --- GRADIENT INFO ---" << std::endl;
         os << "  ID: " << gradObj->getGradientID() << std::endl;
-        //os << "  Opacity: " << strokeObj->strokeOpacity << std::endl;
-        //os << "  Color (RGB): " << strokeObj->strokeColor.fromCustomColorToString() << std::endl;
-        os << "---------------------" << std::endl;
+        os << "  Units: " << gradObj->getGradientUnits() << std::endl; // Quan trọng để check userSpaceOnUse
+
+        // THÊM VÒNG LẶP IN STOPS TẠI ĐÂY
+        const std::vector<SVGStop>& stops = gradObj->getStopArray();
+        os << "  Stops Count: " << stops.size() << std::endl;
+
+        for (size_t i = 0; i < stops.size(); ++i) {
+            os << "    Stop [" << i << "]: Offset = " << stops[i].getOffset()
+                << ", Color = " << stops[i].getStopColor().fromCustomColorToString()
+                << ", Opacity = " << stops[i].getStopOpacity() << std::endl;
+        }
+        os << "  ---------------------" << std::endl;
     }
 }
 

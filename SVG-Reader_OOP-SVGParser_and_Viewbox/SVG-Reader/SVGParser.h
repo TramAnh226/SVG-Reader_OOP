@@ -141,10 +141,13 @@ public:
 	void parseStroke(Stroke& stroke, const std::string& styleStr);
 	void parseStyle(SVGStyle& style, const std::string& styleStr);
 
+	float parseFloatValue(const char* attr);
+	void parseGradientStops(SVGGradient* grad, tinyxml2::XMLElement* node);
 	void parseDEFS(tinyxml2::XMLElement* xmlNode, SVGFactoryPattern& factory, SVGDocumentContext& context);
 	void parseGradient(SVGGradient* grad, tinyxml2::XMLElement* node);
 	void parseLinearGradient(SVGLinearGradient* grad, tinyxml2::XMLElement* xmlNode);
 	void parseRadialGradient(SVGRadialGradient* grad, tinyxml2::XMLElement* xmlNode);
+	Gdiplus::Matrix* parseTransform(const std::string& str);
 
 	void parseRectangle(SVGRectangle* rect, tinyxml2::XMLElement* Node);
 	void parseSquare(SVGSquare* sq, tinyxml2::XMLElement* Node);
