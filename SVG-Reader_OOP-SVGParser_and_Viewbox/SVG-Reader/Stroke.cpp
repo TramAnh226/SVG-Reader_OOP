@@ -280,7 +280,11 @@ Stroke& Stroke::operator=(const Stroke& other) {
 }
 
 Stroke::~Stroke() {}
-
+// Trong file Stroke.h hoặc Stroke.cpp
+float Stroke::getStrokeOpacity() const {
+    // Thường thì các parser sẽ lưu giá trị này khi đọc thuộc tính stroke-opacity="0.5"
+    return this->strokeOpacity;
+}
 const std::string& Stroke::getStrokeGradId() const { return this->strokeGradId; }
 const SVGGradient* Stroke::getStrokeGrad() const { return this->strokeGrad; }
 

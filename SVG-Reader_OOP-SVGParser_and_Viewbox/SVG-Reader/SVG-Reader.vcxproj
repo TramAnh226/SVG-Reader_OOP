@@ -138,8 +138,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ColorUtils.h" />
     <ClInclude Include="CustomColor.h" />
     <ClInclude Include="CustomPoint.h" />
+    <ClInclude Include="GradientUtils.h" />
     <ClInclude Include="Stroke.h" />
     <ClInclude Include="SVGCircle.h" />
     <ClInclude Include="SVGDocument.h" />

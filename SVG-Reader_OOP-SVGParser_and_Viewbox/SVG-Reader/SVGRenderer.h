@@ -164,6 +164,7 @@ public:
     void renderRadialObjectBoundingBox(Gdiplus::Graphics& g, const SVGRadialGradient* grad, const Gdiplus::GraphicsPath& path, const Gdiplus::RectF& bounds) const;
     void renderRadialUserSpace(Gdiplus::Graphics& g, const SVGRadialGradient* grad, const Gdiplus::GraphicsPath& path, const Gdiplus::RectF& bounds) const;
     void renderRadialGradientFill(Gdiplus::Graphics& g, const SVGRadialGradient* grad, const Gdiplus::GraphicsPath& path, const Gdiplus::RectF& bounds) const;
-    void renderGradientFill(Gdiplus::Graphics& g, const SVGGradient* grad, const Gdiplus::GraphicsPath& path,  const Gdiplus::RectF& bounds, const SVGDocumentContext& context);
+    void renderGradientFill(Gdiplus::Graphics& g, const SVGGradient* grad, const Gdiplus::GraphicsPath& path, const Gdiplus::RectF& bounds, const SVGDocumentContext& context);
+
 
 };

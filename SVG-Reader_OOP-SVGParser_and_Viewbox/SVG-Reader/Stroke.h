@@ -65,7 +65,8 @@ public:
 	Stroke(const Stroke&);
 	Stroke& operator=(const Stroke&);
 	~Stroke();
-
+	// Trong file Stroke.h hoặc Stroke.cpp
+	float getStrokeOpacity() const;
 	const std::string& getStrokeGradId() const;
 	const SVGGradient* getStrokeGrad() const;
 	void setStrokeGradId(const std::string& id);

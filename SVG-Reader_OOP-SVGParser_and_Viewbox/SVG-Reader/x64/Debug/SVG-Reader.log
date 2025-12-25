@@ -1,8 +1,8 @@
 ﻿  main.cpp
-C:\Users\LENOVO\Documents\GitHub\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(111,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
+D:\DoAnOOP2025\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(111,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
   (compiling source file 'main.cpp')
-      C:\Users\LENOVO\Documents\GitHub\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(37,8):
+      D:\DoAnOOP2025\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(37,8):
       see declaration of 'CustomPoint'
   
-C:\Users\LENOVO\Documents\GitHub\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\main.cpp(620,31): warning C4101: 'e': unreferenced local variable
-  SVG-Reader.vcxproj -> C:\Users\LENOVO\Documents\GitHub\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\x64\Debug\SVG-Reader.exe
+D:\DoAnOOP2025\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\main.cpp(383,31): warning C4101: 'e': unreferenced local variable
+  SVG-Reader.vcxproj -> D:\DoAnOOP2025\SVG-Reader_OOP-SVGParser_and_Viewbox\x64\Debug\SVG-Reader.exe
