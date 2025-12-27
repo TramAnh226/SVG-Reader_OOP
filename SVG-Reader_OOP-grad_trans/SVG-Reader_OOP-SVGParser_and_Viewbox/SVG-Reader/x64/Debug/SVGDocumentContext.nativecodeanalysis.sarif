@@ -1,0 +1,75 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "MSVC Code Analysis",
+          "version": "14.44.35217.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgdocumentcontext.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "29a59269d4db1a1e25abe2671e66eee212726a2c7fc040223de44b2abbbfc8c3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgdocumentcontext.h"
+          },
+          "hashes": {
+            "sha-256": "861197b2c1253187837c85597a6cd8e999d1d69fe7d938a8969e235a54fee8aa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svggradient.h"
+          },
+          "hashes": {
+            "sha-256": "faa03cdfb0e2c075f60ae5eb093a2b2c54d01ae164f71315dac0f1a44a896bc0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/tinyxml2.h"
+          },
+          "hashes": {
+            "sha-256": "efbcd12caf3704f8611da0228378b1b191645a37e08647cdecace66263b8a2b0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgstop.h"
+          },
+          "hashes": {
+            "sha-256": "6624e98ef79ebe8905b32cf215445c8e1417bb956076deea1f48275389bcdd53"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/customcolor.h"
+          },
+          "hashes": {
+            "sha-256": "a2290ad4a9563244c94d5761e43cee6e55aec40fb400d8234a1b9bb24f7f936a"
+          }
+        }
+      ]
+    }
+  ]
+}

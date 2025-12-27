@@ -1,0 +1,8 @@
+﻿  main.cpp
+D:\Downloads\SVG-Reader_OOP-Milestone3\SVG-Reader_OOP-grad_trans\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(16,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'main.cpp')
+      D:\Downloads\SVG-Reader_OOP-Milestone3\SVG-Reader_OOP-grad_trans\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(37,8):
+      see declaration of 'CustomPoint'
+  
+D:\Downloads\SVG-Reader_OOP-Milestone3\SVG-Reader_OOP-grad_trans\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\main.cpp(384,31): warning C4101: 'e': unreferenced local variable
+  SVG-Reader.vcxproj -> D:\Downloads\SVG-Reader_OOP-Milestone3\SVG-Reader_OOP-grad_trans\SVG-Reader_OOP-SVGParser_and_Viewbox\x64\Debug\SVG-Reader.exe
