@@ -39,7 +39,7 @@ using namespace std;
 
 // Tên file SVG để tải
 //const std::string SVG_FILENAME = "D:\\Downloads\\sample.svg";
-const std::string SVG_FILENAME = "D:\\DoAnOOP2025\\SVG-Reader_OOP-SVGParser_and_Viewbox\\TestCases-20251225T142325Z-1-001\\TestCases\\svg-19.svg";
+const std::string SVG_FILENAME = "D:\\DoAnOOP2025\\SVG-Reader_OOP-SVGParser_and_Viewbox\\TestCases-20251225T142325Z-1-001\\TestCases\\svg-21.svg";
 
 // Đã chuyển sang Unicode (LPCWSTR)
 const LPCWSTR WINDOW_CLASS_NAME = L"SVGReaderWindow";

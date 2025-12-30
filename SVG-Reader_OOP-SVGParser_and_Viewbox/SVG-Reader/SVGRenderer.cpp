@@ -11,8 +11,7 @@
 #include "SVGText.h"
 #include "SVGSquare.h"
 #include "SVGStop.h"
-#include "GradientUtils.h"
-#include "ColorUtils.h"
+
 //#include "SVGElement.h"  
 //#include "CustomColor.h" // Cần cho getARGB
 //#include "CustomPoint.h" // Cần cho CustomPoint.x/y
@@ -1093,7 +1092,7 @@ Gdiplus::Color stabilizeHue(const Gdiplus::Color& src, float offset) {
     );
 }
 
-
+//bản ok
 //void SVGRenderer::renderRadialObjectBoundingBox(Gdiplus::Graphics& g, const SVGRadialGradient* grad, const Gdiplus::GraphicsPath& path, const Gdiplus::RectF& bounds) const {
 //    using namespace Gdiplus;
 //    std::vector<SVGStop> stops = grad->getStopArray();
@@ -1128,15 +1127,23 @@ Gdiplus::Color stabilizeHue(const Gdiplus::Color& src, float offset) {
 //        );
 //
 //        // === FIX IG COLOR SHIFT ===
-//        Color currentStopCol = stabilizeHue(rawCol, offset);
+//        Color currentStopCol = rawCol;
+//        float lum = getLuminance(rawCol);
 //
-//        float lum = getLuminance(currentStopCol);
+//        
+//
+//        //Color currentStopCol = stabilizeHue(rawCol, offset);
+//
+//        //float lum = getLuminance(currentStopCol);
 //        float currentBias = 0.4f; // Mặc định
 //
-//        // NẾU LÀ MÀU TRẮNG/SÁNG (như vùng tâm viên ngọc):
+//        //// NẾU LÀ MÀU TRẮNG/SÁNG (như vùng tâm viên ngọc):
+//        //if (lum > 230) {
+//        //    // Dùng bias thấp (0.2 - 0.25) để ép màu trắng loang rộng ra biên
+//        //    currentBias = 0.22f;
+//        //}
 //        if (lum > 230) {
-//            // Dùng bias thấp (0.2 - 0.25) để ép màu trắng loang rộng ra biên
-//            currentBias = 0.22f;
+//            currentStopCol = stabilizeHue(rawCol, offset);
 //        }
 //        else if (lum > 180) {
 //            currentBias = 0.32f;
@@ -1176,18 +1183,87 @@ Gdiplus::Color stabilizeHue(const Gdiplus::Color& src, float offset) {
 //    g.FillPath(&brush, &path);
 //}
 
+////bản tai vàng
+//void SVGRenderer::renderRadialObjectBoundingBox(Gdiplus::Graphics& g, const SVGRadialGradient* grad, const Gdiplus::GraphicsPath& path, const Gdiplus::RectF& bounds) const {
+//    using namespace Gdiplus;
+//    std::vector<SVGStop> stops = grad->getStopArray();
+//    if (stops.empty()) return;
+//
+//    // 1. Tọa độ và Bán kính chuẩn
+//    float cx = bounds.X + grad->getCX() * bounds.Width;
+//    float cy = bounds.Y + grad->getCY() * bounds.Height;
+//    float fx = bounds.X + grad->getFX() * bounds.Width;
+//    float fy = bounds.Y + grad->getFY() * bounds.Height;
+//    float r_svg = grad->getR() * (std::max)(bounds.Width, bounds.Height);
+//
+//    float d1 = pow(cx - bounds.X, 2) + pow(cy - bounds.Y, 2);
+//    float d2 = pow(cx - (bounds.X + bounds.Width), 2) + pow(cy - bounds.Y, 2);
+//    float d3 = pow(cx - bounds.X, 2) + pow(cy - (bounds.Y + bounds.Height), 2);
+//    float d4 = pow(cx - (bounds.X + bounds.Width), 2) + pow(cy - (bounds.Y + bounds.Height), 2);
+//    float r_cover = sqrt((std::max)({ d1, d2, d3, d4 }));
+//
+//    float r = (std::max)(r_svg, r_cover);
+//    float ratio = r_svg / r;
+//
+//    // 2. Mảng màu: LOGIC MỞ RỘNG VÙNG TRẮNG
+//    std::vector<REAL> pos; std::vector<Color> col;
+//
+//    for (int i = (int)stops.size() - 1; i >= 0; --i) {
+//        float offset = stops[i].getOffset();
+//        Color currentStopCol(BYTE(stops[i].getStopOpacity() * 255), stops[i].getStopColor().r, stops[i].getStopColor().g, stops[i].getStopColor().b);
+//
+//        float lum = getLuminance(currentStopCol);
+//        float currentBias = 0.4f; // Mặc định
+//
+//        // NẾU LÀ MÀU TRẮNG/SÁNG (như vùng tâm viên ngọc):
+//        if (lum > 230) {
+//            // Dùng bias thấp (0.2 - 0.25) để ép màu trắng loang rộng ra biên
+//            currentBias = 0.22f;
+//        }
+//        else if (lum > 180) {
+//            currentBias = 0.32f;
+//        }
+//
+//        float adjustedOffset = applyBias(offset, currentBias);
+//        pos.push_back(1.0f - (adjustedOffset * ratio));
+//        col.push_back(currentStopCol);
+//    }
+//
+//    // 3. Logic Pad (Giữ nguyên để chuẩn viên ngọc)
+//    if (pos.front() > 0.0f) { pos.insert(pos.begin(), 0.0f); col.insert(col.begin(), col.at(1)); }
+//    if (pos.back() < 1.0f) { pos.push_back(1.0f); col.push_back(col.back()); }
+//    for (size_t i = 1; i < pos.size(); ++i) if (pos[i] <= pos[i - 1]) pos[i] = pos[i - 1] + 0.001f;
+//
+//   // 4. Brush
+//    GraphicsPath brushPath;
+//    brushPath.AddEllipse(cx - r, cy - r, r * 2, r * 2);
+//    PathGradientBrush brush(&brushPath);
+//    brush.SetCenterPoint(PointF(fx, fy));
+//    brush.SetInterpolationColors(col.data(), pos.data(), (int)pos.size());
+//    brush.SetGammaCorrection(FALSE);
+//    brush.SetWrapMode(WrapModeClamp);
+//
+//    if (grad->getGradientTransform()) brush.MultiplyTransform(grad->getGradientTransform(), MatrixOrderPrepend);
+//
+//    g.FillPath(&brush, &path);
+//}
+
+//bản vầng đỏ
 void SVGRenderer::renderRadialObjectBoundingBox(Gdiplus::Graphics& g, const SVGRadialGradient* grad, const Gdiplus::GraphicsPath& path, const Gdiplus::RectF& bounds) const {
     using namespace Gdiplus;
     std::vector<SVGStop> stops = grad->getStopArray();
     if (stops.empty()) return;
 
-    // 1. Tọa độ và Bán kính chuẩn
+    // 1. Tọa độ thực tế dựa trên Bounds
     float cx = bounds.X + grad->getCX() * bounds.Width;
     float cy = bounds.Y + grad->getCY() * bounds.Height;
     float fx = bounds.X + grad->getFX() * bounds.Width;
     float fy = bounds.Y + grad->getFY() * bounds.Height;
+
+    // Bán kính chuẩn SVG
     float r_svg = grad->getR() * (std::max)(bounds.Width, bounds.Height);
 
+    // Tính toán bán kính bao phủ để không bị "cụt" màu ở rìa
     float d1 = pow(cx - bounds.X, 2) + pow(cy - bounds.Y, 2);
     float d2 = pow(cx - (bounds.X + bounds.Width), 2) + pow(cy - bounds.Y, 2);
     float d3 = pow(cx - bounds.X, 2) + pow(cy - (bounds.Y + bounds.Height), 2);
@@ -1197,229 +1273,64 @@ void SVGRenderer::renderRadialObjectBoundingBox(Gdiplus::Graphics& g, const SVGR
     float r = (std::max)(r_svg, r_cover);
     float ratio = r_svg / r;
 
-    // 2. Mảng màu: LOGIC MỞ RỘNG VÙNG TRẮNG
+    // 2. Xây dựng mảng màu
     std::vector<REAL> pos; std::vector<Color> col;
 
+    // SVG: 0 (tâm) -> 1 (rìa). GDI+: 0 (rìa) -> 1 (tâm)
+ //   for (int i = (int)stops.size() - 1; i >= 0; --i) {
+ //       float offset = stops[i].getOffset();
+ //// Bias vùng ngoài để GIỮ RED Ở RÌA
+ //       float biasedOffset = applyBias(offset, 0.65f);
+ //       Color c(BYTE(stops[i].getStopOpacity() * 255),
+ //           stops[i].getStopColor().r,
+ //           stops[i].getStopColor().g,
+ //           stops[i].getStopColor().b);
     for (int i = (int)stops.size() - 1; i >= 0; --i) {
         float offset = stops[i].getOffset();
-        Color currentStopCol(BYTE(stops[i].getStopOpacity() * 255), stops[i].getStopColor().r, stops[i].getStopColor().g, stops[i].getStopColor().b);
-
-        float lum = getLuminance(currentStopCol);
-        float currentBias = 0.4f; // Mặc định
-
-        // NẾU LÀ MÀU TRẮNG/SÁNG (như vùng tâm viên ngọc):
-        if (lum > 230) {
-            // Dùng bias thấp (0.2 - 0.25) để ép màu trắng loang rộng ra biên
-            currentBias = 0.22f;
-        }
-        else if (lum > 180) {
-            currentBias = 0.32f;
-        }
-
+        Color rawCol(
+            BYTE(stops[i].getStopOpacity() * 255),
+            stops[i].getStopColor().r,
+            stops[i].getStopColor().g,
+            stops[i].getStopColor().b
+        );
+        Color currentStopCol = rawCol;
+        float currentBias = 0.4f;
+        float lum = getLuminance(rawCol);
+        //Đảo ngược vị trí và nén theo tỷ lệ r_svg/r
+        float adjustedPos = 1.0f - (offset * ratio);
+        // Tránh trùng offset gây lỗi GDI+
+        
         float adjustedOffset = applyBias(offset, currentBias);
-        pos.push_back(1.0f - (adjustedOffset * ratio));
+        if (!pos.empty() && adjustedPos <= pos.back()) adjustedPos = pos.back() + 0.001f;
+        //pos.push_back(adjustedPos);
+        pos.push_back(1.0f - (adjustedOffset * ratio));       
         col.push_back(currentStopCol);
     }
 
-    // 3. Logic Pad (Giữ nguyên để chuẩn viên ngọc)
-    if (pos.front() > 0.0f) { pos.insert(pos.begin(), 0.0f); col.insert(col.begin(), col.at(1)); }
+    // Pad mảng để phủ kín từ 0.0 đến 1.0
+    if (pos.front() > 0.0f) { pos.insert(pos.begin(), 0.0f); col.insert(col.begin(), col.front()); }
     if (pos.back() < 1.0f) { pos.push_back(1.0f); col.push_back(col.back()); }
-    for (size_t i = 1; i < pos.size(); ++i) if (pos[i] <= pos[i - 1]) pos[i] = pos[i - 1] + 0.001f;
 
-    // 4. Brush
-    GraphicsPath brushPath;
-    brushPath.AddEllipse(cx - r, cy - r, r * 2, r * 2);
-    PathGradientBrush brush(&brushPath);
+    // 3. Khởi tạo Brush
+    GraphicsPath ellipsePath;
+    ellipsePath.AddEllipse(cx - r, cy - r, r * 2, r * 2);
+    PathGradientBrush brush(&ellipsePath);
+
+    // QUAN TRỌNG: Thiết lập tiêu điểm giúp tạo khối 3D
     brush.SetCenterPoint(PointF(fx, fy));
     brush.SetInterpolationColors(col.data(), pos.data(), (int)pos.size());
-    brush.SetGammaCorrection(FALSE);
+
+    // Bật GammaCorrection để màu sắc (đặc biệt là màu tím/đỏ) rực rỡ và tự nhiên
+    brush.SetGammaCorrection(TRUE);
     brush.SetWrapMode(WrapModeClamp);
 
-    if (grad->getGradientTransform()) brush.MultiplyTransform(grad->getGradientTransform(), MatrixOrderPrepend);
+    if (grad->getGradientTransform()) {
+        brush.MultiplyTransform(grad->getGradientTransform(), MatrixOrderPrepend);
+    }
 
     g.FillPath(&brush, &path);
 }
 
-//void SVGRenderer::renderRadialObjectBoundingBox(
-//    Gdiplus::Graphics& g,
-//    const SVGRadialGradient* grad,
-//    const Gdiplus::GraphicsPath& path,
-//    const Gdiplus::RectF& bounds
-//) const {
-//    using namespace Gdiplus;
-//
-//    auto stops = grad->getStopArray();
-//    if (stops.empty()) return;
-//
-//    // --- 1. Geometry ---
-//    float cx = bounds.X + grad->getCX() * bounds.Width;
-//    float cy = bounds.Y + grad->getCY() * bounds.Height;
-//    float fx = bounds.X + grad->getFX() * bounds.Width;
-//    float fy = bounds.Y + grad->getFY() * bounds.Height;
-//
-//    float r_svg = grad->getR() * (std::max)(bounds.Width, bounds.Height);
-//
-//    float d1 = pow(cx - bounds.X, 2) + pow(cy - bounds.Y, 2);
-//    float d2 = pow(cx - (bounds.X + bounds.Width), 2) + pow(cy - bounds.Y, 2);
-//    float d3 = pow(cx - bounds.X, 2) + pow(cy - (bounds.Y + bounds.Height), 2);
-//    float d4 = pow(cx - (bounds.X + bounds.Width), 2) + pow(cy - (bounds.Y + bounds.Height), 2);
-//
-//    float r_cover = sqrt((std::max)({ d1, d2, d3, d4 }));
-//    float r = (std::max)(r_svg, r_cover);
-//    float ratio = r_svg / r;
-//
-//    // --- 2. Build gradient stops (ENGINE CHUNG) ---
-//    std::vector<Gdiplus::REAL> pos;
-//    std::vector<Gdiplus::Color> col;
-//
-//    bool useHSV = false;
-//
-//    // Heuristic: gradient nhiều màu, lệch hue mạnh → HSV
-//    if (stops.size() >= 3) {
-//        HSV h0 = RGBtoHSV(
-//            stops.front().getStopColor().r,
-//            stops.front().getStopColor().g,
-//            stops.front().getStopColor().b
-//        );
-//        HSV h1 = RGBtoHSV(
-//            stops.back().getStopColor().r,
-//            stops.back().getStopColor().g,
-//            stops.back().getStopColor().b
-//        );
-//
-//        if (fabs(h0.h - h1.h) > 120.0f)
-//            useHSV = true;
-//    }
-//
-//    if (useHSV) {
-//        ResampleGradientHSV(stops, pos, col, 128);
-//    }
-//    else {
-//        NormalizeStops(stops, pos, col, ratio);
-//    }
-//
-//    // --- 3. Build brush ---
-//    GraphicsPath brushPath;
-//    brushPath.AddEllipse(cx - r, cy - r, r * 2, r * 2);
-//    PathGradientBrush brush(&brushPath);
-//
-//    // CenterColor phải opaque
-//    const SVGStop& centerStop = stops.front();
-//    Color centerColor(
-//        255,
-//        centerStop.getStopColor().r,
-//        centerStop.getStopColor().g,
-//        centerStop.getStopColor().b
-//    );
-//    brush.SetCenterColor(centerColor);
-//    brush.SetCenterPoint(PointF(fx, fy));
-//
-//    // --- Chuẩn hóa edge ---
-//    std::vector<Gdiplus::REAL> edgePos;
-//    std::vector<Gdiplus::Color> edgeCol;
-//
-//    for (int i = (int)pos.size() - 1; i >= 0; --i) {
-//        edgeCol.push_back(col[i]);
-//        // Đảo vị trí: SVG 1.0 (rìa) -> GDI+ 0.0 | SVG 0.0 (tâm) -> GDI+ 1.0
-//        edgePos.push_back(1.0f - pos[i]);
-//    }
-//    // Nếu edgePos chưa bắt đầu từ 0.0, pad thêm để GDI+ không lỗi
-//    if (!edgePos.empty() && edgePos.front() > 0.0f) {
-//        edgePos.insert(edgePos.begin(), 0.0f);
-//        edgeCol.insert(edgeCol.begin(), edgeCol.front());
-//    }
-//
-//    // --- SetInterpolationColors chỉ dùng edge ---
-//    brush.SetInterpolationColors(edgeCol.data(), edgePos.data(), (INT)edgeCol.size());
-//    brush.SetWrapMode(WrapModeClamp);
-//    brush.SetGammaCorrection(TRUE);
-//
-//    // --- 4. Gradient transform ---
-//    if (grad->getGradientTransform()) {
-//        brush.MultiplyTransform(
-//            grad->getGradientTransform(),
-//            MatrixOrderPrepend
-//        );
-//    }
-//
-//    g.FillPath(&brush, &path);
-//}
-
-
-
-
-
-// //ban ve duoc insta
-//void SVGRenderer::renderRadialGradientFill(Gdiplus::Graphics& g, const SVGRadialGradient* grad, const Gdiplus::GraphicsPath& path, const Gdiplus::RectF& bounds) const {
-//    using namespace Gdiplus;
-//    std::vector<SVGStop> stops = grad->getStopArray();
-//
-//    // Debug tối giản để theo dõi
-//    std::cout << "Rendering Gradient ID: " << grad->getGradientID() << std::endl;
-//    if (stops.empty()) return;
-//
-//    // 1. Lấy tọa độ gốc (Giữ nguyên logic bạn đang dùng)
-//    float cx, cy, r, fx, fy;
-//    if (grad->getGradientUnits() == "userSpaceOnUse") {
-//        cx = grad->getCX(); cy = grad->getCY(); r = grad->getR();
-//        fx = grad->getFX(); fy = grad->getFY();
-//    }
-//    else {
-//        cx = bounds.X + grad->getCX() * bounds.Width;
-//        cy = bounds.Y + grad->getCY() * bounds.Height;
-//        r = grad->getR() * (std::max)(bounds.Width, bounds.Height);
-//        fx = bounds.X + grad->getFX() * bounds.Width;
-//        fy = bounds.Y + grad->getFY() * bounds.Height;
-//    }
-//    if (r <= 0.5f) r = 0.5f;
-//
-//    // 2. Chuẩn bị dải màu (Đảo ngược)
-//    int n = (int)stops.size();
-//    std::vector<REAL> pos; std::vector<Color> col;
-//    for (int i = n - 1; i >= 0; --i) {
-//        float alpha = stops[i].getStopOpacity();
-//        if (alpha < 0.01f) alpha = 0.01f; // Giữ sắc độ
-//        pos.push_back(1.0f - stops[i].getOffset());
-//        col.push_back(Color(BYTE(alpha * 255), stops[i].getStopColor().r, stops[i].getStopColor().g, stops[i].getStopColor().b));
-//    }
-//    // Đảm bảo mảng pos luôn hợp lệ
-//    for (size_t i = 1; i < pos.size(); ++i) if (pos[i] <= pos[i - 1]) pos[i] = pos[i - 1] + 0.001f;
-//
-//    // 3. Kỹ thuật "Nới lỏng" bán kính (An toàn cho mọi testcase)
-//    // Thay vì dùng r=65, ta dùng r_render lớn hơn một chút để chống khuyết mảng
-//    float r_render = r * 1.5f;
-//    float ratio = r / r_render;
-//
-//    GraphicsPath ellipsePath;
-//    ellipsePath.AddEllipse(cx - r_render, cy - r_render, r_render * 2, r_render * 2);
-//    PathGradientBrush brush(&ellipsePath);
-//
-//    // Nén dải màu theo tỷ lệ 1.5x
-//    for (auto& p : pos) {
-//        p = 1.0f - ((1.0f - p) * ratio);
-//    }
-//
-//    // Giả lập "Pad": Thêm stop cuối cùng kéo dài ra biên r_render
-//    if (pos.front() > 0.0f) {
-//        pos.insert(pos.begin(), 0.0f);
-//        col.insert(col.begin(), col.front());
-//    }
-//
-//    brush.SetCenterPoint(PointF(fx, fy));
-//    brush.SetInterpolationColors(col.data(), pos.data(), (int)pos.size());
-//    brush.SetWrapMode(WrapModeClamp);
-//
-//    // 4. Áp dụng Ma trận (Giữ nguyên MatrixOrderAppend như bạn thấy ổn)
-//    if (grad->getGradientTransform()) {
-//        brush.MultiplyTransform(grad->getGradientTransform(), MatrixOrderAppend);
-//    }
-//
-//    // 5. Vẽ và kiểm tra trạng thái
-//    Status status = g.FillPath(&brush, &path);
-//    if (status != Ok) {
-//        std::cout << "[ERROR] GDI+ FillPath failed with code: " << status << std::endl;
-//    }
-//}
 
 void SVGRenderer::renderRadialGradientFill(Gdiplus::Graphics& g, const SVGRadialGradient* grad, const Gdiplus::GraphicsPath& path, const Gdiplus::RectF& bounds) const {
     std::string units = grad->getGradientUnits();
