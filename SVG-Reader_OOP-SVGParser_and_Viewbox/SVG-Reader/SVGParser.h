@@ -52,7 +52,7 @@ public:
 	void parseLinearGradient(SVGLinearGradient* grad, tinyxml2::XMLElement* xmlNode);
 	void parseRadialGradient(SVGRadialGradient* grad, tinyxml2::XMLElement* xmlNode);
 	
-	Gdiplus::Matrix* parseTransform(const std::string& str);
+	SVGTransform parseTransform(const string& str);
 
 	void parseRectangle(SVGRectangle* rect, tinyxml2::XMLElement* Node);
 	void parseSquare(SVGSquare* sq, tinyxml2::XMLElement* Node);
@@ -72,6 +72,7 @@ public:
 	FontWeight parseFontWeight(const std::string& value);
 
 	void parseInheritableAttributes(tinyxml2::XMLElement* xmlNode, std::unordered_map<std::string, std::string>& inheritableMap);
+
 };
 #endif
 

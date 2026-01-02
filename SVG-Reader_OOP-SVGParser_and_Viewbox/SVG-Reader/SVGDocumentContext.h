@@ -11,13 +11,13 @@ public:
     std::unordered_map<std::string, SVGGradient*> gradientDefinitions;
 
     SVGDocumentContext();
-    SVGDocumentContext(const SVGDocumentContext& other);
-    SVGDocumentContext& operator=(const SVGDocumentContext& other);
+    SVGDocumentContext(const SVGDocumentContext&);
+    SVGDocumentContext& operator=(const SVGDocumentContext&);
     ~SVGDocumentContext();
 
     void addGradient(SVGGradient* gradient);
 
-    const SVGGradient* getGradientById(const std::string& id) const;
+    const SVGGradient* getGradientById(const std::string&) const;
 
     void clear();
 };

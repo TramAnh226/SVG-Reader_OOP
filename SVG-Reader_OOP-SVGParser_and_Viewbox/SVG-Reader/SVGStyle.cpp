@@ -84,7 +84,6 @@ Gdiplus::Color SVGStyle::getGdiFillColor() const {
     );
 }
 void SVGStyle::parse(const std::string& styleStr) {
-    // p.parseStyle(*this, styleString);
     std::stringstream ss(styleStr);
     std::string item;
     while (getline(ss, item, ';')) {
@@ -101,7 +100,6 @@ void SVGStyle::parse(const std::string& styleStr) {
         else if (key == "fill-opacity") this->setFillOpacity(stof(value));
         else if (key.find("stroke") != std::string::npos) {
             Stroke* stroke = this->getStroke();
-            // parseStroke(stroke, item);
             std::string s = styleStr;
             s.erase(remove_if(s.begin(), s.end(), ::isspace), s.end());
             size_t pos = s.find(':');
@@ -131,14 +129,12 @@ void SVGStyle::setGrad(SVGGradient* ptr) {
     this->grad = ptr;
 }
 
-// Hàm kiểm tra: Có Gradient cần fill và đã được resolve chưa?
 bool SVGStyle::hasGradientFill() const {
     return grad != nullptr;
 }
-// void SVGStyle::render(SVGRenderer& r) const {
-//     r.renderStyle(*this);
-// }  
-// void transform(Matrix*);         
+const SVGTransform& SVGStyle::getTransform() const { return transform; }
+SVGTransform& SVGStyle::getTransform() { return transform; }
+void SVGStyle::setTransform(const SVGTransform& t) { transform = t; }
 
 void SVGStyle::resolveGradient(const SVGDocumentContext& context) {
     if (!gradId.empty() && grad == nullptr) {
@@ -148,7 +144,6 @@ void SVGStyle::resolveGradient(const SVGDocumentContext& context) {
         const SVGGradient* gradient = context.getGradientById(id);
 
         if (gradient) {
-            // SỬA TẠI ĐÂY:
             // 1. Bảo gradient tự đi tìm màu từ xlink:href nếu nó chưa có stops
             gradient->resolveReference(context);
 

@@ -1,8 +1,236 @@
-﻿  main.cpp
-D:\DoAnOOP2025\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(111,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
-  (compiling source file 'main.cpp')
-      D:\DoAnOOP2025\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(37,8):
+﻿  SVGCircle.cpp
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(15,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'SVGCircle.cpp')
+      D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(9,8):
       see declaration of 'CustomPoint'
   
-D:\DoAnOOP2025\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\main.cpp(383,31): warning C4101: 'e': unreferenced local variable
-  SVG-Reader.vcxproj -> D:\DoAnOOP2025\SVG-Reader_OOP-SVGParser_and_Viewbox\x64\Debug\SVG-Reader.exe
+  SVGDocument.cpp
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(15,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'SVGDocument.cpp')
+      D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(9,8):
+      see declaration of 'CustomPoint'
+  
+  SVGDocumentContext.cpp
+  SVGElement.cpp
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGStyle.h(7,7): warning C4099: 'Stroke': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'SVGElement.cpp')
+      D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\Stroke.h(17,8):
+      see declaration of 'Stroke'
+  
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(15,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'SVGElement.cpp')
+      D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(9,8):
+      see declaration of 'CustomPoint'
+  
+  SVGEllipse.cpp
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(15,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'SVGEllipse.cpp')
+      D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(9,8):
+      see declaration of 'CustomPoint'
+  
+  SVGFactoryPattern.cpp
+  SVGGradient.cpp
+  SVGGroup.cpp
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(15,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'SVGGroup.cpp')
+      D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(9,8):
+      see declaration of 'CustomPoint'
+  
+  SVGLine.cpp
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(15,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'SVGLine.cpp')
+      D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(9,8):
+      see declaration of 'CustomPoint'
+  
+  SVGLinearGradient.cpp
+  SVGParser.cpp
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGParser.cpp(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGStyle.h(7,7): warning C4099: 'Stroke': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'SVGParser.cpp')
+      D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\Stroke.h(17,8):
+      see declaration of 'Stroke'
+  
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\Utils.hpp(154,14): warning C4101: 'c': unreferenced local variable
+  (compiling source file 'SVGParser.cpp')
+  
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGParser.cpp(454,50): warning C4101: 'e': unreferenced local variable
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGParser.cpp(462,50): warning C4101: 'e': unreferenced local variable
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGParser.cpp(632,38): warning C4101: 'e': unreferenced local variable
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGParser.cpp(640,38): warning C4101: 'e': unreferenced local variable
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGParser.cpp(734,38): warning C4101: 'e': unreferenced local variable
+  SVGPath.cpp
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(15,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'SVGPath.cpp')
+      D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(9,8):
+      see declaration of 'CustomPoint'
+  
+  SVGPolygon.cpp
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(15,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'SVGPolygon.cpp')
+      D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(9,8):
+      see declaration of 'CustomPoint'
+  
+  SVGPolyline.cpp
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(15,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'SVGPolyline.cpp')
+      D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(9,8):
+      see declaration of 'CustomPoint'
+  
+  SVGPolyshapeBase.cpp
+  SVGRadialGradient.cpp
+  SVGRectangle.cpp
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(15,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'SVGRectangle.cpp')
+      D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(9,8):
+      see declaration of 'CustomPoint'
+  
+  SVGRenderer.cpp
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\Stroke.h(17,8): warning C4099: 'Stroke': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGRenderer.cpp')
+      D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\Stroke.h(17,8):
+      see declaration of 'Stroke'
+  
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(15,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'SVGRenderer.cpp')
+      D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(9,8):
+      see declaration of 'CustomPoint'
+  
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\Utils.hpp(154,14): warning C4101: 'c': unreferenced local variable
+  (compiling source file 'SVGRenderer.cpp')
+  
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.cpp(846,24): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.cpp(847,24): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.cpp(1080,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.cpp(1081,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.cpp(1082,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.cpp(1083,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  SVGSquare.cpp
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(15,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'SVGSquare.cpp')
+      D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(9,8):
+      see declaration of 'CustomPoint'
+  
+  SVGStyle.cpp
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\Stroke.h(17,8): warning C4099: 'Stroke': type name first seen using 'class' now seen using 'struct'
+  (compiling source file 'SVGStyle.cpp')
+      D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\Stroke.h(17,8):
+      see declaration of 'Stroke'
+  
+  Generating Code...
+  Compiling...
+  SVGText.cpp
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(15,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'SVGText.cpp')
+      D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(9,8):
+      see declaration of 'CustomPoint'
+  
+  SVGTransform.cpp
+  Stroke.cpp
+  main.cpp
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\SVGRenderer.h(15,7): warning C4099: 'CustomPoint': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'main.cpp')
+      D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\CustomPoint.h(9,8):
+      see declaration of 'CustomPoint'
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility(4829,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility(4829,18):
+      the template instantiation context (the oldest one first) is
+          D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\main.cpp(374,28):
+          see reference to function template instantiation 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' being compiled
+          with
+          [
+              _Elem=wchar_t,
+              _Iter=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+              _Alloc=std::allocator<char>
+          ]
+              D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\SVG-Reader\main.cpp(374,28):
+              see the first reference to 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string' in 'wWinMain'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(788,17):
+          see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct_from_iter<wchar_t*,wchar_t*,_Size_type>(_Iter,const _Sent,_Size)' being compiled
+          with
+          [
+              _Size_type=unsigned __int64,
+              _Iter=wchar_t *,
+              _Sent=wchar_t *,
+              _Size=unsigned __int64
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(944,18):
+          see reference to function template instantiation '_OutIt *std::_Copy_n_unchecked4<wchar_t*,_Size,char*>(_InIt,_SizeTy,_OutIt)' being compiled
+          with
+          [
+              _OutIt=char *,
+              _Size=unsigned __int64,
+              _InIt=wchar_t *,
+              _SizeTy=unsigned __int64
+          ]
+  
+  Generating Code...
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol _calloc_dbg
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol _calloc_dbg
+CustomColor.obj : error LNK2001: unresolved external symbol _calloc_dbg
+SVGGroup.obj : error LNK2001: unresolved external symbol _calloc_dbg
+libcpmtd.lib(_tolower.obj) : error LNK2001: unresolved external symbol _calloc_dbg
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol _calloc_dbg
+libcpmtd.lib(StlCompareStringA.obj) : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(StlLCMapStringA.obj) : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(xwcsxfrm.obj) : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(locale0.obj) : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(cerr.obj) : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(filesystem.obj) : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol _free_dbg
+CustomColor.obj : error LNK2001: unresolved external symbol _free_dbg
+SVGGroup.obj : error LNK2001: unresolved external symbol _free_dbg
+SVGParser.obj : error LNK2001: unresolved external symbol _free_dbg
+SVGStyle.obj : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(StlCompareStringA.obj) : error LNK2001: unresolved external symbol _malloc_dbg
+libcpmtd.lib(StlLCMapStringA.obj) : error LNK2001: unresolved external symbol _malloc_dbg
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol _malloc_dbg
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol _malloc_dbg
+libcpmtd.lib(xwcsxfrm.obj) : error LNK2001: unresolved external symbol _malloc_dbg
+libcpmtd.lib(locale0.obj) : error LNK2001: unresolved external symbol _malloc_dbg
+libcpmtd.lib(cerr.obj) : error LNK2001: unresolved external symbol _malloc_dbg
+libcpmtd.lib(filesystem.obj) : error LNK2001: unresolved external symbol _malloc_dbg
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol _malloc_dbg
+CustomColor.obj : error LNK2001: unresolved external symbol _malloc_dbg
+SVGGroup.obj : error LNK2001: unresolved external symbol _malloc_dbg
+SVGParser.obj : error LNK2001: unresolved external symbol _malloc_dbg
+SVGStyle.obj : error LNK2001: unresolved external symbol _malloc_dbg
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol _CrtDbgReport
+main.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+libcpmtd.lib(cerr.obj) : error LNK2001: unresolved external symbol _CrtDbgReport
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol _CrtDbgReport
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGSquare.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGStyle.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGText.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGTransform.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGPolyshapeBase.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGRadialGradient.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGRectangle.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGRenderer.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGParser.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGPath.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGPolygon.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGPolyline.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGGradient.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGGroup.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGLine.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGLinearGradient.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGDocumentContext.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGElement.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGEllipse.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGFactoryPattern.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+CustomColor.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+Stroke.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGCircle.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+SVGDocument.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+libcpmtd.lib(_tolower.obj) : error LNK2019: unresolved external symbol _wcsdup_dbg referenced in function _Getctype
+libcpmtd.lib(xstrcoll.obj) : error LNK2001: unresolved external symbol _wcsdup_dbg
+libcpmtd.lib(locale.obj) : error LNK2019: unresolved external symbol _realloc_dbg referenced in function "private: static void __cdecl std::locale::_Locimp::_Locimp_Addfac(class std::locale::_Locimp *,class std::locale::facet *,unsigned __int64)" (?_Locimp_Addfac@_Locimp@locale@std@@CAXPEAV123@PEAVfacet@23@_K@Z)
+libcpmtd.lib(StlLCMapStringA.obj) : error LNK2019: unresolved external symbol _CrtDbgReportW referenced in function _freea_crt
+libcpmtd.lib(xmbtowc.obj) : error LNK2001: unresolved external symbol _CrtDbgReportW
+libcpmtd.lib(StlCompareStringA.obj) : error LNK2001: unresolved external symbol _CrtDbgReportW
+D:\IT\SVG-Reader_OOP\SVG-Reader_OOP-SVGParser_and_Viewbox\x64\Debug\SVG-Reader.exe : fatal error LNK1120: 7 unresolved externals

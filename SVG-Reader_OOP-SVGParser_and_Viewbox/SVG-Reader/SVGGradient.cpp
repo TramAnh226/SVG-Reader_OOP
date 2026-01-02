@@ -7,10 +7,6 @@
 #include "SVGDocumentContext.h"
 #include "SVGParser.h"
 
-//SVGGradient::SVGGradient()
-//    : gradientUnits("objectBoundingBox"), spreadMethod("pad"), gradientTransform(nullptr) {
-//}
-
 SVGGradient::SVGGradient()
     : gradientUnits("objectBoundingBox"), spreadMethod("pad") {
 }
@@ -23,18 +19,6 @@ SVGGradient::SVGGradient(const SVGGradient& other)
     gradientTransform(other.gradientTransform) {
 }
 
-//SVGGradient& SVGGradient::operator=(const SVGGradient& other) {
-//    if (this != &other) {
-//        delete this->gradientTransform; // Xóa cũ
-//        this->gradientID = other.gradientID;
-//        this->stopArray = other.stopArray;
-//        this->gradientUnits = other.gradientUnits;
-//        this->spreadMethod = other.spreadMethod;
-//        this->gradientTransform = (other.gradientTransform) ? other.gradientTransform->Clone() : nullptr;
-//    }
-//    return *this;
-//}
-
 SVGGradient& SVGGradient::operator=(const SVGGradient& other) {
     if (this != &other) {
         this->gradientID = other.gradientID;
@@ -46,9 +30,6 @@ SVGGradient& SVGGradient::operator=(const SVGGradient& other) {
     return *this;
 }
 
-SVGGradient::~SVGGradient() {
-    //delete gradientTransform;
-}
 
 const std::string& SVGGradient::getGradientID() const {
     return this->gradientID;
@@ -66,10 +47,6 @@ const std::string& SVGGradient::getSpreadMethod() const {
     return this->spreadMethod;
 }
 
-//const std::string& SVGGradient::getTransform() const {
-//    return this->transform;
-//}
-
 void SVGGradient::setGradientID(const std::string& id) {
     this->gradientID = id;
 }
@@ -86,16 +63,22 @@ void SVGGradient::setSpreadMethod(const std::string& method) {
     this->spreadMethod = method;
 }
 
-//void SVGGradient::setTransform(const std::string& t) {
-//    this->transform = t;
-//}
-
 void SVGGradient::addStop(const SVGStop& stop) {
     this->stopArray.push_back(stop);
 }
 
 void SVGGradient::clearStops() {
     this->stopArray.clear();
+}
+
+const SVGTransform SVGGradient::getGradientTransform() const {
+    return gradientTransform;
+}
+SVGTransform& SVGGradient::getGradientTransform() {
+    return gradientTransform;
+}
+void SVGGradient::setGradientTransform(SVGTransform transform) {
+    this->gradientTransform = transform;
 }
 
 void SVGGradient::parse(SVGParser& p, tinyxml2::XMLElement* node) {
@@ -109,15 +92,6 @@ const std::string& SVGGradient::getHrefID() const {
 void SVGGradient::setHrefID(const std::string& id) {
     hrefID = id;
 }
-
-//const Gdiplus::Matrix* SVGGradient::getGradientTransform() const {
-//    return gradientTransform;
-//}
-//
-//void SVGGradient::setGradientTransform(Gdiplus::Matrix* matrix) {
-//    if (this->gradientTransform) delete this->gradientTransform;
-//    this->gradientTransform = matrix;
-//}
 
 bool SVGGradient::isReferencing() const {
     return !hrefID.empty();

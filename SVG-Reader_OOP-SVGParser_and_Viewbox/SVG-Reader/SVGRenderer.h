@@ -35,9 +35,6 @@ public:
     SVGRenderer();
     ~SVGRenderer() = default;
 
-    //void setZoom(double z);
-    //void setRotation(double deg);
-
     void renderRectangle(Gdiplus::Graphics& g, const SVGRectangle* rect, const SVGDocumentContext& context);
     void renderCircle(Gdiplus::Graphics& g, const SVGCircle* circle, const SVGDocumentContext& context);
     void renderEllipse(Gdiplus::Graphics& g, const SVGEllipse* ellipse, const SVGDocumentContext& context);
@@ -61,5 +58,7 @@ public:
     void renderRadialUserSpace(Gdiplus::Graphics& g, const SVGRadialGradient* grad, const Gdiplus::GraphicsPath& path, const Gdiplus::RectF& bounds) const;
     void renderRadialGradientFill(Gdiplus::Graphics& g, const SVGRadialGradient* grad, const Gdiplus::GraphicsPath& path, const Gdiplus::RectF& bounds) const;
     void renderGradientFill(Gdiplus::Graphics& g, const SVGGradient* grad, const Gdiplus::GraphicsPath& path, const Gdiplus::RectF& bounds, const SVGDocumentContext& context);
+
+    void applyToMatrix(const SVGTransform&, Gdiplus::Matrix&) const;
 };
 #endif

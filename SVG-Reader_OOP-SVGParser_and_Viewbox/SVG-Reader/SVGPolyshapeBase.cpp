@@ -27,9 +27,6 @@ SVGPolyshapeBase& SVGPolyshapeBase::operator=(const SVGPolyshapeBase& other) {
     return *this;
 }
 SVGPolyshapeBase::~SVGPolyshapeBase() {}
-//SVGElement* SVGPolyshapeBase::clone() const {
-//    return new SVGPolyshapeBase(*this);
-//}
 
 std::vector<CustomPoint> SVGPolyshapeBase::getPoints() const {
     return points;

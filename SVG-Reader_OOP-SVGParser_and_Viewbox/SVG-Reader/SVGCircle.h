@@ -19,9 +19,7 @@ public:
 	float getRadius() const;
 	void setRadius(const float&);
 
-	//void parse(tinyxml2::XMLElement*);
 	void parse(SVGParser&, tinyxml2::XMLElement*) override;
 	void render(SVGRenderer&, Gdiplus::Graphics&, const SVGDocumentContext&) const override;
-	// void transform(Matrix*) override;
 };
 #endif

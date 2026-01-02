@@ -44,7 +44,5 @@ public:
 	Gdiplus::Color getGdiColor() const;
 
 	void parse(const std::string&);
-	// void render(SVGRenderer&) const;
-	// void transform(Matrix*);
 };
 #endif

@@ -2,6 +2,7 @@
 #define SVGSTYLE_H
 
 #include "CustomColor.h"
+#include "SVGTransform.h"
 
 class Stroke;
 class SVGGradient;
@@ -25,6 +26,7 @@ private:
 
 	FillRule fillRule = FillRule::NonZero;
 
+	SVGTransform transform;
 public:
 	SVGStyle();
 	SVGStyle(const CustomColor& color, float opacity, Stroke* newStroke);
@@ -50,6 +52,10 @@ public:
 	bool hasGradientFill() const;
 
 	Gdiplus::Color getGdiFillColor() const;
+
+	const SVGTransform& getTransform() const;
+	SVGTransform& getTransform();
+	void setTransform(const SVGTransform&);
 
 	void parse(const std::string&);
 

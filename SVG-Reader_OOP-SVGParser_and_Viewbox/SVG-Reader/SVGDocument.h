@@ -10,10 +10,6 @@ class SVGFactoryPattern;
 
 namespace Gdiplus {
     class Graphics;
-    //class Color;
-    //typedef unsigned char BYTE;
-    //typedef unsigned char ARGB;
-    //class ARGB;
 }
 
 class SVGDocument {

@@ -12,6 +12,7 @@
 #include <wingdi.h> 
 #include <gdiplus.h>
 #include <shellapi.h> // Cho Command Line
+#include <filesystem>
 
 #include <iostream>
 #include <string>
@@ -28,6 +29,8 @@
 using namespace Gdiplus;
 using namespace std;
 
+namespace fs = std::filesystem;
+
 #ifdef _MSC_VER
 #pragma comment (lib,"Gdiplus.lib")
 #pragma comment (lib,"user32.lib")
@@ -37,7 +40,6 @@ using namespace std;
 #endif
 
 // Config
-const std::string DEFAULT_FILENAME = "D:/Download/HCMUS.svg";
 const LPCWSTR WINDOW_CLASS_NAME = L"SVGReaderWindow";
 const LPCWSTR WINDOW_TITLE = L"SVG Reader";
 
@@ -52,8 +54,10 @@ ULONG_PTR gdiplusToken;
 
 int g_scrollX = 0;
 int g_scrollY = 0;
-float g_userZoom = 1.0f;
-float g_rotation = 0.0f;
+float g_userZoom = 1.0f;    // 1.0 = 100%
+float g_rotation = 0.0f;    // Góc xoay (độ)
+float g_moveX = 0.0f;  // Dịch chuyển theo trục X
+float g_moveY = 0.0f;  // Dịch chuyển theo trục Y
 
 // Chuyển đổi chuỗi
 std::string WStringToString(const std::wstring& wstr) {
@@ -64,7 +68,7 @@ std::string WStringToString(const std::wstring& wstr) {
     return strTo;
 }
 
-// --- HÀM MỚI: VẼ BẢNG HƯỚNG DẪN LÊN GÓC PHẢI DƯỚI ---
+// VẼ BẢNG HƯỚNG DẪN LÊN GÓC PHẢI DƯỚI
 void RenderHelpOverlay(Gdiplus::Graphics& graphics, int viewW, int viewH) {
     // 1. Nội dung hướng dẫn
     std::wstring helpText =
@@ -72,7 +76,7 @@ void RenderHelpOverlay(Gdiplus::Graphics& graphics, int viewW, int viewH) {
         L"------------------\n"
         L"Mouse Wheel : Zoom\n"
         L"L / R       : Rotate\n"
-        L"Arrows/WASD : Pan\n"
+        L"← ↑ ↓ →/WASD : Pan\n"
         L"X           : Reset";
 
     // 2. Cấu hình Font và Brush
@@ -159,7 +163,7 @@ VOID OnPaint(HWND hWnd) {
     float viewportW = (float)clientRect.right;
     float viewportH = (float)clientRect.bottom;
 
-    // --- PHẦN 1: VẼ SVG (CÓ BIẾN ĐỔI XOAY/ZOOM) ---
+    // rotate/zoom
     if (g_svgDocument && g_svgDocument->getRootGroup()) {
         SVGGroup* rootGroup = g_svgDocument->getRootGroup();
 
@@ -187,6 +191,8 @@ VOID OnPaint(HWND hWnd) {
         float scaledH = viewBoxH * final_scale;
         float offsetX = (viewportW - scaledW) / 2.0f;
         float offsetY = (viewportH - scaledH) / 2.0f;
+        offsetX = 0.0f;
+        offsetY = 0.0f;
         if (offsetX < 0) offsetX = 0;
         if (offsetY < 0) offsetY = 0;
 
@@ -196,7 +202,10 @@ VOID OnPaint(HWND hWnd) {
         // Áp dụng Transform cho SVG
         graphics.TranslateTransform(-viewBoxX, -viewBoxY);
         graphics.ScaleTransform(final_scale, final_scale, Gdiplus::MatrixOrderAppend);
-        graphics.TranslateTransform(offsetX - (float)scrollX, offsetY - (float)scrollY, Gdiplus::MatrixOrderAppend);
+
+        float totalOffsetX = offsetX - (float)scrollX + g_moveX;
+        float totalOffsetY = offsetY - (float)scrollY + g_moveY;
+        graphics.TranslateTransform(totalOffsetX, totalOffsetY, Gdiplus::MatrixOrderAppend);
 
         if (g_rotation != 0.0f) {
             float centerX = viewportW / 2.0f;
@@ -207,9 +216,9 @@ VOID OnPaint(HWND hWnd) {
         }
 
         rootGroup->render(g_renderer, graphics, g_svgDocument->context);
+
     }
 
-    // --- PHẦN 2: VẼ UI HƯỚNG DẪN (KHÔNG BIẾN ĐỔI) ---
     // Reset ma trận biến đổi về mặc định để vẽ UI đè lên trên và đứng yên
     graphics.ResetTransform();
     RenderHelpOverlay(graphics, (int)viewportW, (int)viewportH);
@@ -218,8 +227,11 @@ VOID OnPaint(HWND hWnd) {
 }
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) {
-    int bar, newPos, maxPos;
+    // Khai báo biến trên đỉnh switch 
+    int bar;
+    int newPos;
     SCROLLINFO si = { 0 };
+    int maxPos = 0;
 
     switch (message) {
     case WM_PAINT:
@@ -234,13 +246,15 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
         UpdateScrollBars(hWnd);
         break;
 
+        // scrolling
     case WM_MOUSEWHEEL:
     {
         float delta = GET_WHEEL_DELTA_WPARAM(wParam);
-        if (delta > 0) g_userZoom *= 1.1f;
-        else           g_userZoom /= 1.1f;
+        if (delta > 0) g_userZoom *= 1.1f; 
+        else           g_userZoom /= 1.1f; 
 
         if (g_userZoom < 0.1f) g_userZoom = 0.1f;
+
         UpdateScrollBars(hWnd);
         return 0;
     }
@@ -248,12 +262,43 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
     case WM_KEYDOWN:
     {
         bool changed = false;
+        float step = 20.0f / g_userZoom; 
         switch (wParam) {
-        case 'L': g_rotation -= 5.0f; changed = true; break;
-        case 'R': g_rotation += 5.0f; changed = true; break;
-        case 'X':
-            g_rotation = 0.0f; g_userZoom = 1.0f;
-            g_scrollX = 0; g_scrollY = 0;
+        case VK_LEFT: 
+        case 'A':
+            g_moveX -= step;
+            changed = true;
+            break;
+        case VK_RIGHT:
+        case 'D':
+            g_moveX += step;
+            changed = true;
+            break;
+        case VK_UP: 
+        case 'W':
+            g_moveY -= step;
+            changed = true;
+            break;
+        case VK_DOWN:
+        case 'S': 
+            g_moveY += step;
+            changed = true;
+            break;
+        case 'L':
+            g_rotation -= 5.0f;
+            changed = true;
+            break;
+        case 'R': 
+            g_rotation += 5.0f;
+            changed = true;
+            break;
+        case 'X': 
+            g_rotation = 0.0f;
+            g_userZoom = 1.0f;
+            g_moveX = 0.0f;
+            g_moveY = 0.0f;
+            g_scrollX = 0;
+            g_scrollY = 0;
             UpdateScrollBars(hWnd);
             changed = true;
             break;
@@ -271,23 +316,40 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
         newPos = si.nPos;
 
         switch (LOWORD(wParam)) {
-        case SB_LINELEFT:      newPos -= 20; break;
-        case SB_LINERIGHT:     newPos += 20; break;
-        case SB_PAGELEFT:      newPos -= si.nPage; break;
-        case SB_PAGERIGHT:     newPos += si.nPage; break;
+        case SB_LINELEFT:
+            newPos -= 20;
+            break;
+        case SB_LINERIGHT:
+            newPos += 20;
+            break;
+        case SB_PAGELEFT:
+            newPos -= si.nPage;
+            break;
+        case SB_PAGERIGHT:
+            newPos += si.nPage;
+            break;
         case SB_THUMBTRACK:
-        case SB_THUMBPOSITION: newPos = HIWORD(wParam); break;
+        case SB_THUMBPOSITION:
+            newPos = HIWORD(wParam);
+            break;
         }
 
         maxPos = (int)si.nMax - (int)si.nPage;
         maxPos = std::max(0, maxPos);
+
         si.fMask = SIF_POS;
         si.nPos = std::max(si.nMin, std::min(newPos, maxPos));
 
         if (si.nPos != GetScrollPos(hWnd, bar)) {
             SetScrollInfo(hWnd, bar, &si, TRUE);
-            if (bar == SB_HORZ) g_scrollX = si.nPos;
-            else                g_scrollY = si.nPos;
+
+            if (bar == SB_HORZ) {
+                g_scrollX = si.nPos;
+            }
+            else {
+                g_scrollY = si.nPos;
+            }
+
             InvalidateRect(hWnd, NULL, TRUE);
         }
         break;
@@ -298,21 +360,29 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
     return 0;
 }
 
-INT WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, INT iCmdShow) {
+INT WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, INT iCmdShow) { 
     GdiplusStartupInput gdiplusStartupInput;
     GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
 
-    std::string svgFileToOpen = DEFAULT_FILENAME;
-    int argc = 0;
-    LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-    if (argv && argc > 1) {
-        std::wstring wArg = argv[1];
-        svgFileToOpen = WStringToString(wArg);
+    std::wstring wpCmdLine(pCmdLine);
+    std::string filePath;
+
+    if (wpCmdLine.empty()) {
+        filePath = "sample.svg";
     }
-    if (argv) LocalFree(argv);
+    else {
+        std::string rawPath(wpCmdLine.begin(), wpCmdLine.end());
+        rawPath.erase(std::remove(rawPath.begin(), rawPath.end(), '\"'), rawPath.end());
+        filePath = rawPath;
+    }
 
     try {
-        g_svgDocument = new SVGDocument(svgFileToOpen);
+        if (!fs::exists(filePath)) {
+            MessageBoxA(NULL, ("Khong tim thay file: " + filePath).c_str(), "Loi", MB_OK | MB_ICONERROR);
+            return 0;
+        }
+
+        g_svgDocument = new SVGDocument(filePath);
         g_svgDocument->parseSVGImage(g_parser, g_factory);
         g_svgDocument->resolveReferences();
     }
@@ -335,7 +405,9 @@ INT WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
     }
 
     HWND hWnd = CreateWindowEx(
-        0, WINDOW_CLASS_NAME, WINDOW_TITLE,
+        0,
+        WINDOW_CLASS_NAME,
+        WINDOW_TITLE,
         WS_OVERLAPPEDWINDOW | WS_HSCROLL | WS_VSCROLL,
         CW_USEDEFAULT, CW_USEDEFAULT, 800, 600,
         NULL, NULL, hInstance, NULL

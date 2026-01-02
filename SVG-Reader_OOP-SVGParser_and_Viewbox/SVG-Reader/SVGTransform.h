@@ -1,79 +1,26 @@
-﻿//#pragma once
-//
-//#include <windows.h> 
-//#include <gdiplus.h>
-//#include <vector>
-//#include <string>
-//
-//using namespace Gdiplus;
-//using namespace std;
-//
-//enum class TransformType { Translate, Rotate, Scale };
-//
-//struct TransformOp {
-//    TransformType type;
-//    float a, b;
-//};
-//
-//class SVGTransform {
-//public:
-//    vector<TransformOp> ops;
-//
-//    void clear() { ops.clear(); }
-//
-//    void addTranslate(float tx, float ty) {
-//        ops.push_back({ TransformType::Translate, tx, ty });
-//
-//    }
-//    void addRotate(float deg) {
-//        ops.push_back({ TransformType::Rotate, deg, 0.0f });
-//    }
-//    void addScale(float sx, float sy) {
-//        ops.push_back({ TransformType::Scale, sx, sy });
-//    }
-//
-//    void applyToMatrix(Gdiplus::Matrix& m) const;
-//
-//    static SVGTransform parse(const std::string& str); // parse chuỗi "translate(...) rotate(...) ..."
-//};
-//
+﻿#ifndef SVGTRANSFORM_H
+#define SVGTRANSFORM_H
 
-
-#pragma once
 #include <vector>
 #include <string>
 
-//using namespace Gdiplus;
-using namespace std;
-
-enum class TransformType { Translate, Rotate, Scale };
+enum class TransformType { Translate, Rotate, Scale, Matrix };
 
 struct TransformOp {
     TransformType type;
-    float a, b;
+    float a, b, c, d, e, f;
 };
 
 class SVGTransform {
 public:
-    vector<TransformOp> ops;
+    SVGTransform() = default;
+    std::vector<TransformOp> ops;
 
-    void clear() { ops.clear(); }
-
-    void addTranslate(float tx, float ty) {
-        ops.push_back({ TransformType::Translate, tx, ty });
-
-    }
-    void addRotate(float deg) {
-        ops.push_back({ TransformType::Rotate, deg, 0.0f });
-    }
-    void addScale(float sx, float sy) {
-        ops.push_back({ TransformType::Scale, sx, sy });
-    }
-
-    void applyToMatrix(Gdiplus::Matrix& m) const;
-
-    //static SVGTransform parse(const std::string& str); // parse chuỗi "translate(...) rotate(...) ..."
-    Gdiplus::Matrix* parse(const std::string& str); // parse chuỗi "translate(...) rotate(...) ..."
-
+    void clear();
+    bool isEmpty() const;
+    void addTranslate(float, float);
+    void addRotate(float);
+    void addScale(float, float);
+    void addMatrix(float, float, float, float, float, float);
 };
-
+#endif

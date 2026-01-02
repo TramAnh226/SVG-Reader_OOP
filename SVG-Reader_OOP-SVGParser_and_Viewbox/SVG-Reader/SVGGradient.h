@@ -16,7 +16,6 @@ protected:
 	std::string gradientID; // id de dinh danh trong GradientMap
 	std::string gradientUnits;
 	std::string spreadMethod;
-	//Gdiplus::Matrix* gradientTransform;
 	
 	SVGTransform gradientTransform;
 
@@ -27,30 +26,23 @@ public:
 	SVGGradient();
 	SVGGradient(const SVGGradient& other);
 	SVGGradient& operator=(const SVGGradient& other);
-	virtual ~SVGGradient();
+	virtual ~SVGGradient() = default;
 
 	const std::string& getGradientID() const;
 	const std::vector<SVGStop>& getStopArray() const;
 	const std::string& getGradientUnits() const;
 	const std::string& getSpreadMethod() const;
-	//const Gdiplus::Matrix* getGradientTransform() const;
+		
 	const std::string& getHrefID() const;
 
-	const SVGTransform getGradientTransform() const {
-		return gradientTransform;
-	}
-	SVGTransform& getGradientTransform() {
-		return gradientTransform;
-	}
-	void setGradientTransform(SVGTransform transform) {
-		this->gradientTransform = transform;
-	}
+	const SVGTransform getGradientTransform() const;
+	SVGTransform& getGradientTransform();
+	void setGradientTransform(SVGTransform);
 
 	void setGradientID(const std::string&);
 	void setStopArray(const std::vector<SVGStop>&);
 	void setGradientUnits(const std::string&);
 	void setSpreadMethod(const std::string&);
-	//void setGradientTransform(Gdiplus::Matrix* matrix);
 	void setHrefID(const std::string&);
 
 	void addStop(const SVGStop&);
