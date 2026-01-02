@@ -1,5 +1,5 @@
-﻿//
-#pragma once
+﻿#ifndef CUSTOMCOLOR_H
+#define CUSTOMCOLOR_H
 
 #include <windows.h>
 #include <gdiplus.h>
@@ -39,3 +39,4 @@ struct CustomColor {
 	Gdiplus::ARGB getARGB(float opacity) const;
 
 };
+#endif

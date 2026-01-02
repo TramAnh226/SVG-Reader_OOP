@@ -1,22 +1,6 @@
-//#pragma once
-//#include "SVGPolyshapeBase.h"
-//
-//class SVGPolygon : public SVGPolyshapeBase {
-//public:
-//	SVGPolygon();
-//	SVGPolygon(const std::vector<CustomPoint>&);
-//	SVGPolygon(const SVGPolygon&);
-//	SVGPolygon& operator=(const SVGPolygon&);
-//	~SVGPolygon();
-//	SVGElement* clone() const override;
-//
-//	//void parse(tinyxml2::XMLElement*);
-//	void render(SVGRenderer&, Gdiplus::Graphics&, const SVGDocumentContext&) const override;
-//	// void transform(Matrix*) override;
-//};
+﻿#ifndef SVGPOLYGON_H
+#define SVGPOLYGON_H
 
-
-#pragma once
 #include "SVGPolyshapeBase.h"
 
 class SVGPolygon : public SVGPolyshapeBase {
@@ -28,7 +12,7 @@ public:
 	~SVGPolygon();
 	SVGElement* clone() const override;
 
-	//void parse(tinyxml2::XMLElement*);
+	// use SVGPolyshapeBase::parse
 	void render(SVGRenderer&, Gdiplus::Graphics&, const SVGDocumentContext&) const override;
-	// void transform(Matrix*) override;
 };
+#endif

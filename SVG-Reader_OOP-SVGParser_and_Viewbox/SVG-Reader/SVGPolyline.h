@@ -1,21 +1,6 @@
-//#pragma once
-//#include "SVGPolyshapeBase.h"
-//
-//class SVGPolyline : public SVGPolyshapeBase {
-//public:
-//	SVGPolyline();
-//	SVGPolyline(const std::vector<CustomPoint>&);
-//	SVGPolyline(const SVGPolyline&);
-//	SVGPolyline& operator=(const SVGPolyline&);
-//	~SVGPolyline();
-//	SVGElement* clone() const override;
-//
-//	//void parse(tinyxml2::XMLElement*);
-//	void render(SVGRenderer&, Gdiplus::Graphics&, const SVGDocumentContext&) const override;
-//	// void transform(Matrix*) override;
-//};
+#ifndef SVGPOLYLINE_H
+#define SVGPOLYLINE_H
 
-#pragma once
 #include "SVGPolyshapeBase.h"
 
 class SVGPolyline : public SVGPolyshapeBase {
@@ -27,7 +12,7 @@ public:
 	~SVGPolyline();
 	SVGElement* clone() const override;
 
-	//void parse(tinyxml2::XMLElement*);
+	// use SVGPolyshapeBase::parse
 	void render(SVGRenderer&, Gdiplus::Graphics&, const SVGDocumentContext&) const override;
-	// void transform(Matrix*) override;
 };
+#endif

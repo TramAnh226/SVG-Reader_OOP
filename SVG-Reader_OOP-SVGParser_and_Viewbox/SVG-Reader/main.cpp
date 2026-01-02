@@ -1,6 +1,4 @@
-﻿
-
-#ifndef NOMINMAX
+﻿#ifndef NOMINMAX
 #define NOMINMAX 
 #endif
 
@@ -8,446 +6,357 @@
 #define _WIN32_WINNT 0x0600
 #endif
 
-// Sắp xếp thứ tự include để tránh xung đột GDI+/Windows API
+// Include
 #include <WinSock2.h>
 #include <Windows.h>
-#include <wingdi.h> // Cần thiết để đảm bảo các hằng số GDI được định nghĩa
+#include <wingdi.h> 
 #include <gdiplus.h>
+#include <shellapi.h> // Cho Command Line
 
 #include <iostream>
 #include <string>
+#include <vector>
+#include <algorithm> 
 
-// Kỹ thuật Include: Giả định các thư mục cha đã được cấu hình trong Project Properties
+// SVG Project Headers
 #include "SVGDocument.h"
 #include "SVGParser.h"
 #include "SVGRenderer.h"
 #include "SVGGroup.h"
-#include "SVGFactoryPattern.h" // Thêm Factory để đảm bảo nó được nhìn thấy
-//#include "SVGDocumentContext.h"
+#include "SVGFactoryPattern.h" 
 
-// Cần cho các hàm của Gdiplus
 using namespace Gdiplus;
 using namespace std;
 
-// BẮT BUỘC: Đảm bảo các thư viện Windows được liên kết chính xác
 #ifdef _MSC_VER
 #pragma comment (lib,"Gdiplus.lib")
 #pragma comment (lib,"user32.lib")
 #pragma comment (lib,"gdi32.lib")
 #pragma comment (lib,"kernel32.lib")
+#pragma comment (lib,"shell32.lib")
 #endif
 
-// Tên file SVG để tải
-//const std::string SVG_FILENAME = "D:\\Downloads\\sample.svg";
-const std::string SVG_FILENAME = "D:\\DoAnOOP2025\\SVG-Reader_OOP-SVGParser_and_Viewbox\\TestCases-20251225T142325Z-1-001\\TestCases\\svg-21.svg";
-
-// Đã chuyển sang Unicode (LPCWSTR)
+// Config
+const std::string DEFAULT_FILENAME = "D:/Download/HCMUS.svg";
 const LPCWSTR WINDOW_CLASS_NAME = L"SVGReaderWindow";
-const LPCWSTR WINDOW_TITLE = L"SVG Reader Demo";
+const LPCWSTR WINDOW_TITLE = L"SVG Reader";
 
-// Khai báo Hàm xử lý Thông điệp Cửa sổ (cần thiết cho WndProc)
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
-// Khai báo Toàn cục
+// Globals
 SVGDocument* g_svgDocument = nullptr;
 SVGParser g_parser;
 SVGRenderer g_renderer;
-SVGFactoryPattern g_factory; // Factory để phân tích cú pháp
+SVGFactoryPattern g_factory;
 ULONG_PTR gdiplusToken;
 
 int g_scrollX = 0;
 int g_scrollY = 0;
+float g_userZoom = 1.0f;
+float g_rotation = 0.0f;
 
-// --- THÊM MỚI: Biến Zoom và Xoay ---
-float g_userZoom = 1.0f;    // 1.0 = 100%
-float g_rotation = 0.0f;    // Góc xoay (độ)
-// ------------------------------------
-
-// --- HÀM HỖ TRỢ: Hiển thị bảng hướng dẫn ---
-void ShowHelp(HWND hWnd) {
-	MessageBox(hWnd,
-		L"=== HƯỚNG DẪN ===\n\n"
-		L"[ Chuột ]\n"
-		L"- Lăn chuột giữa: Phóng to / Thu nhỏ\n\n"
-		L"[ Bàn phím ]\n"
-		L"- L: Xoay Trái\n"
-		L"- R: Xoay Phải\n"
-		L"- X: Reset về mặc định\n"
-		L"- H: Xem lại hướng dẫn này",
-		L"Hướng dẫn sử dụng", MB_OK | MB_ICONINFORMATION);
+// Chuyển đổi chuỗi
+std::string WStringToString(const std::wstring& wstr) {
+    if (wstr.empty()) return std::string();
+    int size_needed = WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), NULL, 0, NULL, NULL);
+    std::string strTo(size_needed, 0);
+    WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), &strTo[0], size_needed, NULL, NULL);
+    return strTo;
 }
 
-// --- HÀM HỖ TRỢ: Cập nhật thanh cuộn (Tách logic cũ từ WM_SIZE ra để tái sử dụng) ---
+// --- HÀM MỚI: VẼ BẢNG HƯỚNG DẪN LÊN GÓC PHẢI DƯỚI ---
+void RenderHelpOverlay(Gdiplus::Graphics& graphics, int viewW, int viewH) {
+    // 1. Nội dung hướng dẫn
+    std::wstring helpText =
+        L"Controls:\n"
+        L"------------------\n"
+        L"Mouse Wheel : Zoom\n"
+        L"L / R       : Rotate\n"
+        L"Arrows/WASD : Pan\n"
+        L"X           : Reset";
+
+    // 2. Cấu hình Font và Brush
+    Gdiplus::Font font(L"Consolas", 10, Gdiplus::FontStyleBold); // Font đơn cách cho dễ nhìn
+    Gdiplus::SolidBrush textBrush(Gdiplus::Color(255, 255, 255)); // Chữ trắng
+    Gdiplus::SolidBrush bgBrush(Gdiplus::Color(180, 0, 0, 0));    // Nền đen bán trong suốt (Alpha=180)
+
+    // 3. Tính toán kích thước khung chứa chữ
+    Gdiplus::RectF layoutRect(0, 0, 250, 150); // Kích thước ước lượng tối đa
+    Gdiplus::RectF boundingBox;
+    graphics.MeasureString(helpText.c_str(), -1, &font, layoutRect, NULL, &boundingBox);
+
+    // Thêm padding cho đẹp
+    float padding = 10.0f;
+    float boxW = boundingBox.Width + padding * 2;
+    float boxH = boundingBox.Height + padding * 2;
+
+    // 4. Tính toán vị trí (Góc dưới bên phải)
+    float x = (float)viewW - boxW - 20.0f; // Cách lề phải 20px
+    float y = (float)viewH - boxH - 20.0f; // Cách lề dưới 20px
+
+    // 5. Vẽ nền và vẽ chữ
+    graphics.FillRectangle(&bgBrush, x, y, boxW, boxH);
+    graphics.DrawString(helpText.c_str(), -1, &font, PointF(x + padding, y + padding), &textBrush);
+}
+
+// Cập nhật Scrollbar
 void UpdateScrollBars(HWND hWnd) {
-	if (!g_svgDocument || !g_svgDocument->getRootGroup()) return;
+    if (!g_svgDocument || !g_svgDocument->getRootGroup()) return;
 
-	SVGGroup* rootGroup = g_svgDocument->getRootGroup();
-	RECT rect;
-	GetClientRect(hWnd, &rect);
-	int clientW = rect.right;
-	int clientH = rect.bottom;
+    SVGGroup* rootGroup = g_svgDocument->getRootGroup();
+    RECT rect;
+    GetClientRect(hWnd, &rect);
+    int clientW = rect.right;
+    int clientH = rect.bottom;
 
-	float viewBoxW = rootGroup->getViewBoxW();
-	float viewBoxH = rootGroup->getViewBoxH();
-	float svgWidth = rootGroup->getWidth();
-	float svgHeight = rootGroup->getHeight();
+    float viewBoxW = rootGroup->getViewBoxW();
+    float viewBoxH = rootGroup->getViewBoxH();
+    float svgWidth = rootGroup->getWidth();
+    float svgHeight = rootGroup->getHeight();
 
-	// Logic xử lý ViewBox thiếu (giữ nguyên logic cũ của bạn)
-	if (viewBoxW <= 0.0f || viewBoxH <= 0.0f) {
-		if (svgWidth > 0.0f && svgHeight > 0.0f) { viewBoxW = svgWidth; viewBoxH = svgHeight; }
-		else { viewBoxW = clientW > 0 ? (float)clientW : 1.0f; viewBoxH = clientH > 0 ? (float)clientH : 1.0f; }
-	}
+    if (viewBoxW <= 0.0f || viewBoxH <= 0.0f) {
+        if (svgWidth > 0.0f && svgHeight > 0.0f) { viewBoxW = svgWidth; viewBoxH = svgHeight; }
+        else { viewBoxW = clientW > 0 ? (float)clientW : 1.0f; viewBoxH = clientH > 0 ? (float)clientH : 1.0f; }
+    }
 
-	// Tính toán tỷ lệ render
-	float scaleX = (float)clientW / viewBoxW;
-	float scaleY = (float)clientH / viewBoxH;
-	float final_scale = std::min(scaleX, scaleY);
+    float scaleX = (float)clientW / viewBoxW;
+    float scaleY = (float)clientH / viewBoxH;
+    float final_scale = std::min(scaleX, scaleY);
+    if (final_scale <= 1.0f) final_scale = std::min(final_scale, 0.8f);
 
-	// Logic cũ của bạn: limit scale
-	if (final_scale <= 1.0f) final_scale = std::min(final_scale, 0.8f);
+    final_scale *= g_userZoom;
 
-	// --- ÁP DỤNG ZOOM CỦA NGƯỜI DÙNG ---
-	final_scale *= g_userZoom;
-	// ------------------------------------
+    int contentW = (int)(viewBoxW * final_scale);
+    int contentH = (int)(viewBoxH * final_scale);
 
-	// Kích thước nội dung VẬT LÝ sau khi render
-	int contentW = (int)(viewBoxW * final_scale);
-	int contentH = (int)(viewBoxH * final_scale);
+    SCROLLINFO si = { 0 };
+    si.cbSize = sizeof(si);
+    si.fMask = SIF_RANGE | SIF_PAGE | SIF_POS;
 
-	SCROLLINFO si = { 0 };
-	si.cbSize = sizeof(si);
-	si.fMask = SIF_RANGE | SIF_PAGE | SIF_POS;
+    si.nMin = 0; si.nMax = contentW; si.nPage = clientW;
+    g_scrollX = std::min(g_scrollX, std::max(0, contentW - clientW));
+    si.nPos = g_scrollX;
+    SetScrollInfo(hWnd, SB_HORZ, &si, TRUE);
 
-	// Thanh cuộn Ngang
-	si.nMin = 0;
-	si.nMax = contentW;
-	si.nPage = clientW;
-	int maxScrollX = contentW > clientW ? contentW - clientW : 0;
-	g_scrollX = std::min(g_scrollX, maxScrollX);
-	si.nPos = g_scrollX;
-	SetScrollInfo(hWnd, SB_HORZ, &si, TRUE);
+    si.nMax = contentH; si.nPage = clientH;
+    g_scrollY = std::min(g_scrollY, std::max(0, contentH - clientH));
+    si.nPos = g_scrollY;
+    SetScrollInfo(hWnd, SB_VERT, &si, TRUE);
 
-	// Thanh cuộn Dọc
-	si.nMax = contentH;
-	si.nPage = clientH;
-	int maxScrollY = contentH > clientH ? contentH - clientH : 0;
-	g_scrollY = std::min(g_scrollY, maxScrollY);
-	si.nPos = g_scrollY;
-	SetScrollInfo(hWnd, SB_VERT, &si, TRUE);
-
-	InvalidateRect(hWnd, NULL, TRUE);
+    InvalidateRect(hWnd, NULL, TRUE);
 }
 
-
-
-//Hàm vẽ chính (GDI+ Paint Handler)
 VOID OnPaint(HWND hWnd) {
-	PAINTSTRUCT ps;
-	HDC hdc = BeginPaint(hWnd, &ps);
-	Gdiplus::Graphics graphics(hdc);
+    PAINTSTRUCT ps;
+    HDC hdc = BeginPaint(hWnd, &ps);
+    Gdiplus::Graphics graphics(hdc);
 
-	graphics.SetSmoothingMode(Gdiplus::SmoothingModeAntiAlias);
-	graphics.Clear(Gdiplus::Color(255, 255, 255));
+    graphics.SetSmoothingMode(Gdiplus::SmoothingModeAntiAlias);
+    graphics.Clear(Gdiplus::Color(255, 255, 255)); // Xóa màn hình màu trắng
 
-	if (g_svgDocument && g_svgDocument->getRootGroup()) {
+    RECT clientRect;
+    GetClientRect(hWnd, &clientRect);
+    float viewportW = (float)clientRect.right;
+    float viewportH = (float)clientRect.bottom;
 
-		SVGGroup* rootGroup = g_svgDocument->getRootGroup();
+    // --- PHẦN 1: VẼ SVG (CÓ BIẾN ĐỔI XOAY/ZOOM) ---
+    if (g_svgDocument && g_svgDocument->getRootGroup()) {
+        SVGGroup* rootGroup = g_svgDocument->getRootGroup();
 
-		// 1. Lấy kích thước cửa sổ hiện tại (Viewport Rendering)
-		RECT clientRect;
-		GetClientRect(hWnd, &clientRect);
-		float actualViewportW = (float)clientRect.right;
-		float actualViewportH = (float)clientRect.bottom;
+        float viewBoxX = rootGroup->getViewBoxX();
+        float viewBoxY = rootGroup->getViewBoxY();
+        float viewBoxW = rootGroup->getViewBoxW();
+        float viewBoxH = rootGroup->getViewBoxH();
+        float svgWidth = rootGroup->getWidth();
+        float svgHeight = rootGroup->getHeight();
 
-		// Lấy thông số ViewBox/Kích thước SVG
-		float viewBoxX = rootGroup->getViewBoxX();
-		float viewBoxY = rootGroup->getViewBoxY();
-		float viewBoxW = rootGroup->getViewBoxW();
-		float viewBoxH = rootGroup->getViewBoxH();
+        if (viewBoxW <= 0.0f || viewBoxH <= 0.0f) {
+            if (svgWidth > 0.0f && svgHeight > 0.0f) { viewBoxW = svgWidth; viewBoxH = svgHeight; }
+            else { viewBoxW = viewportW > 0 ? viewportW : 1.0f; viewBoxH = viewportH > 0 ? viewportH : 1.0f; }
+            viewBoxX = 0.0f; viewBoxY = 0.0f;
+        }
 
-		float svgWidth = rootGroup->getWidth();
-		float svgHeight = rootGroup->getHeight();
+        float scaleX_base = viewportW / viewBoxW;
+        float scaleY_base = viewportH / viewBoxH;
+        float final_scale = std::min(scaleX_base, scaleY_base);
+        if (final_scale <= 1.0f) final_scale = std::min(final_scale, 0.8f);
 
-		// Xử lý ViewBox bị thiếu (Dùng Kích thước SVG hoặc Kích thước cửa sổ)
-		if (viewBoxW <= 0.0f || viewBoxH <= 0.0f) {
-			// Ưu tiên dùng kích thước width/height của thẻ <svg>
-			if (svgWidth > 0.0f && svgHeight > 0.0f) {
-				viewBoxW = svgWidth;
-				viewBoxH = svgHeight;
-			}
-			else {
-				// Nếu không có gì, dùng kích thước cửa sổ làm ViewBox (hành vi mặc định)
-				viewBoxW = actualViewportW > 0.0f ? actualViewportW : 1.0f;
-				viewBoxH = actualViewportH > 0.0f ? actualViewportH : 1.0f;
-			}
-			viewBoxX = 0.0f;
-			viewBoxY = 0.0f;
-		}
+        final_scale *= g_userZoom;
 
+        float scaledW = viewBoxW * final_scale;
+        float scaledH = viewBoxH * final_scale;
+        float offsetX = (viewportW - scaledW) / 2.0f;
+        float offsetY = (viewportH - scaledH) / 2.0f;
+        if (offsetX < 0) offsetX = 0;
+        if (offsetY < 0) offsetY = 0;
 
-		// 2. TÍNH TOÁN TỶ LỆ RENDER (render_scale)
-		float scaleX_base = actualViewportW / viewBoxW;
-		float scaleY_base = actualViewportH / viewBoxH;
-		float final_scale = std::min(scaleX_base, scaleY_base);
-		// cout << final_scale;
-		if (final_scale <= 1.0f) final_scale = std::min(final_scale, 0.8f);
-		//final_scale = 1.0f;
+        int scrollX = GetScrollPos(hWnd, SB_HORZ);
+        int scrollY = GetScrollPos(hWnd, SB_VERT);
 
-		// --- THÊM: ÁP DỤNG USER ZOOM ---
-		final_scale *= g_userZoom;
-		// -------------------------------
+        // Áp dụng Transform cho SVG
+        graphics.TranslateTransform(-viewBoxX, -viewBoxY);
+        graphics.ScaleTransform(final_scale, final_scale, Gdiplus::MatrixOrderAppend);
+        graphics.TranslateTransform(offsetX - (float)scrollX, offsetY - (float)scrollY, Gdiplus::MatrixOrderAppend);
 
-		// Tính toán kích thước sau khi render (dùng render_scale)
-		float scaledW = viewBoxW * final_scale;
-		float scaledH = viewBoxH * final_scale;
+        if (g_rotation != 0.0f) {
+            float centerX = viewportW / 2.0f;
+            float centerY = viewportH / 2.0f;
+            graphics.TranslateTransform(-centerX, -centerY, Gdiplus::MatrixOrderAppend);
+            graphics.RotateTransform(g_rotation, Gdiplus::MatrixOrderAppend);
+            graphics.TranslateTransform(centerX, centerY, Gdiplus::MatrixOrderAppend);
+        }
 
-		// Tính toán Offset để căn giữa (chỉ xảy ra khi render_scale = final_scale)
-		float offsetX = (actualViewportW - scaledW) / 2.0f;
-		float offsetY = (actualViewportH - scaledH) / 2.0f;
+        rootGroup->render(g_renderer, graphics, g_svgDocument->context);
+    }
 
-		// Logic cũ: nếu scroll thì không căn giữa kiểu này nữa, reset về 0 để scroll hoạt động
-		if (offsetX < 0) offsetX = 0;
-		if (offsetY < 0) offsetY = 0;
-		//offsetX = 0.0f;
-		//offsetY = 0.0f; 
+    // --- PHẦN 2: VẼ UI HƯỚNG DẪN (KHÔNG BIẾN ĐỔI) ---
+    // Reset ma trận biến đổi về mặc định để vẽ UI đè lên trên và đứng yên
+    graphics.ResetTransform();
+    RenderHelpOverlay(graphics, (int)viewportW, (int)viewportH);
 
-		// 3. LẤY VỊ TRÍ CUỘN HIỆN TẠI
-		int scrollX = GetScrollPos(hWnd, SB_HORZ);
-		int scrollY = GetScrollPos(hWnd, SB_VERT);
-
-		// 4. ÁP DỤNG BIẾN ĐỔI GDI+
-
-		// B1: Dịch chuyển ngược ViewBox Origin (áp dụng đầu tiên)
-		graphics.TranslateTransform(-viewBoxX, -viewBoxY);
-
-		// B2: Áp dụng Tỷ lệ RENDER
-		graphics.ScaleTransform(final_scale, final_scale, Gdiplus::MatrixOrderAppend);
-
-		// B3: Áp dụng Tịnh tiến (Centering và Scroll)
-		// Dịch chuyển theo đơn vị Viewport (Pixel)
-		// Offset (Căn giữa) - Vị trí Cuộn
-		graphics.TranslateTransform(offsetX - (float)scrollX, offsetY - (float)scrollY, Gdiplus::MatrixOrderAppend);
-
-		// --- THÊM MỚI: Xử lý Rotate (Xoay quanh tâm cửa sổ) ---
-		if (g_rotation != 0.0f) {
-			float centerX = actualViewportW / 2.0f;
-			float centerY = actualViewportH / 2.0f;
-			// Dịch về tâm cửa sổ -> Xoay -> Dịch ngược lại
-			graphics.TranslateTransform(-centerX, -centerY, Gdiplus::MatrixOrderAppend);
-			graphics.RotateTransform(g_rotation, Gdiplus::MatrixOrderAppend);
-			graphics.TranslateTransform(centerX, centerY, Gdiplus::MatrixOrderAppend);
-		}
-		// -----------------------------------------------------
-
-		// 5. GỌI HÀM RENDER CHÍNH
-		rootGroup->render(g_renderer, graphics, g_svgDocument->context);
-	}
-	EndPaint(hWnd, &ps);
+    EndPaint(hWnd, &ps);
 }
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) {
-	// Khai báo biến trên đỉnh switch 
-	int bar;
-	int newPos;
-	SCROLLINFO si = { 0 };
-	int maxPos = 0;
+    int bar, newPos, maxPos;
+    SCROLLINFO si = { 0 };
 
-	switch (message) {
-	case WM_PAINT:
-		OnPaint(hWnd);
-		return 0;
+    switch (message) {
+    case WM_PAINT:
+        OnPaint(hWnd);
+        return 0;
 
-	case WM_DESTROY:
-		PostQuitMessage(0);
-		return 0;
+    case WM_DESTROY:
+        PostQuitMessage(0);
+        return 0;
 
-	case WM_SIZE:
-		// Thay vì viết code tính toán ở đây, ta gọi hàm UpdateScrollBars
-		UpdateScrollBars(hWnd);
-		break;
+    case WM_SIZE:
+        UpdateScrollBars(hWnd);
+        break;
 
-		// --- THÊM MỚI: Xử lý Lăn chuột (ZOOM) ---
-	case WM_MOUSEWHEEL:
-	{
-		float delta = GET_WHEEL_DELTA_WPARAM(wParam);
-		if (delta > 0) g_userZoom *= 1.1f; // Zoom in
-		else           g_userZoom /= 1.1f; // Zoom out
+    case WM_MOUSEWHEEL:
+    {
+        float delta = GET_WHEEL_DELTA_WPARAM(wParam);
+        if (delta > 0) g_userZoom *= 1.1f;
+        else           g_userZoom /= 1.1f;
 
-		if (g_userZoom < 0.1f) g_userZoom = 0.1f;
+        if (g_userZoom < 0.1f) g_userZoom = 0.1f;
+        UpdateScrollBars(hWnd);
+        return 0;
+    }
 
-		// Cập nhật lại thanh cuộn và vẽ lại
-		UpdateScrollBars(hWnd);
-		return 0;
-	}
-	// ----------------------------------------
+    case WM_KEYDOWN:
+    {
+        bool changed = false;
+        switch (wParam) {
+        case 'L': g_rotation -= 5.0f; changed = true; break;
+        case 'R': g_rotation += 5.0f; changed = true; break;
+        case 'X':
+            g_rotation = 0.0f; g_userZoom = 1.0f;
+            g_scrollX = 0; g_scrollY = 0;
+            UpdateScrollBars(hWnd);
+            changed = true;
+            break;
+        }
+        if (changed) InvalidateRect(hWnd, NULL, TRUE);
+        break;
+    }
 
-	// --- THÊM MỚI: Xử lý Bàn phím (ROTATE & HELP) ---
-	case WM_KEYDOWN:
-	{
-		bool changed = false;
-		switch (wParam) {
-		case 'L': // Xoay Trái
-			g_rotation -= 5.0f;
-			changed = true;
-			break;
-		case 'R': // Xoay Phải
-			g_rotation += 5.0f;
-			changed = true;
-			break;
-		case 'X': // Reset
-			g_rotation = 0.0f;
-			g_userZoom = 1.0f;
-			g_scrollX = 0; g_scrollY = 0;
-			UpdateScrollBars(hWnd);
-			changed = true;
-			break;
-		case 'H': // Help
-			ShowHelp(hWnd);
-			break;
-		}
-		if (changed) InvalidateRect(hWnd, NULL, TRUE);
-		break;
-	}
-	// ------------------------------------------------
+    case WM_HSCROLL:
+    case WM_VSCROLL:
+        bar = (message == WM_HSCROLL) ? SB_HORZ : SB_VERT;
+        si.cbSize = sizeof(si);
+        si.fMask = SIF_ALL;
+        GetScrollInfo(hWnd, bar, &si);
+        newPos = si.nPos;
 
-	case WM_HSCROLL:
-	case WM_VSCROLL:
-		bar = (message == WM_HSCROLL) ? SB_HORZ : SB_VERT;
-		si.cbSize = sizeof(si);
-		si.fMask = SIF_ALL;
-		GetScrollInfo(hWnd, bar, &si);
-		newPos = si.nPos;
+        switch (LOWORD(wParam)) {
+        case SB_LINELEFT:      newPos -= 20; break;
+        case SB_LINERIGHT:     newPos += 20; break;
+        case SB_PAGELEFT:      newPos -= si.nPage; break;
+        case SB_PAGERIGHT:     newPos += si.nPage; break;
+        case SB_THUMBTRACK:
+        case SB_THUMBPOSITION: newPos = HIWORD(wParam); break;
+        }
 
-		switch (LOWORD(wParam)) {
-		case SB_LINELEFT:
-			newPos -= 20;
-			break;
-		case SB_LINERIGHT:
-			newPos += 20;
-			break;
-		case SB_PAGELEFT:
-			newPos -= si.nPage;
-			break;
-		case SB_PAGERIGHT:
-			newPos += si.nPage;
-			break;
-		case SB_THUMBTRACK:
-		case SB_THUMBPOSITION:
-			newPos = HIWORD(wParam);
-			break;
-		}
+        maxPos = (int)si.nMax - (int)si.nPage;
+        maxPos = std::max(0, maxPos);
+        si.fMask = SIF_POS;
+        si.nPos = std::max(si.nMin, std::min(newPos, maxPos));
 
-		maxPos = (int)si.nMax - (int)si.nPage;
-		maxPos = std::max(0, maxPos);
+        if (si.nPos != GetScrollPos(hWnd, bar)) {
+            SetScrollInfo(hWnd, bar, &si, TRUE);
+            if (bar == SB_HORZ) g_scrollX = si.nPos;
+            else                g_scrollY = si.nPos;
+            InvalidateRect(hWnd, NULL, TRUE);
+        }
+        break;
 
-		si.fMask = SIF_POS;
-		si.nPos = std::max(si.nMin, std::min(newPos, maxPos));
-
-		if (si.nPos != GetScrollPos(hWnd, bar)) {
-			SetScrollInfo(hWnd, bar, &si, TRUE);
-
-			if (bar == SB_HORZ) {
-				g_scrollX = si.nPos;
-			}
-			else {
-				g_scrollY = si.nPos;
-			}
-
-			InvalidateRect(hWnd, NULL, TRUE);
-		}
-		break;
-
-	default:
-		return DefWindowProc(hWnd, message, wParam, lParam);
-	}
-	return 0;
+    default:
+        return DefWindowProc(hWnd, message, wParam, lParam);
+    }
+    return 0;
 }
-// Hàm Main (Điểm Khởi chạy Ứng dụng) - Đã đổi thành wWinMain cho Unicode
-INT WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, INT iCmdShow) { // Đã sửa tham số thứ 2 và 3
 
-	// ----------------------------------------------------
-	// 1. KHỞI TẠO GDI+ VÀ PHÂN TÍCH FILE SVG
-	// ----------------------------------------------------
-	GdiplusStartupInput gdiplusStartupInput;
-	GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
+INT WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, INT iCmdShow) {
+    GdiplusStartupInput gdiplusStartupInput;
+    GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
 
-	try {
-		// Tạo Document
-		g_svgDocument = new SVGDocument(SVG_FILENAME);
+    std::string svgFileToOpen = DEFAULT_FILENAME;
+    int argc = 0;
+    LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
+    if (argv && argc > 1) {
+        std::wstring wArg = argv[1];
+        svgFileToOpen = WStringToString(wArg);
+    }
+    if (argv) LocalFree(argv);
 
-		// Tải file và xây dựng cây đối tượng (truyền g_parser và g_factory)
-		g_svgDocument->parseSVGImage(g_parser, g_factory);
+    try {
+        g_svgDocument = new SVGDocument(svgFileToOpen);
+        g_svgDocument->parseSVGImage(g_parser, g_factory);
+        g_svgDocument->resolveReferences();
+    }
+    catch (...) {}
 
-		g_svgDocument->resolveReferences();
-	}
-	catch (const std::exception& e) {
-		// ...
-	}
+    WNDCLASSEX wc = {};
+    wc.cbSize = sizeof(WNDCLASSEX);
+    wc.style = CS_HREDRAW | CS_VREDRAW;
+    wc.lpfnWndProc = WndProc;
+    wc.hInstance = hInstance;
+    wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+    wc.hCursor = LoadCursor(NULL, IDC_ARROW);
+    wc.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
+    wc.lpszClassName = WINDOW_CLASS_NAME;
+    wc.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
 
+    if (!RegisterClassEx(&wc)) {
+        GdiplusShutdown(gdiplusToken);
+        return 0;
+    }
 
-	// ----------------------------------------------------
-	// 2. KHỞI TẠO CỬA SỔ WINDOWS
-	// ----------------------------------------------------
-	WNDCLASSEX wc = {};
-	wc.cbSize = sizeof(WNDCLASSEX);
-	wc.style = CS_HREDRAW | CS_VREDRAW;
-	wc.lpfnWndProc = WndProc;
-	wc.hInstance = hInstance;
-	wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
-	wc.hCursor = LoadCursor(NULL, IDC_ARROW);
-	wc.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
-	wc.lpszClassName = WINDOW_CLASS_NAME;
-	wc.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
+    HWND hWnd = CreateWindowEx(
+        0, WINDOW_CLASS_NAME, WINDOW_TITLE,
+        WS_OVERLAPPEDWINDOW | WS_HSCROLL | WS_VSCROLL,
+        CW_USEDEFAULT, CW_USEDEFAULT, 800, 600,
+        NULL, NULL, hInstance, NULL
+    );
 
-	// Đăng ký lớp cửa sổ
-	if (!RegisterClassEx(&wc)) {
-		GdiplusShutdown(gdiplusToken);
-		return 0;
-	}
+    if (hWnd == NULL) {
+        GdiplusShutdown(gdiplusToken);
+        return 0;
+    }
 
-	// Tạo cửa sổ
-	//HWND hWnd = CreateWindow(
-	//	WINDOW_CLASS_NAME,
-	//	WINDOW_TITLE,
-	//	WS_OVERLAPPEDWINDOW,
-	//	CW_USEDEFAULT, CW_USEDEFAULT, 800, 600,
-	//	NULL, NULL, hInstance, NULL
-	//);
-	HWND hWnd = CreateWindowEx(
-		0,
-		WINDOW_CLASS_NAME,
-		WINDOW_TITLE,
-		WS_OVERLAPPEDWINDOW | WS_HSCROLL | WS_VSCROLL,
-		CW_USEDEFAULT, CW_USEDEFAULT, 800, 600,
-		NULL, NULL, hInstance, NULL
-	);
+    ShowWindow(hWnd, iCmdShow);
+    UpdateWindow(hWnd);
 
-	if (hWnd == NULL) {
-		GdiplusShutdown(gdiplusToken);
-		return 0;
-	}
+    MSG Msg;
+    while (GetMessage(&Msg, NULL, 0, 0) > 0) {
+        TranslateMessage(&Msg);
+        DispatchMessage(&Msg);
+    }
 
-	ShowWindow(hWnd, iCmdShow);
-	UpdateWindow(hWnd);
+    delete g_svgDocument;
+    GdiplusShutdown(gdiplusToken);
 
-	// --- HIỂN THỊ BẢNG HƯỚNG DẪN LẦN ĐẦU ---
-	ShowHelp(hWnd);
-	// ---------------------------------------
-
-	// ----------------------------------------------------
-	// 3. VÒNG LẶP THÔNG ĐIỆP (MAIN LOOP)
-	// ----------------------------------------------------
-	MSG Msg;
-	while (GetMessage(&Msg, NULL, 0, 0) > 0) {
-		TranslateMessage(&Msg);
-		DispatchMessage(&Msg);
-	}
-
-	// ----------------------------------------------------
-	// 4. DỌN DẸP
-	// ----------------------------------------------------
-	delete g_svgDocument;
-	GdiplusShutdown(gdiplusToken);
-
-	return static_cast<INT>(Msg.wParam);
+    return static_cast<INT>(Msg.wParam);
 }

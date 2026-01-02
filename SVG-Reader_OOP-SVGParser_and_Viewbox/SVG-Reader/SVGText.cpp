@@ -310,6 +310,10 @@ void SVGText::setContent(const std::wstring& content) {
 //        this->setContent(L"");
 //    }
 //}
+float SVGText::getDx() const { return dx; }
+void SVGText::setDx(float val) { dx = val; }
+float SVGText::getDy() const { return dy; }
+void SVGText::setDy(float val) { dy = val; }
 
 void SVGText::parse(SVGParser& parser, tinyxml2::XMLElement* xmlNode) {
     /*SVGElement::parse(parser, xmlNode);
@@ -317,23 +321,4 @@ void SVGText::parse(SVGParser& parser, tinyxml2::XMLElement* xmlNode) {
 }
 void SVGText::render(SVGRenderer& r, Gdiplus::Graphics& g, const SVGDocumentContext& context) const {
     r.renderText(g, this, context);
-}
-// void SVGText::transform(Matrix* m) {
-// Trong SVGText.cpp
-
-// Đảm bảo đã include <iostream> và các headers cần thiết
-
-void SVGText::printDebugAttributes(std::ostream& os, int idx) const {
-    // 1. Gọi hàm lớp cơ sở để in ID và TagName
-    SVGElement::printDebugAttributes(os, idx);
-
-    // 2. In thuộc tính RIÊNG của SVGText
-    os << "  --- TEXT INFO ---" << std::endl;
-    os << "  Font Size: " << this->getFontSize() << std::endl; // Lấy font_size
-    os << "  Start Point: (" << this->getStart().x << ", " << this->getStart().y << ")" << std::endl;
-    // ... (in các thuộc tính riêng khác nếu cần)
-    os << "-------------------" << std::endl;
-
-    // 3. Gọi hàm tiện ích để in Style/Stroke
-    printStyleDebug(os);
 }

@@ -1,13 +1,10 @@
-﻿#pragma once
+﻿#ifndef SVGGROUP_H
+#define SVGGROUP_H
+
 #include "tinyxml2.h" 
 #include "SVGElement.h"
 #include <vector>
 #include <algorithm>
-
-// có trong SVGElement.h rồi
-//class SVGDocumentContext;
-//class SVGParser;
-//class SVGRender;
 
 class SVGGroup : public SVGElement {
 private:
@@ -15,7 +12,8 @@ private:
 
     std::vector<SVGElement*> ElementArray;
     SVGGroup* parent;
-    // THÊM: Kích thước vật lý/Viewport của thẻ <svg>
+    
+    // Kích thước vật lý/Viewport của thẻ <svg>
     float width = 0.0f;
     float height = 0.0f;
 
@@ -23,13 +21,11 @@ private:
 
     float viewBoxW = 0.0f;     // Mặc định
     float viewBoxH = 0.0f;    // Mặc định
-    // THÊM: Tọa độ bắt đầu của ViewBox
+    // Tọa độ bắt đầu của ViewBox
     float viewBoxX = 0.0f;
     float viewBoxY = 0.0f;
 
     std::unordered_map<std::string, std::string> inheritedAttributes;
-
-    // std::string transform;  // Mặc định là chuỗi rỗng
 
 public:
 
@@ -53,7 +49,6 @@ public:
 
     SVGElement* clone() const override;
 
-    //void parse(tinyxml2::XMLElement*);
     void parse(SVGParser&, tinyxml2::XMLElement*) override;
     void render(SVGRenderer&, Gdiplus::Graphics&, const SVGDocumentContext&) const override;
 
@@ -73,18 +68,12 @@ public:
     void setViewBoxW(float w) { this->viewBoxW = w; }
     void setViewBoxH(float h) { this->viewBoxH = h; }
     void setViewBox(const std::string& vb);
-    // void setTransform(const std::string& t) { transform = t; }
 
-    const std::unordered_map<std::string, std::string>& getInheritedAttributes() const {
-        return inheritedAttributes;
-    }
+    const std::unordered_map<std::string, std::string>& getInheritedAttributes() const;
 
     // Hàm hợp nhất các thuộc tính kế thừa từ cha vào Group hiện tại
     void mergeInheritedAttributes(const std::unordered_map<std::string, std::string>& parentMap);
 
-
-    void printDebugAttributes(std::ostream&, int) const;
-
     void resolve(const SVGDocumentContext& context) override;
 };
-
+#endif

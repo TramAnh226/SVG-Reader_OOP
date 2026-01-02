@@ -7,33 +7,47 @@
 #include "SVGDocumentContext.h"
 #include "SVGParser.h"
 
+//SVGGradient::SVGGradient()
+//    : gradientUnits("objectBoundingBox"), spreadMethod("pad"), gradientTransform(nullptr) {
+//}
+
 SVGGradient::SVGGradient()
-    : gradientUnits("objectBoundingBox"), spreadMethod("pad"), gradientTransform(nullptr) {
+    : gradientUnits("objectBoundingBox"), spreadMethod("pad") {
 }
 
-SVGGradient::SVGGradient(const SVGGradient& other) {
-    this->gradientID = other.gradientID;
-    this->stopArray = other.stopArray;
-    this->gradientUnits = other.gradientUnits;
-    this->spreadMethod = other.spreadMethod;
-    // SỬA: Clone ma trận thay vì gán con trỏ trực tiếp
-    this->gradientTransform = (other.gradientTransform) ? other.gradientTransform->Clone() : nullptr;
+SVGGradient::SVGGradient(const SVGGradient& other)
+    : gradientID(other.gradientID),
+    stopArray(other.stopArray),
+    gradientUnits(other.gradientUnits),
+    spreadMethod(other.spreadMethod),
+    gradientTransform(other.gradientTransform) {
 }
+
+//SVGGradient& SVGGradient::operator=(const SVGGradient& other) {
+//    if (this != &other) {
+//        delete this->gradientTransform; // Xóa cũ
+//        this->gradientID = other.gradientID;
+//        this->stopArray = other.stopArray;
+//        this->gradientUnits = other.gradientUnits;
+//        this->spreadMethod = other.spreadMethod;
+//        this->gradientTransform = (other.gradientTransform) ? other.gradientTransform->Clone() : nullptr;
+//    }
+//    return *this;
+//}
 
 SVGGradient& SVGGradient::operator=(const SVGGradient& other) {
     if (this != &other) {
-        delete this->gradientTransform; // Xóa cũ
         this->gradientID = other.gradientID;
         this->stopArray = other.stopArray;
         this->gradientUnits = other.gradientUnits;
         this->spreadMethod = other.spreadMethod;
-        this->gradientTransform = (other.gradientTransform) ? other.gradientTransform->Clone() : nullptr;
+        this->gradientTransform = other.gradientTransform;
     }
     return *this;
 }
 
 SVGGradient::~SVGGradient() {
-    delete gradientTransform;
+    //delete gradientTransform;
 }
 
 const std::string& SVGGradient::getGradientID() const {
@@ -52,6 +66,10 @@ const std::string& SVGGradient::getSpreadMethod() const {
     return this->spreadMethod;
 }
 
+//const std::string& SVGGradient::getTransform() const {
+//    return this->transform;
+//}
+
 void SVGGradient::setGradientID(const std::string& id) {
     this->gradientID = id;
 }
@@ -67,6 +85,10 @@ void SVGGradient::setGradientUnits(const std::string& units) {
 void SVGGradient::setSpreadMethod(const std::string& method) {
     this->spreadMethod = method;
 }
+
+//void SVGGradient::setTransform(const std::string& t) {
+//    this->transform = t;
+//}
 
 void SVGGradient::addStop(const SVGStop& stop) {
     this->stopArray.push_back(stop);
@@ -88,44 +110,18 @@ void SVGGradient::setHrefID(const std::string& id) {
     hrefID = id;
 }
 
-const Gdiplus::Matrix* SVGGradient::getGradientTransform() const {
-    return gradientTransform;
-}
-
-void SVGGradient::setGradientTransform(Gdiplus::Matrix* matrix) {
-    if (this->gradientTransform) delete this->gradientTransform;
-    this->gradientTransform = matrix;
-}
+//const Gdiplus::Matrix* SVGGradient::getGradientTransform() const {
+//    return gradientTransform;
+//}
+//
+//void SVGGradient::setGradientTransform(Gdiplus::Matrix* matrix) {
+//    if (this->gradientTransform) delete this->gradientTransform;
+//    this->gradientTransform = matrix;
+//}
 
 bool SVGGradient::isReferencing() const {
     return !hrefID.empty();
 }
-
-//const SVGGradient* SVGGradient::resolveReference(const SVGDocumentContext& context) const {
-//    const SVGGradient* current = this;
-//
-//    // Lặp lại cho đến khi không còn tham chiếu
-//    while (current && current->isReferencing()) {
-//        std::string refID = current->getHrefID();
-//        if (refID.size() > 0 && refID[0] == '#') {
-//            refID = refID.substr(1);
-//        }
-//
-//        const SVGGradient* next = context.getGradientById(refID);
-//
-//        if (next) {
-//            current = next; // Tiếp tục chuỗi tham chiếu
-//        }
-//        else {
-//            // Tham chiếu bị đứt gãy
-//            std::cerr << "Warning: Gradient reference ID #" << refID << " not found.\n";
-//            break;
-//        }
-//    }
-//
-//    // Trả về Gradient cuối cùng không tham chiếu
-//    return current;
-//}
 
 void SVGGradient::resolveReference(const SVGDocumentContext& context) const {
     // Nếu đã có màu sắc thì không cần lấy từ cha nữa
