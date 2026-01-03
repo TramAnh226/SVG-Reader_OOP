@@ -1,0 +1,243 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "MSVC Code Analysis",
+          "version": "14.44.35217.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgelement.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "53815f84f460e8795b89f336819199bbad68ac94f9c7b7fb659821c18b85f1a7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/tinyxml2.h"
+          },
+          "hashes": {
+            "sha-256": "efbcd12caf3704f8611da0228378b1b191645a37e08647cdecace66263b8a2b0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/stroke.h"
+          },
+          "hashes": {
+            "sha-256": "ed7ea8c487fbc5c00e5a272fb1d4ab90695fb3d62feade3fbd600fa70cb7032f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/customcolor.h"
+          },
+          "hashes": {
+            "sha-256": "a2290ad4a9563244c94d5761e43cee6e55aec40fb400d8234a1b9bb24f7f936a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgelement.h"
+          },
+          "hashes": {
+            "sha-256": "5bca42260b2ffc8774243a90e5b6f32940b4473c1540fb0c985c285812d40022"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgstyle.h"
+          },
+          "hashes": {
+            "sha-256": "3b860ba0d643c64b45d9422116a09fc354d998f52cd8548870bb36dfceaf7f8f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgtransform.h"
+          },
+          "hashes": {
+            "sha-256": "d7ab4d8bad28100766c6cee831362a041a778b42861d97b0fc289f7a6a311f76"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgparser.h"
+          },
+          "hashes": {
+            "sha-256": "b1f8394196c222833e7b4c7f397a1d1e8d83c06393193e3640a415a37c7b3f31"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgrectangle.h"
+          },
+          "hashes": {
+            "sha-256": "6651d2405903bea4fe70e97d88d8947dfe1f918f204ac3b060921787a4ea12fc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/custompoint.h"
+          },
+          "hashes": {
+            "sha-256": "d37154caad80929b917dbdd28fe92f15959d15a6bfb1fcc3e2c5fd1694d83cf5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgsquare.h"
+          },
+          "hashes": {
+            "sha-256": "8294c0fb5dcb0bda3977cda0152c2e2009af1c4fcdbd1b288397c52046368190"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgellipse.h"
+          },
+          "hashes": {
+            "sha-256": "d5067799103fd6fc9453395cfcc9e8295894182d31d44138d0d0f9f412f89275"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgcircle.h"
+          },
+          "hashes": {
+            "sha-256": "c0868b21859004d87cca8ed716e3b5d9fc932d913be53f2c6ca4d14e125fd799"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgline.h"
+          },
+          "hashes": {
+            "sha-256": "b842c18aceb53603d66cb906be0a3835920804de21a13dcb886febfceb5e72fc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgpolyshapebase.h"
+          },
+          "hashes": {
+            "sha-256": "5e45f9204ae935f4da48747d2d545940e36d3dfeb6c8542066edee7d977e7e5f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgpolygon.h"
+          },
+          "hashes": {
+            "sha-256": "9414d96d3c548c5f2d79e2111e55d3046d021155fe9bb645d09d5c0b7450c25f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgpolyline.h"
+          },
+          "hashes": {
+            "sha-256": "f8f2b2ed2cf567e8aaafccecba475df622b8d6573e25e2a65d99454ec19894ac"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgtext.h"
+          },
+          "hashes": {
+            "sha-256": "d053d5ca28202b9be86d8c49e00ae384a5e91505c00d0035d2a250bf11067d80"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgpath.h"
+          },
+          "hashes": {
+            "sha-256": "49e11a59cd5b8924f36775d2f90668ebeec41288dcfc3c80c6c242b1f152f07c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svggroup.h"
+          },
+          "hashes": {
+            "sha-256": "6cf4bd9d1a1dcb86d29273641228b1d52286e6210e9d51f385d12c1b558176a6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgdocumentcontext.h"
+          },
+          "hashes": {
+            "sha-256": "861197b2c1253187837c85597a6cd8e999d1d69fe7d938a8969e235a54fee8aa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgfactorypattern.h"
+          },
+          "hashes": {
+            "sha-256": "2af66d66671773aa3c90d39d99f563ba5e611d3e4e0d6833a46f21abe7a18015"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgstop.h"
+          },
+          "hashes": {
+            "sha-256": "6624e98ef79ebe8905b32cf215445c8e1417bb956076deea1f48275389bcdd53"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svggradient.h"
+          },
+          "hashes": {
+            "sha-256": "faa03cdfb0e2c075f60ae5eb093a2b2c54d01ae164f71315dac0f1a44a896bc0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svglineargradient.h"
+          },
+          "hashes": {
+            "sha-256": "168bc92446d3aeceaee0d7eb3c525a49faecaac05d9519398c572eb7cb80e358"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgradialgradient.h"
+          },
+          "hashes": {
+            "sha-256": "727a18545b14887617b4d5c55bc2e1856e60f4ed2b7d6509bf4fab38b8198b19"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/lenovo/downloads/svg-reader_oop-svgparser_and_viewbox (1)/svg-reader_oop-svgparser_and_viewbox/svg-reader/svgrenderer.h"
+          },
+          "hashes": {
+            "sha-256": "4a100661b87ca7557eab9bde76420415b5f2ec6576d908a1ad8a8edafd8a176c"
+          }
+        }
+      ]
+    }
+  ]
+}

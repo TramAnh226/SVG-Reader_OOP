@@ -1,0 +1,32 @@
+#ifndef SVGELLIPSE_H
+#define SVGELLIPSE_H
+
+#include "SVGElement.h"
+#include "CustomPoint.h"
+
+namespace tinyxml2 { class XMLElement; }
+namespace Gdiplus { class Graphics; }
+
+class SVGEllipse : public SVGElement {
+protected:
+	CustomPoint center;
+	float rx, ry;
+public:
+	SVGEllipse();
+	SVGEllipse(CustomPoint, float, float);
+	SVGEllipse(const SVGEllipse&);
+	SVGEllipse& operator=(const SVGEllipse&);
+	~SVGEllipse();
+	SVGElement* clone() const override;
+
+	CustomPoint getCenter() const;
+	void setCenter(const CustomPoint&);
+	float getRadiusX() const;
+	void setRadiusX(const float&);
+	float getRadiusY() const;
+	void setRadiusY(const float&);
+
+	void parse(SVGParser&, tinyxml2::XMLElement*) override;
+	void render(SVGRenderer&, Gdiplus::Graphics&, const SVGDocumentContext&) const override;
+};
+#endif
